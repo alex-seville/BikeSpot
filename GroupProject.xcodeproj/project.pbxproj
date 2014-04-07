@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3DD463A48F6C4C3684A374A9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D890258C2A944EA7A6C3ECC8 /* libPods.a */; };
+		6524D9D818F23AB80072620D /* CPParseClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6524D9D718F23AB80072620D /* CPParseClient.m */; };
+		6524D9DA18F23B570072620D /* ParseClient.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6524D9D918F23B570072620D /* ParseClient.plist */; };
 		6548959B18ED08E3002E7F0E /* CPRack.m in Sources */ = {isa = PBXBuildFile; fileRef = 6548959A18ED08E3002E7F0E /* CPRack.m */; };
 		6583AF1918EC931D00D46333 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6583AF1818EC931D00D46333 /* Foundation.framework */; };
 		6583AF1B18EC931D00D46333 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6583AF1A18EC931D00D46333 /* CoreGraphics.framework */; };
@@ -47,6 +49,9 @@
 
 /* Begin PBXFileReference section */
 		215048BF48324A4E953CADC1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		6524D9D618F23AB80072620D /* CPParseClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPParseClient.h; path = DAL/CPParseClient.h; sourceTree = "<group>"; };
+		6524D9D718F23AB80072620D /* CPParseClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPParseClient.m; path = DAL/CPParseClient.m; sourceTree = "<group>"; };
+		6524D9D918F23B570072620D /* ParseClient.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ParseClient.plist; path = DAL/ParseClient.plist; sourceTree = "<group>"; };
 		6548959918ED08E3002E7F0E /* CPRack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPRack.h; path = Models/CPRack.h; sourceTree = "<group>"; };
 		6548959A18ED08E3002E7F0E /* CPRack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPRack.m; path = Models/CPRack.m; sourceTree = "<group>"; };
 		6583AF1518EC931D00D46333 /* GroupProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +123,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6524D9D518F23A960072620D /* DAL */ = {
+			isa = PBXGroup;
+			children = (
+				6524D9D618F23AB80072620D /* CPParseClient.h */,
+				6524D9D718F23AB80072620D /* CPParseClient.m */,
+				6524D9D918F23B570072620D /* ParseClient.plist */,
+			);
+			name = DAL;
+			sourceTree = "<group>";
+		};
 		6548959C18ED08E7002E7F0E /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +190,7 @@
 		6583AF1E18EC931D00D46333 /* GroupProject */ = {
 			isa = PBXGroup;
 			children = (
+				6524D9D518F23A960072620D /* DAL */,
 				6548959C18ED08E7002E7F0E /* Models */,
 				6583AF2718EC931D00D46333 /* CPAppDelegate.h */,
 				6583AF2818EC931D00D46333 /* CPAppDelegate.m */,
@@ -291,6 +307,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6524D9DA18F23B570072620D /* ParseClient.plist in Resources */,
 				6583AF2318EC931D00D46333 /* InfoPlist.strings in Resources */,
 				6583AF2B18EC931D00D46333 /* Images.xcassets in Resources */,
 			);
@@ -347,6 +364,7 @@
 				6548959B18ED08E3002E7F0E /* CPRack.m in Sources */,
 				6583AF2518EC931D00D46333 /* main.m in Sources */,
 				6583AF2918EC931D00D46333 /* CPAppDelegate.m in Sources */,
+				6524D9D818F23AB80072620D /* CPParseClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

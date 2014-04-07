@@ -155,88 +155,173 @@ t1396822848
 s127748
 
 N/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/libPods-AFNetworking.a
-t2
-s0
+t1396822848
+s1426480
+
+N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/AFNetworking/AFHTTPRequestOperation.h
+c00000000533C5CA80000000000001192
+t1396464808
+s4498
 
 N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/AFNetworking/AFHTTPRequestOperation.m
 c00000000533C5CA80000000000001CFD
 t1396464808
 s7421
 
+N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/AFNetworking/AFHTTPRequestOperationManager.h
+c00000000533C5CA800000000000048F0
+t1396464808
+s18672
+
 N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/AFNetworking/AFHTTPRequestOperationManager.m
 c00000000533C5CA8000000000000291C
 t1396464808
 s10524
+
+N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/AFNetworking/AFHTTPSessionManager.h
+c00000000533C5CA800000000000038E4
+t1396464808
+s14564
 
 N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/AFNetworking/AFHTTPSessionManager.m
 c00000000533C5CA80000000000003019
 t1396464808
 s12313
 
+N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/AFNetworking/AFNetworkReachabilityManager.h
+c00000000533C5CA80000000000001D1F
+t1396464808
+s7455
+
 N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/AFNetworking/AFNetworkReachabilityManager.m
 c00000000533C5CA80000000000002520
 t1396464808
 s9504
+
+N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/AFNetworking/AFSecurityPolicy.h
+c00000000533C5CA8000000000000141B
+t1396464808
+s5147
 
 N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/AFNetworking/AFSecurityPolicy.m
 c00000000533C5CA80000000000002A47
 t1396464808
 s10823
 
+N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/AFNetworking/AFURLConnectionOperation.h
+c00000000533C5CA80000000000004621
+t1396464808
+s17953
+
 N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/AFNetworking/AFURLConnectionOperation.m
 c00000000533C5CA800000000000068B9
 t1396464808
 s26809
+
+N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.h
+c00000000533C5CA80000000000005009
+t1396464808
+s20489
 
 N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.m
 c00000000533C5CA8000000000000B7BC
 t1396464808
 s47036
 
+N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/AFNetworking/AFURLResponseSerialization.h
+c00000000533C5CA800000000000027A4
+t1396464808
+s10148
+
 N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/AFNetworking/AFURLResponseSerialization.m
 c00000000533C5CA80000000000005DA7
 t1396464808
 s23975
+
+N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/AFNetworking/AFURLSessionManager.h
+c00000000533C5CA80000000000006DC8
+t1396464808
+s28104
 
 N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/AFNetworking/AFURLSessionManager.m
 c00000000533C5CA8000000000000A00A
 t1396464808
 s40970
 
+N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h
+c00000000533C5CA80000000000000EC1
+t1396464808
+s3777
+
 N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m
 c00000000533C5CA8000000000000190C
 t1396464808
 s6412
+
+N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h
+c00000000533C5CA800000000000009C9
+t1396464808
+s2505
 
 N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m
 c00000000533C5CA80000000000000F19
 t1396464808
 s3865
 
+N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/UIKit+AFNetworking/UIAlertView+AFNetworking.h
+c00000000533C5CA8000000000000143A
+t1396464808
+s5178
+
 N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/UIKit+AFNetworking/UIAlertView+AFNetworking.m
 c00000000533C5CA80000000000001642
 t1396464808
 s5698
+
+N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/UIKit+AFNetworking/UIButton+AFNetworking.h
+c00000000533C5CA80000000000001F95
+t1396464808
+s8085
 
 N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/UIKit+AFNetworking/UIButton+AFNetworking.m
 c00000000533C5CA80000000000001D5B
 t1396464808
 s7515
 
+N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/UIKit+AFNetworking/UIImageView+AFNetworking.h
+c00000000533C5CA80000000000001C53
+t1396464808
+s7251
+
 N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/UIKit+AFNetworking/UIImageView+AFNetworking.m
 c00000000533C5CA80000000000001D77
 t1396464808
 s7543
+
+N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/UIKit+AFNetworking/UIProgressView+AFNetworking.h
+c00000000533C5CA80000000000000D89
+t1396464808
+s3465
 
 N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/UIKit+AFNetworking/UIProgressView+AFNetworking.m
 c00000000533C5CA80000000000001EDC
 t1396464808
 s7900
 
+N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/UIKit+AFNetworking/UIRefreshControl+AFNetworking.h
+c00000000533C5CA800000000000009BC
+t1396464808
+s2492
+
 N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/UIKit+AFNetworking/UIRefreshControl+AFNetworking.m
 c00000000533C5CA80000000000000EFC
 t1396464808
 s3836
+
+N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/UIKit+AFNetworking/UIWebView+AFNetworking.h
+c00000000533C5CA80000000000001734
+t1396464808
+s5940
 
 N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/UIKit+AFNetworking/UIWebView+AFNetworking.m
 c00000000533C5CA80000000000001927
@@ -252,6 +337,11 @@ N/Users/seville/Documents/github/ios/GroupProject/Pods/Pods-AFNetworking-prefix.
 c00000000533C5CAB0000000000000053
 t1396464811
 s83
+
+N/Users/seville/Documents/github/ios/GroupProject/Pods/Pods-environment.h
+c00000000533C5CAB0000000000000A4D
+t1396464811
+s2637
 
 CBuild AST from /Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/AFNetworking/AFHTTPRequestOperation.m
 r0
@@ -309,7 +399,7 @@ r0
 
 CCheck dependencies
 r0
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependenciesb6a013c00af2b841^aed922c00af2b841^---0#1#1#--18"Check dependencies36"0B9DF641-6633-4EC7-9A53-D778FD508906-
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependenciesfe0d36bc42f2b841^52ee36bc42f2b841^---0#1#1#--18"Check dependencies36"368FBC41-BEE7-4DB0-BBAB-4FE2ED7B560D-
 
 CCompileC /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods-AFNetworking.build/Objects-normal/i386/AFHTTPRequestOperation.o /Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/AFNetworking/AFHTTPRequestOperation.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s418515648.325377

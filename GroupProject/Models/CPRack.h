@@ -13,6 +13,8 @@
 @interface CPRack : PFObject<PFSubclassing>
 + (NSString *)parseClassName;
 
+- (id) initWithDictionary:(NSDictionary *)dictionary;
+
 /* the main identifying name associated with the rack */
 @property (retain) NSString *name;
 

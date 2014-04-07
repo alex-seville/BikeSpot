@@ -9,6 +9,7 @@
 #import "CPAppDelegate.h"
 #import <Parse/Parse.h>
 #import "CPRack.h"
+#import "CPParseClient.h"
 
 @implementation CPAppDelegate
 
@@ -18,19 +19,33 @@
     // Override point for customization after application launch.
     
     /* test for parse */
-    [Parse setApplicationId:@"A2CVP1bVaNR4vXj0wPxE1fm14zMKkUHn1PuLape9"
-                  clientKey:@"8awrefD79RaybyI0SS0pGAP4XsA8owM5to66iOm9"];
+    CPParseClient *parseClient = [CPParseClient instance];
     
-    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-    testObject[@"foo"] = @"bar";
-    [testObject saveInBackground];
+    
+    CPRack *testObject = [[CPRack alloc] initWithDictionary:@{
+                            @"name": @"Test Bike Rack",
+                            @"isInGarage": @NO,
+                            @"isCommercial": @YES,
+                            @"safetyRating": @3,
+                            @"longDescription": @"This is a long description",
+                            @"rackPhotoName": @"test.png",
+                            @"geoLocation": [[PFGeoPoint alloc] init]
+                        }];
+    
+    [testObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
+        NSString *objectId = testObject.objectId;
+        PFQuery *query = [PFQuery queryWithClassName:@"CPRack"];
+        [query getObjectInBackgroundWithId:objectId block:^(PFObject *bikeRack, NSError *error) {
+            // Do something with the returned PFObject in the gameScore variable.
+            NSLog(@"%@", (CPRack *)bikeRack);
+        }];
+    }];
+    
+    
+    
+   
     
     /* end parse test */
-    
-    /*  register CPRack model with parse */
-    [CPRack registerSubclass];
-    /* already did this */
-    //[Parse setApplicationId:parseAppId clientKey:parseClientKey];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

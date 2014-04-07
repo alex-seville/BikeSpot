@@ -55,8 +55,13 @@ t1396822848
 s127320
 
 N/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/libPods-MHPrettyDate.a
-t2
-s0
+t1396822848
+s63080
+
+N/Users/seville/Documents/github/ios/GroupProject/Pods/MHPrettyDate/MHPrettyDate/MHPrettyDate.h
+c00000000533C5CAA0000000000000F45
+t1396464810
+s3909
 
 N/Users/seville/Documents/github/ios/GroupProject/Pods/MHPrettyDate/MHPrettyDate/MHPrettyDate.m
 c00000000533C5CAA0000000000003F48
@@ -73,6 +78,11 @@ c00000000533C5CAB000000000000004D
 t1396464811
 s77
 
+N/Users/seville/Documents/github/ios/GroupProject/Pods/Pods-environment.h
+c00000000533C5CAB0000000000000A4D
+t1396464811
+s2637
+
 CBuild AST from /Users/seville/Documents/github/ios/GroupProject/Pods/MHPrettyDate/MHPrettyDate/MHPrettyDate.m
 r0
 
@@ -81,7 +91,7 @@ r0
 
 CCheck dependencies
 r0
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependenciesb5a413c00af2b841^942e19c00af2b841^---0#1#1#--18"Check dependencies36"2FC6796F-FFCE-4408-8B48-741724099546-
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependenciesba1136bc42f2b841^29ec36bc42f2b841^---0#1#1#--18"Check dependencies36"BE06A032-9BAA-4F20-B81C-6892847BBFC3-
 
 CCompileC /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods-MHPrettyDate.build/Objects-normal/i386/MHPrettyDate.o /Users/seville/Documents/github/ios/GroupProject/Pods/MHPrettyDate/MHPrettyDate/MHPrettyDate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s418515648.286823

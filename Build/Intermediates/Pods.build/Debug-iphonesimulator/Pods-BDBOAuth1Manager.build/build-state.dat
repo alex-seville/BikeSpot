@@ -75,28 +75,98 @@ t1396822848
 s127436
 
 N/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/libPods-BDBOAuth1Manager.a
-t2
-s0
+t1396822848
+s171760
+
+N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/AFNetworking/AFHTTPRequestOperation.h
+c00000000533C5CA80000000000001192
+t1396464808
+s4498
+
+N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/AFNetworking/AFHTTPRequestOperationManager.h
+c00000000533C5CA800000000000048F0
+t1396464808
+s18672
+
+N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/AFNetworking/AFHTTPSessionManager.h
+c00000000533C5CA800000000000038E4
+t1396464808
+s14564
+
+N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/AFNetworking/AFNetworkReachabilityManager.h
+c00000000533C5CA80000000000001D1F
+t1396464808
+s7455
+
+N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/AFNetworking/AFSecurityPolicy.h
+c00000000533C5CA8000000000000141B
+t1396464808
+s5147
+
+N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/AFNetworking/AFURLConnectionOperation.h
+c00000000533C5CA80000000000004621
+t1396464808
+s17953
+
+N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.h
+c00000000533C5CA80000000000005009
+t1396464808
+s20489
+
+N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/AFNetworking/AFURLResponseSerialization.h
+c00000000533C5CA800000000000027A4
+t1396464808
+s10148
+
+N/Users/seville/Documents/github/ios/GroupProject/Pods/AFNetworking/AFNetworking/AFURLSessionManager.h
+c00000000533C5CA80000000000006DC8
+t1396464808
+s28104
+
+N/Users/seville/Documents/github/ios/GroupProject/Pods/BDBOAuth1Manager/BDBOAuth1Manager/BDBOAuth1RequestOperationManager.h
+c00000000533C5CA90000000000000974
+t1396464809
+s2420
 
 N/Users/seville/Documents/github/ios/GroupProject/Pods/BDBOAuth1Manager/BDBOAuth1Manager/BDBOAuth1RequestOperationManager.m
 c00000000533C5CA90000000000001791
 t1396464809
 s6033
 
+N/Users/seville/Documents/github/ios/GroupProject/Pods/BDBOAuth1Manager/BDBOAuth1Manager/BDBOAuth1RequestSerializer.h
+c00000000533C5CA900000000000009A9
+t1396464809
+s2473
+
 N/Users/seville/Documents/github/ios/GroupProject/Pods/BDBOAuth1Manager/BDBOAuth1Manager/BDBOAuth1RequestSerializer.m
 c00000000533C5CA900000000000042E5
 t1396464809
 s17125
+
+N/Users/seville/Documents/github/ios/GroupProject/Pods/BDBOAuth1Manager/BDBOAuth1Manager/BDBOAuth1SessionManager.h
+c00000000533C5CA90000000000000A0E
+t1396464809
+s2574
 
 N/Users/seville/Documents/github/ios/GroupProject/Pods/BDBOAuth1Manager/BDBOAuth1Manager/BDBOAuth1SessionManager.m
 c00000000533C5CA9000000000000182C
 t1396464809
 s6188
 
+N/Users/seville/Documents/github/ios/GroupProject/Pods/BDBOAuth1Manager/BDBOAuth1Manager/Categories/NSDictionary+BDBOAuth1Manager.h
+c00000000533C5CA9000000000000059C
+t1396464809
+s1436
+
 N/Users/seville/Documents/github/ios/GroupProject/Pods/BDBOAuth1Manager/BDBOAuth1Manager/Categories/NSDictionary+BDBOAuth1Manager.m
 c00000000533C5CA900000000000008DA
 t1396464809
 s2266
+
+N/Users/seville/Documents/github/ios/GroupProject/Pods/BDBOAuth1Manager/BDBOAuth1Manager/Categories/NSString+BDBOAuth1Manager.h
+c00000000533C5CA90000000000000526
+t1396464809
+s1318
 
 N/Users/seville/Documents/github/ios/GroupProject/Pods/BDBOAuth1Manager/BDBOAuth1Manager/Categories/NSString+BDBOAuth1Manager.m
 c00000000533C5CA90000000000000861
@@ -112,6 +182,11 @@ N/Users/seville/Documents/github/ios/GroupProject/Pods/Pods-BDBOAuth1Manager-pre
 c00000000533C5CAB000000000000004D
 t1396464811
 s77
+
+N/Users/seville/Documents/github/ios/GroupProject/Pods/Pods-environment.h
+c00000000533C5CAB0000000000000A4D
+t1396464811
+s2637
 
 CBuild AST from /Users/seville/Documents/github/ios/GroupProject/Pods/BDBOAuth1Manager/BDBOAuth1Manager/BDBOAuth1RequestOperationManager.m
 r0
@@ -133,7 +208,7 @@ r0
 
 CCheck dependencies
 r0
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependenciesc0b2bec00af2b841^12d9cbc00af2b841^---0#1#1#--18"Check dependencies36"34208377-FCB6-43E9-BE55-76579053E307-
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies3f913bbc42f2b841^f1bd3bbc42f2b841^---0#1#1#--18"Check dependencies36"3BB39A0D-545C-4235-9762-E2AB80CC47A9-
 
 CCompileC /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods-BDBOAuth1Manager.build/Objects-normal/i386/BDBOAuth1RequestOperationManager.o /Users/seville/Documents/github/ios/GroupProject/Pods/BDBOAuth1Manager/BDBOAuth1Manager/BDBOAuth1RequestOperationManager.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s418515648.781338

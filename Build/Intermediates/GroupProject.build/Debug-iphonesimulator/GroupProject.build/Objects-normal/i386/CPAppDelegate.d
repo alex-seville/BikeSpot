@@ -67,4 +67,5 @@ dependencies: \
   /Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBUserSettingsViewController.h \
   /Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/NSError+FBError.h \
   /Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFFacebookUtils.h \
-  /Users/seville/Documents/github/ios/GroupProject/GroupProject/Models/CPRack.h
+  /Users/seville/Documents/github/ios/GroupProject/GroupProject/Models/CPRack.h \
+  /Users/seville/Documents/github/ios/GroupProject/GroupProject/DAL/CPParseClient.h
