@@ -8,6 +8,7 @@
 
 #import "CPAppDelegate.h"
 #import <Parse/Parse.h>
+#import "CPRack.h"
 
 @implementation CPAppDelegate
 
@@ -16,12 +17,20 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
+    /* test for parse */
     [Parse setApplicationId:@"A2CVP1bVaNR4vXj0wPxE1fm14zMKkUHn1PuLape9"
                   clientKey:@"8awrefD79RaybyI0SS0pGAP4XsA8owM5to66iOm9"];
     
     PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
     testObject[@"foo"] = @"bar";
     [testObject saveInBackground];
+    
+    /* end parse test */
+    
+    /*  register CPRack model with parse */
+    [CPRack registerSubclass];
+    /* already did this */
+    //[Parse setApplicationId:parseAppId clientKey:parseClientKey];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

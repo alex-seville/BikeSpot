@@ -7,7 +7,11 @@
 //
 
 #import "CPRack.h"
+#import <Parse/PFObject+Subclass.h>
 
 @implementation CPRack
++ (NSString *)parseClassName {
+    return @"CPRack";
+}
 
 @end

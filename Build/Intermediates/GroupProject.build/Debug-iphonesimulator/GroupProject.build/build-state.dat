@@ -45,45 +45,15 @@ c0000000053273EA6000000000058E0E0
 t1395080870
 s5824736
 
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreAudio.framework/CoreAudio
-c0000000053273EA500000000000FB140
-t1395080869
-s1028416
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
-c0000000053273EA600000000005B82F0
-t1395080870
-s5997296
-
 N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
 c0000000053273EA50000000000446820
 t1395080869
 s4483104
 
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreImage.framework/CoreImage
-c0000000053273EA600000000003599D0
-t1395080870
-s3512784
-
 N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreLocation.framework/CoreLocation
 c0000000053273EA500000000000F1A80
 t1395080869
 s989824
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreMIDI.framework/CoreMIDI
-c0000000053273EA600000000000CF090
-t1395080870
-s848016
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreText.framework/CoreText
-c0000000053273EA600000000002FC3B0
-t1395080870
-s3130288
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreVideo.framework/CoreVideo
-c0000000053273EA6000000000004B000
-t1395080870
-s307200
 
 N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
 c0000000053273EA6000000000088D8C0
@@ -94,11 +64,6 @@ N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/D
 c0000000053273EA700000000001BE790
 t1395080871
 s1828752
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/OpenGLES.framework/OpenGLES
-c0000000053273EA70000000000037680
-t1395080871
-s226944
 
 N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/QuartzCore.framework/QuartzCore
 c0000000053273EA7000000000048F720
@@ -125,217 +90,82 @@ c0000000053273EA90000000001F1DE10
 t1395080873
 s32628240
 
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
-c0000000053273EAF00000000002BC360
-t1395080879
-s2868064
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/crt1.o
-c0000000053273EB30000000000002338
-t1395080883
-s9016
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libSystem.dylib
-c0000000053273EB3000000000008D370
-t1395080883
-s578416
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libobjc.dylib
-c0000000053273EB30000000000392E20
-t1395080883
-s3747360
-
 N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libz.1.2.5.dylib
 c0000000053273EB3000000000002B700
 t1395080883
 s177920
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/host/libdyld.dylib
-c000000005310CFC800000000000141F0
-t1393610696
-s82416
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcache_sim.dylib
-c0000000053273EB30000000000014A80
-t1395080883
-s84608
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcommonCrypto_sim.dylib
-c0000000053273EB30000000000033BA0
-t1395080883
-s211872
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcompiler_rt_sim.dylib
-c0000000053273EB3000000000001CFB0
-t1395080883
-s118704
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcopyfile_sim.dylib
-c0000000053273EB3000000000001B2B0
-t1395080883
-s111280
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcorecrypto_sim.dylib
-c0000000053273EB300000000000C9570
-t1395080883
-s824688
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libdispatch.dylib
-c0000000053273EB30000000000063280
-t1395080883
-s406144
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libdyld_sim.dylib
-c0000000053273EB30000000000008880
-t1395080883
-s34944
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libmacho_sim.dylib
-c0000000053273EB30000000000015080
-t1395080883
-s86144
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libnotify_sim.dylib
-c0000000053273EB300000000000230F0
-t1395080883
-s143600
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libremovefile_sim.dylib
-c0000000053273EB3000000000000E380
-t1395080883
-s58240
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_network.dylib
-c0000000053273EB30000000000089380
-t1395080883
-s562048
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_override.dylib
-c0000000053273EB30000000000017320
-t1395080883
-s95008
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_asl.dylib
-c0000000053273EB30000000000039CD0
-t1395080883
-s236752
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_blocks.dylib
-c0000000053273EB3000000000000B0B0
-t1395080883
-s45232
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_c.dylib
-c0000000053273EB40000000000167E80
-t1395080884
-s1474176
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_configuration.dylib
-c0000000053273EB300000000000106A0
-t1395080883
-s67232
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_dnssd.dylib
-c0000000053273EB3000000000001CE40
-t1395080883
-s118336
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_info.dylib
-c0000000053273EB400000000000740C0
-t1395080884
-s475328
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_m.dylib
-c0000000053273EB4000000000006CA60
-t1395080884
-s445024
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libunwind_sim.dylib
-c0000000053273EB4000000000001BAD0
-t1395080884
-s113360
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libxpc.dylib
-c0000000053273EB40000000000084A20
-t1395080884
-s543264
 
 N/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/include/module.map
 c0000000053273EB60000000000000ADC
 t1395080886
 s2780
 
-N/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/lib/darwin/libclang_rt.ios.a
-c0000000053273EB6000000000000514C
-t1395080886
-s20812
-
 N/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/CPAppDelegate.o
-t1396668030
-s65988
+t1396822849
+s66132
 
 N/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/CPRack.o
-t1396667889
-s3352
+t1396822849
+s7104
 
 N/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/GroupProject.LinkFileList
-c00000000533F75F100000000000001DF
-t1396667889
+c000000005341D34100000000000001DF
+t1396822849
 s479
 
 N/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/main.o
-t1396667889
+t1396822849
 s3576
 
 N/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Script-20EC845D42B149BABCE987E2.sh
-c00000000533F75F10000000000000103
-t1396667889
+c000000005341D3410000000000000103
+t1396822849
 s259
 
 N/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Script-4A983DC39F6F42BBBAD8525D.sh
-c00000000533F75F1000000000000002F
-t1396667889
+c000000005341D341000000000000002F
+t1396822849
 s47
 
 N/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/assetcatalog_dependencies.txt
-t1396667891
+t1396822850
 s424
 
 N/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/assetcatalog_generated_info.plist
-t1396667891
+t1396822850
 s525
 
 N/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/PrecompiledHeaders/GroupProject-Prefix-dmouceyuturikpceitokvjxgktng/GroupProject-Prefix.pch.pch
-t1396667889
+t1396822849
 s123512
 
 N/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app
-t1396668030
+t1396822850
 s340
 
 N/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app.dSYM
-t1396667891
-s102
+t2
+s0
 
 N/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/GroupProject
-t1396668030
-s4051012
+t1396822849
+s4047028
 
 N/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/Info.plist
-t1396667891
+t1396822850
 s994
 
 N/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/PkgInfo
-t1396667891
+t1396822850
 s8
 
 N/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/en.lproj/InfoPlist.strings
-t1396667890
+t1396822849
 s42
 
 N/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/libPods.a
-c00000000533F75F100000000001B2508
-t1396667889
+c000000005341D34100000000001B2508
+t1396822849
 s1778952
 
 N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/FacebookSDK
@@ -343,195 +173,10 @@ c00000000533C412C0000000000880EAC
 t1396457772
 s8916652
 
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBAccessTokenData.h
-c00000000533C412C0000000000001443
-t1396457772
-s5187
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBAppCall.h
-c00000000533C412C00000000000023C5
-t1396457772
-s9157
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBAppEvents.h
-c00000000533C412C0000000000004A52
-t1396457772
-s19026
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBAppLinkData.h
-c00000000533C412C00000000000006DA
-t1396457772
-s1754
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBCacheDescriptor.h
-c00000000533C412C000000000000055C
-t1396457772
-s1372
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBDialogs.h
-c00000000533C412C00000000000073CD
-t1396457772
-s29645
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBDialogsData.h
-c00000000533C412C0000000000000538
-t1396457772
-s1336
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBDialogsParams.h
-c00000000533C412C0000000000000341
-t1396457772
-s833
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBError.h
-c00000000533C412C000000000000377A
-t1396457772
-s14202
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBErrorUtility.h
-c00000000533C412C00000000000009B9
-t1396457772
-s2489
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBFrictionlessRecipientCache.h
-c00000000533C412C0000000000000B3D
-t1396457772
-s2877
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBFriendPickerViewController.h
-c00000000533C412C00000000000024AF
-t1396457772
-s9391
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBGraphLocation.h
-c00000000533C412C000000000000075F
-t1396457772
-s1887
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBGraphObject.h
-c00000000533C412C0000000000002B3B
-t1396457772
-s11067
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBGraphPlace.h
-c00000000533C412C000000000000060D
-t1396457772
-s1549
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBGraphUser.h
-c00000000533C412C0000000000000863
-t1396457772
-s2147
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBInsights.h
-c00000000533C412C0000000000000A81
-t1396457772
-s2689
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBLoginView.h
-c00000000533C412C000000000000195C
-t1396457772
-s6492
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBNativeDialogs.h
-c00000000533C412C0000000000000F98
-t1396457772
-s3992
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBOpenGraphAction.h
-c00000000533C412C0000000000000C43
-t1396457772
-s3139
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBOpenGraphActionShareDialogParams.h
-c00000000533C412C000000000000059B
-t1396457772
-s1435
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBOpenGraphObject.h
-c00000000533C412C0000000000000877
-t1396457772
-s2167
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBPlacePickerViewController.h
-c00000000533C412C0000000000002125
-t1396457772
-s8485
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBProfilePictureView.h
-c00000000533C412C00000000000009A7
-t1396457772
-s2471
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBRequest.h
-c00000000533C412C0000000000006201
-t1396457772
-s25089
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBRequestConnection.h
-c00000000533C412C00000000000065A6
-t1396457772
-s26022
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBSession.h
-c00000000533C412C000000000000934A
-t1396457772
-s37706
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBSessionTokenCachingStrategy.h
-c00000000533C412C0000000000001A34
-t1396457772
-s6708
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBSettings.h
-c00000000533C412C00000000000026A3
-t1396457772
-s9891
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBShareDialogParams.h
-c00000000533C412C00000000000009C2
-t1396457772
-s2498
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBShareDialogPhotoParams.h
-c00000000533C412C0000000000000653
-t1396457772
-s1619
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBUserSettingsViewController.h
-c00000000533C412C0000000000001006
-t1396457772
-s4102
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBViewController.h
-c00000000533C412C0000000000000F64
-t1396457772
-s3940
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBWebDialogs.h
-c00000000533C412C00000000000023AA
-t1396457772
-s9130
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FacebookSDK.h
-c00000000533C412C000000000000166F
-t1396457772
-s5743
-
-N/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/NSError+FBError.h
-c00000000533C412C000000000000091D
-t1396457772
-s2333
-
-N/Users/seville/Documents/github/ios/GroupProject/GroupProject/CPAppDelegate.h
-c00000000533C5B9D000000000000012E
-t1396464541
-s302
-
 N/Users/seville/Documents/github/ios/GroupProject/GroupProject/CPAppDelegate.m
-c00000000533F767600000000000009E1
-t1396668022
-s2529
+c000000005341D33E0000000000000ADA
+t1396822846
+s2778
 
 N/Users/seville/Documents/github/ios/GroupProject/GroupProject/GroupProject-Info.plist
 c00000000533C5B9D0000000000000491
@@ -548,15 +193,10 @@ c00000000533C5B9D0000000000000088
 t1396464541
 s136
 
-N/Users/seville/Documents/github/ios/GroupProject/GroupProject/Models/CPRack.h
-c00000000533CD16300000000000000DE
-t1396494691
-s222
-
 N/Users/seville/Documents/github/ios/GroupProject/GroupProject/Models/CPRack.m
-c00000000533CD16300000000000000C9
-t1396494691
-s201
+c000000005341D33F0000000000000124
+t1396822847
+s292
 
 N/Users/seville/Documents/github/ios/GroupProject/GroupProject/en.lproj/InfoPlist.strings
 c00000000533C5B9D000000000000002D
@@ -568,295 +208,10 @@ c00000000533C5B9D000000000000016A
 t1396464541
 s362
 
-N/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFACL.h
-c0000000052C70A3A00000000000019F8
-t1388775994
-s6648
-
-N/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFAnalytics.h
-c0000000052C70A3A0000000000000ABC
-t1388775994
-s2748
-
-N/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFAnonymousUtils.h
-c0000000052C70A3A000000000000094B
-t1388775994
-s2379
-
-N/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFCloud.h
-c0000000052C70A3A0000000000000847
-t1388775994
-s2119
-
-N/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFConstants.h
-c0000000052C70A3A0000000000001EE5
-t1388775994
-s7909
-
-N/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFFacebookUtils.h
-c0000000052C70A3A0000000000002BF1
-t1388775994
-s11249
-
-N/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFFile.h
-c0000000052C70A3A0000000000001C46
-t1388775994
-s7238
-
-N/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFGeoPoint.h
-c0000000052C70A3A0000000000000A3E
-t1388775994
-s2622
-
-N/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFImageView.h
-c0000000052C70A3A0000000000000366
-t1388775994
-s870
-
-N/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFInstallation.h
-c0000000052C70A3A0000000000000B43
-t1388775994
-s2883
-
-N/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFLogInView.h
-c0000000052C70A3A0000000000000B75
-t1388775994
-s2933
-
-N/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFLogInViewController.h
-c0000000052C70A3A0000000000000E55
-t1388775994
-s3669
-
-N/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFObject.h
-c0000000052C70A3A000000000000545E
-t1388775994
-s21598
-
-N/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFProduct.h
-c0000000052C70A3A000000000000068E
-t1388775994
-s1678
-
-N/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFProductTableViewController.h
-c0000000052C70A3A000000000000023A
-t1388775994
-s570
-
-N/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFPurchase.h
-c0000000052C70A3A0000000000000A6A
-t1388775994
-s2666
-
-N/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFPush.h
-c0000000052C70A3A0000000000004591
-t1388775994
-s17809
-
-N/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFQuery.h
-c0000000052C70A3A000000000000526A
-t1388775994
-s21098
-
-N/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFQueryTableViewController.h
-c0000000052C70A3A000000000000153A
-t1388775994
-s5434
-
-N/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFRelation.h
-c0000000052C70A3A00000000000003A0
-t1388775994
-s928
-
-N/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFRole.h
-c0000000052C70A3A0000000000000AE4
-t1388775994
-s2788
-
-N/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFSignUpView.h
-c0000000052C70A3A00000000000008C6
-t1388775994
-s2246
-
-N/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFSignUpViewController.h
-c0000000052C70A3A0000000000000B96
-t1388775994
-s2966
-
-N/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFSubclassing.h
-c0000000052C70A3A00000000000007EE
-t1388775994
-s2030
-
-N/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFTableViewCell.h
-c0000000052C70A3A0000000000000299
-t1388775994
-s665
-
-N/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFTwitterUtils.h
-c0000000052C70A3A0000000000001FBC
-t1388775994
-s8124
-
-N/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFUser.h
-c0000000052C70A3A0000000000003354
-t1388775994
-s13140
-
-N/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PF_EGORefreshTableHeaderView.h
-c0000000052C70A3A00000000000008B0
-t1388775994
-s2224
-
-N/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PF_Twitter.h
-c0000000052C70A3A00000000000005E1
-t1388775994
-s1505
-
-N/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/Parse.h
-c0000000052C70A3A000000000000081A
-t1388775994
-s2074
-
 N/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Parse
 c0000000052C70A3A0000000001CD6EF4
 t1388775994
 s30240500
-
-N/usr/lib/libSystem.B.dylib
-c0000000052FC0431000000000000E6D0
-t1392247857
-s59088
-
-N/usr/lib/system/libcache.dylib
-c0000000052FC043D0000000000012A00
-t1392247869
-s76288
-
-N/usr/lib/system/libcommonCrypto.dylib
-c0000000052FC0426000000000002E320
-t1392247846
-s189216
-
-N/usr/lib/system/libcompiler_rt.dylib
-c0000000052FC04310000000000021860
-t1392247857
-s137312
-
-N/usr/lib/system/libcopyfile.dylib
-c0000000052FC043D000000000001B620
-t1392247869
-s112160
-
-N/usr/lib/system/libcorecrypto.dylib
-c0000000052FC043D00000000000BD920
-t1392247869
-s776480
-
-N/usr/lib/system/libdyld.dylib
-c000000005310CFC800000000000141F0
-t1393610696
-s82416
-
-N/usr/lib/system/libkeymgr.dylib
-c0000000052FC043D000000000000A120
-t1392247869
-s41248
-
-N/usr/lib/system/liblaunch.dylib
-c000000005310CFC8000000000001D550
-t1393610696
-s120144
-
-N/usr/lib/system/libmacho.dylib
-c0000000052FC043C0000000000014EE0
-t1392247868
-s85728
-
-N/usr/lib/system/libquarantine.dylib
-c0000000052FC043F0000000000010380
-t1392247871
-s66432
-
-N/usr/lib/system/libremovefile.dylib
-c0000000052FC043F000000000000C4C0
-t1392247871
-s50368
-
-N/usr/lib/system/libsystem_asl.dylib
-c0000000052FC043D00000000000357A0
-t1392247869
-s219040
-
-N/usr/lib/system/libsystem_blocks.dylib
-c0000000052FC043D000000000000C070
-t1392247869
-s49264
-
-N/usr/lib/system/libsystem_c.dylib
-c000000005310CFA20000000000168D00
-t1393610658
-s1477888
-
-N/usr/lib/system/libsystem_configuration.dylib
-c000000005310CFC30000000000010630
-t1393610691
-s67120
-
-N/usr/lib/system/libsystem_dnssd.dylib
-c000000005310CFC9000000000001DF10
-t1393610697
-s122640
-
-N/usr/lib/system/libsystem_info.dylib
-c0000000052FC04310000000000075B00
-t1392247857
-s482048
-
-N/usr/lib/system/libsystem_kernel.dylib
-c000000005310CFA2000000000007CCE0
-t1393610658
-s511200
-
-N/usr/lib/system/libsystem_m.dylib
-c0000000052FC043100000000000766C0
-t1392247857
-s485056
-
-N/usr/lib/system/libsystem_malloc.dylib
-c000000005310CFC80000000000044DC0
-t1393610696
-s282048
-
-N/usr/lib/system/libsystem_notify.dylib
-c0000000052FC04310000000000021FA0
-t1392247857
-s139168
-
-N/usr/lib/system/libsystem_platform.dylib
-c000000005310CFC8000000000002D920
-t1393610696
-s186656
-
-N/usr/lib/system/libsystem_pthread.dylib
-c0000000052FC043E000000000001E570
-t1392247870
-s124272
-
-N/usr/lib/system/libsystem_sandbox.dylib
-c000000005310CFB6000000000000CC70
-t1393610678
-s52336
-
-N/usr/lib/system/libunc.dylib
-c0000000052FC0439000000000000C3F0
-t1392247865
-s50160
-
-N/usr/lib/system/libunwind.dylib
-c0000000052FC043E00000000000199F0
-t1392247870
-s104944
 
 CBuild AST from /Users/seville/Documents/github/ios/GroupProject/GroupProject/CPAppDelegate.m
 r0
@@ -869,27 +224,27 @@ r0
 
 CCheck dependencies
 r0
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies06f703feadefb841^496708feadefb841^---0#1#1#--18"Check dependencies36"7B91E282-EA91-4078-8943-E3F5715C8B45-
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependenciesda740cc10af2b841^36060dc10af2b841^---0#1#1#--18"Check dependencies36"D3118572-A6E5-4498-884B-BFF80DAF8800-
 
 CCompileAssetCatalog /Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app /Users/seville/Documents/github/ios/GroupProject/GroupProject/Images.xcassets
-s418360690.058066
-e418360691.634650
+s418515649.695959
+e418515650.561333
 r1
 xCompileAssetCatalog
 x/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app
 x/Users/seville/Documents/github/ios/GroupProject/GroupProject/Images.xcassets
-o2014-04-04 20:18:11.455 IBCocoaTouchImageCatalogTool[70061:303] CFPreferences: user home directory at file:///Users/seville/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.
+o2014-04-06 15:20:50.490 IBCocoaTouchImageCatalogTool[82163:303] CFPreferences: user home directory at file:///Users/seville/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.
 o/* com.apple.actool.compilation-results */
 o/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/LaunchImage-700-568h@2x.png
 o/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/Assets.car
 o/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/assetcatalog_generated_info.plist
 o
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection102"CompileAssetCatalog Build/Products/Debug-iphonesimulator/GroupProject.app GroupProject/Images.xcassets102"CompileAssetCatalog Build/Products/Debug-iphonesimulator/GroupProject.app GroupProject/Images.xcassets54010f72adefb841^8e78a273adefb841^-678"2014-04-04 20:18:11.455 IBCocoaTouchImageCatalogTool[70061:303] CFPreferences: user home directory at file:///Users/seville/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile./* com.apple.actool.compilation-results *//Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/LaunchImage-700-568h@2x.png/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/Assets.car/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/assetcatalog_generated_info.plist-0#0#1#-19%DVTDocumentLocation2@85"file:///Users/seville/Documents/github/ios/GroupProject/GroupProject/Images.xcassets/0000000000000000^1228"CompileAssetCatalog Build/Products/Debug-iphonesimulator/GroupProject.app GroupProject/Images.xcassets    cd /Users/seville/Documents/github/ios/GroupProject    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/actool --output-format human-readable-text --notices --warnings --export-dependency-info /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/assetcatalog_dependencies.txt --output-partial-info-plist /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/assetcatalog_generated_info.plist --app-icon AppIcon --launch-image LaunchImage --platform iphonesimulator --minimum-deployment-target 7.1 --target-device iphone --compress-pngs --compile /Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app /Users/seville/Documents/github/ios/GroupProject/GroupProject/Images.xcassets36"8A093416-D44B-4449-8208-E39F152DEF54-
-b36F0A374-DA88-4096-BF11-8F123420436A
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection102"CompileAssetCatalog Build/Products/Debug-iphonesimulator/GroupProject.app GroupProject/Images.xcassets102"CompileAssetCatalog Build/Products/Debug-iphonesimulator/GroupProject.app GroupProject/Images.xcassets6135b2c10af2b841^c8b38fc20af2b841^-678"2014-04-06 15:20:50.490 IBCocoaTouchImageCatalogTool[82163:303] CFPreferences: user home directory at file:///Users/seville/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile./* com.apple.actool.compilation-results *//Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/LaunchImage-700-568h@2x.png/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/Assets.car/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/assetcatalog_generated_info.plist-0#0#1#-19%DVTDocumentLocation2@85"file:///Users/seville/Documents/github/ios/GroupProject/GroupProject/Images.xcassets/0000000000000000^1228"CompileAssetCatalog Build/Products/Debug-iphonesimulator/GroupProject.app GroupProject/Images.xcassets    cd /Users/seville/Documents/github/ios/GroupProject    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/actool --output-format human-readable-text --notices --warnings --export-dependency-info /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/assetcatalog_dependencies.txt --output-partial-info-plist /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/assetcatalog_generated_info.plist --app-icon AppIcon --launch-image LaunchImage --platform iphonesimulator --minimum-deployment-target 7.1 --target-device iphone --compress-pngs --compile /Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app /Users/seville/Documents/github/ios/GroupProject/GroupProject/Images.xcassets36"946C6004-84E7-4867-B2FD-1475C9465B23-
+b5F21276F-B801-437D-BD31-80F80681709B
 
 CCompileC Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/CPAppDelegate.o /Users/seville/Documents/github/ios/GroupProject/GroupProject/CPAppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s418360830.045691
-e418360830.119511
+s418515649.271865
+e418515649.415000
 r1
 xCompileC
 xBuild/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/CPAppDelegate.o
@@ -966,12 +321,13 @@ d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/
 d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBUserSettingsViewController.h
 d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/NSError+FBError.h
 d/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFFacebookUtils.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection85"Compile /Users/seville/Documents/github/ios/GroupProject/GroupProject/CPAppDelegate.m221"CompileC Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/CPAppDelegate.o GroupProject/CPAppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilerd2c40bfeadefb841^57981efeadefb841^---0#0#1#-19%DVTDocumentLocation2@84"file:///Users/seville/Documents/github/ios/GroupProject/GroupProject/CPAppDelegate.m0000000000000000^4701"CompileC Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/CPAppDelegate.o GroupProject/CPAppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/seville/Documents/github/ios/GroupProject    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/seville/Library/Developer/Xcode/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -DCOCOAPODS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.1 -iquote /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/GroupProject-generated-files.hmap -I/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/GroupProject-own-target-headers.hmap -I/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/GroupProject-all-target-headers.hmap -iquote /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/GroupProject-project-headers.hmap -I/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/include -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/AFNetworking -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/BDBOAuth1Manager -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/MHPrettyDate -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/SVProgressHUD -I/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/DerivedSources/i386 -I/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/DerivedSources -F/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator -F/Users/seville/Documents/github/ios/GroupProject -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/AFNetworking -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/BDBOAuth1Manager -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/MHPrettyDate -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/SVProgressHUD -include /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/PrecompiledHeaders/GroupProject-Prefix-dmouceyuturikpceitokvjxgktng/GroupProject-Prefix.pch -MMD -MT dependencies -MF /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/CPAppDelegate.d --serialize-diagnostics /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/CPAppDelegate.dia -c /Users/seville/Documents/github/ios/GroupProject/GroupProject/CPAppDelegate.m -o /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/CPAppDelegate.o36"D4D84796-F5F3-4FEF-8308-01D44980CCBF-
-b5D073FBE-F85A-4813-89E2-BF3BB4307034
+d/Users/seville/Documents/github/ios/GroupProject/GroupProject/Models/CPRack.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection85"Compile /Users/seville/Documents/github/ios/GroupProject/GroupProject/CPAppDelegate.m221"CompileC Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/CPAppDelegate.o GroupProject/CPAppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler71aa45c10af2b841^d53d6ac10af2b841^---0#0#1#-19%DVTDocumentLocation2@84"file:///Users/seville/Documents/github/ios/GroupProject/GroupProject/CPAppDelegate.m0000000000000000^4701"CompileC Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/CPAppDelegate.o GroupProject/CPAppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/seville/Documents/github/ios/GroupProject    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/seville/Library/Developer/Xcode/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -DCOCOAPODS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.1 -iquote /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/GroupProject-generated-files.hmap -I/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/GroupProject-own-target-headers.hmap -I/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/GroupProject-all-target-headers.hmap -iquote /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/GroupProject-project-headers.hmap -I/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/include -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/AFNetworking -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/BDBOAuth1Manager -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/MHPrettyDate -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/SVProgressHUD -I/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/DerivedSources/i386 -I/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/DerivedSources -F/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator -F/Users/seville/Documents/github/ios/GroupProject -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/AFNetworking -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/BDBOAuth1Manager -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/MHPrettyDate -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/SVProgressHUD -include /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/PrecompiledHeaders/GroupProject-Prefix-dmouceyuturikpceitokvjxgktng/GroupProject-Prefix.pch -MMD -MT dependencies -MF /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/CPAppDelegate.d --serialize-diagnostics /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/CPAppDelegate.dia -c /Users/seville/Documents/github/ios/GroupProject/GroupProject/CPAppDelegate.m -o /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/CPAppDelegate.o36"6FEFD636-EBF5-4476-9231-158BE6007771-
+b5F21276F-B801-437D-BD31-80F80681709B
 
 CCompileC Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/CPRack.o /Users/seville/Documents/github/ios/GroupProject/GroupProject/Models/CPRack.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s418360689.374876
-e418360689.411233
+s418515649.271185
+e418515649.380632
 r1
 xCompileC
 xBuild/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/CPRack.o
@@ -982,12 +338,79 @@ xobjective-c
 xcom.apple.compilers.llvm.clang.1_0.compiler
 d/Users/seville/Documents/github/ios/GroupProject/GroupProject/Models/CPRack.m
 d/Users/seville/Documents/github/ios/GroupProject/GroupProject/Models/CPRack.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection85"Compile /Users/seville/Documents/github/ios/GroupProject/GroupProject/Models/CPRack.m214"CompileC Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/CPRack.o GroupProject/Models/CPRack.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler4d116071adefb841^5f466971adefb841^---0#0#1#-19%DVTDocumentLocation2@84"file:///Users/seville/Documents/github/ios/GroupProject/GroupProject/Models/CPRack.m0000000000000000^4673"CompileC Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/CPRack.o GroupProject/Models/CPRack.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/seville/Documents/github/ios/GroupProject    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/seville/Library/Developer/Xcode/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -DCOCOAPODS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.1 -iquote /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/GroupProject-generated-files.hmap -I/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/GroupProject-own-target-headers.hmap -I/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/GroupProject-all-target-headers.hmap -iquote /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/GroupProject-project-headers.hmap -I/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/include -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/AFNetworking -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/BDBOAuth1Manager -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/MHPrettyDate -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/SVProgressHUD -I/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/DerivedSources/i386 -I/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/DerivedSources -F/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator -F/Users/seville/Documents/github/ios/GroupProject -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/AFNetworking -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/BDBOAuth1Manager -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/MHPrettyDate -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/SVProgressHUD -include /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/PrecompiledHeaders/GroupProject-Prefix-dmouceyuturikpceitokvjxgktng/GroupProject-Prefix.pch -MMD -MT dependencies -MF /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/CPRack.d --serialize-diagnostics /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/CPRack.dia -c /Users/seville/Documents/github/ios/GroupProject/GroupProject/Models/CPRack.m -o /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/CPRack.o36"94A08A71-F5BD-453B-B700-5F6D9A18970C-
-b36F0A374-DA88-4096-BF11-8F123420436A
+d/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/Parse.h
+d/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFACL.h
+d/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFAnalytics.h
+d/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFAnonymousUtils.h
+d/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFUser.h
+d/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFConstants.h
+d/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFObject.h
+d/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFSubclassing.h
+d/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFCloud.h
+d/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFFile.h
+d/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFGeoPoint.h
+d/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFQuery.h
+d/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFRelation.h
+d/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFRole.h
+d/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFImageView.h
+d/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFInstallation.h
+d/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFLogInViewController.h
+d/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFLogInView.h
+d/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFSignUpViewController.h
+d/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFSignUpView.h
+d/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFProduct.h
+d/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFProductTableViewController.h
+d/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFQueryTableViewController.h
+d/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFTableViewCell.h
+d/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PF_EGORefreshTableHeaderView.h
+d/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFPurchase.h
+d/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFPush.h
+d/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFTwitterUtils.h
+d/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PF_Twitter.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FacebookSDK.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBAccessTokenData.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBSession.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBAppCall.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBAppLinkData.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBDialogsData.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBAppEvents.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBCacheDescriptor.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBDialogs.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBOpenGraphActionShareDialogParams.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBDialogsParams.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBOpenGraphAction.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBGraphObject.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBShareDialogParams.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBShareDialogPhotoParams.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBError.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBErrorUtility.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBFrictionlessRecipientCache.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBRequest.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBOpenGraphObject.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBRequestConnection.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBWebDialogs.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBFriendPickerViewController.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBGraphUser.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBGraphPlace.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBGraphLocation.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBViewController.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBInsights.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBLoginView.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBNativeDialogs.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBPlacePickerViewController.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBProfilePictureView.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBSessionTokenCachingStrategy.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBSettings.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/FBUserSettingsViewController.h
+d/Users/seville/Documents/github/ios/GroupProject/FacebookSDK.framework/Headers/NSError+FBError.h
+d/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFFacebookUtils.h
+d/Users/seville/Documents/github/ios/GroupProject/Parse.framework/Headers/PFObject+Subclass.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection85"Compile /Users/seville/Documents/github/ios/GroupProject/GroupProject/Models/CPRack.m214"CompileC Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/CPRack.o GroupProject/Models/CPRack.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler5a8145c10af2b841^6d7161c10af2b841^---0#0#1#-19%DVTDocumentLocation2@84"file:///Users/seville/Documents/github/ios/GroupProject/GroupProject/Models/CPRack.m0000000000000000^4673"CompileC Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/CPRack.o GroupProject/Models/CPRack.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/seville/Documents/github/ios/GroupProject    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/seville/Library/Developer/Xcode/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -DCOCOAPODS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.1 -iquote /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/GroupProject-generated-files.hmap -I/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/GroupProject-own-target-headers.hmap -I/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/GroupProject-all-target-headers.hmap -iquote /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/GroupProject-project-headers.hmap -I/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/include -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/AFNetworking -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/BDBOAuth1Manager -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/MHPrettyDate -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/SVProgressHUD -I/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/DerivedSources/i386 -I/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/DerivedSources -F/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator -F/Users/seville/Documents/github/ios/GroupProject -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/AFNetworking -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/BDBOAuth1Manager -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/MHPrettyDate -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/SVProgressHUD -include /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/PrecompiledHeaders/GroupProject-Prefix-dmouceyuturikpceitokvjxgktng/GroupProject-Prefix.pch -MMD -MT dependencies -MF /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/CPRack.d --serialize-diagnostics /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/CPRack.dia -c /Users/seville/Documents/github/ios/GroupProject/GroupProject/Models/CPRack.m -o /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/CPRack.o36"282C6AED-E1C8-4573-8FD4-A980F4AA225D-
+b5F21276F-B801-437D-BD31-80F80681709B
 
 CCompileC Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/main.o /Users/seville/Documents/github/ios/GroupProject/GroupProject/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s418360689.375202
-e418360689.411093
+s418515649.271465
+e418515649.309242
 r1
 xCompileC
 xBuild/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/main.o
@@ -998,32 +421,32 @@ xobjective-c
 xcom.apple.compilers.llvm.clang.1_0.compiler
 d/Users/seville/Documents/github/ios/GroupProject/GroupProject/main.m
 d/Users/seville/Documents/github/ios/GroupProject/GroupProject/CPAppDelegate.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection76"Compile /Users/seville/Documents/github/ios/GroupProject/GroupProject/main.m203"CompileC Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/main.o GroupProject/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilercd1e6071adefb841^a73d6971adefb841^---0#0#1#-19%DVTDocumentLocation2@75"file:///Users/seville/Documents/github/ios/GroupProject/GroupProject/main.m0000000000000000^4647"CompileC Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/main.o GroupProject/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/seville/Documents/github/ios/GroupProject    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/seville/Library/Developer/Xcode/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -DCOCOAPODS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.1 -iquote /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/GroupProject-generated-files.hmap -I/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/GroupProject-own-target-headers.hmap -I/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/GroupProject-all-target-headers.hmap -iquote /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/GroupProject-project-headers.hmap -I/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/include -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/AFNetworking -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/BDBOAuth1Manager -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/MHPrettyDate -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/SVProgressHUD -I/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/DerivedSources/i386 -I/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/DerivedSources -F/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator -F/Users/seville/Documents/github/ios/GroupProject -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/AFNetworking -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/BDBOAuth1Manager -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/MHPrettyDate -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/SVProgressHUD -include /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/PrecompiledHeaders/GroupProject-Prefix-dmouceyuturikpceitokvjxgktng/GroupProject-Prefix.pch -MMD -MT dependencies -MF /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/main.d --serialize-diagnostics /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/main.dia -c /Users/seville/Documents/github/ios/GroupProject/GroupProject/main.m -o /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/main.o36"A25CEA2B-7235-4649-BB57-7D8907795453-
-b36F0A374-DA88-4096-BF11-8F123420436A
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection76"Compile /Users/seville/Documents/github/ios/GroupProject/GroupProject/main.m203"CompileC Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/main.o GroupProject/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler329245c10af2b841^ed2b4fc10af2b841^---0#0#1#-19%DVTDocumentLocation2@75"file:///Users/seville/Documents/github/ios/GroupProject/GroupProject/main.m0000000000000000^4647"CompileC Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/main.o GroupProject/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/seville/Documents/github/ios/GroupProject    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/seville/Library/Developer/Xcode/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -DCOCOAPODS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.1 -iquote /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/GroupProject-generated-files.hmap -I/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/GroupProject-own-target-headers.hmap -I/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/GroupProject-all-target-headers.hmap -iquote /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/GroupProject-project-headers.hmap -I/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/include -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/AFNetworking -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/BDBOAuth1Manager -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/MHPrettyDate -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/SVProgressHUD -I/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/DerivedSources/i386 -I/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/DerivedSources -F/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator -F/Users/seville/Documents/github/ios/GroupProject -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/AFNetworking -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/BDBOAuth1Manager -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/MHPrettyDate -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/SVProgressHUD -include /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/PrecompiledHeaders/GroupProject-Prefix-dmouceyuturikpceitokvjxgktng/GroupProject-Prefix.pch -MMD -MT dependencies -MF /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/main.d --serialize-diagnostics /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/main.dia -c /Users/seville/Documents/github/ios/GroupProject/GroupProject/main.m -o /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/main.o36"F5CF9B6E-03D6-42D2-B3BC-D4F159169588-
+b5F21276F-B801-437D-BD31-80F80681709B
 
 CCopyStringsFile /Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/en.lproj/InfoPlist.strings GroupProject/en.lproj/InfoPlist.strings
-s418360690.057491
-e418360690.112569
+s418515649.695726
+e418515649.705306
 r1
 xCopyStringsFile
 x/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/en.lproj/InfoPlist.strings
 xGroupProject/en.lproj/InfoPlist.strings
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection44"Copy GroupProject/en.lproj/InfoPlist.strings136"CopyStringsFile Build/Products/Debug-iphonesimulator/GroupProject.app/en.lproj/InfoPlist.strings GroupProject/en.lproj/InfoPlist.stringsffca0e72adefb841^f6d21c72adefb841^---0#0#1#-19%DVTDocumentLocation2@95"file:///Users/seville/Documents/github/ios/GroupProject/GroupProject/en.lproj/InfoPlist.strings0000000000000000^633"CopyStringsFile Build/Products/Debug-iphonesimulator/GroupProject.app/en.lproj/InfoPlist.strings GroupProject/en.lproj/InfoPlist.strings    cd /Users/seville/Documents/github/ios/GroupProject    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir /Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/en.lproj -- GroupProject/en.lproj/InfoPlist.strings36"7A5D2E92-2E39-46B1-A1F3-EBF4944E0464-
-b36F0A374-DA88-4096-BF11-8F123420436A
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection44"Copy GroupProject/en.lproj/InfoPlist.strings136"CopyStringsFile Build/Products/Debug-iphonesimulator/GroupProject.app/en.lproj/InfoPlist.strings GroupProject/en.lproj/InfoPlist.strings7429b2c10af2b841^eb8fb4c10af2b841^---0#0#1#-19%DVTDocumentLocation2@95"file:///Users/seville/Documents/github/ios/GroupProject/GroupProject/en.lproj/InfoPlist.strings0000000000000000^633"CopyStringsFile Build/Products/Debug-iphonesimulator/GroupProject.app/en.lproj/InfoPlist.strings GroupProject/en.lproj/InfoPlist.strings    cd /Users/seville/Documents/github/ios/GroupProject    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir /Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/en.lproj -- GroupProject/en.lproj/InfoPlist.strings36"C66C21A8-0780-4EF4-9705-5306295EA523-
+b5F21276F-B801-437D-BD31-80F80681709B
 
 CGenerateDSYMFile /Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app.dSYM /Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/GroupProject
-s418360830.281109
-e418360830.418528
+s418515650.563543
+e418515650.716966
 r1
 xGenerateDSYMFile
 x/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app.dSYM
 x/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/GroupProject
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection116"Generate /Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app.dSYM142"GenerateDSYMFile Build/Products/Debug-iphonesimulator/GroupProject.app.dSYM Build/Products/Debug-iphonesimulator/GroupProject.app/GroupProject080648feadefb841^2d256bfeadefb841^---0#0#1#-19%DVTDocumentLocation2@115"file:///Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app.dSYM/0000000000000000^721"GenerateDSYMFile Build/Products/Debug-iphonesimulator/GroupProject.app.dSYM Build/Products/Debug-iphonesimulator/GroupProject.app/GroupProject    cd /Users/seville/Documents/github/ios/GroupProject    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/GroupProject -o /Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app.dSYM36"88D18510-9F3C-4C42-A18D-6B7280C83487-
-b5D073FBE-F85A-4813-89E2-BF3BB4307034
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection116"Generate /Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app.dSYM142"GenerateDSYMFile Build/Products/Debug-iphonesimulator/GroupProject.app.dSYM Build/Products/Debug-iphonesimulator/GroupProject.app/GroupProject984d90c20af2b841^ac8bb7c20af2b841^---0#0#1#-19%DVTDocumentLocation2@114"file:///Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app.dSYM003480e2ddffdf42^721"GenerateDSYMFile Build/Products/Debug-iphonesimulator/GroupProject.app.dSYM Build/Products/Debug-iphonesimulator/GroupProject.app/GroupProject    cd /Users/seville/Documents/github/ios/GroupProject    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/GroupProject -o /Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app.dSYM36"CB4E54F1-9F5A-45F8-9D58-7BFD84F85E90-
+b5F21276F-B801-437D-BD31-80F80681709B
 
 CLd /Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/GroupProject normal i386
-s418360830.121811
-e418360830.279661
+s418515649.416476
+e418515649.694669
 r1
 xLd
 x/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/GroupProject
@@ -1054,11 +477,11 @@ d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/D
 d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libSystem.dylib
 d/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/lib/darwin/libclang_rt.ios.a
 d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreMIDI.framework/CoreMIDI
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
 d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreAudio.framework/CoreAudio
 d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreVideo.framework/CoreVideo
 d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreImage.framework/CoreImage
 d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/OpenGLES.framework/OpenGLES
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
 d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreText.framework/CoreText
 d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
 d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_override.dylib
@@ -1109,22 +532,22 @@ d/usr/lib/system/libsystem_pthread.dylib
 d/usr/lib/system/libsystem_sandbox.dylib
 d/usr/lib/system/libunc.dylib
 d/usr/lib/system/libunwind.dylib
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection120"Link /Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/GroupProject81"Ld Build/Products/Debug-iphonesimulator/GroupProject.app/GroupProject normal i386e23d1ffeadefb841^399a47feadefb841^---0#0#1#--1974"Ld Build/Products/Debug-iphonesimulator/GroupProject.app/GroupProject normal i386    cd /Users/seville/Documents/github/ios/GroupProject    export IPHONEOS_DEPLOYMENT_TARGET=7.1    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -L/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator -F/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator -F/Users/seville/Documents/github/ios/GroupProject -filelist /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/GroupProject.LinkFileList -Xlinker -objc_abi_version -Xlinker 2 -ObjC -framework CoreGraphics -framework Foundation -framework MobileCoreServices -framework QuartzCore -framework Security -framework SystemConfiguration -fobjc-arc -fobjc-link-runtime -Xlinker -no_implicit_dylibs -mios-simulator-version-min=7.1 -framework Accounts -lz.1.2.5 -framework SystemConfiguration -framework StoreKit -framework Security -framework QuartzCore -framework MobileCoreServices -framework CoreLocation -framework CoreGraphics -framework CFNetwork -framework AudioToolbox -framework UIKit -framework Foundation -framework FacebookSDK -lPods -framework Parse -Xlinker -dependency_info -Xlinker /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/GroupProject_dependency_info.dat -o /Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/GroupProject36"E8FA0CE0-EC45-4096-991C-4942840D64C8-
-b5D073FBE-F85A-4813-89E2-BF3BB4307034
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection120"Link /Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/GroupProject81"Ld Build/Products/Debug-iphonesimulator/GroupProject.app/GroupProject normal i3866dae6ac10af2b841^13d7b1c10af2b841^---0#0#1#--1974"Ld Build/Products/Debug-iphonesimulator/GroupProject.app/GroupProject normal i386    cd /Users/seville/Documents/github/ios/GroupProject    export IPHONEOS_DEPLOYMENT_TARGET=7.1    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -L/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator -F/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator -F/Users/seville/Documents/github/ios/GroupProject -filelist /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/GroupProject.LinkFileList -Xlinker -objc_abi_version -Xlinker 2 -ObjC -framework CoreGraphics -framework Foundation -framework MobileCoreServices -framework QuartzCore -framework Security -framework SystemConfiguration -fobjc-arc -fobjc-link-runtime -Xlinker -no_implicit_dylibs -mios-simulator-version-min=7.1 -framework Accounts -lz.1.2.5 -framework SystemConfiguration -framework StoreKit -framework Security -framework QuartzCore -framework MobileCoreServices -framework CoreLocation -framework CoreGraphics -framework CFNetwork -framework AudioToolbox -framework UIKit -framework Foundation -framework FacebookSDK -lPods -framework Parse -Xlinker -dependency_info -Xlinker /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Objects-normal/i386/GroupProject_dependency_info.dat -o /Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/GroupProject36"8C274EF1-2907-40CB-99F7-A069FC243091-
+b5F21276F-B801-437D-BD31-80F80681709B
 
 CPhaseScriptExecution Check\ Pods\ Manifest.lock /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Script-20EC845D42B149BABCE987E2.sh
-s418360830.033634
-e418360830.043595
+s418515649.051782
+e418515649.086671
 r1
 xPhaseScriptExecution
 xCheck Pods Manifest.lock
 x/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Script-20EC845D42B149BABCE987E2.sh
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection50"Run custom shell script 'Check Pods Manifest.lock'162"PhaseScriptExecution Check\ Pods\ Manifest.lock Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Script-20EC845D42B149BABCE987E2.shdfdf08feadefb841^7c2a0bfeadefb841^---0#0#1#--398"PhaseScriptExecution Check\ Pods\ Manifest.lock Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Script-20EC845D42B149BABCE987E2.sh    cd /Users/seville/Documents/github/ios/GroupProject    /bin/sh -c /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Script-20EC845D42B149BABCE987E2.sh36"B037B1B8-70EC-4660-ADC1-47CF94623EEF-
-b5D073FBE-F85A-4813-89E2-BF3BB4307034
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection50"Run custom shell script 'Check Pods Manifest.lock'162"PhaseScriptExecution Check\ Pods\ Manifest.lock Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Script-20EC845D42B149BABCE987E2.sh878a0dc10af2b841^5d3216c10af2b841^---0#0#1#--398"PhaseScriptExecution Check\ Pods\ Manifest.lock Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Script-20EC845D42B149BABCE987E2.sh    cd /Users/seville/Documents/github/ios/GroupProject    /bin/sh -c /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Script-20EC845D42B149BABCE987E2.sh36"460BD33D-D137-4F91-9D62-58D1696F6981-
+b5F21276F-B801-437D-BD31-80F80681709B
 
 CPhaseScriptExecution Copy\ Pods\ Resources /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Script-4A983DC39F6F42BBBAD8525D.sh
-s418360830.419391
-e418360831.113061
+s418515650.717819
+e418515651.064652
 r1
 xPhaseScriptExecution
 xCopy Pods Resources
@@ -1133,29 +556,38 @@ o/Users/seville/Documents/github/ios/GroupProject/Pods/MHPrettyDate/MHPrettyDate
 o/Users/seville/Documents/github/ios/GroupProject/Pods/MHPrettyDate/MHPrettyDate/nl.lproj
 o/Users/seville/Documents/github/ios/GroupProject/Pods/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle
 obuilding file list ... done
+oSVProgressHUD.bundle/
+oSVProgressHUD.bundle/error.png
+oSVProgressHUD.bundle/error@2x.png
+oSVProgressHUD.bundle/success.png
+oSVProgressHUD.bundle/success@2x.png
+oen.lproj/
+oen.lproj/MHPrettyDate.strings
+onl.lproj/
+onl.lproj/MHPrettyDate.strings
 o
-osent 260 bytes  received 20 bytes  560.00 bytes/sec
-ototal size is 6961  speedup is 24.86
-o2014-04-04 20:20:31.050 IBCocoaTouchImageCatalogTool[70225:303] CFPreferences: user home directory at file:///Users/seville/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.
+osent 7515 bytes  received 170 bytes  15370.00 bytes/sec
+ototal size is 6961  speedup is 0.91
+o2014-04-06 15:20:50.999 IBCocoaTouchImageCatalogTool[82178:303] CFPreferences: user home directory at file:///Users/seville/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.
 o/* com.apple.actool.compilation-results */
 o/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/Assets.car
 o
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection45"Run custom shell script 'Copy Pods Resources'157"PhaseScriptExecution Copy\ Pods\ Resources Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Script-4A983DC39F6F42BBBAD8525D.shbaa36bfeadefb841^f5f11cffadefb841^-783"/Users/seville/Documents/github/ios/GroupProject/Pods/MHPrettyDate/MHPrettyDate/en.lproj/Users/seville/Documents/github/ios/GroupProject/Pods/MHPrettyDate/MHPrettyDate/nl.lproj/Users/seville/Documents/github/ios/GroupProject/Pods/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundlebuilding file list ... donesent 260 bytes  received 20 bytes  560.00 bytes/sectotal size is 6961  speedup is 24.862014-04-04 20:20:31.050 IBCocoaTouchImageCatalogTool[70225:303] CFPreferences: user home directory at file:///Users/seville/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile./* com.apple.actool.compilation-results *//Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/Assets.car9(21%IDEActivityLogMessage2@89"/Users/seville/Documents/github/ios/GroupProject/Pods/MHPrettyDate/MHPrettyDate/en.lproj-418360830#0#89#-0#-----2@89"/Users/seville/Documents/github/ios/GroupProject/Pods/MHPrettyDate/MHPrettyDate/nl.lproj-418360830#89#89#-0#-----2@103"/Users/seville/Documents/github/ios/GroupProject/Pods/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle-418360830#178#103#-0#-----2@28"building file list ... done-418360830#281#28#-0#-----2@52"sent 260 bytes  received 20 bytes  560.00 bytes/sec-418360830#310#52#-0#-----2@37"total size is 6961  speedup is 24.86-418360830#362#37#-0#-----2@226"2014-04-04 20:20:31.050 IBCocoaTouchImageCatalogTool[70225:303] CFPreferences: user home directory at file:///Users/seville/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.-418360831#399#226#-0#-----2@43"/* com.apple.actool.compilation-results */-418360831#625#43#-0#-----2@114"/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/Assets.car-418360831#668#114#-0#-----0#0#1#--393"PhaseScriptExecution Copy\ Pods\ Resources Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Script-4A983DC39F6F42BBBAD8525D.sh    cd /Users/seville/Documents/github/ios/GroupProject    /bin/sh -c /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Script-4A983DC39F6F42BBBAD8525D.sh36"56A68F8A-5257-4393-A426-09F7C3420554-
-b5D073FBE-F85A-4813-89E2-BF3BB4307034
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection45"Run custom shell script 'Copy Pods Resources'157"PhaseScriptExecution Copy\ Pods\ Resources Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Script-4A983DC39F6F42BBBAD8525D.sh890bb8c20af2b841^806313c30af2b841^-1022"/Users/seville/Documents/github/ios/GroupProject/Pods/MHPrettyDate/MHPrettyDate/en.lproj/Users/seville/Documents/github/ios/GroupProject/Pods/MHPrettyDate/MHPrettyDate/nl.lproj/Users/seville/Documents/github/ios/GroupProject/Pods/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundlebuilding file list ... doneSVProgressHUD.bundle/SVProgressHUD.bundle/error.pngSVProgressHUD.bundle/error@2x.pngSVProgressHUD.bundle/success.pngSVProgressHUD.bundle/success@2x.pngen.lproj/en.lproj/MHPrettyDate.stringsnl.lproj/nl.lproj/MHPrettyDate.stringssent 7515 bytes  received 170 bytes  15370.00 bytes/sectotal size is 6961  speedup is 0.912014-04-06 15:20:50.999 IBCocoaTouchImageCatalogTool[82178:303] CFPreferences: user home directory at file:///Users/seville/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile./* com.apple.actool.compilation-results *//Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/Assets.car18(21%IDEActivityLogMessage2@89"/Users/seville/Documents/github/ios/GroupProject/Pods/MHPrettyDate/MHPrettyDate/en.lproj-418515650#0#89#-0#-----2@89"/Users/seville/Documents/github/ios/GroupProject/Pods/MHPrettyDate/MHPrettyDate/nl.lproj-418515650#89#89#-0#-----2@103"/Users/seville/Documents/github/ios/GroupProject/Pods/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle-418515650#178#103#-0#-----2@28"building file list ... done-418515650#281#28#-0#-----2@22"SVProgressHUD.bundle/-418515650#309#22#-0#-----2@31"SVProgressHUD.bundle/error.png-418515650#331#31#-0#-----2@34"SVProgressHUD.bundle/error@2x.png-418515650#362#34#-0#-----2@33"SVProgressHUD.bundle/success.png-418515650#396#33#-0#-----2@36"SVProgressHUD.bundle/success@2x.png-418515650#429#36#-0#-----2@10"en.lproj/-418515650#465#10#-0#-----2@30"en.lproj/MHPrettyDate.strings-418515650#475#30#-0#-----2@10"nl.lproj/-418515650#505#10#-0#-----2@30"nl.lproj/MHPrettyDate.strings-418515650#515#30#-0#-----2@56"sent 7515 bytes  received 170 bytes  15370.00 bytes/sec-418515650#546#56#-0#-----2@36"total size is 6961  speedup is 0.91-418515650#602#36#-0#-----2@226"2014-04-06 15:20:50.999 IBCocoaTouchImageCatalogTool[82178:303] CFPreferences: user home directory at file:///Users/seville/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.-418515651#638#226#-0#-----2@43"/* com.apple.actool.compilation-results */-418515651#864#43#-0#-----2@114"/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/Assets.car-418515651#907#114#-0#-----0#0#1#--393"PhaseScriptExecution Copy\ Pods\ Resources Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Script-4A983DC39F6F42BBBAD8525D.sh    cd /Users/seville/Documents/github/ios/GroupProject    /bin/sh -c /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/Script-4A983DC39F6F42BBBAD8525D.sh36"55AAA70F-1623-4E77-A9C7-AC038E978DD6-
+b5F21276F-B801-437D-BD31-80F80681709B
 
 CProcessInfoPlistFile /Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/Info.plist /Users/seville/Documents/github/ios/GroupProject/GroupProject/GroupProject-Info.plist
-s418360691.635105
-e418360691.636575
+s418515650.561755
+e418515650.563228
 r1
 xProcessInfoPlistFile
 x/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/Info.plist
 x/Users/seville/Documents/github/ios/GroupProject/GroupProject/GroupProject-Info.plist
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection93"Process /Users/seville/Documents/github/ios/GroupProject/GroupProject/GroupProject-Info.plist122"ProcessInfoPlistFile Build/Products/Debug-iphonesimulator/GroupProject.app/Info.plist GroupProject/GroupProject-Info.plist9ca3a273adefb841^6ef7a273adefb841^---0#0#1#-19%DVTDocumentLocation2@92"file:///Users/seville/Documents/github/ios/GroupProject/GroupProject/GroupProject-Info.plist0000000000000000^977"ProcessInfoPlistFile Build/Products/Debug-iphonesimulator/GroupProject.app/Info.plist GroupProject/GroupProject-Info.plist    cd /Users/seville/Documents/github/ios/GroupProject    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility /Users/seville/Documents/github/ios/GroupProject/GroupProject/GroupProject-Info.plist -genpkginfo /Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/assetcatalog_generated_info.plist -o /Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/Info.plist36"00C1EA9A-0807-4C05-B678-D14B64F4D925-
-b36F0A374-DA88-4096-BF11-8F123420436A
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection93"Process /Users/seville/Documents/github/ios/GroupProject/GroupProject/GroupProject-Info.plist122"ProcessInfoPlistFile Build/Products/Debug-iphonesimulator/GroupProject.app/Info.plist GroupProject/GroupProject-Info.plistf0dc8fc20af2b841^b13090c20af2b841^---0#0#1#-19%DVTDocumentLocation2@92"file:///Users/seville/Documents/github/ios/GroupProject/GroupProject/GroupProject-Info.plist0000000000000000^977"ProcessInfoPlistFile Build/Products/Debug-iphonesimulator/GroupProject.app/Info.plist GroupProject/GroupProject-Info.plist    cd /Users/seville/Documents/github/ios/GroupProject    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility /Users/seville/Documents/github/ios/GroupProject/GroupProject/GroupProject-Info.plist -genpkginfo /Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/assetcatalog_generated_info.plist -o /Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/GroupProject.app/Info.plist36"E0E33587-BF2A-4C0D-95ED-113D0EE7533E-
+b5F21276F-B801-437D-BD31-80F80681709B
 
 CProcessPCH /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/PrecompiledHeaders/GroupProject-Prefix-dmouceyuturikpceitokvjxgktng/GroupProject-Prefix.pch.pch GroupProject/GroupProject-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s418360689.192591
-e418360689.374274
+s418515649.087287
+e418515649.270548
 r1
 xProcessPCH
 x/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/PrecompiledHeaders/GroupProject-Prefix-dmouceyuturikpceitokvjxgktng/GroupProject-Prefix.pch.pch
@@ -1165,8 +597,8 @@ xi386
 xobjective-c
 xcom.apple.compilers.llvm.clang.1_0.compiler
 d/Users/seville/Documents/github/ios/GroupProject/GroupProject/GroupProject-Prefix.pch
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection47"Precompile GroupProject/GroupProject-Prefix.pch231"ProcessPCH Build/Intermediates/PrecompiledHeaders/GroupProject-Prefix-dmouceyuturikpceitokvjxgktng/GroupProject-Prefix.pch.pch GroupProject/GroupProject-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilerd9603171adefb841^0fd25f71adefb841^---0#0#1#-19%DVTDocumentLocation2@92"file:///Users/seville/Documents/github/ios/GroupProject/GroupProject/GroupProject-Prefix.pch0000000000000000^4552"ProcessPCH Build/Intermediates/PrecompiledHeaders/GroupProject-Prefix-dmouceyuturikpceitokvjxgktng/GroupProject-Prefix.pch.pch GroupProject/GroupProject-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/seville/Documents/github/ios/GroupProject    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/seville/Library/Developer/Xcode/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -DCOCOAPODS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.1 -iquote /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/GroupProject-generated-files.hmap -I/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/GroupProject-own-target-headers.hmap -I/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/GroupProject-all-target-headers.hmap -iquote /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/GroupProject-project-headers.hmap -I/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/include -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/AFNetworking -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/BDBOAuth1Manager -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/MHPrettyDate -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/SVProgressHUD -I/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/DerivedSources/i386 -I/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/DerivedSources -F/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator -F/Users/seville/Documents/github/ios/GroupProject -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/AFNetworking -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/BDBOAuth1Manager -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/MHPrettyDate -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/SVProgressHUD --serialize-diagnostics /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/PrecompiledHeaders/GroupProject-Prefix-dmouceyuturikpceitokvjxgktng/GroupProject-Prefix.pch.dia -MMD -MT dependencies -MF /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/PrecompiledHeaders/GroupProject-Prefix-dmouceyuturikpceitokvjxgktng/GroupProject-Prefix.pch.d -c /Users/seville/Documents/github/ios/GroupProject/GroupProject/GroupProject-Prefix.pch -o /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/PrecompiledHeaders/GroupProject-Prefix-dmouceyuturikpceitokvjxgktng/GroupProject-Prefix.pch.pch36"1EC24898-EBC6-42B7-9C05-4F7360C85E1D-
-b36F0A374-DA88-4096-BF11-8F123420436A
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection47"Precompile GroupProject/GroupProject-Prefix.pch231"ProcessPCH Build/Intermediates/PrecompiledHeaders/GroupProject-Prefix-dmouceyuturikpceitokvjxgktng/GroupProject-Prefix.pch.pch GroupProject/GroupProject-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler2f6b16c10af2b841^074345c10af2b841^---0#0#1#-19%DVTDocumentLocation2@92"file:///Users/seville/Documents/github/ios/GroupProject/GroupProject/GroupProject-Prefix.pch0000000000000000^4552"ProcessPCH Build/Intermediates/PrecompiledHeaders/GroupProject-Prefix-dmouceyuturikpceitokvjxgktng/GroupProject-Prefix.pch.pch GroupProject/GroupProject-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/seville/Documents/github/ios/GroupProject    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/seville/Library/Developer/Xcode/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -DCOCOAPODS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.1 -iquote /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/GroupProject-generated-files.hmap -I/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/GroupProject-own-target-headers.hmap -I/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/GroupProject-all-target-headers.hmap -iquote /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/GroupProject-project-headers.hmap -I/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator/include -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/AFNetworking -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/BDBOAuth1Manager -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/MHPrettyDate -I/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/SVProgressHUD -I/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/DerivedSources/i386 -I/Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/GroupProject.build/Debug-iphonesimulator/GroupProject.build/DerivedSources -F/Users/seville/Documents/github/ios/GroupProject/Build/Products/Debug-iphonesimulator -F/Users/seville/Documents/github/ios/GroupProject -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/AFNetworking -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/BDBOAuth1Manager -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/MHPrettyDate -isystem/Users/seville/Documents/github/ios/GroupProject/Pods/Headers/SVProgressHUD --serialize-diagnostics /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/PrecompiledHeaders/GroupProject-Prefix-dmouceyuturikpceitokvjxgktng/GroupProject-Prefix.pch.dia -MMD -MT dependencies -MF /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/PrecompiledHeaders/GroupProject-Prefix-dmouceyuturikpceitokvjxgktng/GroupProject-Prefix.pch.d -c /Users/seville/Documents/github/ios/GroupProject/GroupProject/GroupProject-Prefix.pch -o /Users/seville/Documents/github/ios/GroupProject/Build/Intermediates/PrecompiledHeaders/GroupProject-Prefix-dmouceyuturikpceitokvjxgktng/GroupProject-Prefix.pch.pch36"4F391160-B22C-4932-B5F6-4F73A5590A54-
+b5F21276F-B801-437D-BD31-80F80681709B
 
 CProcessPCH /Users/seville/Library/Developer/Xcode/DerivedData/GroupProject-bimqtptelbefoxfytjkjtsmwoiwv/Index/PrecompiledHeaders/GroupProject-Prefix-gcnefguzxelmptatupuexgetbgdl_ast/GroupProject-Prefix.pch.pch GroupProject/GroupProject-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.astbuilder
 r0

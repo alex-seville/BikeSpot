@@ -7,7 +7,31 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
 
-@interface CPRack : NSObject
+
+@interface CPRack : PFObject<PFSubclassing>
++ (NSString *)parseClassName;
+
+/* the main identifying name associated with the rack */
+@property (retain) NSString *name;
+
+/* is this rack in a garage */
+@property BOOL isInGarage;
+
+/* is this rack owned by a sponsoring business */
+@property BOOL isCommercial;
+
+/* what is the original safety rating */
+@property int safetyRating;
+
+/* long description including more details */
+@property (retain) NSString *longDescription;
+
+/* Name of rack photo, used to create PFFile */
+@property (retain) NSString *rackPhotoName;
+
+/* geo location */
+@property (retain) PFGeoPoint *geoLocation;
 
 @end
