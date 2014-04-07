@@ -47,7 +47,7 @@
     
     /* end parse test */
     
-    /* test sign up */
+    /* test sign up and logging in */
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     [format setDateFormat:@"MMMMddyyyyHHmmssz"];
     NSString *temp = [format stringFromDate:[NSDate date]];
@@ -62,10 +62,34 @@
                                                               @"email": newEmail
                                                               }];
 
-    [parseClient signUpWithUser:testUser];
-    
-    /* test log in */
-    [parseClient logInWithUsername:newUsername password:newPassword];
+    [testUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            NSLog(@"User %@ signed up!", newUsername);
+            
+            // try loggin in
+            [PFUser logInWithUsernameInBackground:newUsername password:newPassword
+                                            block:^(PFUser *user, NSError *error) {
+                                                if (user) {
+                                                    // get current user info
+                                                    CPUser *currentUser = [CPUser currentUser];
+                                                    if (currentUser) {
+                                                        NSLog(@"User %@ has real name: %@ %@", currentUser.username, currentUser.firstname, currentUser.lastname);
+                                                    } else {
+                                                        NSLog(@"User not signed in");
+                                                    }
+                                                } else {
+                                                    // The login failed. Check error to see why.
+                                                    NSLog(@"Log in failed: %@", [error userInfo][@"error"]);
+                                                }
+                                            }];
+            
+            
+        } else {
+            NSString *errorString = [error userInfo][@"error"];
+            // Show the errorString somewhere and let the user try again.
+            NSLog(@"Error signing user %@ up: %@", newUsername, errorString);
+        }
+    }];
     
     
     self.window.backgroundColor = [UIColor whiteColor];
