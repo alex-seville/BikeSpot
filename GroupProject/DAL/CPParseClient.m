@@ -42,6 +42,9 @@
         
         /*  register CPRack model with parse */
         [CPRack registerSubclass];
+        
+        /* register CPUser model with parse */
+        [CPUser registerSubclass];
 
         
         /* now create the instance */
@@ -55,6 +58,49 @@
 
 - (void) save:(PFObject *)objectToSave {
     [objectToSave saveInBackground];
+}
+
+- (void) signUpWithUsername:(NSString *)username password:(NSString *)password email:(NSString *)email {
+    PFUser *user = [PFUser user];
+    user.username = username;
+    user.password = password;
+    user.email = email;
+    
+    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            NSLog(@"User %@ signed up!", username);
+        } else {
+            NSString *errorString = [error userInfo][@"error"];
+            // Show the errorString somewhere and let the user try again.
+            NSLog(@"Error signing user %@ up: %@", username, errorString);
+        }
+    }];
+}
+
+- (void) signUpWithUser:(CPUser *)user {
+    
+    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            NSLog(@"User %@ signed up!", user.username);
+        } else {
+            NSString *errorString = [error userInfo][@"error"];
+            // Show the errorString somewhere and let the user try again.
+            NSLog(@"Error signing user %@ up: %@", user.username, errorString);
+        }
+    }];
+}
+
+- (void) logInWithUsername:(NSString *)username password:(NSString *)password {
+    
+    [PFUser logInWithUsernameInBackground:username password:password
+                                    block:^(PFUser *user, NSError *error) {
+                                        if (user) {
+                                            NSLog(@"User %@ logged in!", user.username);
+                                        } else {
+                                            // The login failed. Check error to see why.
+                                            NSLog(@"Log in failed: %@", [error userInfo][@"error"]);
+                                        }
+                                    }];
 }
 
 @end

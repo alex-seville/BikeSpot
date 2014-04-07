@@ -47,6 +47,27 @@
     
     /* end parse test */
     
+    /* test sign up */
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"MMMMddyyyyHHmmssz"];
+    NSString *temp = [format stringFromDate:[NSDate date]];
+    NSString *newUsername = [NSString stringWithFormat:@"user%@", temp];
+    NSString *newPassword = @"myPassword";
+    NSString *newEmail = [NSString stringWithFormat:@"user%@@eugenialeong.com", temp];
+    CPUser *testUser = [[CPUser alloc] initWithDictionary:@{
+                                                              @"username": newUsername,
+                                                              @"firstname": @"Eugenia",
+                                                              @"lastname": @"Leong",
+                                                              @"password": newPassword,
+                                                              @"email": newEmail
+                                                              }];
+
+    [parseClient signUpWithUser:testUser];
+    
+    /* test log in */
+    [parseClient logInWithUsername:newUsername password:newPassword];
+    
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
