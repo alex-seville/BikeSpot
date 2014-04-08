@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		3DD463A48F6C4C3684A374A9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D890258C2A944EA7A6C3ECC8 /* libPods.a */; };
 		5C66FE2F18F2788B00AB0965 /* CPUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C66FE2E18F2788B00AB0965 /* CPUser.m */; };
+		65173C2018F38BD3002B2C14 /* CPMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65173C1E18F38BD3002B2C14 /* CPMainViewController.m */; };
+		65173C2118F38BD3002B2C14 /* CPMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65173C1F18F38BD3002B2C14 /* CPMainViewController.xib */; };
+		65173C2518F38C00002B2C14 /* CPHamburgerMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65173C2318F38C00002B2C14 /* CPHamburgerMenuViewController.m */; };
+		65173C2618F38C00002B2C14 /* CPHamburgerMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65173C2418F38C00002B2C14 /* CPHamburgerMenuViewController.xib */; };
+		65173C2A18F38C57002B2C14 /* CPViewLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65173C2818F38C57002B2C14 /* CPViewLocationViewController.m */; };
+		65173C2B18F38C57002B2C14 /* CPViewLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65173C2918F38C57002B2C14 /* CPViewLocationViewController.xib */; };
 		6524D9D818F23AB80072620D /* CPParseClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6524D9D718F23AB80072620D /* CPParseClient.m */; };
 		6524D9DA18F23B570072620D /* ParseClient.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6524D9D918F23B570072620D /* ParseClient.plist */; };
 		6548959B18ED08E3002E7F0E /* CPRack.m in Sources */ = {isa = PBXBuildFile; fileRef = 6548959A18ED08E3002E7F0E /* CPRack.m */; };
@@ -52,6 +58,15 @@
 		215048BF48324A4E953CADC1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		5C66FE2D18F2788B00AB0965 /* CPUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPUser.h; path = Models/CPUser.h; sourceTree = "<group>"; };
 		5C66FE2E18F2788B00AB0965 /* CPUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPUser.m; path = Models/CPUser.m; sourceTree = "<group>"; };
+		65173C1D18F38BD3002B2C14 /* CPMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPMainViewController.h; path = ViewControllers/CPMainViewController.h; sourceTree = "<group>"; };
+		65173C1E18F38BD3002B2C14 /* CPMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPMainViewController.m; path = ViewControllers/CPMainViewController.m; sourceTree = "<group>"; };
+		65173C1F18F38BD3002B2C14 /* CPMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CPMainViewController.xib; path = ViewControllers/CPMainViewController.xib; sourceTree = "<group>"; };
+		65173C2218F38C00002B2C14 /* CPHamburgerMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPHamburgerMenuViewController.h; path = ViewControllers/CPHamburgerMenuViewController.h; sourceTree = "<group>"; };
+		65173C2318F38C00002B2C14 /* CPHamburgerMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPHamburgerMenuViewController.m; path = ViewControllers/CPHamburgerMenuViewController.m; sourceTree = "<group>"; };
+		65173C2418F38C00002B2C14 /* CPHamburgerMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CPHamburgerMenuViewController.xib; path = ViewControllers/CPHamburgerMenuViewController.xib; sourceTree = "<group>"; };
+		65173C2718F38C57002B2C14 /* CPViewLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPViewLocationViewController.h; path = ViewControllers/CPViewLocationViewController.h; sourceTree = "<group>"; };
+		65173C2818F38C57002B2C14 /* CPViewLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPViewLocationViewController.m; path = ViewControllers/CPViewLocationViewController.m; sourceTree = "<group>"; };
+		65173C2918F38C57002B2C14 /* CPViewLocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CPViewLocationViewController.xib; path = ViewControllers/CPViewLocationViewController.xib; sourceTree = "<group>"; };
 		6524D9D618F23AB80072620D /* CPParseClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPParseClient.h; path = DAL/CPParseClient.h; sourceTree = "<group>"; };
 		6524D9D718F23AB80072620D /* CPParseClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPParseClient.m; path = DAL/CPParseClient.m; sourceTree = "<group>"; };
 		6524D9D918F23B570072620D /* ParseClient.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ParseClient.plist; path = DAL/ParseClient.plist; sourceTree = "<group>"; };
@@ -126,6 +141,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65173C1C18F38BA8002B2C14 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				65173C1D18F38BD3002B2C14 /* CPMainViewController.h */,
+				65173C1E18F38BD3002B2C14 /* CPMainViewController.m */,
+				65173C1F18F38BD3002B2C14 /* CPMainViewController.xib */,
+				65173C2218F38C00002B2C14 /* CPHamburgerMenuViewController.h */,
+				65173C2318F38C00002B2C14 /* CPHamburgerMenuViewController.m */,
+				65173C2418F38C00002B2C14 /* CPHamburgerMenuViewController.xib */,
+				65173C2718F38C57002B2C14 /* CPViewLocationViewController.h */,
+				65173C2818F38C57002B2C14 /* CPViewLocationViewController.m */,
+				65173C2918F38C57002B2C14 /* CPViewLocationViewController.xib */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		6524D9D518F23A960072620D /* DAL */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +226,7 @@
 		6583AF1E18EC931D00D46333 /* GroupProject */ = {
 			isa = PBXGroup;
 			children = (
+				65173C1C18F38BA8002B2C14 /* ViewControllers */,
 				6524D9D518F23A960072620D /* DAL */,
 				6548959C18ED08E7002E7F0E /* Models */,
 				6583AF2718EC931D00D46333 /* CPAppDelegate.h */,
@@ -312,9 +344,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65173C2118F38BD3002B2C14 /* CPMainViewController.xib in Resources */,
 				6524D9DA18F23B570072620D /* ParseClient.plist in Resources */,
 				6583AF2318EC931D00D46333 /* InfoPlist.strings in Resources */,
 				6583AF2B18EC931D00D46333 /* Images.xcassets in Resources */,
+				65173C2B18F38C57002B2C14 /* CPViewLocationViewController.xib in Resources */,
+				65173C2618F38C00002B2C14 /* CPHamburgerMenuViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,11 +401,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65173C2018F38BD3002B2C14 /* CPMainViewController.m in Sources */,
 				6548959B18ED08E3002E7F0E /* CPRack.m in Sources */,
 				6583AF2518EC931D00D46333 /* main.m in Sources */,
 				6583AF2918EC931D00D46333 /* CPAppDelegate.m in Sources */,
+				65173C2518F38C00002B2C14 /* CPHamburgerMenuViewController.m in Sources */,
 				6524D9D818F23AB80072620D /* CPParseClient.m in Sources */,
 				5C66FE2F18F2788B00AB0965 /* CPUser.m in Sources */,
+				65173C2A18F38C57002B2C14 /* CPViewLocationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

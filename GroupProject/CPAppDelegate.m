@@ -36,7 +36,7 @@
         NSString *objectId = testObject.objectId;
         PFQuery *query = [PFQuery queryWithClassName:@"CPRack"];
         [query getObjectInBackgroundWithId:objectId block:^(PFObject *bikeRack, NSError *error) {
-            // Do something with the returned PFObject in the gameScore variable.
+            // Do something with the returned PFObject in the bikeRack variable.
             NSLog(@"%@", (CPRack *)bikeRack);
         }];
     }];
