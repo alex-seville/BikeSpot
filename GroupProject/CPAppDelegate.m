@@ -19,7 +19,7 @@
     // Override point for customization after application launch.
     
     /* test for parse */
-    CPParseClient *parseClient = [CPParseClient instance];
+    [CPParseClient instance];
     
     
     CPRack *testObject = [[CPRack alloc] initWithDictionary:@{

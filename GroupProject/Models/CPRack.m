@@ -37,6 +37,12 @@
 /* geo location */
 @dynamic geoLocation;
 
+/* address */
+@dynamic address;
+
+/* number of spots */
+@dynamic numSpots;
+
 
 + (NSString *)parseClassName {
     return @"CPRack";
@@ -52,6 +58,8 @@
     self.longDescription = dictionary[@"longDescription"];
     self.rackPhotoName = dictionary[@"rackPhotoName"];
     self.geoLocation = (PFGeoPoint *)dictionary[@"geoLocation"];
+    self.address = dictionary[@"address"];
+    self.numSpots = [dictionary[@"numSpots"] intValue];
     
     return self;
 }

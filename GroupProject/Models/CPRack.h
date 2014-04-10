@@ -36,4 +36,10 @@
 /* geo location */
 @property (retain) PFGeoPoint *geoLocation;
 
+/* geo location */
+@property (retain) NSString *address;
+
+/* number of spots */
+@property int numSpots;
+
 @end
