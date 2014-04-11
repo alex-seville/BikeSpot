@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "CPRack.h"
 #import "CPParseClient.h"
+#import "CPViewLocationViewController.h"
 
 @implementation CPAppDelegate
 
@@ -21,7 +22,7 @@
     /* test for parse */
     [CPParseClient instance];
     
-    
+    /*
     CPRack *testObject = [[CPRack alloc] initWithDictionary:@{
                             @"name": @"Test Bike Rack",
                             @"isInGarage": @NO,
@@ -40,7 +41,7 @@
             NSLog(@"%@", (CPRack *)bikeRack);
         }];
     }];
-    
+    */
     
     
    
@@ -91,6 +92,8 @@
         }
     }];
     
+    CPViewLocationViewController *vc = [[CPViewLocationViewController alloc] init];
+    self.window.rootViewController = vc;
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
