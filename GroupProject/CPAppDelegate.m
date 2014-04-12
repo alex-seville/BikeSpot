@@ -11,6 +11,7 @@
 #import "CPRack.h"
 #import "CPParseClient.h"
 #import "CPViewLocationViewController.h"
+#import "CPSignInViewController.h"
 
 @implementation CPAppDelegate
 
@@ -92,7 +93,8 @@
         }
     }];
     
-    CPViewLocationViewController *vc = [[CPViewLocationViewController alloc] init];
+    //CPViewLocationViewController *vc = [[CPViewLocationViewController alloc] init];
+    CPSignInViewController *vc = [[CPSignInViewController alloc] init];
     self.window.rootViewController = vc;
     
     self.window.backgroundColor = [UIColor whiteColor];

@@ -44,6 +44,10 @@
 		65DA840718EDFCE30091FC1C /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DA840618EDFCE30091FC1C /* libz.1.2.5.dylib */; };
 		65E4E52718EFAD2F00559B80 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E4E52618EFAD2F00559B80 /* Accounts.framework */; };
 		65E4E52918EFAD6A00559B80 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E4E52818EFAD6A00559B80 /* FacebookSDK.framework */; };
+		AE4C437618F91AAF00731F44 /* CPEnterAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4C437418F91AAF00731F44 /* CPEnterAccountViewController.m */; };
+		AE4C437718F91AAF00731F44 /* CPEnterAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE4C437518F91AAF00731F44 /* CPEnterAccountViewController.xib */; };
+		AE4C437B18F91BFA00731F44 /* CPSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4C437918F91BFA00731F44 /* CPSignInViewController.m */; };
+		AE4C437C18F91BFA00731F44 /* CPSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE4C437A18F91BFA00731F44 /* CPSignInViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +109,12 @@
 		65DA840618EDFCE30091FC1C /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		65E4E52618EFAD2F00559B80 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		65E4E52818EFAD6A00559B80 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		AE4C437318F91AAF00731F44 /* CPEnterAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPEnterAccountViewController.h; path = ViewControllers/CPEnterAccountViewController.h; sourceTree = "<group>"; };
+		AE4C437418F91AAF00731F44 /* CPEnterAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPEnterAccountViewController.m; path = ViewControllers/CPEnterAccountViewController.m; sourceTree = "<group>"; };
+		AE4C437518F91AAF00731F44 /* CPEnterAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CPEnterAccountViewController.xib; path = ViewControllers/CPEnterAccountViewController.xib; sourceTree = "<group>"; };
+		AE4C437818F91BFA00731F44 /* CPSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPSignInViewController.h; path = ViewControllers/CPSignInViewController.h; sourceTree = "<group>"; };
+		AE4C437918F91BFA00731F44 /* CPSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPSignInViewController.m; path = ViewControllers/CPSignInViewController.m; sourceTree = "<group>"; };
+		AE4C437A18F91BFA00731F44 /* CPSignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CPSignInViewController.xib; path = ViewControllers/CPSignInViewController.xib; sourceTree = "<group>"; };
 		D890258C2A944EA7A6C3ECC8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -158,6 +168,12 @@
 				65173C2718F38C57002B2C14 /* CPViewLocationViewController.h */,
 				65173C2818F38C57002B2C14 /* CPViewLocationViewController.m */,
 				65173C2918F38C57002B2C14 /* CPViewLocationViewController.xib */,
+				AE4C437318F91AAF00731F44 /* CPEnterAccountViewController.h */,
+				AE4C437418F91AAF00731F44 /* CPEnterAccountViewController.m */,
+				AE4C437518F91AAF00731F44 /* CPEnterAccountViewController.xib */,
+				AE4C437818F91BFA00731F44 /* CPSignInViewController.h */,
+				AE4C437918F91BFA00731F44 /* CPSignInViewController.m */,
+				AE4C437A18F91BFA00731F44 /* CPSignInViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -359,10 +375,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE4C437C18F91BFA00731F44 /* CPSignInViewController.xib in Resources */,
 				652D805618F7AA900027D752 /* data.json in Resources */,
 				65173C2118F38BD3002B2C14 /* CPMainViewController.xib in Resources */,
 				6524D9DA18F23B570072620D /* ParseClient.plist in Resources */,
 				6583AF2318EC931D00D46333 /* InfoPlist.strings in Resources */,
+				AE4C437718F91AAF00731F44 /* CPEnterAccountViewController.xib in Resources */,
 				6583AF2B18EC931D00D46333 /* Images.xcassets in Resources */,
 				65173C2B18F38C57002B2C14 /* CPViewLocationViewController.xib in Resources */,
 				65173C2618F38C00002B2C14 /* CPHamburgerMenuViewController.xib in Resources */,
@@ -418,6 +436,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65173C2018F38BD3002B2C14 /* CPMainViewController.m in Sources */,
+				AE4C437B18F91BFA00731F44 /* CPSignInViewController.m in Sources */,
 				6548959B18ED08E3002E7F0E /* CPRack.m in Sources */,
 				6583AF2518EC931D00D46333 /* main.m in Sources */,
 				6583AF2918EC931D00D46333 /* CPAppDelegate.m in Sources */,
@@ -425,6 +444,7 @@
 				6524D9D818F23AB80072620D /* CPParseClient.m in Sources */,
 				5C66FE2F18F2788B00AB0965 /* CPUser.m in Sources */,
 				65173C2A18F38C57002B2C14 /* CPViewLocationViewController.m in Sources */,
+				AE4C437618F91AAF00731F44 /* CPEnterAccountViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,6 +562,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -551,6 +573,7 @@
 				INFOPLIST_FILE = "GroupProject/GroupProject-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -561,6 +584,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -570,6 +595,7 @@
 				INFOPLIST_FILE = "GroupProject/GroupProject-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
