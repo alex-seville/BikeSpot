@@ -25,6 +25,12 @@
 /* email */
 @dynamic email;
 
+/* user's current city */
+@dynamic city;
+
+/* user's current state */
+@dynamic state;
+
 - (id) initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
     
@@ -34,6 +40,8 @@
         self.lastname = dictionary[@"lastname"];
         self.password = dictionary[@"password"];
         self.email = dictionary[@"email"];
+        
+        // don't add city and state, user will be able to add this from profile view after sign up
     }
   
     return self;
