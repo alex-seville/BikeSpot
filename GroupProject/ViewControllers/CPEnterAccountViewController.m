@@ -61,17 +61,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    if (!self.newAccount) {
-        self.firstname.hidden = YES;
-        self.lastname.hidden = YES;
-        self.email.hidden = YES;
-        self.firstnameLabel.hidden = YES;
-        self.lastnameLabel.hidden = YES;
-        self.emailLabel.hidden = YES;
-    }
-    
-    self.cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(onCancel:)];
-    self.navigationItem.leftBarButtonItem = self.cancelButton;
+    [self setupView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -94,6 +84,26 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (void)setupView {
+    if (!self.newAccount) {
+        self.firstname.hidden = YES;
+        self.lastname.hidden = YES;
+        self.email.hidden = YES;
+        self.firstnameLabel.hidden = YES;
+        self.lastnameLabel.hidden = YES;
+        self.emailLabel.hidden = YES;
+        
+        self.firstname.text = @"";
+        self.lastname.text = @"";
+        self.email.text = @"";
+        self.username.text = @"";
+        self.password.text = @"";
+    }
+    
+    self.cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(onCancel:)];
+    self.navigationItem.leftBarButtonItem = self.cancelButton;
+}
+
 - (void)signUp {
     CPUser *newUser = [[CPUser alloc] initWithDictionary:@{
                                                             @"username": self.username.text,
@@ -108,8 +118,7 @@
             NSLog(@"User %@ signed up!", self.username.text);
             self.newAccount = NO;
             
-            //TODO EL: FIX THIS
-            [self.view setNeedsDisplay];
+            [self setupView];
             
         } else {
             NSString *errorString = [error userInfo][@"error"];
