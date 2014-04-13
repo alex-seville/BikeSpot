@@ -50,6 +50,7 @@
     /* end parse test */
     
     /* test sign up and logging in */
+    /*
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     [format setDateFormat:@"MMMMddyyyyHHmmssz"];
     NSString *temp = [format stringFromDate:[NSDate date]];
@@ -92,6 +93,7 @@
             NSLog(@"Error signing user %@ up: %@", newUsername, errorString);
         }
     }];
+    */
     
     //CPViewLocationViewController *vc = [[CPViewLocationViewController alloc] init];
     CPSignInViewController *vc = [[CPSignInViewController alloc] init];
