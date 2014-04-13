@@ -1,18 +1,18 @@
 //
-//  CPParkingDetailViewController.m
+//  CPAddParkingViewController.m
 //  GroupProject
 //
 //  Created by Eugenia Leong on 4/12/14.
 //  Copyright (c) 2014 CodePath Group Project. All rights reserved.
 //
 
-#import "CPParkingDetailViewController.h"
+#import "CPAddParkingViewController.h"
 
-@interface CPParkingDetailViewController ()
+@interface CPAddParkingViewController ()
 
 @end
 
-@implementation CPParkingDetailViewController
+@implementation CPAddParkingViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

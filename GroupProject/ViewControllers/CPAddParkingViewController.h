@@ -1,5 +1,5 @@
 //
-//  CPParkingDetailViewController.h
+//  CPAddParkingViewController
 //  GroupProject
 //
 //  Created by Eugenia Leong on 4/12/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CPParkingDetailViewController : UIViewController
+@interface CPAddParkingViewController : UIViewController
 
 @end
