@@ -14,6 +14,7 @@
 #import "CPSignInViewController.h"
 #import "CPSettingsViewController.h"
 #import "CPUser.h"
+#import "CPRackMiniDetailViewController.h"
 
 @interface CPMainViewController ()
 @property (weak, nonatomic) IBOutlet UIView *menuView;
@@ -91,6 +92,12 @@
     UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc ] initWithTarget:self action:@selector(onPan:)];
     
     [self.contentView addGestureRecognizer:panGestureRecognizer];
+    
+    /* listen for navigation events */
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(viewMoreDetails:)
+                                                 name:ViewMoreRackDetails
+                                               object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -173,4 +180,11 @@
     
     
 }
+
+-(void)viewMoreDetails:(NSNotification *) notification {
+    NSLog(@"view more details %@", (NSString *)notification.userInfo[@"name"]);
+    
+    /* do navigating */
+}
+
 @end

@@ -27,12 +27,6 @@
     if (self) {
         // Custom initialization
         
-        /* this will be moved into mainViewController when it's ready */
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(viewMoreDetails:)
-                                                     name:ViewMoreRackDetails
-                                                   object:nil];
-        
     }
     return self;
 }
@@ -120,11 +114,7 @@
     
 }
 
--(void)viewMoreDetails:(NSNotification *) notification {
-    NSLog(@"view more details %@", (NSString *)notification.userInfo[@"name"]);
-    
-   /* do navigating */
-}
+
 
 
 

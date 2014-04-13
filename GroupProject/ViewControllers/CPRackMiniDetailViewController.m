@@ -13,7 +13,9 @@ NSString * const ViewMoreRackDetails = @"ViewMoreRackDetails";
 @interface CPRackMiniDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *rackNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *rackDescriptionLabel;
-- (IBAction)viewMoreButton:(id)sender;
+- (IBAction)onViewMoreTap:(UITapGestureRecognizer *)sender;
+
+
 
 @end
 
@@ -44,7 +46,8 @@ NSString * const ViewMoreRackDetails = @"ViewMoreRackDetails";
     self.rackNameLabel.text = name;
 }
 
-- (IBAction)viewMoreButton:(id)sender {
-    [[NSNotificationCenter defaultCenter] postNotificationName:ViewMoreRackDetails object:self userInfo:@{@"name": self.rackNameLabel.text}];
+- (IBAction)onViewMoreTap:(UITapGestureRecognizer *)sender {
+	NSLog(@"click");
+	// [[NSNotificationCenter defaultCenter] postNotificationName:ViewMoreRackDetails object:self userInfo:@{@"name": @"test"}];
 }
 @end

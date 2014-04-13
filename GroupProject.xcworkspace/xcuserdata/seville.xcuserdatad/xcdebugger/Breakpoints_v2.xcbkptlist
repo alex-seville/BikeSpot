@@ -54,28 +54,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GroupProject/ViewControllers/CPRackMiniDetailViewController.m"
-            timestampString = "419062941.814981"
+            timestampString = "419107216.627446"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "-viewMoreButton:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GroupProject/ViewControllers/CPViewLocationViewController.m"
-            timestampString = "419062958.886432"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
-            landmarkName = "-viewMoreDetails:"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "-onViewMoreTap:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

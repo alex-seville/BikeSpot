@@ -11,6 +11,7 @@
 #import "CPRack.h"
 #import "CPParseClient.h"
 #import "CPMainViewController.h"
+#import "CPRackMiniDetailViewController.h"
 
 @implementation CPAppDelegate
 
@@ -97,11 +98,9 @@
     }];
     */
     
-    //CPViewLocationViewController *vc = [[CPViewLocationViewController alloc] init];
     CPMainViewController *vc = [[CPMainViewController alloc] init];
 
-    //CPViewLocationViewController *vc = [[CPViewLocationViewController alloc] init];
-    //CPSignInViewController *vc = [[CPSignInViewController alloc] init];
+    //CPRackMiniDetailViewController *vc = [[CPRackMiniDetailViewController alloc] init];
 
     self.window.rootViewController = vc;
     
