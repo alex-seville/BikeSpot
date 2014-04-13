@@ -7,8 +7,13 @@
 //
 
 #import "CPUserProfileViewController.h"
+#import <Parse/Parse.h>
 
 @interface CPUserProfileViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
+@property (weak, nonatomic) IBOutlet UILabel *firstname;
+@property (weak, nonatomic) IBOutlet UILabel *lastname;
+@property (weak, nonatomic) IBOutlet UILabel *currentcity;
 
 @end
 
@@ -27,6 +32,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    BOOL isLinkedToFacebook = [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]];
+    NSLog(@"islinkedtofb: %d", isLinkedToFacebook);
 }
 
 - (void)didReceiveMemoryWarning
