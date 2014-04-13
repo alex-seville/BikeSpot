@@ -21,6 +21,8 @@
 @property (strong, nonatomic) CPEnterAccountViewController * createAccountViewController;
 @property (strong, nonatomic) UINavigationController *createAccountNavigationViewController;
 
+@property (strong, nonatomic) UIBarButtonItem *cancelButton;
+
 @end
 
 @implementation CPSignInViewController
@@ -47,6 +49,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(onCancel:)];
+    self.navigationItem.leftBarButtonItem = self.cancelButton;
 
 }
 
@@ -102,6 +107,10 @@
     CPMainViewController *mainViewController = [[CPMainViewController alloc] init];
     UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
     [self presentViewController:navigationController animated:NO completion:nil];
+}
+
+- (IBAction)onCancel:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

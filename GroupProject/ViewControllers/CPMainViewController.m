@@ -24,6 +24,7 @@
 @property (strong, nonatomic) UINavigationController *userProfileNavigationController;
 @property (strong, nonatomic) UINavigationController *addParkingNavigationController;
 @property (strong, nonatomic) UINavigationController *settingsNavigationController;
+@property (strong, nonatomic) UINavigationController *signInNavigationController;
 @property (strong, nonatomic) CPHamburgerMenuViewController *menuViewController;
 @property (strong, nonatomic) CPViewLocationViewController *mapViewController;   // CHANGE THIS BACK TO MAP VIEW
 @property (strong, nonatomic) CPUserProfileViewController *userProfileViewController;
@@ -61,10 +62,11 @@
         self.settingsNavigationController = [[UINavigationController alloc] initWithRootViewController:self.settingsViewController];
         
         self.signInViewController = [[CPSignInViewController alloc] init];
+        self.signInNavigationController = [[UINavigationController alloc] initWithRootViewController:self.signInViewController];
         
         self.loggedInViewControllers = @[self.mapViewNavigationController, self.userProfileNavigationController, self.addParkingNavigationController, self.settingsNavigationController, self.mapViewNavigationController];
         
-        self.loggedOutViewControllers = @[self.mapViewNavigationController, self.signInViewController];
+        self.loggedOutViewControllers = @[self.mapViewNavigationController, self.signInNavigationController];
         
     }
     return self;
@@ -155,7 +157,7 @@
     // log in
     if (!user && index == [self.loggedOutViewControllers count]-1)
     {
-        [self presentViewController:self.signInViewController animated:YES completion:nil];
+        [self presentViewController:self.signInNavigationController animated:YES completion:nil];
         return;
     }
     // log out
