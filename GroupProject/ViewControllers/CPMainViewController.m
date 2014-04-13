@@ -151,12 +151,15 @@
     [self displayMainContentView];
 
     CPUser *user = [CPUser currentUser];
-    if (user == nil && index == 1)
+    
+    // log in
+    if (!user && index == [self.loggedOutViewControllers count]-1)
     {
         [self presentViewController:self.signInViewController animated:YES completion:nil];
         return;
     }
-    else if (user && index == 4)
+    // log out
+    else if (user && index == [self.loggedInViewControllers count]-1)
     {
         [CPUser logOut];
     }
