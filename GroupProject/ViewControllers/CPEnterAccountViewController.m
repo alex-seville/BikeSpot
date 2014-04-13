@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lastnameLabel;
 @property (assign, nonatomic) BOOL newAccount;
 @property (strong, nonatomic) UIBarButtonItem *cancelButton;
+- (IBAction)onTap:(id)sender;
 
 - (IBAction)submit:(id)sender;
 
@@ -68,6 +69,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)onTap:(id)sender {
+    [self.view endEditing:YES];
 }
 
 - (IBAction)submit:(id)sender {
