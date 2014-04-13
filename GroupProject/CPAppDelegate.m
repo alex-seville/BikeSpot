@@ -10,7 +10,6 @@
 #import <Parse/Parse.h>
 #import "CPRack.h"
 #import "CPParseClient.h"
-#import "CPViewLocationViewController.h"
 #import "CPSignInViewController.h"
 
 @implementation CPAppDelegate
@@ -24,6 +23,8 @@
     [CPParseClient instance];
     
     [PFFacebookUtils initializeFacebook];
+    
+    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setRootViewController) name:UserLogOutNotification object:nil];
     
     /*
     CPRack *testObject = [[CPRack alloc] initWithDictionary:@{

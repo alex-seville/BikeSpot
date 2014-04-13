@@ -9,7 +9,7 @@
 #import "CPSignInViewController.h"
 #import "CPEnterAccountViewController.h"
 #import <Parse/Parse.h>
-#import "CPViewLocationViewController.h"
+#import "CPMainViewController.h"
 
 @interface CPSignInViewController ()
 - (IBAction)signInFB:(id)sender;
@@ -99,8 +99,8 @@
 }
         
 - (void) showLocationViewController {
-    CPViewLocationViewController *viewLocationViewController = [[CPViewLocationViewController alloc] init];
-    UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:viewLocationViewController];
+    CPMainViewController *mainViewController = [[CPMainViewController alloc] init];
+    UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
     [self presentViewController:navigationController animated:NO completion:nil];
 }
 

@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@class CPHamburgerMenuViewController;
+@protocol CPHamburgerMenuViewControllerDelegate <NSObject>
 
-@interface CPHamburgerMenuViewController : UIViewController
+-(void)sender:(CPHamburgerMenuViewController *)sender menuTapped:(int) index;
+@end
 
+@interface CPHamburgerMenuViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) id<CPHamburgerMenuViewControllerDelegate> delegate;
 @end

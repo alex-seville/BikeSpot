@@ -8,7 +8,7 @@
 
 #import "CPEnterAccountViewController.h"
 #import "CPUser.h"
-#import "CPViewLocationViewController.h"
+#import "CPMainViewController.h"
 
 @interface CPEnterAccountViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *firstname;
@@ -138,8 +138,8 @@
                                             CPUser *currentUser = [CPUser currentUser];
                                             if (currentUser) {
                                                 NSLog(@"User %@ has real name: %@ %@", currentUser.username, currentUser.firstname, currentUser.lastname);
-                                                CPViewLocationViewController *viewLocationViewController = [[CPViewLocationViewController alloc] init];
-                                                UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:viewLocationViewController];
+                                                 CPMainViewController *mainViewController = [[CPMainViewController alloc] init];
+                                                UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
                                                 [self presentViewController:navigationController animated:YES completion:nil];
                                             } else {
                                                 NSLog(@"User not signed in");

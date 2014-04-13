@@ -8,6 +8,8 @@
 
 #import "CPUser.h"
 
+//NSString * const UserLogOutNotification = @"UserLogOutNotification";
+
 @implementation CPUser
 
 /* username associated with the user */

@@ -54,6 +54,8 @@
 		AE4C438618FA074600731F44 /* CPSearchSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE4C438418FA074600731F44 /* CPSearchSettingsViewController.xib */; };
 		AE4C438A18FA075E00731F44 /* CPUserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4C438818FA075E00731F44 /* CPUserProfileViewController.m */; };
 		AE4C438B18FA075E00731F44 /* CPUserProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE4C438918FA075E00731F44 /* CPUserProfileViewController.xib */; };
+		AE4C438F18FA508700731F44 /* CPMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4C438D18FA508700731F44 /* CPMenuCell.m */; };
+		AE4C439018FA508700731F44 /* CPMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE4C438E18FA508700731F44 /* CPMenuCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +132,9 @@
 		AE4C438718FA075E00731F44 /* CPUserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPUserProfileViewController.h; path = ViewControllers/CPUserProfileViewController.h; sourceTree = "<group>"; };
 		AE4C438818FA075E00731F44 /* CPUserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPUserProfileViewController.m; path = ViewControllers/CPUserProfileViewController.m; sourceTree = "<group>"; };
 		AE4C438918FA075E00731F44 /* CPUserProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CPUserProfileViewController.xib; path = ViewControllers/CPUserProfileViewController.xib; sourceTree = "<group>"; };
+		AE4C438C18FA508700731F44 /* CPMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPMenuCell.h; path = ViewControllers/CPMenuCell.h; sourceTree = "<group>"; };
+		AE4C438D18FA508700731F44 /* CPMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPMenuCell.m; path = ViewControllers/CPMenuCell.m; sourceTree = "<group>"; };
+		AE4C438E18FA508700731F44 /* CPMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CPMenuCell.xib; path = ViewControllers/CPMenuCell.xib; sourceTree = "<group>"; };
 		D890258C2A944EA7A6C3ECC8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -198,6 +203,9 @@
 				AE4C438718FA075E00731F44 /* CPUserProfileViewController.h */,
 				AE4C438818FA075E00731F44 /* CPUserProfileViewController.m */,
 				AE4C438918FA075E00731F44 /* CPUserProfileViewController.xib */,
+				AE4C438C18FA508700731F44 /* CPMenuCell.h */,
+				AE4C438D18FA508700731F44 /* CPMenuCell.m */,
+				AE4C438E18FA508700731F44 /* CPMenuCell.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -409,6 +417,7 @@
 				AE4C437718F91AAF00731F44 /* CPEnterAccountViewController.xib in Resources */,
 				6583AF2B18EC931D00D46333 /* Images.xcassets in Resources */,
 				65173C2B18F38C57002B2C14 /* CPViewLocationViewController.xib in Resources */,
+				AE4C439018FA508700731F44 /* CPMenuCell.xib in Resources */,
 				65173C2618F38C00002B2C14 /* CPHamburgerMenuViewController.xib in Resources */,
 				AE4C438118FA073000731F44 /* CPAddParkingViewController.xib in Resources */,
 			);
@@ -463,6 +472,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65173C2018F38BD3002B2C14 /* CPMainViewController.m in Sources */,
+				AE4C438F18FA508700731F44 /* CPMenuCell.m in Sources */,
 				AE4C437B18F91BFA00731F44 /* CPSignInViewController.m in Sources */,
 				6548959B18ED08E3002E7F0E /* CPRack.m in Sources */,
 				AE4C438A18FA075E00731F44 /* CPUserProfileViewController.m in Sources */,

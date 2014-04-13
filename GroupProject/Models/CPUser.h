@@ -8,6 +8,8 @@
 
 #import <Parse/Parse.h>
 
+//extern NSString *const UserLogOutNotification;
+
 @interface CPUser : PFUser
 
 - (id) initWithDictionary:(NSDictionary *)dictionary;

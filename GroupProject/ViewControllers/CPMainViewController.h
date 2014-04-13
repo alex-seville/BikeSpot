@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CPHamburgerMenuViewController.h"
 
-@interface CPMainViewController : UIViewController
+@interface CPMainViewController : UIViewController <CPHamburgerMenuViewControllerDelegate>
 
 @end
