@@ -11,9 +11,8 @@
 #import <MapKit/MapKit.h>
 
 
-@interface CPRack : PFObject<PFSubclassing, MKAnnotation> {
-    CLLocationCoordinate2D coordinate;
-}
+@interface CPRack : PFObject<PFSubclassing>
+
 + (NSString *)parseClassName;
 
 - (id) initWithDictionary:(NSDictionary *)dictionary;
@@ -44,8 +43,6 @@
 
 /* number of spots */
 @property int numSpots;
-
-@property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 
 
 @end

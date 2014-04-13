@@ -32,6 +32,7 @@
 		6583AF3418EC931D00D46333 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6583AF1C18EC931D00D46333 /* UIKit.framework */; };
 		6583AF3C18EC931D00D46333 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6583AF3A18EC931D00D46333 /* InfoPlist.strings */; };
 		6583AF3E18EC931D00D46333 /* GroupProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6583AF3D18EC931D00D46333 /* GroupProjectTests.m */; };
+		658D6A9518FA4A3F009D6812 /* CPRackAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 658D6A9418FA4A3F009D6812 /* CPRackAnnotation.m */; };
 		65DA83F318EDF7A70091FC1C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DA83F218EDF7A70091FC1C /* Parse.framework */; };
 		65DA83F518EDF7EA0091FC1C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DA83F418EDF7EA0091FC1C /* AudioToolbox.framework */; };
 		65DA83F718EDF7F10091FC1C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DA83F618EDF7F10091FC1C /* CFNetwork.framework */; };
@@ -92,6 +93,8 @@
 		6583AF3918EC931D00D46333 /* GroupProjectTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GroupProjectTests-Info.plist"; sourceTree = "<group>"; };
 		6583AF3B18EC931D00D46333 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6583AF3D18EC931D00D46333 /* GroupProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroupProjectTests.m; sourceTree = "<group>"; };
+		658D6A9318FA4A3F009D6812 /* CPRackAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPRackAnnotation.h; path = Views/CPRackAnnotation.h; sourceTree = "<group>"; };
+		658D6A9418FA4A3F009D6812 /* CPRackAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPRackAnnotation.m; path = Views/CPRackAnnotation.m; sourceTree = "<group>"; };
 		65DA83F218EDF7A70091FC1C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		65DA83F418EDF7EA0091FC1C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		65DA83F618EDF7F10091FC1C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -183,6 +186,8 @@
 		6548959C18ED08E7002E7F0E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				658D6A9318FA4A3F009D6812 /* CPRackAnnotation.h */,
+				658D6A9418FA4A3F009D6812 /* CPRackAnnotation.m */,
 				6548959918ED08E3002E7F0E /* CPRack.h */,
 				6548959A18ED08E3002E7F0E /* CPRack.m */,
 				5C66FE2D18F2788B00AB0965 /* CPUser.h */,
@@ -241,6 +246,7 @@
 		6583AF1E18EC931D00D46333 /* GroupProject */ = {
 			isa = PBXGroup;
 			children = (
+				658D6A9218FA4A07009D6812 /* Views */,
 				65173C1C18F38BA8002B2C14 /* ViewControllers */,
 				6524D9D518F23A960072620D /* DAL */,
 				6548959C18ED08E7002E7F0E /* Models */,
@@ -279,6 +285,13 @@
 				6583AF3A18EC931D00D46333 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		658D6A9218FA4A07009D6812 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -424,6 +437,7 @@
 				65173C2518F38C00002B2C14 /* CPHamburgerMenuViewController.m in Sources */,
 				6524D9D818F23AB80072620D /* CPParseClient.m in Sources */,
 				5C66FE2F18F2788B00AB0965 /* CPUser.m in Sources */,
+				658D6A9518FA4A3F009D6812 /* CPRackAnnotation.m in Sources */,
 				65173C2A18F38C57002B2C14 /* CPViewLocationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
