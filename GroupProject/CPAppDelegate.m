@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 #import "CPRack.h"
 #import "CPParseClient.h"
-#import "CPSignInViewController.h"
+#import "CPMainViewController.h"
 
 @implementation CPAppDelegate
 
@@ -98,7 +98,7 @@
     */
     
     //CPViewLocationViewController *vc = [[CPViewLocationViewController alloc] init];
-    CPSignInViewController *vc = [[CPSignInViewController alloc] init];
+    CPMainViewController *vc = [[CPMainViewController alloc] init];
 
     //CPViewLocationViewController *vc = [[CPViewLocationViewController alloc] init];
     //CPSignInViewController *vc = [[CPSignInViewController alloc] init];

@@ -35,4 +35,28 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)addNewParking
+{
+    /*
+     CPRack *testObject = [[CPRack alloc] initWithDictionary:@{
+     @"name": @"Test Bike Rack",
+     @"isInGarage": @NO,
+     @"isCommercial": @YES,
+     @"safetyRating": @3,
+     @"longDescription": @"This is a long description",
+     @"rackPhotoName": @"test.png",
+     @"geoLocation": [[PFGeoPoint alloc] init]
+     }];
+     
+     [testObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
+     NSString *objectId = testObject.objectId;
+     PFQuery *query = [PFQuery queryWithClassName:@"CPRack"];
+     [query getObjectInBackgroundWithId:objectId block:^(PFObject *bikeRack, NSError *error) {
+     // Do something with the returned PFObject in the bikeRack variable.
+     NSLog(@"%@", (CPRack *)bikeRack);
+     }];
+     }];
+     */
+}
+
 @end

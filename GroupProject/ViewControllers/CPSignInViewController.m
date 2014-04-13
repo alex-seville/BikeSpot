@@ -55,7 +55,7 @@
     if ([PFUser currentUser])// && // Check if a user is cached
         //[PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) // Check if user is linked to Facebook
     {
-        [self showLocationViewController];
+        [self showMainViewController];
     }
 }
 
@@ -83,8 +83,8 @@
             }
         }
         else {
-            NSLog(@"User with facebook logged in!");
-            [self showLocationViewController];
+            NSLog(@"User with Facebook logged in!");
+            [self showMainViewController];
         }
     }];
 }
@@ -98,7 +98,7 @@
     [self presentViewController:self.createAccountNavigationViewController animated:YES completion:nil];
 }
         
-- (void) showLocationViewController {
+- (void) showMainViewController {
     CPMainViewController *mainViewController = [[CPMainViewController alloc] init];
     UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
     [self presentViewController:navigationController animated:NO completion:nil];

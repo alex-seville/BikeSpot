@@ -12,7 +12,8 @@
 #import "CPUser.h"
 
 @interface CPHamburgerMenuViewController ()
-@property (nonatomic, strong) NSArray *menuOptions;
+@property (nonatomic, strong) NSArray *loggedInMenuOptions;
+@property (nonatomic, strong) NSArray *loggedOutMenuOptions;
 @property (nonatomic, strong) CPUserProfileViewController *userProfileViewController;
 @property (nonatomic, strong) UINavigationController *userProfileNavigationController;
 @property (weak, nonatomic) IBOutlet UITableView *menuTableView;
@@ -28,7 +29,8 @@
         // Custom initialization
         self.title = @"Menu";
         
-        self.menuOptions = @[@"Home", @"Profile", @"Add New Parking Spot", @"Settings", @"Log out"];
+        self.loggedInMenuOptions = @[@"Home", @"Profile", @"Add New Parking Spot", @"Settings", @"Log out"];
+        self.loggedOutMenuOptions = @[@"Home", @"Log In"];
         
         // user profile view
         self.userProfileViewController = [[CPUserProfileViewController alloc] init];
@@ -65,19 +67,36 @@
     // display user profile cell
     
     CPMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CPMenuCell" forIndexPath:indexPath];
-    cell.optionLabel.text = self.menuOptions[indexPath.row];
+    if ([CPUser currentUser])
+    {
+        cell.optionLabel.text = self.loggedInMenuOptions[indexPath.row];
+    }
+    else
+    {
+        cell.optionLabel.text = self.loggedOutMenuOptions[indexPath.row];
+    }
     
     return cell;
 }
 
 - (int)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.menuOptions count];
+    if ([CPUser currentUser])
+    {
+        return [self.loggedInMenuOptions count];
+    }
+    else
+    {
+        return [self.loggedOutMenuOptions count];
+    }
+
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.menuTableView deselectRowAtIndexPath:indexPath animated:YES];
     
     [self.delegate sender:self menuTapped:indexPath.row];
+    
+    [self.menuTableView reloadData];
     
 }
 

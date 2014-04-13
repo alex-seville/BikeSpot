@@ -25,13 +25,15 @@
 @property (strong, nonatomic) UINavigationController *addParkingNavigationController;
 @property (strong, nonatomic) UINavigationController *settingsNavigationController;
 @property (strong, nonatomic) CPHamburgerMenuViewController *menuViewController;
-@property (strong, nonatomic) CPUserProfileViewController *mapViewController;   // CHANGE THIS BACK TO MAP VIEW
+@property (strong, nonatomic) CPViewLocationViewController *mapViewController;   // CHANGE THIS BACK TO MAP VIEW
 @property (strong, nonatomic) CPUserProfileViewController *userProfileViewController;
 @property (strong ,nonatomic) CPAddParkingViewController *addParkingViewController;
 @property (strong, nonatomic) CPSettingsViewController *settingsViewController;
+@property (strong, nonatomic) CPSignInViewController *signInViewController;
 
 
-@property (nonatomic, strong) NSArray *viewControllers;
+@property (nonatomic, strong) NSArray *loggedInViewControllers;
+@property (nonatomic, strong) NSArray *loggedOutViewControllers;
 
 @end
 
@@ -43,7 +45,7 @@
     if (self) {
         // Custom initialization
         
-        self.mapViewController = [[CPUserProfileViewController alloc] init];    // CHANGE THIS BACK TO MAP VIEW
+        self.mapViewController = [[CPViewLocationViewController alloc] init];    // CHANGE THIS BACK TO MAP VIEW
         self.mapViewNavigationController = [[UINavigationController alloc] initWithRootViewController:self.mapViewController];
         
         self.userProfileViewController = [[CPUserProfileViewController alloc] init];
@@ -58,7 +60,12 @@
         self.settingsViewController = [[CPSettingsViewController alloc] init];
         self.settingsNavigationController = [[UINavigationController alloc] initWithRootViewController:self.settingsViewController];
         
-        self.viewControllers = @[self.mapViewNavigationController, self.userProfileNavigationController, self.addParkingNavigationController, self.settingsNavigationController];
+        self.signInViewController = [[CPSignInViewController alloc] init];
+        
+        self.loggedInViewControllers = @[self.mapViewNavigationController, self.userProfileNavigationController, self.addParkingNavigationController, self.settingsNavigationController, self.mapViewNavigationController];
+        
+        self.loggedOutViewControllers = @[self.mapViewNavigationController, self.signInViewController];
+        
     }
     return self;
 }
@@ -140,22 +147,25 @@
 #pragma mark - CPHamburgerMenuViewController methods
 -(void)sender:(CPHamburgerMenuViewController *)sender menuTapped:(int)index
 {
-    if (index < 4) // CLEAN UP
+    // move main display view back
+    [self displayMainContentView];
+
+    CPUser *user = [CPUser currentUser];
+    if (user == nil && index == 1)
     {
-        // move main display view back
-        [self displayMainContentView];
-        
-        UINavigationController *nvc = self.viewControllers[index];
-        [self.contentView addSubview:nvc.view];
-        [self.contentView bringSubviewToFront:nvc.view];
+        [self presentViewController:self.signInViewController animated:YES completion:nil];
+        return;
     }
-    else
+    else if (user && index == 4)
     {
         [CPUser logOut];
-        CPSignInViewController *mainViewController = [[CPSignInViewController alloc] init];
-        [self presentViewController:mainViewController animated:NO completion:nil];
     }
-
+    
+    UINavigationController *nvc = self.loggedInViewControllers[index];
+    [self.contentView addSubview:nvc.view];
+    [self.contentView bringSubviewToFront:nvc.view];
+    
+    
     
 }
 @end
