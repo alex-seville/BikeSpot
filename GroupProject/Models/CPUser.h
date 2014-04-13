@@ -20,4 +20,10 @@
 /* user's last name */
 @property (retain) NSString *lastname;
 
+/* user's current city */
+@property (retain) NSString *city;
+
+/* user's current state */
+@property (retain) NSString *state;
+
 @end

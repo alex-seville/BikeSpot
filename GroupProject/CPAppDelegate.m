@@ -11,6 +11,7 @@
 #import "CPRack.h"
 #import "CPParseClient.h"
 #import "CPViewLocationViewController.h"
+#import "CPSignInViewController.h"
 
 @implementation CPAppDelegate
 
@@ -21,6 +22,8 @@
     
     /* test for parse */
     [CPParseClient instance];
+    
+    [PFFacebookUtils initializeFacebook];
     
     /*
     CPRack *testObject = [[CPRack alloc] initWithDictionary:@{
@@ -49,6 +52,7 @@
     /* end parse test */
     
     /* test sign up and logging in */
+    /*
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     [format setDateFormat:@"MMMMddyyyyHHmmssz"];
     NSString *temp = [format stringFromDate:[NSDate date]];
@@ -91,13 +95,24 @@
             NSLog(@"Error signing user %@ up: %@", newUsername, errorString);
         }
     }];
+    */
     
-    CPViewLocationViewController *vc = [[CPViewLocationViewController alloc] init];
+    //CPViewLocationViewController *vc = [[CPViewLocationViewController alloc] init];
+    CPSignInViewController *vc = [[CPSignInViewController alloc] init];
     self.window.rootViewController = vc;
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    return [FBAppCall handleOpenURL:url
+                  sourceApplication:sourceApplication
+                        withSession:[PFFacebookUtils session]];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -120,6 +135,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
