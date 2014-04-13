@@ -47,6 +47,16 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    if ([PFUser currentUser])// && // Check if a user is cached
+        //[PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) // Check if user is linked to Facebook
+    {
+        [self showLocationViewController];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -74,10 +84,7 @@
         }
         else {
             NSLog(@"User with facebook logged in!");
-            //[self.navigationController pushViewController:[[UserDetailsViewController alloc] initWithStyle:UITableViewStyleGrouped] animated:YES];
-            CPViewLocationViewController *viewLocationViewController = [[CPViewLocationViewController alloc] init];
-            UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:viewLocationViewController];
-            [self presentViewController:navigationController animated:YES completion:nil];
+            [self showLocationViewController];
         }
     }];
 }
@@ -89,6 +96,12 @@
 
 - (IBAction)createNewAccount:(id)sender {
     [self presentViewController:self.createAccountNavigationViewController animated:YES completion:nil];
+}
+        
+- (void) showLocationViewController {
+    CPViewLocationViewController *viewLocationViewController = [[CPViewLocationViewController alloc] init];
+    UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:viewLocationViewController];
+    [self presentViewController:navigationController animated:NO completion:nil];
 }
 
 @end
