@@ -20,85 +20,12 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
-    /* test for parse */
     [CPParseClient instance];
     
     [PFFacebookUtils initializeFacebook];
     
-    /*
-    CPRack *testObject = [[CPRack alloc] initWithDictionary:@{
-                            @"name": @"Test Bike Rack",
-                            @"isInGarage": @NO,
-                            @"isCommercial": @YES,
-                            @"safetyRating": @3,
-                            @"longDescription": @"This is a long description",
-                            @"rackPhotoName": @"test.png",
-                            @"geoLocation": [[PFGeoPoint alloc] init]
-                        }];
-    
-    [testObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
-        NSString *objectId = testObject.objectId;
-        PFQuery *query = [PFQuery queryWithClassName:@"CPRack"];
-        [query getObjectInBackgroundWithId:objectId block:^(PFObject *bikeRack, NSError *error) {
-            // Do something with the returned PFObject in the bikeRack variable.
-            NSLog(@"%@", (CPRack *)bikeRack);
-        }];
-    }];
-    */
-    
-    
-   
-    
-    /* end parse test */
-    
-    /* test sign up and logging in */
-    /*
-    NSDateFormatter *format = [[NSDateFormatter alloc] init];
-    [format setDateFormat:@"MMMMddyyyyHHmmssz"];
-    NSString *temp = [format stringFromDate:[NSDate date]];
-    NSString *newUsername = [NSString stringWithFormat:@"user%@", temp];
-    NSString *newPassword = @"myPassword";
-    NSString *newEmail = [NSString stringWithFormat:@"user%@@eugenialeong.com", temp];
-    CPUser *testUser = [[CPUser alloc] initWithDictionary:@{
-                                                              @"username": newUsername,
-                                                              @"firstname": @"Eugenia",
-                                                              @"lastname": @"Leong",
-                                                              @"password": newPassword,
-                                                              @"email": newEmail
-                                                              }];
-
-    [testUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (!error) {
-            NSLog(@"User %@ signed up!", newUsername);
-            
-            // try loggin in
-            [PFUser logInWithUsernameInBackground:newUsername password:newPassword
-                                            block:^(PFUser *user, NSError *error) {
-                                                if (user) {
-                                                    // get current user info
-                                                    CPUser *currentUser = [CPUser currentUser];
-                                                    if (currentUser) {
-                                                        NSLog(@"User %@ has real name: %@ %@", currentUser.username, currentUser.firstname, currentUser.lastname);
-                                                    } else {
-                                                        NSLog(@"User not signed in");
-                                                    }
-                                                } else {
-                                                    // The login failed. Check error to see why.
-                                                    NSLog(@"Log in failed: %@", [error userInfo][@"error"]);
-                                                }
-                                            }];
-            
-            
-        } else {
-            NSString *errorString = [error userInfo][@"error"];
-            // Show the errorString somewhere and let the user try again.
-            NSLog(@"Error signing user %@ up: %@", newUsername, errorString);
-        }
-    }];
-    */
-    
-    //CPViewLocationViewController *vc = [[CPViewLocationViewController alloc] init];
-    CPSignInViewController *vc = [[CPSignInViewController alloc] init];
+    CPViewLocationViewController *vc = [[CPViewLocationViewController alloc] init];
+    //CPSignInViewController *vc = [[CPSignInViewController alloc] init];
     self.window.rootViewController = vc;
     
     self.window.backgroundColor = [UIColor whiteColor];

@@ -25,14 +25,12 @@
     annotationView.canShowCallout = true;
     
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    [rightButton addTarget:nil  action:@selector(clickAnnotation) forControlEvents:UIControlEventTouchUpInside];
+    [rightButton addTarget:nil  action:nil forControlEvents:UIControlEventTouchUpInside];
     annotationView.rightCalloutAccessoryView = rightButton;
     
     return annotationView;
 }
 
-- (void) clickAnnotation {
-    NSLog(@"click");
-}
+
 
 @end
