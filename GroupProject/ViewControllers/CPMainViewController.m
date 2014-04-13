@@ -12,6 +12,7 @@
 #import "CPAddParkingViewController.h"
 #import "CPUserProfileViewController.h"
 #import "CPSignInViewController.h"
+#import "CPSettingsViewController.h"
 #import "CPUser.h"
 
 @interface CPMainViewController ()
@@ -22,10 +23,12 @@
 @property (strong, nonatomic) UINavigationController *menuNavigationController;
 @property (strong, nonatomic) UINavigationController *userProfileNavigationController;
 @property (strong, nonatomic) UINavigationController *addParkingNavigationController;
+@property (strong, nonatomic) UINavigationController *settingsNavigationController;
 @property (strong, nonatomic) CPHamburgerMenuViewController *menuViewController;
 @property (strong, nonatomic) CPUserProfileViewController *mapViewController;   // CHANGE THIS BACK TO MAP VIEW
 @property (strong, nonatomic) CPUserProfileViewController *userProfileViewController;
 @property (strong ,nonatomic) CPAddParkingViewController *addParkingViewController;
+@property (strong, nonatomic) CPSettingsViewController *settingsViewController;
 
 
 @property (nonatomic, strong) NSArray *viewControllers;
@@ -52,7 +55,10 @@
         self.addParkingViewController = [[CPAddParkingViewController alloc] init];
         self.addParkingNavigationController = [[UINavigationController alloc] initWithRootViewController:self.addParkingViewController];
         
-        self.viewControllers = @[self.mapViewNavigationController, self.userProfileNavigationController, self.addParkingNavigationController];
+        self.settingsViewController = [[CPSettingsViewController alloc] init];
+        self.settingsNavigationController = [[UINavigationController alloc] initWithRootViewController:self.settingsViewController];
+        
+        self.viewControllers = @[self.mapViewNavigationController, self.userProfileNavigationController, self.addParkingNavigationController, self.settingsNavigationController];
     }
     return self;
 }
@@ -134,7 +140,7 @@
 #pragma mark - CPHamburgerMenuViewController methods
 -(void)sender:(CPHamburgerMenuViewController *)sender menuTapped:(int)index
 {
-    if (index < 3)
+    if (index < 4) // CLEAN UP
     {
         // move main display view back
         [self displayMainContentView];

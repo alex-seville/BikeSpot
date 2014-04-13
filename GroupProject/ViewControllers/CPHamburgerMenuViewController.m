@@ -28,7 +28,7 @@
         // Custom initialization
         self.title = @"Menu";
         
-        self.menuOptions = @[@"Home", @"Profile", @"Add New Parking Spot", @"Log out"];
+        self.menuOptions = @[@"Home", @"Profile", @"Add New Parking Spot", @"Settings", @"Log out"];
         
         // user profile view
         self.userProfileViewController = [[CPUserProfileViewController alloc] init];

@@ -61,6 +61,8 @@
 		AE4C438B18FA075E00731F44 /* CPUserProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE4C438918FA075E00731F44 /* CPUserProfileViewController.xib */; };
 		AE4C438F18FA508700731F44 /* CPMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4C438D18FA508700731F44 /* CPMenuCell.m */; };
 		AE4C439018FA508700731F44 /* CPMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE4C438E18FA508700731F44 /* CPMenuCell.xib */; };
+		AE4C439418FA6B7000731F44 /* CPSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4C439218FA6B7000731F44 /* CPSettingsViewController.m */; };
+		AE4C439518FA6B7000731F44 /* CPSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE4C439318FA6B7000731F44 /* CPSettingsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +150,9 @@
 		AE4C438C18FA508700731F44 /* CPMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPMenuCell.h; path = ViewControllers/CPMenuCell.h; sourceTree = "<group>"; };
 		AE4C438D18FA508700731F44 /* CPMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPMenuCell.m; path = ViewControllers/CPMenuCell.m; sourceTree = "<group>"; };
 		AE4C438E18FA508700731F44 /* CPMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CPMenuCell.xib; path = ViewControllers/CPMenuCell.xib; sourceTree = "<group>"; };
+		AE4C439118FA6B7000731F44 /* CPSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPSettingsViewController.h; path = ViewControllers/CPSettingsViewController.h; sourceTree = "<group>"; };
+		AE4C439218FA6B7000731F44 /* CPSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPSettingsViewController.m; path = ViewControllers/CPSettingsViewController.m; sourceTree = "<group>"; };
+		AE4C439318FA6B7000731F44 /* CPSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CPSettingsViewController.xib; path = ViewControllers/CPSettingsViewController.xib; sourceTree = "<group>"; };
 		D890258C2A944EA7A6C3ECC8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -225,6 +230,9 @@
 				658D6AA018FA6270009D6812 /* CPRackDetailViewController.h */,
 				658D6AA118FA6270009D6812 /* CPRackDetailViewController.m */,
 				658D6AA218FA6270009D6812 /* CPRackDetailViewController.xib */,
+				AE4C439118FA6B7000731F44 /* CPSettingsViewController.h */,
+				AE4C439218FA6B7000731F44 /* CPSettingsViewController.m */,
+				AE4C439318FA6B7000731F44 /* CPSettingsViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -436,6 +444,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE4C439518FA6B7000731F44 /* CPSettingsViewController.xib in Resources */,
 				AE4C437C18F91BFA00731F44 /* CPSignInViewController.xib in Resources */,
 				658D6A9F18FA59DA009D6812 /* CPRackMiniDetailViewController.xib in Resources */,
 				652D805618F7AA900027D752 /* data.json in Resources */,
@@ -518,6 +527,7 @@
 				AE4C438018FA073000731F44 /* CPAddParkingViewController.m in Sources */,
 				658D6AA318FA6270009D6812 /* CPRackDetailViewController.m in Sources */,
 				65173C2A18F38C57002B2C14 /* CPViewLocationViewController.m in Sources */,
+				AE4C439418FA6B7000731F44 /* CPSettingsViewController.m in Sources */,
 				AE4C437618F91AAF00731F44 /* CPEnterAccountViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
