@@ -19,7 +19,6 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
-    /* test for parse */
     [CPParseClient instance];
     
     [PFFacebookUtils initializeFacebook];
@@ -100,6 +99,10 @@
     
     //CPViewLocationViewController *vc = [[CPViewLocationViewController alloc] init];
     CPSignInViewController *vc = [[CPSignInViewController alloc] init];
+
+    //CPViewLocationViewController *vc = [[CPViewLocationViewController alloc] init];
+    //CPSignInViewController *vc = [[CPSignInViewController alloc] init];
+
     self.window.rootViewController = vc;
     
     self.window.backgroundColor = [UIColor whiteColor];

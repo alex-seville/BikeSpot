@@ -44,7 +44,7 @@
 /* number of spots */
 @dynamic numSpots;
 
-@dynamic coordinate;
+
 
 
 + (NSString *)parseClassName {
@@ -63,33 +63,12 @@
     
     self.address = dictionary[@"address"];
     self.numSpots = [dictionary[@"numSpots"] intValue];
-    
-    double latitude = [dictionary[@"latitude"] doubleValue];
-    double longitude = [dictionary[@"longitude"] doubleValue];
-    
-    [self setCoordinate:CLLocationCoordinate2DMake(latitude, longitude)];
+   
     
     return self;
 }
 
-- (MKMapItem*)mapItem {
-    
-    
-    
-    MKPlacemark *placemark = [[MKPlacemark alloc]
-                              initWithCoordinate:coordinate
-                              addressDictionary:nil];
-    
-    MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
-    mapItem.name = self.name;
-    
-    return mapItem;
-}
 
-- (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate {
-    PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLatitude:newCoordinate.latitude longitude:newCoordinate.longitude];
-    [self setGeoLocation:geoPoint];
-    
-}
+
 
 @end

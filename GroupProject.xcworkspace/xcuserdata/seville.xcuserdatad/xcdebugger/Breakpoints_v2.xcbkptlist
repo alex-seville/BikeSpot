@@ -6,16 +6,60 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GroupProject/ViewControllers/CPViewLocationViewController.m"
+            timestampString = "419060740.52582"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[CPViewLocationViewController mainMapView]"
+                  moduleName = "GroupProject"
+                  urlString = "file:///Users/seville/Documents/github/ios/GroupProject/GroupProject/ViewControllers/CPViewLocationViewController.m"
+                  timestampString = "419059489.391108"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[CPViewLocationViewController setMainMapView:]"
+                  moduleName = "GroupProject"
+                  urlString = "file:///Users/seville/Documents/github/ios/GroupProject/GroupProject/ViewControllers/CPViewLocationViewController.m"
+                  timestampString = "419059489.392116"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "31">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GroupProject/Models/CPRack.m"
-            timestampString = "418885644.263279"
+            filePath = "GroupProject/ViewControllers/CPRackMiniDetailViewController.m"
+            timestampString = "419062941.814981"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "-mapItem"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "-viewMoreButton:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,12 +70,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GroupProject/ViewControllers/CPViewLocationViewController.m"
-            timestampString = "418886293.289511"
+            timestampString = "419062958.886432"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "-stuff"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "-viewMoreDetails:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
