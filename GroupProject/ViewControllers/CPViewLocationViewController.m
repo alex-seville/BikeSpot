@@ -11,9 +11,11 @@
 #import "CPRack.h"
 #include <CoreLocation/CoreLocation.h>
 #import "CPRackAnnotation.h"
+#import "CPRackMiniDetailViewController.h"
 
 @interface CPViewLocationViewController ()
 @property (weak, nonatomic) IBOutlet MKMapView *mainMapView;
+
 
 @end
 
@@ -24,6 +26,12 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
+        /* this will be moved into mainViewController when it's ready */
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(viewMoreDetails:)
+                                                     name:ViewMoreRackDetails
+                                                   object:nil];
         
     }
     return self;
@@ -98,7 +106,26 @@
 }
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"AnnotationSelected" object:self userInfo:@{@"annotation": view.annotation} ];
+    
+    CPRackMiniDetailViewController *miniDetail = [[CPRackMiniDetailViewController alloc] init];
+    UIView *miniDetailView = miniDetail.view;
+    miniDetailView.frame = CGRectMake(0, self.view.frame.size.height+10, self.view.frame.size.width, 100);
+    [miniDetail setName:view.annotation.title];
+    [self.view addSubview:miniDetailView];
+
+    [UIView animateWithDuration:0.15 animations:^{
+        miniDetailView.frame = CGRectMake(0, self.view.frame.size.height-100, self.view.frame.size.width, 100);
+    } ];
+    
+    
 }
+
+-(void)viewMoreDetails:(NSNotification *) notification {
+    NSLog(@"view more details %@", (NSString *)notification.userInfo[@"name"]);
+    
+   /* do navigating */
+}
+
+
 
 @end
