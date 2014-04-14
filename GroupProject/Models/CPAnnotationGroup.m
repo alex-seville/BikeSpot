@@ -1,28 +1,26 @@
 //
-//  CPRackAnnotation.m
+//  CPAnnotationGroup.m
 //  GroupProject
 //
-//  Created by Alexander Seville on 4/12/14.
+//  Created by Alexander Seville on 4/13/14.
 //  Copyright (c) 2014 CodePath Group Project. All rights reserved.
 //
 
-#import "CPRackAnnotation.h"
-#import "CPRack.h"
+#import "CPAnnotationGroup.h"
+#import <MapKit/MapKit.h>
 
-@implementation CPRackAnnotation
+@implementation CPAnnotationGroup
 
--(id)initWithRack:(CPRack *)rack Location:(CLLocationCoordinate2D)location{
+-(id)initWithLocation:(CLLocationCoordinate2D)location{
     self = [super init];
     if (self){
         _coordinate = location;
-		_rack = rack;
-		
     }
     return self;
 }
 
 - (MKAnnotationView *)annotationView{
-    MKAnnotationView *annotationView = [[MKAnnotationView alloc] initWithAnnotation:self reuseIdentifier:@"RackAnnotation"];
+    MKAnnotationView *annotationView = [[MKAnnotationView alloc] initWithAnnotation:self reuseIdentifier:@"RackGroupAnnotation"];
     annotationView.enabled = true;
     annotationView.canShowCallout = true;
     
@@ -36,9 +34,7 @@
 
 - (NSString *)title{
     
-    return ((CPRack *)_rack).name;
+    return @"Group racks";
 }
-
-
 
 @end

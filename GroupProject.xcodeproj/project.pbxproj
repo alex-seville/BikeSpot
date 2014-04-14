@@ -20,6 +20,7 @@
 		6524D9DA18F23B570072620D /* ParseClient.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6524D9D918F23B570072620D /* ParseClient.plist */; };
 		652D805618F7AA900027D752 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 652D805418F7A3250027D752 /* data.json */; };
 		6548959B18ED08E3002E7F0E /* CPRack.m in Sources */ = {isa = PBXBuildFile; fileRef = 6548959A18ED08E3002E7F0E /* CPRack.m */; };
+		657BD82B18FB847A00A887EC /* CPAnnotationGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 657BD82A18FB847A00A887EC /* CPAnnotationGroup.m */; };
 		6583AF1918EC931D00D46333 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6583AF1818EC931D00D46333 /* Foundation.framework */; };
 		6583AF1B18EC931D00D46333 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6583AF1A18EC931D00D46333 /* CoreGraphics.framework */; };
 		6583AF1D18EC931D00D46333 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6583AF1C18EC931D00D46333 /* UIKit.framework */; };
@@ -95,6 +96,8 @@
 		652D805418F7A3250027D752 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		6548959918ED08E3002E7F0E /* CPRack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPRack.h; path = Models/CPRack.h; sourceTree = "<group>"; };
 		6548959A18ED08E3002E7F0E /* CPRack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPRack.m; path = Models/CPRack.m; sourceTree = "<group>"; };
+		657BD82918FB847A00A887EC /* CPAnnotationGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPAnnotationGroup.h; path = Models/CPAnnotationGroup.h; sourceTree = "<group>"; };
+		657BD82A18FB847A00A887EC /* CPAnnotationGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPAnnotationGroup.m; path = Models/CPAnnotationGroup.m; sourceTree = "<group>"; };
 		6583AF1518EC931D00D46333 /* GroupProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6583AF1818EC931D00D46333 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6583AF1A18EC931D00D46333 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -264,6 +267,8 @@
 				6548959A18ED08E3002E7F0E /* CPRack.m */,
 				5C66FE2D18F2788B00AB0965 /* CPUser.h */,
 				5C66FE2E18F2788B00AB0965 /* CPUser.m */,
+				657BD82918FB847A00A887EC /* CPAnnotationGroup.h */,
+				657BD82A18FB847A00A887EC /* CPAnnotationGroup.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -528,6 +533,7 @@
 				658D6AA318FA6270009D6812 /* CPRackDetailViewController.m in Sources */,
 				65173C2A18F38C57002B2C14 /* CPViewLocationViewController.m in Sources */,
 				AE4C439418FA6B7000731F44 /* CPSettingsViewController.m in Sources */,
+				657BD82B18FB847A00A887EC /* CPAnnotationGroup.m in Sources */,
 				AE4C437618F91AAF00731F44 /* CPEnterAccountViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

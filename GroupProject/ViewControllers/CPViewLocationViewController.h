@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
-#import "KPTreeController.h"
 
 @interface CPViewLocationViewController : UIViewController <MKMapViewDelegate>
 

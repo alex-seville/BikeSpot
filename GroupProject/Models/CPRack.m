@@ -55,6 +55,9 @@
     self = [super init];
     
     self.name = dictionary[@"name"];
+	if (!self.name || [self.name isEqual:@"_undetermined"]){
+		self.name = @"Bike Rack";
+	}
     self.isInGarage = [dictionary[@"isInGarage"] boolValue];
     self.isCommercial = [dictionary[@"isCommercial"] boolValue];
     self.safetyRating = [dictionary[@"safetyRating"] intValue];
@@ -63,6 +66,10 @@
     
     self.address = dictionary[@"address"];
     self.numSpots = [dictionary[@"numSpots"] intValue];
+	
+	self.geoLocation = [[PFGeoPoint alloc] init];
+	self.geoLocation.latitude = [dictionary[@"latitude"] doubleValue];
+	self.geoLocation.longitude = [dictionary[@"longitude"] doubleValue];
    
     
     return self;

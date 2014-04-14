@@ -12,6 +12,9 @@
 #include <CoreLocation/CoreLocation.h>
 #import "CPRackAnnotation.h"
 #import "CPRackMiniDetailViewController.h"
+#import "CPAnnotationGroup.h"
+#import <Parse/Parse.h>
+#import "CPParseClient.h"
 
 #define iphoneScaleFactorLatitude   9.0
 #define iphoneScaleFactorLongitude  11.0
@@ -19,6 +22,7 @@
 @interface CPViewLocationViewController ()
 @property (weak, nonatomic) IBOutlet MKMapView *mainMapView;
 @property (nonatomic, strong) NSMutableArray *annotations;
+@property (nonatomic, strong) NSMutableArray *racks;
 
 
 @end
@@ -30,6 +34,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+		[CPParseClient instance];
         
     }
     return self;
@@ -38,9 +43,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	
+	
+	
     
+	
     self.mainMapView.delegate = self;
     self.annotations = [[NSMutableArray alloc] init];
+	self.racks = [[NSMutableArray alloc] init];
+	 
 		
 }
 
@@ -52,6 +63,9 @@
 
 - (void)importPins
 {
+	
+	/* uncomment only if we need to re-import data */
+	/*
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"data" ofType:@"json"];
     NSData *fileData = [NSData dataWithContentsOfFile:filePath];
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:fileData options:kNilOptions error:nil];
@@ -74,23 +88,64 @@
        coordinate.latitude = latitude;
        coordinate.longitude = longitude;
        
-       CPRackAnnotation *annotation = [[CPRackAnnotation alloc] initWithTitle:rack.name Location:coordinate];
-       //[self.mainMapView addAnnotation:annotation];
+       CPRackAnnotation *annotation = [[CPRackAnnotation alloc] initWithRack:rack Location:coordinate];
+	   
+	   [self.racks addObject:rack];
 	   [self.annotations addObject:annotation];
+	   
+	   [rack saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
+		   NSString *objectId = rack.objectId;
+		   PFQuery *query = [PFQuery queryWithClassName:@"CPRack"];
+		   [query getObjectInBackgroundWithId:objectId block:^(PFObject *bikeRack, NSError *error) {
+			   // Do something with the returned PFObject in the bikeRack variable.
+			   NSLog(@"%@", (CPRack *)bikeRack);
+		   }];
+	   }];
+	   
 	}
 	[self.mainMapView addAnnotations:[self filterAnnotations:self.annotations modifyMap:false]];
+	*/
 }
 
 #pragma mark - mapview delegate methods
 
 - (void)mapView:(MKMapView *)aMapView didUpdateUserLocation:(MKUserLocation *)aUserLocation {
-    
+    PFQuery *query = [PFQuery queryWithClassName:@"CPRack"];
+	
     CLLocationCoordinate2D coord = self.mainMapView.userLocation.location.coordinate;
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coord, 1000, 1000);
     
     [self.mainMapView setRegion:region animated:YES];
-    
-    [self importPins];
+    //only if we need to import
+    //[self importPins];
+	// User's location
+	
+	PFGeoPoint *point = [PFGeoPoint geoPointWithLatitude:coord.latitude longitude:coord.longitude];
+	[query whereKey:@"geoLocation" nearGeoPoint:point withinKilometers:5];
+	//[query includeKey:kPAWParseUserKey];
+	query.limit = 30;
+	
+	[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+		if (error) {
+			NSLog(@"error in geo query!"); // todo why is this ever happening?
+		} else {
+			// We need to make new post objects from objects,
+			// and update allPosts and the map to reflect this new array.
+			// But we don't want to remove all annotations from the mapview blindly,
+			// so let's do some work to figure out what's new and what needs removing.
+			
+			// 1. Find genuinely new posts:
+			NSLog(@"object count %lu", (unsigned long)objects.count);
+			
+			for (PFObject *object in objects) {
+				CPRack *rack = (CPRack *)object;
+				CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(rack.geoLocation.latitude, rack.geoLocation.longitude);
+				CPRackAnnotation *annotation = [[CPRackAnnotation alloc] initWithRack:rack Location:coord];
+				[self.mainMapView addAnnotation:annotation];
+
+			}
+		}
+	}];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
@@ -133,13 +188,16 @@
 
 /* from: https://github.com/kviksilver/MKMapview-annotation-grouping/blob/master/mapView/mapViewViewController.m */
 -(NSArray *)filterAnnotations:(NSArray *)racksToFilter modifyMap:(BOOL)modifyMap{
-    float latDelta=self.mainMapView.region.span.latitudeDelta/iphoneScaleFactorLatitude;
+    
+	float latDelta=self.mainMapView.region.span.latitudeDelta/iphoneScaleFactorLatitude;
     float longDelta=self.mainMapView.region.span.longitudeDelta/iphoneScaleFactorLongitude;
+	
 	
     NSMutableArray *racksToShow=[[NSMutableArray alloc] initWithCapacity:0];
 	
     for (int i=0; i<[racksToFilter count]; i++) {
         CPRackAnnotation *checkingLocation=[racksToFilter objectAtIndex:i];
+		
         CLLocationDegrees latitude = checkingLocation.coordinate.latitude;
         CLLocationDegrees longitude = checkingLocation.coordinate.longitude;
 		
@@ -150,7 +208,9 @@
                 found=TRUE;
 				if (modifyMap){
 					[self.mainMapView removeAnnotation:checkingLocation];
+					//CPAnnotationGroup *group
 				}
+				
                 break;
             }
         }
@@ -163,6 +223,9 @@
 		
     }
     return racksToShow;
+	 
+	//return racksToFilter;
+	
 }
 
 
