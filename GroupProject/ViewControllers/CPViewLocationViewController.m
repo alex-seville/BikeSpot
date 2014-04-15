@@ -110,17 +110,23 @@
 #pragma mark - mapview delegate methods
 
 - (void)mapView:(MKMapView *)aMapView didUpdateUserLocation:(MKUserLocation *)aUserLocation {
-    PFQuery *query = [PFQuery queryWithClassName:@"CPRack"];
-	
-    CLLocationCoordinate2D coord = self.mainMapView.userLocation.location.coordinate;
+	CLLocationCoordinate2D coord = self.mainMapView.userLocation.location.coordinate;
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coord, 1000, 1000);
     
     [self.mainMapView setRegion:region animated:YES];
+	
+	[self findRacksWithLocation:coord];
+}
+
+- (void) findRacksWithLocation:(CLLocationCoordinate2D)location {
+	PFQuery *query = [PFQuery queryWithClassName:@"CPRack"];
+	
+    
     //only if we need to import
     //[self importPins];
 	// User's location
 	
-	PFGeoPoint *point = [PFGeoPoint geoPointWithLatitude:coord.latitude longitude:coord.longitude];
+	PFGeoPoint *point = [PFGeoPoint geoPointWithLatitude:location.latitude longitude:location.longitude];
 	[query whereKey:@"geoLocation" nearGeoPoint:point withinKilometers:5];
 	//[query includeKey:kPAWParseUserKey];
 	query.limit = 30;
@@ -136,13 +142,13 @@
 			
 			// 1. Find genuinely new posts:
 			NSLog(@"object count %lu", (unsigned long)objects.count);
-			
+			[self.mainMapView removeAnnotations:self.mainMapView.annotations];
 			for (PFObject *object in objects) {
 				CPRack *rack = (CPRack *)object;
 				CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(rack.geoLocation.latitude, rack.geoLocation.longitude);
 				CPRackAnnotation *annotation = [[CPRackAnnotation alloc] initWithRack:rack Location:coord];
 				[self.mainMapView addAnnotation:annotation];
-
+				
 			}
 		}
 	}];
@@ -182,7 +188,8 @@
 }
 
 -(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
-	[self filterAnnotations:self.annotations modifyMap:true];
+	//[self filterAnnotations:self.annotations modifyMap:true];
+	[self findRacksWithLocation:mapView.centerCoordinate];
 }
 
 
