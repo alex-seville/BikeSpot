@@ -23,7 +23,8 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mainMapView;
 @property (nonatomic, strong) NSMutableArray *annotations;
 @property (nonatomic, strong) NSMutableArray *racks;
-
+@property (nonatomic, strong) CPRackMiniDetailViewController *miniDetail;
+@property (nonatomic, strong) MKPinAnnotationView *selectedAnnotationView;
 
 @end
 
@@ -156,7 +157,11 @@
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
     
-    MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"RackAnnotation"];
+	//show current location as default blue dot
+	if ([annotation isKindOfClass:[MKUserLocation class]]) return nil;
+    
+	//for our racks, create an annotationview
+	MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"RackAnnotation"];
 	
 	if(!annotationView){
 		annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"RackAnnotation"];
@@ -172,18 +177,46 @@
     return annotationView;
 }
 
-- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
-    
-    CPRackMiniDetailViewController *miniDetail = [[CPRackMiniDetailViewController alloc] init];
-    UIView *miniDetailView = miniDetail.view;
-    miniDetailView.frame = CGRectMake(0, self.view.frame.size.height+10, self.view.frame.size.width, 100);
-    [miniDetail setName:view.annotation.title];
-    [self.view addSubview:miniDetailView];
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKPinAnnotationView *)view {
+	
+	[self.mainMapView deselectAnnotation:view.annotation animated:NO];
+	
+	if(![view.annotation isKindOfClass:[MKUserLocation class]]){
+		
+		if ([self.selectedAnnotationView isEqual:view]){
+			NSLog(@"clicking the same annotation again");
+			self.selectedAnnotationView = nil;
+			view.pinColor = MKPinAnnotationColorRed;
+			UIView *miniDetailView = self.view.subviews.lastObject;
+			[UIView animateWithDuration:0.15 animations:^{
+				miniDetailView.frame = CGRectMake(0, self.view.frame.size.height+10, self.view.frame.size.width, 100);
+			} ];
+		}else{
+			view.pinColor = MKPinAnnotationColorGreen;
+			
+			if (self.selectedAnnotationView != nil){
+				NSLog(@"clicking different annotation");
+				self.selectedAnnotationView.pinColor =MKPinAnnotationColorRed;
+				
+				
+				[self.miniDetail setName:view.annotation.title];
+				
+			}else{
+				NSLog(@"clicking annotation");
+				
+				self.miniDetail = [[CPRackMiniDetailViewController alloc] init];
+				UIView *miniDetailView = self.miniDetail.view;
+				miniDetailView.frame = CGRectMake(0, self.view.frame.size.height+10, self.view.frame.size.width, 100);
+				[self.miniDetail setName:view.annotation.title];
+				[self.view addSubview:miniDetailView];
 
-    [UIView animateWithDuration:0.15 animations:^{
-        miniDetailView.frame = CGRectMake(0, self.view.frame.size.height-100, self.view.frame.size.width, 100);
-    } ];
-    
+				[UIView animateWithDuration:0.15 animations:^{
+					miniDetailView.frame = CGRectMake(0, self.view.frame.size.height-100, self.view.frame.size.width, 100);
+				} ];
+			}
+			self.selectedAnnotationView = view;
+		}
+    }
     
 }
 
