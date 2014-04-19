@@ -13,7 +13,11 @@ NSString * const ViewMoreRackDetails = @"ViewMoreRackDetails";
 @interface CPRackMiniDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *rackNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *rackDescriptionLabel;
-- (IBAction)onViewMoreTap:(UITapGestureRecognizer *)sender;
+
+- (IBAction)onPan:(UIPanGestureRecognizer *)sender;
+@property (nonatomic, assign) double startPan;
+@property (nonatomic, assign) double startHeight;
+@property (nonatomic, assign) double startY;
 
 
 
@@ -46,8 +50,44 @@ NSString * const ViewMoreRackDetails = @"ViewMoreRackDetails";
     self.rackNameLabel.text = name;
 }
 
-- (IBAction)onViewMoreTap:(UITapGestureRecognizer *)sender {
-	NSLog(@"click");
-	// [[NSNotificationCenter defaultCenter] postNotificationName:ViewMoreRackDetails object:self userInfo:@{@"name": @"test"}];
+
+
+- (IBAction)onPan:(UIPanGestureRecognizer *)sender {
+	CGPoint point = [sender locationInView:self.view];
+	CGPoint velocity = [sender velocityInView:self.view];
+	
+	
+	if (sender.state == UIGestureRecognizerStateBegan){
+		CGRect viewFrame = self.view.frame;
+		self.startHeight =viewFrame.size.height;
+		self.startY =viewFrame.origin.y;
+	}
+	else if (sender.state == UIGestureRecognizerStateChanged){
+		CGRect viewFrame = self.view.frame;
+		
+		double increase = self.startPan-point.y;
+		
+		NSLog(@"origin, height: %d %d", (viewFrame.origin.y-increase), (viewFrame.size.height+increase));
+		
+		if (viewFrame.origin.y-increase  > 300 &&
+			viewFrame.size.height+increase > 100){
+		
+			viewFrame.origin.y -= increase;
+			
+			viewFrame.size.height += increase;
+			self.view.frame = viewFrame;
+		}
+	}else if (sender.state == UIGestureRecognizerStateEnded){
+		CGRect viewFrame = self.view.frame;
+		if (velocity.y > 0){
+			
+			viewFrame.origin.y = self.startY;
+			viewFrame.size.height = self.startHeight;
+		}else{
+			viewFrame.origin.y = self.startY/2;
+			viewFrame.size.height = 2 * self.startHeight;
+		}
+	}
+	self.startPan = point.y;
 }
 @end

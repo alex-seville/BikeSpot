@@ -25,6 +25,7 @@
 @property (nonatomic, strong) NSMutableArray *racks;
 @property (nonatomic, strong) CPRackMiniDetailViewController *miniDetail;
 @property (nonatomic, strong) MKPinAnnotationView *selectedAnnotationView;
+@property (weak, nonatomic) IBOutlet UISearchBar *locationSearchBar;
 
 @end
 
@@ -45,9 +46,9 @@
 {
     [super viewDidLoad];
 	
+	self.navigationController.navigationBar.hidden=YES;
 	
-	
-    
+    self.locationSearchBar.delegate = self;
 	
     self.mainMapView.delegate = self;
     self.annotations = [[NSMutableArray alloc] init];
@@ -106,6 +107,28 @@
 	}
 	[self.mainMapView addAnnotations:[self filterAnnotations:self.annotations modifyMap:false]];
 	*/
+}
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+	[searchBar resignFirstResponder];
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder geocodeAddressString:searchBar.text completionHandler:^(NSArray *placemarks, NSError *error) {
+        //Error checking
+		
+        CLPlacemark *placemark = [placemarks objectAtIndex:0];
+        MKCoordinateRegion region;
+        region.center.latitude = placemark.region.center.latitude;
+        region.center.longitude = placemark.region.center.longitude;
+        MKCoordinateSpan span;
+        double radius = placemark.region.radius / 10000; // convert to km
+		
+        NSLog(@"[searchBarSearchButtonClicked] Radius is %f", radius);
+        span.latitudeDelta = radius / 112.0;
+		
+        region.span = span;
+		
+        [self.mainMapView setRegion:region animated:YES];
+    }];
 }
 
 #pragma mark - mapview delegate methods
@@ -203,7 +226,7 @@
 				
 			}else{
 				NSLog(@"clicking annotation");
-				
+								
 				self.miniDetail = [[CPRackMiniDetailViewController alloc] init];
 				UIView *miniDetailView = self.miniDetail.view;
 				miniDetailView.frame = CGRectMake(0, self.view.frame.size.height+10, self.view.frame.size.width, 100);
@@ -213,6 +236,8 @@
 				[UIView animateWithDuration:0.15 animations:^{
 					miniDetailView.frame = CGRectMake(0, self.view.frame.size.height-100, self.view.frame.size.width, 100);
 				} ];
+				
+				
 			}
 			self.selectedAnnotationView = view;
 		}

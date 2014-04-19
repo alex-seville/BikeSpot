@@ -93,11 +93,7 @@
     
     [self.contentView addGestureRecognizer:panGestureRecognizer];
     
-    /* listen for navigation events */
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(viewMoreDetails:)
-                                                 name:ViewMoreRackDetails
-                                               object:nil];
+   
 }
 
 - (void)didReceiveMemoryWarning
@@ -181,10 +177,6 @@
     
 }
 
--(void)viewMoreDetails:(NSNotification *) notification {
-    NSLog(@"view more details %@", (NSString *)notification.userInfo[@"name"]);
-    
-    /* do navigating */
-}
+
 
 @end

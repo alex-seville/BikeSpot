@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -35,19 +35,9 @@
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="view more" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INs-jj-spJ">
-                    <rect key="frame" x="231" y="64" width="69" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <gestureRecognizers/>
-                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                    <connections>
-                        <outletCollection property="gestureRecognizers" destination="r7h-pw-Iaa" appends="YES" id="BZe-BL-nFV"/>
-                    </connections>
-                </label>
             </subviews>
             <color key="backgroundColor" red="0.25490197539999998" green="0.53725492949999998" blue="0.082352943720000002" alpha="1" colorSpace="deviceRGB"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="5Kg-fc-17s" firstAttribute="top" secondItem="v3a-cg-ch9" secondAttribute="bottom" constant="8" id="8Fc-A1-2Dy"/>
                 <constraint firstItem="v3a-cg-ch9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="11" id="BZC-S7-Vlb"/>
@@ -59,11 +49,14 @@
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-        </view>
-        <tapGestureRecognizer id="r7h-pw-Iaa">
             <connections>
-                <action selector="onViewMoreTap:" destination="-1" id="E7x-pW-Nl0"/>
+                <outletCollection property="gestureRecognizers" destination="neT-bi-NoK" appends="YES" id="BRE-aJ-tIP"/>
             </connections>
-        </tapGestureRecognizer>
+        </view>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="neT-bi-NoK">
+            <connections>
+                <action selector="onPan:" destination="-1" id="7ef-eT-UZd"/>
+            </connections>
+        </panGestureRecognizer>
     </objects>
 </document>
