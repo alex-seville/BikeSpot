@@ -19,6 +19,7 @@
 @property (nonatomic, strong) CPRack *rack;
 
 -(id)initWithRack:(CPRack *)rack Location:(CLLocationCoordinate2D)location;
+-(id)initWithLocation:(CLLocationCoordinate2D)location;
 - (MKAnnotationView *)annotationView;
 
 @end

@@ -15,6 +15,7 @@
 #import "CPAnnotationGroup.h"
 #import <Parse/Parse.h>
 #import "CPParseClient.h"
+#import "CPAddParkingViewController.h"
 
 #define iphoneScaleFactorLatitude   9.0
 #define iphoneScaleFactorLongitude  11.0
@@ -23,9 +24,15 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mainMapView;
 @property (nonatomic, strong) NSMutableArray *annotations;
 @property (nonatomic, strong) NSMutableArray *racks;
+
+/* this may have to be refactored */
 @property (nonatomic, strong) CPRackMiniDetailViewController *miniDetail;
+@property (nonatomic, strong) CPAddParkingViewController *addNew;
+
+
 @property (nonatomic, strong) MKPinAnnotationView *selectedAnnotationView;
 @property (weak, nonatomic) IBOutlet UISearchBar *locationSearchBar;
+- (IBAction)onLongPress:(UILongPressGestureRecognizer *)sender;
 
 @end
 
@@ -297,4 +304,33 @@
 
 
 
+- (IBAction)onLongPress:(UILongPressGestureRecognizer *)sender {
+	if (sender.state == UIGestureRecognizerStateBegan){
+		
+		CGPoint location = [sender locationInView:self.mainMapView];
+		CLLocationCoordinate2D coord = [self.mainMapView convertPoint:location toCoordinateFromView:self.mainMapView];
+		CPRackAnnotation *newAnnot = [[CPRackAnnotation alloc] initWithLocation:coord];
+		
+		
+		[self.mainMapView addAnnotation:newAnnot];
+		
+		
+		
+		self.addNew = [[CPAddParkingViewController alloc] init];
+		UIView *addNewView = self.addNew.view;
+		addNewView.frame = CGRectMake(0, self.view.frame.size.height+10, self.view.frame.size.width, 100);
+		
+		[self.view addSubview:addNewView];
+		
+		/* disable map interactions until save or cancel are pressed */
+		[self.mainMapView setUserInteractionEnabled:false];
+		
+		[UIView animateWithDuration:0.15 animations:^{
+			addNewView.frame = CGRectMake(0, self.view.frame.size.height-400, self.view.frame.size.width, 400);
+			/* the map needs to recenter somehow...*/
+		} ];
+
+		
+	}
+}
 @end

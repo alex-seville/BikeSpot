@@ -21,6 +21,16 @@
     return self;
 }
 
+-(id)initWithLocation:(CLLocationCoordinate2D)location{
+    self = [super init];
+    if (self){
+        _coordinate = location;
+		
+		
+    }
+    return self;
+}
+
 - (MKAnnotationView *)annotationView{
     MKAnnotationView *annotationView = [[MKAnnotationView alloc] initWithAnnotation:self reuseIdentifier:@"RackAnnotation"];
     annotationView.enabled = true;

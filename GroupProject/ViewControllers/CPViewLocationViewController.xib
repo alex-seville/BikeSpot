@@ -19,6 +19,10 @@
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k1Q-UW-FUk">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="nUu-i8-Iu8" appends="YES" id="1QN-gn-bsl"/>
+                    </connections>
                 </mapView>
                 <searchBar contentMode="redraw" fixedFrame="YES" placeholder="enter your destination" translatesAutoresizingMaskIntoConstraints="NO" id="gwV-qj-AEB">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -30,5 +34,10 @@
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
+        <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="nUu-i8-Iu8">
+            <connections>
+                <action selector="onLongPress:" destination="-1" id="77l-ms-rjC"/>
+            </connections>
+        </pongPressGestureRecognizer>
     </objects>
 </document>
