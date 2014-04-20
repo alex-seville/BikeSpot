@@ -29,10 +29,14 @@
 @property (nonatomic, strong) CPRackMiniDetailViewController *miniDetail;
 @property (nonatomic, strong) CPAddParkingViewController *addNew;
 
+@property (weak, nonatomic) IBOutlet UIView *searchBarView;
+
 
 @property (nonatomic, strong) MKPinAnnotationView *selectedAnnotationView;
 @property (weak, nonatomic) IBOutlet UISearchBar *locationSearchBar;
 - (IBAction)onLongPress:(UILongPressGestureRecognizer *)sender;
+
+@property (nonatomic, strong) CLLocationManager *locationManager;
 
 @end
 
@@ -44,6 +48,11 @@
     if (self) {
         // Custom initialization
 		[CPParseClient instance];
+		self.locationManager = [[CLLocationManager alloc] init];
+		self.locationManager.delegate = self;
+		[self.locationManager startUpdatingLocation];
+		
+				
         
     }
     return self;
@@ -60,6 +69,10 @@
     self.mainMapView.delegate = self;
     self.annotations = [[NSMutableArray alloc] init];
 	self.racks = [[NSMutableArray alloc] init];
+	
+	self.searchBarView.layer.borderWidth = 1;
+	self.searchBarView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+
 	 
 		
 }
@@ -134,20 +147,33 @@
 		
         region.span = span;
 		
+		
+		CPRackAnnotation *newAnnot = [[CPRackAnnotation alloc] initWithLocation:placemark.location.coordinate];
+		
+		
+		[self.mainMapView addAnnotation:newAnnot];
+		
+		
         [self.mainMapView setRegion:region animated:YES];
     }];
 }
 
 #pragma mark - mapview delegate methods
 
+
+
 - (void)mapView:(MKMapView *)aMapView didUpdateUserLocation:(MKUserLocation *)aUserLocation {
+	/*
 	CLLocationCoordinate2D coord = self.mainMapView.userLocation.location.coordinate;
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coord, 1000, 1000);
     
     [self.mainMapView setRegion:region animated:YES];
 	
 	[self findRacksWithLocation:coord];
+	 */
 }
+
+
 
 - (void) findRacksWithLocation:(CLLocationCoordinate2D)location {
 	PFQuery *query = [PFQuery queryWithClassName:@"CPRack"];
@@ -219,7 +245,7 @@
 			view.pinColor = MKPinAnnotationColorRed;
 			UIView *miniDetailView = self.view.subviews.lastObject;
 			[UIView animateWithDuration:0.15 animations:^{
-				miniDetailView.frame = CGRectMake(0, self.view.frame.size.height+10, self.view.frame.size.width, 100);
+				miniDetailView.frame = CGRectMake(10, self.view.frame.size.height+10, self.view.frame.size.width-20, 100);
 			} ];
 		}else{
 			view.pinColor = MKPinAnnotationColorGreen;
@@ -236,12 +262,12 @@
 								
 				self.miniDetail = [[CPRackMiniDetailViewController alloc] init];
 				UIView *miniDetailView = self.miniDetail.view;
-				miniDetailView.frame = CGRectMake(0, self.view.frame.size.height+10, self.view.frame.size.width, 100);
+				miniDetailView.frame = CGRectMake(10, self.view.frame.size.height+10, self.view.frame.size.width-20, 100);
 				[self.miniDetail setName:view.annotation.title];
 				[self.view addSubview:miniDetailView];
 
 				[UIView animateWithDuration:0.15 animations:^{
-					miniDetailView.frame = CGRectMake(0, self.view.frame.size.height-100, self.view.frame.size.width, 100);
+					miniDetailView.frame = CGRectMake(10, self.view.frame.size.height-100, self.view.frame.size.width-20, 100);
 				} ];
 				
 				
@@ -332,5 +358,16 @@
 
 		
 	}
+}
+
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+	CLLocationCoordinate2D coord = ((CLLocation *)locations[0]).coordinate;
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coord, 1000, 1000);
+    
+    [self.mainMapView setRegion:region animated:YES];
+	
+	[self findRacksWithLocation:coord];
+	[self.locationManager stopUpdatingLocation];
 }
 @end
