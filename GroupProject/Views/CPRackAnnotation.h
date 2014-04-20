@@ -17,6 +17,7 @@
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 @property (copy, nonatomic) NSString *title;
 @property (nonatomic, strong) CPRack *rack;
+@property (nonatomic, assign) bool selected;
 
 -(id)initWithRack:(CPRack *)rack Location:(CLLocationCoordinate2D)location;
 -(id)initWithLocation:(CLLocationCoordinate2D)location;
