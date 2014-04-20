@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="locationSearchBar" destination="gwV-qj-AEB" id="0UH-xk-bNw"/>
                 <outlet property="mainMapView" destination="k1Q-UW-FUk" id="K2s-97-Efq"/>
+                <outlet property="searchBarView" destination="Smg-7K-V2g" id="gJK-Ue-LhU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,10 +25,15 @@
                         <outletCollection property="gestureRecognizers" destination="nUu-i8-Iu8" appends="YES" id="1QN-gn-bsl"/>
                     </connections>
                 </mapView>
-                <searchBar contentMode="redraw" fixedFrame="YES" placeholder="enter your destination" translatesAutoresizingMaskIntoConstraints="NO" id="gwV-qj-AEB">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Smg-7K-V2g">
+                    <rect key="frame" x="10" y="22" width="300" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                </view>
+                <searchBar contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" placeholder="enter your destination" translatesAutoresizingMaskIntoConstraints="NO" id="gwV-qj-AEB">
+                    <rect key="frame" x="10" y="22" width="300" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                 </searchBar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

@@ -38,6 +38,10 @@
 		658D6A9F18FA59DA009D6812 /* CPRackMiniDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 658D6A9D18FA59DA009D6812 /* CPRackMiniDetailViewController.xib */; };
 		658D6AA318FA6270009D6812 /* CPRackDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 658D6AA118FA6270009D6812 /* CPRackDetailViewController.m */; };
 		658D6AA418FA6270009D6812 /* CPRackDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 658D6AA218FA6270009D6812 /* CPRackDetailViewController.xib */; };
+		65B2F924190438B20057BC8B /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B2F923190438B20057BC8B /* CoreMedia.framework */; };
+		65B2F926190438BC0057BC8B /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B2F925190438BC0057BC8B /* CoreVideo.framework */; };
+		65B2F928190438C90057BC8B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B2F927190438C90057BC8B /* OpenGLES.framework */; };
+		65B2F92A190438D60057BC8B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B2F929190438D60057BC8B /* AVFoundation.framework */; };
 		65DA83F318EDF7A70091FC1C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DA83F218EDF7A70091FC1C /* Parse.framework */; };
 		65DA83F518EDF7EA0091FC1C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DA83F418EDF7EA0091FC1C /* AudioToolbox.framework */; };
 		65DA83F718EDF7F10091FC1C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DA83F618EDF7F10091FC1C /* CFNetwork.framework */; };
@@ -122,6 +126,10 @@
 		658D6AA018FA6270009D6812 /* CPRackDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPRackDetailViewController.h; path = ViewControllers/CPRackDetailViewController.h; sourceTree = "<group>"; };
 		658D6AA118FA6270009D6812 /* CPRackDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPRackDetailViewController.m; path = ViewControllers/CPRackDetailViewController.m; sourceTree = "<group>"; };
 		658D6AA218FA6270009D6812 /* CPRackDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CPRackDetailViewController.xib; path = ViewControllers/CPRackDetailViewController.xib; sourceTree = "<group>"; };
+		65B2F923190438B20057BC8B /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		65B2F925190438BC0057BC8B /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		65B2F927190438C90057BC8B /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		65B2F929190438D60057BC8B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		65DA83F218EDF7A70091FC1C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		65DA83F418EDF7EA0091FC1C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		65DA83F618EDF7F10091FC1C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -164,13 +172,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65DA83FF18EDF8210091FC1C /* QuartzCore.framework in Frameworks */,
+				65B2F92A190438D60057BC8B /* AVFoundation.framework in Frameworks */,
+				65B2F928190438C90057BC8B /* OpenGLES.framework in Frameworks */,
+				65B2F926190438BC0057BC8B /* CoreVideo.framework in Frameworks */,
+				65B2F924190438B20057BC8B /* CoreMedia.framework in Frameworks */,
 				65173C2D18F6320A002B2C14 /* MapKit.framework in Frameworks */,
 				65E4E52718EFAD2F00559B80 /* Accounts.framework in Frameworks */,
 				65DA840718EDFCE30091FC1C /* libz.1.2.5.dylib in Frameworks */,
 				65DA840518EDF83D0091FC1C /* SystemConfiguration.framework in Frameworks */,
 				65DA840318EDF8330091FC1C /* StoreKit.framework in Frameworks */,
 				65DA840118EDF8290091FC1C /* Security.framework in Frameworks */,
-				65DA83FF18EDF8210091FC1C /* QuartzCore.framework in Frameworks */,
 				65DA83FD18EDF8180091FC1C /* MobileCoreServices.framework in Frameworks */,
 				65DA83F918EDF8020091FC1C /* CoreLocation.framework in Frameworks */,
 				6583AF1B18EC931D00D46333 /* CoreGraphics.framework in Frameworks */,
@@ -297,6 +309,10 @@
 		6583AF1718EC931D00D46333 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				65B2F929190438D60057BC8B /* AVFoundation.framework */,
+				65B2F927190438C90057BC8B /* OpenGLES.framework */,
+				65B2F925190438BC0057BC8B /* CoreVideo.framework */,
+				65B2F923190438B20057BC8B /* CoreMedia.framework */,
 				65173C2C18F6320A002B2C14 /* MapKit.framework */,
 				65E4E52818EFAD6A00559B80 /* FacebookSDK.framework */,
 				65E4E52618EFAD2F00559B80 /* Accounts.framework */,

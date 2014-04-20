@@ -12,41 +12,27 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" alpha="0.49999999999999961" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3a-cg-ch9">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3a-cg-ch9">
                     <rect key="frame" x="20" y="11" width="280" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="eFi-JR-qo4"/>
-                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="5Kg-fc-17s">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="5Kg-fc-17s">
                     <rect key="frame" x="20" y="40" width="280" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="280" id="fwb-09-NBI"/>
-                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="0.25490197539999998" green="0.53725492949999998" blue="0.082352943720000002" alpha="1" colorSpace="deviceRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <gestureRecognizers/>
-            <constraints>
-                <constraint firstItem="5Kg-fc-17s" firstAttribute="top" secondItem="v3a-cg-ch9" secondAttribute="bottom" constant="8" id="8Fc-A1-2Dy"/>
-                <constraint firstItem="v3a-cg-ch9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="11" id="BZC-S7-Vlb"/>
-                <constraint firstAttribute="trailing" secondItem="5Kg-fc-17s" secondAttribute="trailing" constant="20" id="C17-PB-CIi"/>
-                <constraint firstAttribute="trailing" secondItem="v3a-cg-ch9" secondAttribute="trailing" constant="20" id="Rtv-Xf-XtZ"/>
-                <constraint firstItem="5Kg-fc-17s" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="a5N-qm-uqY"/>
-                <constraint firstItem="v3a-cg-ch9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="mRf-pJ-7w9"/>
-                <constraint firstItem="5Kg-fc-17s" firstAttribute="top" secondItem="v3a-cg-ch9" secondAttribute="bottom" constant="8" id="ox1-pq-rba"/>
-            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <connections>
