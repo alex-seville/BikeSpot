@@ -75,6 +75,9 @@
 	self.searchBarView.layer.shadowOpacity = 0.3;
 	self.searchBarView.layer.shadowOffset = CGSizeMake(0, 0);
 	self.searchBarView.layer.cornerRadius = 2;
+	
+	
+	
 		
 }
 
