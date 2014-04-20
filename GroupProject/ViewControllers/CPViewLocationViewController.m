@@ -307,16 +307,18 @@
 - (IBAction)onLongPress:(UILongPressGestureRecognizer *)sender {
 	if (sender.state == UIGestureRecognizerStateBegan){
 		
+
 		CGPoint location = [sender locationInView:self.mainMapView];
 		CLLocationCoordinate2D coord = [self.mainMapView convertPoint:location toCoordinateFromView:self.mainMapView];
 		CPRackAnnotation *newAnnot = [[CPRackAnnotation alloc] initWithLocation:coord];
 		
 		
+        // TODO only add if user actually added a bike rack
 		[self.mainMapView addAnnotation:newAnnot];
 		
 		
 		
-		self.addNew = [[CPAddParkingViewController alloc] init];
+		self.addNew = [[CPAddParkingViewController alloc] initWithLocation:coord];
 		UIView *addNewView = self.addNew.view;
 		addNewView.frame = CGRectMake(0, self.view.frame.size.height+10, self.view.frame.size.width, 100);
 		
@@ -327,6 +329,7 @@
 		
 		[UIView animateWithDuration:0.15 animations:^{
 			addNewView.frame = CGRectMake(0, self.view.frame.size.height-400, self.view.frame.size.width, 400);
+            self.locationSearchBar.hidden = TRUE;
 			/* the map needs to recenter somehow...*/
 		} ];
 

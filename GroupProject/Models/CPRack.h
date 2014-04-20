@@ -44,5 +44,8 @@
 /* number of spots */
 @property int numSpots;
 
+/* username of user who added the bike rack */
+@property (retain) NSString *createdBy;
+
 
 @end

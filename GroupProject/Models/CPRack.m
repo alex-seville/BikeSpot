@@ -44,6 +44,10 @@
 /* number of spots */
 @dynamic numSpots;
 
+/* username of user who added this rack */
+@dynamic createdBy;
+
+
 
 
 
@@ -66,6 +70,7 @@
     
     self.address = dictionary[@"address"];
     self.numSpots = [dictionary[@"numSpots"] intValue];
+    self.createdBy = dictionary[@"createdBy"];
 	
 	self.geoLocation = [[PFGeoPoint alloc] init];
 	self.geoLocation.latitude = [dictionary[@"latitude"] doubleValue];

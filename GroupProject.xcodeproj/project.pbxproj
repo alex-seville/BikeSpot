@@ -54,8 +54,6 @@
 		AE4C437718F91AAF00731F44 /* CPEnterAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE4C437518F91AAF00731F44 /* CPEnterAccountViewController.xib */; };
 		AE4C437B18F91BFA00731F44 /* CPSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4C437918F91BFA00731F44 /* CPSignInViewController.m */; };
 		AE4C437C18F91BFA00731F44 /* CPSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE4C437A18F91BFA00731F44 /* CPSignInViewController.xib */; };
-		AE4C438018FA073000731F44 /* CPAddParkingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4C437E18FA073000731F44 /* CPAddParkingViewController.m */; };
-		AE4C438118FA073000731F44 /* CPAddParkingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE4C437F18FA073000731F44 /* CPAddParkingViewController.xib */; };
 		AE4C438518FA074600731F44 /* CPSearchSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4C438318FA074600731F44 /* CPSearchSettingsViewController.m */; };
 		AE4C438618FA074600731F44 /* CPSearchSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE4C438418FA074600731F44 /* CPSearchSettingsViewController.xib */; };
 		AE4C438A18FA075E00731F44 /* CPUserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4C438818FA075E00731F44 /* CPUserProfileViewController.m */; };
@@ -64,6 +62,8 @@
 		AE4C439018FA508700731F44 /* CPMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE4C438E18FA508700731F44 /* CPMenuCell.xib */; };
 		AE4C439418FA6B7000731F44 /* CPSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4C439218FA6B7000731F44 /* CPSettingsViewController.m */; };
 		AE4C439518FA6B7000731F44 /* CPSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE4C439318FA6B7000731F44 /* CPSettingsViewController.xib */; };
+		AEC149BC1903366800A66CE6 /* CPAddParkingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC149BA1903366800A66CE6 /* CPAddParkingViewController.m */; };
+		AEC149BD1903366800A66CE6 /* CPAddParkingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEC149BB1903366800A66CE6 /* CPAddParkingViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,9 +141,6 @@
 		AE4C437818F91BFA00731F44 /* CPSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPSignInViewController.h; path = ViewControllers/CPSignInViewController.h; sourceTree = "<group>"; };
 		AE4C437918F91BFA00731F44 /* CPSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPSignInViewController.m; path = ViewControllers/CPSignInViewController.m; sourceTree = "<group>"; };
 		AE4C437A18F91BFA00731F44 /* CPSignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CPSignInViewController.xib; path = ViewControllers/CPSignInViewController.xib; sourceTree = "<group>"; };
-		AE4C437D18FA073000731F44 /* CPAddParkingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPAddParkingViewController.h; path = ViewControllers/CPAddParkingViewController.h; sourceTree = "<group>"; };
-		AE4C437E18FA073000731F44 /* CPAddParkingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPAddParkingViewController.m; path = ViewControllers/CPAddParkingViewController.m; sourceTree = "<group>"; };
-		AE4C437F18FA073000731F44 /* CPAddParkingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CPAddParkingViewController.xib; path = ViewControllers/CPAddParkingViewController.xib; sourceTree = "<group>"; };
 		AE4C438218FA074600731F44 /* CPSearchSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPSearchSettingsViewController.h; path = ViewControllers/CPSearchSettingsViewController.h; sourceTree = "<group>"; };
 		AE4C438318FA074600731F44 /* CPSearchSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPSearchSettingsViewController.m; path = ViewControllers/CPSearchSettingsViewController.m; sourceTree = "<group>"; };
 		AE4C438418FA074600731F44 /* CPSearchSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CPSearchSettingsViewController.xib; path = ViewControllers/CPSearchSettingsViewController.xib; sourceTree = "<group>"; };
@@ -156,6 +153,9 @@
 		AE4C439118FA6B7000731F44 /* CPSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPSettingsViewController.h; path = ViewControllers/CPSettingsViewController.h; sourceTree = "<group>"; };
 		AE4C439218FA6B7000731F44 /* CPSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPSettingsViewController.m; path = ViewControllers/CPSettingsViewController.m; sourceTree = "<group>"; };
 		AE4C439318FA6B7000731F44 /* CPSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CPSettingsViewController.xib; path = ViewControllers/CPSettingsViewController.xib; sourceTree = "<group>"; };
+		AEC149B91903366800A66CE6 /* CPAddParkingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPAddParkingViewController.h; path = ViewControllers/CPAddParkingViewController.h; sourceTree = "<group>"; };
+		AEC149BA1903366800A66CE6 /* CPAddParkingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPAddParkingViewController.m; path = ViewControllers/CPAddParkingViewController.m; sourceTree = "<group>"; };
+		AEC149BB1903366800A66CE6 /* CPAddParkingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CPAddParkingViewController.xib; path = ViewControllers/CPAddParkingViewController.xib; sourceTree = "<group>"; };
 		D890258C2A944EA7A6C3ECC8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -215,9 +215,6 @@
 				AE4C437818F91BFA00731F44 /* CPSignInViewController.h */,
 				AE4C437918F91BFA00731F44 /* CPSignInViewController.m */,
 				AE4C437A18F91BFA00731F44 /* CPSignInViewController.xib */,
-				AE4C437D18FA073000731F44 /* CPAddParkingViewController.h */,
-				AE4C437E18FA073000731F44 /* CPAddParkingViewController.m */,
-				AE4C437F18FA073000731F44 /* CPAddParkingViewController.xib */,
 				AE4C438218FA074600731F44 /* CPSearchSettingsViewController.h */,
 				AE4C438318FA074600731F44 /* CPSearchSettingsViewController.m */,
 				AE4C438418FA074600731F44 /* CPSearchSettingsViewController.xib */,
@@ -236,6 +233,9 @@
 				AE4C439118FA6B7000731F44 /* CPSettingsViewController.h */,
 				AE4C439218FA6B7000731F44 /* CPSettingsViewController.m */,
 				AE4C439318FA6B7000731F44 /* CPSettingsViewController.xib */,
+				AEC149B91903366800A66CE6 /* CPAddParkingViewController.h */,
+				AEC149BA1903366800A66CE6 /* CPAddParkingViewController.m */,
+				AEC149BB1903366800A66CE6 /* CPAddParkingViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -455,6 +455,7 @@
 				652D805618F7AA900027D752 /* data.json in Resources */,
 				AE4C438B18FA075E00731F44 /* CPUserProfileViewController.xib in Resources */,
 				65173C2118F38BD3002B2C14 /* CPMainViewController.xib in Resources */,
+				AEC149BD1903366800A66CE6 /* CPAddParkingViewController.xib in Resources */,
 				6524D9DA18F23B570072620D /* ParseClient.plist in Resources */,
 				6583AF2318EC931D00D46333 /* InfoPlist.strings in Resources */,
 				AE4C438618FA074600731F44 /* CPSearchSettingsViewController.xib in Resources */,
@@ -464,7 +465,6 @@
 				AE4C439018FA508700731F44 /* CPMenuCell.xib in Resources */,
 				658D6AA418FA6270009D6812 /* CPRackDetailViewController.xib in Resources */,
 				65173C2618F38C00002B2C14 /* CPHamburgerMenuViewController.xib in Resources */,
-				AE4C438118FA073000731F44 /* CPAddParkingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +520,7 @@
 				65173C2018F38BD3002B2C14 /* CPMainViewController.m in Sources */,
 				AE4C438F18FA508700731F44 /* CPMenuCell.m in Sources */,
 				AE4C437B18F91BFA00731F44 /* CPSignInViewController.m in Sources */,
+				AEC149BC1903366800A66CE6 /* CPAddParkingViewController.m in Sources */,
 				6548959B18ED08E3002E7F0E /* CPRack.m in Sources */,
 				AE4C438A18FA075E00731F44 /* CPUserProfileViewController.m in Sources */,
 				6583AF2518EC931D00D46333 /* main.m in Sources */,
@@ -529,7 +530,6 @@
 				6524D9D818F23AB80072620D /* CPParseClient.m in Sources */,
 				5C66FE2F18F2788B00AB0965 /* CPUser.m in Sources */,
 				658D6A9518FA4A3F009D6812 /* CPRackAnnotation.m in Sources */,
-				AE4C438018FA073000731F44 /* CPAddParkingViewController.m in Sources */,
 				658D6AA318FA6270009D6812 /* CPRackDetailViewController.m in Sources */,
 				65173C2A18F38C57002B2C14 /* CPViewLocationViewController.m in Sources */,
 				AE4C439418FA6B7000731F44 /* CPSettingsViewController.m in Sources */,
