@@ -88,7 +88,7 @@
 - (IBAction)onCancel:(id)sender {
     
     /* enable map interactions */
-    //[self.view.superview setUserInteractionEnabled:true];
+    [self.view.superview setUserInteractionEnabled:true];
     
     [UIView animateWithDuration:0.15 animations:^{
         [self.view removeFromSuperview];
@@ -105,6 +105,7 @@
 }
 
 - (BOOL)validateFields {
+    // TODO or just grey out submit button 
     // replace with log in vc
     if (![CPUser currentUser]) {
         UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Log In!" message:@"Please log in to add a new bike rack." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
