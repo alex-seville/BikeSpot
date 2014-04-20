@@ -129,9 +129,32 @@
 	*/
 }
 
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+	[searchBar resignFirstResponder];
+	searchBar.showsCancelButton=false;
+}
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+	searchBar.showsCancelButton=true;
+	
+}
+
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
 	[searchBar resignFirstResponder];
+	searchBar.showsCancelButton=false;
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+	
+	/* close the detail view */
+	if (self.selectedAnnotationView != nil){
+		self.selectedAnnotationView.pinColor = MKPinAnnotationColorRed;
+		self.selectedAnnotationView = nil;
+		UIView *miniDetailView = self.view.subviews.lastObject;
+		[UIView animateWithDuration:0.15 animations:^{
+			miniDetailView.frame = CGRectMake(10, self.view.frame.size.height+10, self.view.frame.size.width-20, 100);
+		} ];
+	}
+	
+	
     [geocoder geocodeAddressString:searchBar.text completionHandler:^(NSArray *placemarks, NSError *error) {
         //Error checking
 		
