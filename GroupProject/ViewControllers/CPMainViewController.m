@@ -139,16 +139,6 @@
     }
 }
 
-- (void)displayMainContentView
-{
-    [UIView animateWithDuration:0.5  animations:^{
-        CGRect mainContentFrame = self.contentView.frame;
-        mainContentFrame.origin.x = 0;
-        self.contentView.frame = mainContentFrame;
-        
-    }];
-}
-
 - (IBAction)onMenuTap:(UITapGestureRecognizer *)sender {
     [UIView animateWithDuration:0.5  animations:^{
         // show main content view
@@ -180,7 +170,7 @@
 -(void)sender:(CPHamburgerMenuViewController *)sender menuTapped:(int)index
 {
     // move main display view back
-    [self displayMainContentView];
+    [self showMainContentView];
 
     CPUser *user = [CPUser currentUser];
     
