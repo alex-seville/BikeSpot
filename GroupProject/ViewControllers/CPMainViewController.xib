@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CPMainViewController">
             <connections>
                 <outlet property="contentView" destination="XXv-a7-dFt" id="Tss-S8-4qc"/>
+                <outlet property="menuTab" destination="Wbo-Qq-bIv" id="sbF-4L-y8W"/>
                 <outlet property="menuView" destination="kvh-bp-H1f" id="JQZ-Pa-wtX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -24,6 +25,17 @@
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XXv-a7-dFt">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <imageView alpha="0.69999999999999973" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="menuTab_resized" translatesAutoresizingMaskIntoConstraints="NO" id="Wbo-Qq-bIv">
+                            <rect key="frame" x="0.0" y="379" width="26" height="40"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <gestureRecognizers/>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="v76-Jb-wZw" appends="YES" id="Cqn-Dh-EeM"/>
+                            </connections>
+                        </imageView>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
@@ -32,5 +44,13 @@
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
+        <tapGestureRecognizer id="v76-Jb-wZw">
+            <connections>
+                <action selector="onMenuTap:" destination="-1" id="w1u-ie-tM7"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
+    <resources>
+        <image name="menuTab_resized" width="20" height="14"/>
+    </resources>
 </document>

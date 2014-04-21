@@ -19,6 +19,7 @@
 @interface CPMainViewController ()
 @property (weak, nonatomic) IBOutlet UIView *menuView;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (assign, nonatomic) BOOL mainContentShown;
 
 @property (strong, nonatomic) UINavigationController *mapViewNavigationController;
 @property (strong, nonatomic) UINavigationController *menuNavigationController;
@@ -34,6 +35,8 @@
 @property (strong, nonatomic) CPSignInViewController *signInViewController;
 
 @property (nonatomic, strong) NSArray *viewControllers;
+@property (weak, nonatomic) IBOutlet UIImageView *menuTab;
+- (IBAction)onMenuTap:(UITapGestureRecognizer *)sender;
 
 @end
 
@@ -76,12 +79,13 @@
 
     self.navigationController.navigationBar.hidden=YES;
     
+
     [self.menuView addSubview:self.menuNavigationController.view];
     self.menuViewController.delegate = self;
-    
+
     [self.contentView addSubview:self.mapViewNavigationController.view];
     [self.contentView bringSubviewToFront:self.mapViewNavigationController.view];
-    [self.view bringSubviewToFront:self.contentView];
+    [self.contentView addSubview:self.menuTab];
     
     
     //add pan recongnizer to firstView
@@ -120,15 +124,11 @@
         [UIView animateWithDuration:0.5  animations:^{
             // show main content view
             if (velocity.x <= 0) {
-                CGRect mainContentFrame = self.contentView.frame;
-                mainContentFrame.origin.x = 0;
-                self.contentView.frame = mainContentFrame;
+                [self showMainContentView];
             }
             // hide main content view
             else {
-                CGRect mainContentFrame = self.contentView.frame;
-                mainContentFrame.origin.x = mainContentFrame.size.width-80;
-                self.contentView.frame = mainContentFrame;
+                [self hideMainContentView];
                 
             }
         }];
@@ -143,6 +143,33 @@
         self.contentView.frame = mainContentFrame;
         
     }];
+}
+
+- (IBAction)onMenuTap:(UITapGestureRecognizer *)sender {
+    [UIView animateWithDuration:0.5  animations:^{
+        // show main content view
+        if (!self.mainContentShown) {
+            [self showMainContentView];
+        }
+        // hide main content view
+        else {
+            [self hideMainContentView];
+        }
+    }];
+}
+
+- (void) hideMainContentView {
+    CGRect mainContentFrame = self.contentView.frame;
+    mainContentFrame.origin.x = mainContentFrame.size.width-80;
+    self.contentView.frame = mainContentFrame;
+    self.mainContentShown = NO;
+}
+
+- (void) showMainContentView {
+    CGRect mainContentFrame = self.contentView.frame;
+    mainContentFrame.origin.x = 0;
+    self.contentView.frame = mainContentFrame;
+    self.mainContentShown = YES;
 }
 
 #pragma mark - CPHamburgerMenuViewController methods
@@ -167,12 +194,15 @@
     
     UINavigationController *nvc = self.viewControllers[index];
     [self.contentView addSubview:nvc.view];
-    [self.contentView bringSubviewToFront:nvc.view];
+    
+    if (index == 0 || ![CPUser currentUser])
+    {
+        [self.contentView addSubview:self.menuTab];
+    }
+
     
     
     
 }
-
-
 
 @end

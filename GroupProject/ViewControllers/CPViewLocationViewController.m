@@ -35,6 +35,7 @@
 @property (nonatomic, strong) MKPinAnnotationView *selectedAnnotationView;
 @property (weak, nonatomic) IBOutlet UISearchBar *locationSearchBar;
 - (IBAction)onLongPress:(UILongPressGestureRecognizer *)sender;
+- (IBAction)onMenuTapped:(UITapGestureRecognizer *)sender;
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 
@@ -413,6 +414,9 @@
 
 		
 	}
+}
+
+- (IBAction)onMenuTapped:(UITapGestureRecognizer *)sender {
 }
 
 
