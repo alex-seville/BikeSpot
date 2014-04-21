@@ -16,7 +16,7 @@
     if (self){
         _coordinate = location;
 		_rack = rack;
-		
+		_selected = false;
     }
     return self;
 }

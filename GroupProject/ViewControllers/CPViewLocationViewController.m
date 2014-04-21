@@ -70,10 +70,14 @@
     self.annotations = [[NSMutableArray alloc] init];
 	self.racks = [[NSMutableArray alloc] init];
 	
-	self.searchBarView.layer.borderWidth = 1;
-	self.searchBarView.layer.borderColor = [UIColor lightGrayColor].CGColor;
-
-	 
+	self.searchBarView.layer.shadowColor = [UIColor blackColor].CGColor;
+	self.searchBarView.layer.shadowRadius = 2;
+	self.searchBarView.layer.shadowOpacity = 0.3;
+	self.searchBarView.layer.shadowOffset = CGSizeMake(0, 0);
+	self.searchBarView.layer.cornerRadius = 2;
+	
+	
+	
 		
 }
 
@@ -178,6 +182,7 @@
 		
 		
         [self.mainMapView setRegion:region animated:YES];
+		
     }];
 }
 
@@ -219,7 +224,7 @@
 			// and update allPosts and the map to reflect this new array.
 			// But we don't want to remove all annotations from the mapview blindly,
 			// so let's do some work to figure out what's new and what needs removing.
-			
+			bool firstSelected = false;
 			// 1. Find genuinely new posts:
 			NSLog(@"object count %lu", (unsigned long)objects.count);
 			[self.mainMapView removeAnnotations:self.mainMapView.annotations];
@@ -228,8 +233,19 @@
 				CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(rack.geoLocation.latitude, rack.geoLocation.longitude);
 				CPRackAnnotation *annotation = [[CPRackAnnotation alloc] initWithRack:rack Location:coord];
 				[self.mainMapView addAnnotation:annotation];
-				
+				if (!firstSelected && self.selectedAnnotationView == nil){
+					firstSelected = true;
+					[self.mainMapView selectAnnotation:self.mainMapView.annotations.lastObject animated:NO];
+					
+				}else if (((CPRackAnnotation *)self.selectedAnnotationView.annotation).selected &&
+						  self.selectedAnnotationView.annotation == annotation){
+					annotation.selected = true;
+				}
 			}
+			
+			
+			
+			
 		}
 	}];
 }
@@ -246,7 +262,11 @@
 		annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"RackAnnotation"];
 	}
 	
-    annotationView.pinColor = MKPinAnnotationColorRed;
+	if (((CPRackAnnotation *)annotationView.annotation).selected){
+		annotationView.pinColor = MKPinAnnotationColorGreen;
+	} else{
+		annotationView.pinColor = MKPinAnnotationColorRed;
+	}
 
     annotationView.canShowCallout = YES;
     annotationView.draggable = YES;
@@ -264,6 +284,7 @@
 		
 		if ([self.selectedAnnotationView isEqual:view]){
 			NSLog(@"clicking the same annotation again");
+			((CPRackAnnotation *)self.selectedAnnotationView.annotation).selected = false;
 			self.selectedAnnotationView = nil;
 			view.pinColor = MKPinAnnotationColorRed;
 			UIView *miniDetailView = self.view.subviews.lastObject;
@@ -275,6 +296,8 @@
 			
 			if (self.selectedAnnotationView != nil){
 				NSLog(@"clicking different annotation");
+				((CPRackAnnotation *)self.selectedAnnotationView.annotation).selected = false;
+
 				self.selectedAnnotationView.pinColor =MKPinAnnotationColorRed;
 				
 				
@@ -296,6 +319,8 @@
 				
 			}
 			self.selectedAnnotationView = view;
+			((CPRackAnnotation *)self.selectedAnnotationView.annotation).selected = true;
+
 		}
     }
     
@@ -304,7 +329,11 @@
 -(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
 	//[self filterAnnotations:self.annotations modifyMap:true];
 	[self findRacksWithLocation:mapView.centerCoordinate];
+	
+	
 }
+
+
 
 
 /* from: https://github.com/kviksilver/MKMapview-annotation-grouping/blob/master/mapView/mapViewViewController.m */
