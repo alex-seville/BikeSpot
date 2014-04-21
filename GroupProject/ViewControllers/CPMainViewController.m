@@ -86,6 +86,10 @@
     [self.contentView addSubview:self.mapViewNavigationController.view];
     [self.contentView bringSubviewToFront:self.mapViewNavigationController.view];
     [self.contentView addSubview:self.menuTab];
+	
+	self.mapViewNavigationController.view.layer.shadowOffset = CGSizeMake(-5, 0);
+    self.mapViewNavigationController.view.layer.shadowRadius = 5;
+    self.mapViewNavigationController.view.layer.shadowOpacity = 0.3;
     
     
     //add pan recongnizer to firstView

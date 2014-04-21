@@ -77,7 +77,6 @@
 	self.searchBarView.layer.cornerRadius = 2;
 	
 	
-	
 		
 }
 
@@ -321,6 +320,21 @@
 			self.selectedAnnotationView = view;
 			((CPRackAnnotation *)self.selectedAnnotationView.annotation).selected = true;
 
+			
+			MKMapItem *source = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:self.mainMapView.centerCoordinate addressDictionary:nil]];
+			MKMapItem *dest = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:((CPRackAnnotation *)view.annotation).coordinate addressDictionary:nil]];
+			
+			MKDirectionsRequest *request = [[MKDirectionsRequest alloc] init];
+			request.transportType = MKDirectionsTransportTypeWalking;
+			request.source = source;
+			request.destination = dest;
+			
+			MKDirections *directions = [[MKDirections alloc] initWithRequest:request];
+			[directions calculateETAWithCompletionHandler:^(MKETAResponse *response, NSError *error) {
+				NSLog(@"distance: %.2f minutes", response.expectedTravelTime / 60);
+				self.miniDetail.rackDescriptionLabel.text = [NSString stringWithFormat:@"Walking time: %.2f minutes", response.expectedTravelTime / 60];
+			}];
+								 
 		}
     }
     
