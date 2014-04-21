@@ -21,6 +21,8 @@
 - (IBAction)onCancel:(id)sender;
 - (IBAction)onTap:(UITapGestureRecognizer *)sender;
 - (IBAction)onStepperValueChanged:(id)sender;
+- (void)didAddParkingViewClose:(CPAddParkingViewController *)sender;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *safetyRatingControl;
 
 
 
@@ -68,7 +70,7 @@
                                                               @"name": self.nameField.text,
                                                               @"isInGarage": self.garageControl.selectedSegmentIndex == 0?@YES:@NO,
                                                               @"isCommercial": @NO,
-                                                              @"safetyRating": @3,
+                                                              @"safetyRating": [NSNumber numberWithInt:self.safetyRatingControl.selectedSegmentIndex+1],
                                                               @"longDescription": self.descriptionField.text,
                                                               @"rackPhotoName": @"test.png",
                                                               @"longitude": [NSNumber numberWithDouble:self.coordinate.longitude],
@@ -81,21 +83,28 @@
         if (!error) {
             UIAlertView *successAlert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"You've added a new bike rack." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
             [successAlert show];
+            // change to close after alert 
+            [self closeView];
+            
         }
     }];
 }
 
 - (IBAction)onCancel:(id)sender {
     
-    /* enable map interactions */
-    [self.view.superview setUserInteractionEnabled:true];
-    
-    [UIView animateWithDuration:0.15 animations:^{
-        [self.view removeFromSuperview];
+    [self closeView];
 
-    } ];
 }
 
+- (void) closeView {
+    [UIView animateWithDuration:0.15 animations:^{
+        self.view.frame = CGRectMake(0, self.view.frame.size.height+100, self.view.frame.size.width, 100);
+        
+    } completion:^(BOOL finished) {
+        [self.view removeFromSuperview];
+        [self.delegate didAddParkingViewClose:self];
+    }];
+}
 - (IBAction)onTap:(UITapGestureRecognizer *)sender {
     [self.view endEditing:YES];
 }
@@ -130,4 +139,5 @@
     return true;
     
 }
+
 @end

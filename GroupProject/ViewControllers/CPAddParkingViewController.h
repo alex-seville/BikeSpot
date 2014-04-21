@@ -9,8 +9,16 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
+@class CPAddParkingViewController;
+
+@protocol CPAddParkingViewControllerDelegate <NSObject>
+@required
+-(void)didAddParkingViewClose:(CPAddParkingViewController *)sender;
+@end
+
 @interface CPAddParkingViewController : UIViewController<MKMapViewDelegate>
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
+@property (nonatomic, weak) id<CPAddParkingViewControllerDelegate> delegate;
 
 -(id)initWithLocation:(CLLocationCoordinate2D)location;
 @end

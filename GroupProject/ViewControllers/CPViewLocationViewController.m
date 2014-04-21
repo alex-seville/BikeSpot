@@ -15,7 +15,6 @@
 #import "CPAnnotationGroup.h"
 #import <Parse/Parse.h>
 #import "CPParseClient.h"
-#import "CPAddParkingViewController.h"
 
 #define iphoneScaleFactorLatitude   9.0
 #define iphoneScaleFactorLongitude  11.0
@@ -400,6 +399,7 @@
 		self.addNew = [[CPAddParkingViewController alloc] initWithLocation:coord];
 		UIView *addNewView = self.addNew.view;
 		addNewView.frame = CGRectMake(0, self.view.frame.size.height+10, self.view.frame.size.width, 100);
+        self.addNew.delegate = self;
 		
 		[self.view addSubview:addNewView];
 		
@@ -428,5 +428,11 @@
 	
 	[self findRacksWithLocation:coord];
 	[self.locationManager stopUpdatingLocation];
+}
+
+#pragma mark - CPAddParkingViewControllerDelegate methods
+-(void)didAddParkingViewClose:(CPAddParkingViewController *)sender
+{
+    [self.mainMapView setUserInteractionEnabled:YES];
 }
 @end
