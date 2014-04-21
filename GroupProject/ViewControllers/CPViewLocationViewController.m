@@ -422,7 +422,6 @@
 		
 		[UIView animateWithDuration:0.15 animations:^{
 			addNewView.frame = CGRectMake(0, self.view.frame.size.height-400, self.view.frame.size.width, 400);
-            self.locationSearchBar.hidden = TRUE;
 			/* the map needs to recenter somehow...*/
 		} ];
 
