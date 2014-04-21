@@ -14,4 +14,7 @@ extern NSString * const ViewMoreRackDetails;
 
 - (void) setName:(NSString *)name;
 
+/* just for now */
+@property (weak, nonatomic) IBOutlet UILabel *rackDescriptionLabel;
+
 @end

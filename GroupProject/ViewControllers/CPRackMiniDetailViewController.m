@@ -12,7 +12,7 @@ NSString * const ViewMoreRackDetails = @"ViewMoreRackDetails";
 
 @interface CPRackMiniDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *rackNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *rackDescriptionLabel;
+//@property (weak, nonatomic) IBOutlet UILabel *rackDescriptionLabel;
 
 - (IBAction)onPan:(UIPanGestureRecognizer *)sender;
 @property (nonatomic, assign) double startPan;
