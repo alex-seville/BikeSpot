@@ -38,6 +38,7 @@ NSString * const ViewMoreRackDetails = @"ViewMoreRackDetails";
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+	self.view.layer.cornerRadius = 2;
 }
 
 - (void)didReceiveMemoryWarning

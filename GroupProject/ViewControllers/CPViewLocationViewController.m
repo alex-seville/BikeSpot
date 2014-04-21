@@ -78,7 +78,6 @@
 	self.searchBarView.layer.cornerRadius = 2;
 	
 	
-	
 		
 }
 
