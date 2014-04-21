@@ -33,9 +33,7 @@
 @property (strong, nonatomic) CPSettingsViewController *settingsViewController;
 @property (strong, nonatomic) CPSignInViewController *signInViewController;
 
-
-@property (nonatomic, strong) NSArray *loggedInViewControllers;
-@property (nonatomic, strong) NSArray *loggedOutViewControllers;
+@property (nonatomic, strong) NSArray *viewControllers;
 
 @end
 
@@ -65,9 +63,7 @@
         self.signInViewController = [[CPSignInViewController alloc] init];
         self.signInNavigationController = [[UINavigationController alloc] initWithRootViewController:self.signInViewController];
         
-        self.loggedInViewControllers = @[self.mapViewNavigationController, self.userProfileNavigationController, self.addParkingNavigationController, self.settingsNavigationController, self.mapViewNavigationController];
-        
-        self.loggedOutViewControllers = @[self.mapViewNavigationController, self.signInNavigationController];
+        self.viewControllers = @[self.mapViewNavigationController, self.userProfileNavigationController, self.settingsNavigationController, self.mapViewNavigationController];
         
     }
     return self;
@@ -158,18 +154,18 @@
     CPUser *user = [CPUser currentUser];
     
     // log in
-    if (!user && index == [self.loggedOutViewControllers count]-1)
+    if (!user && index == [self.viewControllers count]-1)
     {
         [self presentViewController:self.signInNavigationController animated:YES completion:nil];
         return;
     }
     // log out
-    else if (user && index == [self.loggedInViewControllers count]-1)
+    else if (user && index == [self.viewControllers count]-1)
     {
         [CPUser logOut];
     }
     
-    UINavigationController *nvc = self.loggedInViewControllers[index];
+    UINavigationController *nvc = self.viewControllers[index];
     [self.contentView addSubview:nvc.view];
     [self.contentView bringSubviewToFront:nvc.view];
     

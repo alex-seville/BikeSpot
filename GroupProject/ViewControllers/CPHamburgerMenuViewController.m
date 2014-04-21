@@ -14,6 +14,7 @@
 @interface CPHamburgerMenuViewController ()
 @property (nonatomic, strong) NSArray *loggedInMenuOptions;
 @property (nonatomic, strong) NSArray *loggedOutMenuOptions;
+@property (nonatomic, strong) NSArray *menuOptions;
 @property (nonatomic, strong) CPUserProfileViewController *userProfileViewController;
 @property (nonatomic, strong) UINavigationController *userProfileNavigationController;
 @property (weak, nonatomic) IBOutlet UITableView *menuTableView;
@@ -29,8 +30,7 @@
         // Custom initialization
         self.title = @"Menu";
         
-        self.loggedInMenuOptions = @[@"Home", @"Profile", @"Add New Parking Spot", @"Settings", @"Log out"];
-        self.loggedOutMenuOptions = @[@"Home", @"Log In"];
+        self.menuOptions = @[@"Home", @"Profile", @"Settings", @"Log In/Out"];
         
         // user profile view
         self.userProfileViewController = [[CPUserProfileViewController alloc] init];
@@ -64,30 +64,38 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    // display user profile cell
-    
     CPMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CPMenuCell" forIndexPath:indexPath];
-    if ([CPUser currentUser])
+    
+    // Log in/ log out option if this is the last cell
+    BOOL userLoggedIn = [CPUser currentUser]?YES:NO;
+    
+    if (indexPath.row == [self.menuOptions count]-1)
     {
-        cell.optionLabel.text = self.loggedInMenuOptions[indexPath.row];
+        if (!userLoggedIn)
+        {
+            cell.optionLabel.text = @"Log In";
+        }
+        else
+        {
+            cell.optionLabel.text = @"Log Out";
+        }
     }
     else
     {
-        cell.optionLabel.text = self.loggedOutMenuOptions[indexPath.row];
+        cell.optionLabel.text = self.menuOptions[indexPath.row];
+        if (indexPath.row > 0 && !userLoggedIn)
+        {
+            [cell.optionLabel setTextColor:[UIColor grayColor]];
+            cell.userInteractionEnabled = NO;
+        }
     }
     
     return cell;
 }
 
 - (int)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if ([CPUser currentUser])
-    {
-        return [self.loggedInMenuOptions count];
-    }
-    else
-    {
-        return [self.loggedOutMenuOptions count];
-    }
+
+    return [self.menuOptions count];
 
 }
 

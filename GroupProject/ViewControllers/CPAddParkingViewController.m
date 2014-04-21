@@ -105,7 +105,7 @@
 }
 
 - (BOOL)validateFields {
-    // TODO or just grey out submit button 
+    // TODO or just grey out submit button
     // replace with log in vc
     if (![CPUser currentUser]) {
         UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Log In!" message:@"Please log in to add a new bike rack." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
