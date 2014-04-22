@@ -90,6 +90,12 @@
 	self.mapViewNavigationController.view.layer.shadowOffset = CGSizeMake(-5, 0);
     self.mapViewNavigationController.view.layer.shadowRadius = 5;
     self.mapViewNavigationController.view.layer.shadowOpacity = 0.3;
+	
+	/*add shadow to menu tab too */
+	self.menuTab.layer.shadowOffset = CGSizeMake(-5, 0);
+    self.menuTab.layer.shadowRadius = 5;
+    self.menuTab.layer.shadowOpacity = 0.3;
+	self.menuTab.layer.cornerRadius = 10;
     
     
     //add pan recongnizer to firstView
