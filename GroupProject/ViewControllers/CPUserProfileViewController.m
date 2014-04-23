@@ -54,6 +54,11 @@
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f];
     
     //self.dividerBar.backgroundColor = [UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f];
+    self.dividerBar.layer.shadowColor = [UIColor blackColor].CGColor;
+	self.dividerBar.layer.shadowRadius = 2;
+	self.dividerBar.layer.shadowOpacity = 0.3;
+	self.dividerBar.layer.shadowOffset = CGSizeMake(0, 0);
+	self.dividerBar.layer.cornerRadius = 2;
     
     if (isLinkedToFacebook)
     {
