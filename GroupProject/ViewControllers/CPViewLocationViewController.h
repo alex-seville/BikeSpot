@@ -10,6 +10,10 @@
 #import <MapKit/MapKit.h>
 #import "CPAddParkingViewController.h"
 
+extern NSString * const ViewMoreRackDetails;
+extern NSString * const UpdateMiniDetailNotification;
+extern NSString * const CloseDetailNotification;
+
 @interface CPViewLocationViewController : UIViewController <MKMapViewDelegate, UISearchBarDelegate, CLLocationManagerDelegate, CPAddParkingViewControllerDelegate>
 
 @end

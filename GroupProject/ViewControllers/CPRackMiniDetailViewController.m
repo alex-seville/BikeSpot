@@ -8,7 +8,7 @@
 
 #import "CPRackMiniDetailViewController.h"
 
-NSString * const ViewMoreRackDetails = @"ViewMoreRackDetails";
+
 
 @interface CPRackMiniDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *rackNameLabel;
@@ -59,36 +59,37 @@ NSString * const ViewMoreRackDetails = @"ViewMoreRackDetails";
 	
 	
 	if (sender.state == UIGestureRecognizerStateBegan){
-		CGRect viewFrame = self.view.frame;
-		self.startHeight =viewFrame.size.height;
-		self.startY =viewFrame.origin.y;
+		//CGRect viewFrame = self.view.frame;
+		//self.startHeight =viewFrame.size.height;
+		//self.startY =viewFrame.origin.y;
 	}
 	else if (sender.state == UIGestureRecognizerStateChanged){
 		CGRect viewFrame = self.view.frame;
 		
-		double increase = self.startPan-point.y;
+		//double increase = self.startPan-point.y;
 		
-		NSLog(@"origin, height: %d %d", (viewFrame.origin.y-increase), (viewFrame.size.height+increase));
+		NSLog(@"origin, height: %f %f", point.y, self.view.frame.size.height);
 		
-		if (viewFrame.origin.y-increase  > 300 &&
-			viewFrame.size.height+increase > 100){
+		//if (viewFrame.origin.y  > 300 ){
 		
-			viewFrame.origin.y -= increase;
+			viewFrame.origin.y += point.y;
+			viewFrame.size.height -= point.y;
 			
-			viewFrame.size.height += increase;
+			
+			
 			self.view.frame = viewFrame;
-		}
+		//}
 	}else if (sender.state == UIGestureRecognizerStateEnded){
 		CGRect viewFrame = self.view.frame;
 		if (velocity.y > 0){
 			
-			viewFrame.origin.y = self.startY;
-			viewFrame.size.height = self.startHeight;
+			viewFrame.origin.y = 0;
+			viewFrame.size.height = 0;
 		}else{
-			viewFrame.origin.y = self.startY/2;
-			viewFrame.size.height = 2 * self.startHeight;
+			viewFrame.origin.y = 300;
+			viewFrame.size.height = self.view.frame.size.height-300;
 		}
 	}
-	self.startPan = point.y;
+	
 }
 @end
