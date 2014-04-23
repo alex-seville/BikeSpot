@@ -29,7 +29,7 @@
 @property (strong, nonatomic) UINavigationController *settingsNavigationController;
 @property (strong, nonatomic) UINavigationController *signInNavigationController;
 @property (strong, nonatomic) CPHamburgerMenuViewController *menuViewController;
-@property (strong, nonatomic) CPViewLocationViewController *mapViewController;   // CHANGE THIS BACK TO MAP VIEW
+@property (strong, nonatomic) CPViewLocationViewController *mapViewController;
 @property (strong, nonatomic) CPUserProfileViewController *userProfileViewController;
 @property (strong ,nonatomic) CPAddParkingViewController *addParkingViewController;
 @property (strong, nonatomic) CPSettingsViewController *settingsViewController;
@@ -54,7 +54,7 @@
     if (self) {
         // Custom initialization
         
-        self.mapViewController = [[CPViewLocationViewController alloc] init];    // CHANGE THIS BACK TO MAP VIEW
+        self.mapViewController = [[CPViewLocationViewController alloc] init];
         self.mapViewNavigationController = [[UINavigationController alloc] initWithRootViewController:self.mapViewController];
         
         self.userProfileViewController = [[CPUserProfileViewController alloc] init];
@@ -72,7 +72,7 @@
         self.signInViewController = [[CPSignInViewController alloc] init];
         self.signInNavigationController = [[UINavigationController alloc] initWithRootViewController:self.signInViewController];
         
-        self.viewControllers = @[self.mapViewNavigationController, self.userProfileNavigationController, self.settingsNavigationController, self.mapViewNavigationController];
+        self.viewControllers = @[self.mapViewNavigationController, self.userProfileNavigationController, self.mapViewNavigationController];
         
     }
     return self;
