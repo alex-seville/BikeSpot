@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CPRack.h"
 
 extern NSString * const ViewMoreRackDetails;
 
 @interface CPRackMiniDetailViewController : UIViewController
 
-- (void) setName:(NSString *)name;
+- (void) setRack:(CPRack *)rack;
+- (void) setTime:(NSTimeInterval)time;
 
 /* just for now */
 @property (weak, nonatomic) IBOutlet UILabel *rackDescriptionLabel;

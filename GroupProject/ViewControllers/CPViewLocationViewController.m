@@ -11,7 +11,6 @@
 #import "CPRack.h"
 #include <CoreLocation/CoreLocation.h>
 #import "CPRackAnnotation.h"
-#import "CPRackMiniDetailViewController.h"
 #import "CPAnnotationGroup.h"
 #import <Parse/Parse.h>
 #import "CPParseClient.h"
@@ -19,14 +18,15 @@
 #define iphoneScaleFactorLatitude   9.0
 #define iphoneScaleFactorLongitude  11.0
 
+NSString * const ViewMoreRackDetails = @"ViewMoreRackDetails";
+NSString * const UpdateMiniDetailNotification = @"UpdateMiniDetailNotification";
+NSString * const CloseDetailNotification = @"CloseDetailNotification";
+NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistanceDetailNotification";
+
 @interface CPViewLocationViewController ()
 @property (weak, nonatomic) IBOutlet MKMapView *mainMapView;
 @property (nonatomic, strong) NSMutableArray *annotations;
 @property (nonatomic, strong) NSMutableArray *racks;
-
-/* this may have to be refactored */
-@property (nonatomic, strong) CPRackMiniDetailViewController *miniDetail;
-@property (nonatomic, strong) CPAddParkingViewController *addNew;
 
 @property (weak, nonatomic) IBOutlet UIView *searchBarView;
 
@@ -37,6 +37,8 @@
 - (IBAction)onMenuTapped:(UITapGestureRecognizer *)sender;
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
+
+@property (nonatomic, strong) UITapGestureRecognizer *tap;
 
 @end
 
@@ -75,8 +77,6 @@
 	self.searchBarView.layer.shadowOpacity = 0.3;
 	self.searchBarView.layer.shadowOffset = CGSizeMake(0, 0);
 	self.searchBarView.layer.cornerRadius = 2;
-	
-	
 		
 }
 
@@ -104,6 +104,7 @@
        
        CPRack *rack = [[CPRack alloc] initWithDictionary:@{
                                 @"name": [row objectAtIndex:8],
+								@"address": [row objectAtIndex:9],
                                 @"latitude": [[NSNumber alloc] initWithDouble:latitude],
                                 @"longitude": [[NSNumber alloc] initWithDouble:longitude]
                             }];
@@ -128,18 +129,28 @@
 	   }];
 	   
 	}
-	[self.mainMapView addAnnotations:[self filterAnnotations:self.annotations modifyMap:false]];
-	*/
+	 */
+	//[self.mainMapView addAnnotations:[self filterAnnotations:self.annotations modifyMap:false]];
+	
 }
 
-- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
-	[searchBar resignFirstResponder];
-	searchBar.showsCancelButton=false;
-}
+
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
-	searchBar.showsCancelButton=true;
 	
+	self.tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTap:)];
+	
+	//[self.mainMapView setUserInteractionEnabled:false];
+	[self.mainMapView addGestureRecognizer:self.tap];
+	
+	NSLog(@"begin editing and add gestrue recog");
+}
+
+- (IBAction)onTap:(UIPanGestureRecognizer *)gesture {
+	NSLog(@"on tap");
+	[self.mainMapView removeGestureRecognizer:self.tap];
+	[self.locationSearchBar resignFirstResponder];
+	//[self.mainMapView setUserInteractionEnabled:true];
 }
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
@@ -156,7 +167,6 @@
 			miniDetailView.frame = CGRectMake(10, self.view.frame.size.height+10, self.view.frame.size.width-20, 100);
 		} ];
 	}
-	
 	
     [geocoder geocodeAddressString:searchBar.text completionHandler:^(NSArray *placemarks, NSError *error) {
         //Error checking
@@ -215,6 +225,8 @@
 	//[query includeKey:kPAWParseUserKey];
 	query.limit = 30;
 	
+	[self.annotations removeAllObjects];
+	
 	[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
 		if (error) {
 			NSLog(@"error in geo query!"); // todo why is this ever happening?
@@ -223,7 +235,7 @@
 			// and update allPosts and the map to reflect this new array.
 			// But we don't want to remove all annotations from the mapview blindly,
 			// so let's do some work to figure out what's new and what needs removing.
-			bool firstSelected = false;
+			
 			// 1. Find genuinely new posts:
 			NSLog(@"object count %lu", (unsigned long)objects.count);
 			[self.mainMapView removeAnnotations:self.mainMapView.annotations];
@@ -232,6 +244,9 @@
 				CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(rack.geoLocation.latitude, rack.geoLocation.longitude);
 				CPRackAnnotation *annotation = [[CPRackAnnotation alloc] initWithRack:rack Location:coord];
 				[self.mainMapView addAnnotation:annotation];
+				[self.annotations addObject:annotation];
+				
+				/*
 				if (!firstSelected && self.selectedAnnotationView == nil){
 					firstSelected = true;
 					[self.mainMapView selectAnnotation:self.mainMapView.annotations.lastObject animated:NO];
@@ -239,7 +254,7 @@
 				}else if (((CPRackAnnotation *)self.selectedAnnotationView.annotation).selected &&
 						  self.selectedAnnotationView.annotation == annotation){
 					annotation.selected = true;
-				}
+				}*/
 			}
 			
 			
@@ -279,41 +294,37 @@
 	
 	[self.mainMapView deselectAnnotation:view.annotation animated:NO];
 	
-	if(![view.annotation isKindOfClass:[MKUserLocation class]]){
+	if(![view.annotation isKindOfClass:[MKUserLocation class]] && ((CPRackAnnotation *)view.annotation).rack != nil){
+		CPRack *rack = ((CPRackAnnotation *)view.annotation).rack;
 		
 		if ([self.selectedAnnotationView isEqual:view]){
 			NSLog(@"clicking the same annotation again");
-			((CPRackAnnotation *)self.selectedAnnotationView.annotation).selected = false;
+			
 			self.selectedAnnotationView = nil;
 			view.pinColor = MKPinAnnotationColorRed;
-			UIView *miniDetailView = self.view.subviews.lastObject;
-			[UIView animateWithDuration:0.15 animations:^{
-				miniDetailView.frame = CGRectMake(10, self.view.frame.size.height+10, self.view.frame.size.width-20, 100);
-			} ];
+			
+			[[NSNotificationCenter defaultCenter] postNotificationName:CloseDetailNotification object:self userInfo:[NSDictionary dictionaryWithObject:rack forKey:@"rack"]];
 		}else{
 			view.pinColor = MKPinAnnotationColorGreen;
 			
 			if (self.selectedAnnotationView != nil){
 				NSLog(@"clicking different annotation");
-				((CPRackAnnotation *)self.selectedAnnotationView.annotation).selected = false;
+				
 
 				self.selectedAnnotationView.pinColor =MKPinAnnotationColorRed;
 				
-				
-				[self.miniDetail setName:view.annotation.title];
+				/* update minitdetailview info */
+				//[self.miniDetail setName:view.annotation.title];
+				[[NSNotificationCenter defaultCenter] postNotificationName:UpdateMiniDetailNotification object:self userInfo:[NSDictionary dictionaryWithObject:rack forKey:@"rack"]];
 				
 			}else{
 				NSLog(@"clicking annotation");
-								
-				self.miniDetail = [[CPRackMiniDetailViewController alloc] init];
-				UIView *miniDetailView = self.miniDetail.view;
-				miniDetailView.frame = CGRectMake(10, self.view.frame.size.height+10, self.view.frame.size.width-20, 100);
-				[self.miniDetail setName:view.annotation.title];
-				[self.view addSubview:miniDetailView];
-
-				[UIView animateWithDuration:0.15 animations:^{
-					miniDetailView.frame = CGRectMake(10, self.view.frame.size.height-100, self.view.frame.size.width-20, 100);
-				} ];
+							
+				
+				
+				CPRack *rack = ((CPRackAnnotation *)view.annotation).rack;
+				
+				[[NSNotificationCenter defaultCenter] postNotificationName:ViewMoreRackDetails object:self userInfo:[NSDictionary dictionaryWithObject:rack forKey:@"rack"]];
 				
 				
 			}
@@ -332,7 +343,8 @@
 			MKDirections *directions = [[MKDirections alloc] initWithRequest:request];
 			[directions calculateETAWithCompletionHandler:^(MKETAResponse *response, NSError *error) {
 				NSLog(@"distance: %.2f minutes", response.expectedTravelTime / 60);
-				self.miniDetail.rackDescriptionLabel.text = [NSString stringWithFormat:@"Walking time: %.2f minutes", response.expectedTravelTime / 60];
+				
+				[[NSNotificationCenter defaultCenter] postNotificationName:UpdateWalkingDistanceDetailNotification object:self userInfo:[NSDictionary dictionaryWithObject:@(response.expectedTravelTime) forKey:@"time"]];
 			}];
 								 
 		}
@@ -409,19 +421,20 @@
 		[self.mainMapView addAnnotation:newAnnot];
 		
 		
-		
+		/* move up */
+		/*
 		self.addNew = [[CPAddParkingViewController alloc] initWithLocation:coord];
 		UIView *addNewView = self.addNew.view;
 		addNewView.frame = CGRectMake(0, self.view.frame.size.height+10, self.view.frame.size.width, 100);
         self.addNew.delegate = self;
 		
 		[self.view addSubview:addNewView];
-		
+		*/
 		/* disable map interactions until save or cancel are pressed */
 		[self.mainMapView setUserInteractionEnabled:false];
 		
 		[UIView animateWithDuration:0.15 animations:^{
-			addNewView.frame = CGRectMake(0, self.view.frame.size.height-400, self.view.frame.size.width, 400);
+			//addNewView.frame = CGRectMake(0, self.view.frame.size.height-400, self.view.frame.size.width, 400);
 			/* the map needs to recenter somehow...*/
 		} ];
 

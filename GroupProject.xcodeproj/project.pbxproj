@@ -36,8 +36,6 @@
 		658D6A9518FA4A3F009D6812 /* CPRackAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 658D6A9418FA4A3F009D6812 /* CPRackAnnotation.m */; };
 		658D6A9E18FA59DA009D6812 /* CPRackMiniDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 658D6A9C18FA59DA009D6812 /* CPRackMiniDetailViewController.m */; };
 		658D6A9F18FA59DA009D6812 /* CPRackMiniDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 658D6A9D18FA59DA009D6812 /* CPRackMiniDetailViewController.xib */; };
-		658D6AA318FA6270009D6812 /* CPRackDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 658D6AA118FA6270009D6812 /* CPRackDetailViewController.m */; };
-		658D6AA418FA6270009D6812 /* CPRackDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 658D6AA218FA6270009D6812 /* CPRackDetailViewController.xib */; };
 		65B2F924190438B20057BC8B /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B2F923190438B20057BC8B /* CoreMedia.framework */; };
 		65B2F926190438BC0057BC8B /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B2F925190438BC0057BC8B /* CoreVideo.framework */; };
 		65B2F928190438C90057BC8B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B2F927190438C90057BC8B /* OpenGLES.framework */; };
@@ -123,9 +121,6 @@
 		658D6A9B18FA59DA009D6812 /* CPRackMiniDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPRackMiniDetailViewController.h; path = ViewControllers/CPRackMiniDetailViewController.h; sourceTree = "<group>"; };
 		658D6A9C18FA59DA009D6812 /* CPRackMiniDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPRackMiniDetailViewController.m; path = ViewControllers/CPRackMiniDetailViewController.m; sourceTree = "<group>"; };
 		658D6A9D18FA59DA009D6812 /* CPRackMiniDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CPRackMiniDetailViewController.xib; path = ViewControllers/CPRackMiniDetailViewController.xib; sourceTree = "<group>"; };
-		658D6AA018FA6270009D6812 /* CPRackDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPRackDetailViewController.h; path = ViewControllers/CPRackDetailViewController.h; sourceTree = "<group>"; };
-		658D6AA118FA6270009D6812 /* CPRackDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPRackDetailViewController.m; path = ViewControllers/CPRackDetailViewController.m; sourceTree = "<group>"; };
-		658D6AA218FA6270009D6812 /* CPRackDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CPRackDetailViewController.xib; path = ViewControllers/CPRackDetailViewController.xib; sourceTree = "<group>"; };
 		65B2F923190438B20057BC8B /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		65B2F925190438BC0057BC8B /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		65B2F927190438C90057BC8B /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -239,9 +234,6 @@
 				658D6A9B18FA59DA009D6812 /* CPRackMiniDetailViewController.h */,
 				658D6A9C18FA59DA009D6812 /* CPRackMiniDetailViewController.m */,
 				658D6A9D18FA59DA009D6812 /* CPRackMiniDetailViewController.xib */,
-				658D6AA018FA6270009D6812 /* CPRackDetailViewController.h */,
-				658D6AA118FA6270009D6812 /* CPRackDetailViewController.m */,
-				658D6AA218FA6270009D6812 /* CPRackDetailViewController.xib */,
 				AE4C439118FA6B7000731F44 /* CPSettingsViewController.h */,
 				AE4C439218FA6B7000731F44 /* CPSettingsViewController.m */,
 				AE4C439318FA6B7000731F44 /* CPSettingsViewController.xib */,
@@ -479,7 +471,6 @@
 				6583AF2B18EC931D00D46333 /* Images.xcassets in Resources */,
 				65173C2B18F38C57002B2C14 /* CPViewLocationViewController.xib in Resources */,
 				AE4C439018FA508700731F44 /* CPMenuCell.xib in Resources */,
-				658D6AA418FA6270009D6812 /* CPRackDetailViewController.xib in Resources */,
 				65173C2618F38C00002B2C14 /* CPHamburgerMenuViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -546,7 +537,6 @@
 				6524D9D818F23AB80072620D /* CPParseClient.m in Sources */,
 				5C66FE2F18F2788B00AB0965 /* CPUser.m in Sources */,
 				658D6A9518FA4A3F009D6812 /* CPRackAnnotation.m in Sources */,
-				658D6AA318FA6270009D6812 /* CPRackDetailViewController.m in Sources */,
 				65173C2A18F38C57002B2C14 /* CPViewLocationViewController.m in Sources */,
 				AE4C439418FA6B7000731F44 /* CPSettingsViewController.m in Sources */,
 				657BD82B18FB847A00A887EC /* CPAnnotationGroup.m in Sources */,

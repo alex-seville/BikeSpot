@@ -14,6 +14,7 @@
 #import "CPSignInViewController.h"
 #import "CPSettingsViewController.h"
 #import "CPUser.h"
+#import "CPRack.h"
 #import "CPRackMiniDetailViewController.h"
 
 @interface CPMainViewController ()
@@ -34,9 +35,14 @@
 @property (strong, nonatomic) CPSettingsViewController *settingsViewController;
 @property (strong, nonatomic) CPSignInViewController *signInViewController;
 
+
+
 @property (nonatomic, strong) NSArray *viewControllers;
 @property (weak, nonatomic) IBOutlet UIImageView *menuTab;
 - (IBAction)onMenuTap:(UITapGestureRecognizer *)sender;
+
+@property (nonatomic, strong) CPRackMiniDetailViewController *miniDetail;
+@property (nonatomic, strong) CPAddParkingViewController *addNew;
 
 @end
 
@@ -90,12 +96,42 @@
 	self.mapViewNavigationController.view.layer.shadowOffset = CGSizeMake(-5, 0);
     self.mapViewNavigationController.view.layer.shadowRadius = 5;
     self.mapViewNavigationController.view.layer.shadowOpacity = 0.3;
+	
+	/*add shadow to menu tab too */
+	self.menuTab.layer.shadowOffset = CGSizeMake(-5, 0);
+    self.menuTab.layer.shadowRadius = 5;
+    self.menuTab.layer.shadowOpacity = 0.3;
+	self.menuTab.layer.cornerRadius = 10;
     
     
     //add pan recongnizer to firstView
     UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc ] initWithTarget:self action:@selector(onPan:)];
     
     [self.contentView addGestureRecognizer:panGestureRecognizer];
+	
+	/* events for detail view */
+	[[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(onOpenDetail:)
+                                                 name:ViewMoreRackDetails object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(onUpdateDetail:)
+                                                 name:UpdateMiniDetailNotification object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(onCloseDetail:)
+                                                 name:CloseDetailNotification object:nil];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(onUpdateWalkingTime:)
+                                                 name:UpdateWalkingDistanceDetailNotification object:nil];
+	
+	
+	/* create a new minidetail view */
+	self.miniDetail = [[CPRackMiniDetailViewController alloc] init];
+	self.miniDetail.view.layer.shadowColor = [UIColor blackColor].CGColor;
+	self.miniDetail.view.layer.shadowRadius = 2;
+	self.miniDetail.view.layer.shadowOpacity = 0.3;
+	self.miniDetail.view.layer.shadowOffset = CGSizeMake(0, 0);
+	self.miniDetail.view.layer.cornerRadius = 2;
     
    
 }
@@ -197,6 +233,41 @@
     
     
     
+}
+
+#pragma mark minidetail methods
+
+-(void)onOpenDetail:(NSNotification *) notification {
+	CPRack *rack = (CPRack *)notification.userInfo[@"rack"];
+	
+	UIView *miniDetailView = self.miniDetail.view;
+	miniDetailView.frame = CGRectMake(10, self.view.frame.size.height+10, self.view.frame.size.width-20, 100);
+	[self.miniDetail setRack:rack];
+	[self.view addSubview:miniDetailView];
+	
+	[UIView animateWithDuration:0.15 animations:^{
+		miniDetailView.frame = CGRectMake(10, self.view.frame.size.height-100, self.view.frame.size.width-20, 100);
+	} ];
+}
+
+-(void)onUpdateDetail:(NSNotification *) notification {
+	NSLog(@"update detail");
+	CPRack *rack = (CPRack *)notification.userInfo[@"rack"];
+	[self.miniDetail setRack:rack];
+
+}
+
+-(void)onCloseDetail:(NSNotification *) notification {
+	NSLog(@"close detail");
+	UIView *miniDetailView = self.miniDetail.view;
+	[UIView animateWithDuration:0.15 animations:^{
+		miniDetailView.frame = CGRectMake(10, self.view.frame.size.height+10, self.view.frame.size.width-20, 100);
+	} ];
+}
+
+-(void)onUpdateWalkingTime:(NSNotification *) notification {
+	NSTimeInterval time = [notification.userInfo[@"time"] doubleValue];
+	[self.miniDetail setTime:time];
 }
 
 @end
