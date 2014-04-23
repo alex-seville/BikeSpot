@@ -18,8 +18,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *currentcity;
 @property (weak, nonatomic) IBOutlet UILabel *email;
 
-@property (strong,nonatomic) UIBarButtonItem *editButton;
-
 @end
 
 @implementation CPUserProfileViewController
@@ -46,8 +44,6 @@
     self.currentcity.text = @"";
     self.email.text = @"";
     
-    self.editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(onEdit:)];
-    self.navigationItem.rightBarButtonItem = self.editButton;
     
     if (isLinkedToFacebook)
     {
