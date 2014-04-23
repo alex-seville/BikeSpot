@@ -13,10 +13,10 @@
 
 @interface CPUserProfileViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
-@property (weak, nonatomic) IBOutlet UILabel *firstname;
-@property (weak, nonatomic) IBOutlet UILabel *lastname;
 @property (weak, nonatomic) IBOutlet UILabel *currentcity;
-@property (weak, nonatomic) IBOutlet UILabel *email;
+@property (weak, nonatomic) IBOutlet UILabel *memberSince;
+@property (weak, nonatomic) IBOutlet UILabel *name;
+@property (weak, nonatomic) IBOutlet UIView *dividerBar;
 
 @end
 
@@ -39,11 +39,21 @@
     CPUser *currentUser = [CPUser currentUser];
     BOOL isLinkedToFacebook = [PFFacebookUtils isLinkedWithUser:currentUser];
     
-    self.firstname.text = @"";
-    self.lastname.text = @"";
+    self.name.textColor = [UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f];
+    self.name.text = @"";
     self.currentcity.text = @"";
-    self.email.text = @"";
+    self.memberSince.text = @"";
     
+    // round user profile image
+    self.profileImage.layer.backgroundColor=[[UIColor clearColor] CGColor];
+    self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width/2;
+    self.profileImage.layer.masksToBounds = YES;
+    self.profileImage.layer.borderWidth = 2;
+    self.profileImage.layer.borderColor = [[UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f] CGColor];
+    
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f];
+    
+    //self.dividerBar.backgroundColor = [UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f];
     
     if (isLinkedToFacebook)
     {
@@ -57,8 +67,7 @@
                 NSDictionary *userData = (NSDictionary *)result;
                 NSLog(@"%@", userData);
                 NSString *facebookID = userData[@"id"];
-                self.firstname.text = userData[@"first_name"];
-                self.lastname.text = userData[@"last_name"];
+                self.name.text = userData[@"name"];
                 self.currentcity.text = userData[@"location"][@"name"];
                                 
                 NSURL *pictureURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large&return_ssl_resources=1", facebookID]];
@@ -67,54 +76,16 @@
 
             }
         }];
-    }
-    else
-    {
-
-        if (currentUser.firstname)
-        {
-            self.firstname.text = currentUser.firstname;
-        }
-        else
-        {
-            self.firstname.text = @"";
-        }
         
-        if (currentUser.lastname)
-        {
-            self.lastname.text = currentUser.lastname;
-        }
-        else
-        {
-            self.lastname.text = @"";
-        }
+        // Get createdAt from Parse
+        NSString *dateString = [NSDateFormatter localizedStringFromDate: [CPUser currentUser].createdAt
+                                                              dateStyle:NSDateFormatterLongStyle
+                                                              timeStyle:NSDateFormatterNoStyle];
+        self.memberSince.text = dateString;
         
-        if (currentUser.city && currentUser.state)
-        {
-            self.currentcity.text = [NSString stringWithFormat:@"%@, %@", currentUser.city, currentUser.state];
-        }
-        else if (currentUser.state)
-        {
-            self.currentcity.text = currentUser.state;
-        }
-        else if (currentUser.city)
-        {
-            self.currentcity.text = currentUser.city;
-        }
-        else
-        {
-            self.currentcity.text = @"";
-        }
     }
     
-    if (currentUser.email)
-    {
-        self.email.text = currentUser.email;
-    }
-    else
-    {
-        self.email.text = @"";
-    }
+
 
 }
 

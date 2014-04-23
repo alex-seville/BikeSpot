@@ -12,7 +12,8 @@
 
 - (void)awakeFromNib
 {
-    // Initialization code
+    // Initialization code    
+    [self.optionLabel setFont:[UIFont fontWithName:@"Avenir" size:14.0f]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

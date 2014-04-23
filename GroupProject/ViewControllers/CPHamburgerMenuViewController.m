@@ -47,6 +47,8 @@
     self.menuTableView.delegate = self;
     self.menuTableView.scrollEnabled = NO;
     
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f];
+    
     // register cells
     UINib *menuCellNib = [UINib nibWithNibName:@"CPMenuCell" bundle:nil];
     [self.menuTableView registerNib:menuCellNib forCellReuseIdentifier:@"CPMenuCell"];
