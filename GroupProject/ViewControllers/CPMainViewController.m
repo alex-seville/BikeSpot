@@ -120,6 +120,10 @@
                                              selector:@selector(onCloseDetail:)
                                                  name:CloseDetailNotification object:nil];
 	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(onUpdateWalkingTime:)
+                                                 name:UpdateWalkingDistanceDetailNotification object:nil];
+	
 	
 	/* create a new minidetail view */
 	self.miniDetail = [[CPRackMiniDetailViewController alloc] init];
@@ -238,7 +242,7 @@
 	
 	UIView *miniDetailView = self.miniDetail.view;
 	miniDetailView.frame = CGRectMake(10, self.view.frame.size.height+10, self.view.frame.size.width-20, 100);
-	[self.miniDetail setName:rack.name];
+	[self.miniDetail setRack:rack];
 	[self.view addSubview:miniDetailView];
 	
 	[UIView animateWithDuration:0.15 animations:^{
@@ -249,7 +253,8 @@
 -(void)onUpdateDetail:(NSNotification *) notification {
 	NSLog(@"update detail");
 	CPRack *rack = (CPRack *)notification.userInfo[@"rack"];
-	[self.miniDetail setName:rack.name];
+	[self.miniDetail setRack:rack];
+
 }
 
 -(void)onCloseDetail:(NSNotification *) notification {
@@ -258,6 +263,11 @@
 	[UIView animateWithDuration:0.15 animations:^{
 		miniDetailView.frame = CGRectMake(10, self.view.frame.size.height+10, self.view.frame.size.width-20, 100);
 	} ];
+}
+
+-(void)onUpdateWalkingTime:(NSNotification *) notification {
+	NSTimeInterval time = [notification.userInfo[@"time"] doubleValue];
+	[self.miniDetail setTime:time];
 }
 
 @end

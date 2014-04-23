@@ -13,6 +13,7 @@
 extern NSString * const ViewMoreRackDetails;
 extern NSString * const UpdateMiniDetailNotification;
 extern NSString * const CloseDetailNotification;
+extern NSString * const UpdateWalkingDistanceDetailNotification;
 
 @interface CPViewLocationViewController : UIViewController <MKMapViewDelegate, UISearchBarDelegate, CLLocationManagerDelegate, CPAddParkingViewControllerDelegate>
 

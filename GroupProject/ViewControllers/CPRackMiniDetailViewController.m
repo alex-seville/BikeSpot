@@ -7,6 +7,7 @@
 //
 
 #import "CPRackMiniDetailViewController.h"
+#import "CPRack.h"
 
 
 
@@ -19,6 +20,7 @@
 @property (nonatomic, assign) double startHeight;
 @property (nonatomic, assign) double startY;
 
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 
 @end
@@ -47,11 +49,18 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) setName:(NSString *)name {
-    self.rackNameLabel.text = name;
+- (void) setRack:(CPRack *)rack {
+    self.rackNameLabel.text = rack.name;
+	self.rackDescriptionLabel.text = rack.address;
 }
 
-
+- (void) setTime:(NSTimeInterval)time {
+	if (time < 60){
+		self.timeLabel.text = [NSString stringWithFormat:@"Walking time: %.0f seconds", time];
+	}else{
+		self.timeLabel.text = [NSString stringWithFormat:@"Walking time: %.0f minutes", time / 60];
+	}
+}
 
 - (IBAction)onPan:(UIPanGestureRecognizer *)sender {
 	CGPoint point = [sender locationInView:self.view];

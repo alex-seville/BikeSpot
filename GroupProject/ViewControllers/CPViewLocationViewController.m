@@ -21,6 +21,7 @@
 NSString * const ViewMoreRackDetails = @"ViewMoreRackDetails";
 NSString * const UpdateMiniDetailNotification = @"UpdateMiniDetailNotification";
 NSString * const CloseDetailNotification = @"CloseDetailNotification";
+NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistanceDetailNotification";
 
 @interface CPViewLocationViewController ()
 @property (weak, nonatomic) IBOutlet MKMapView *mainMapView;
@@ -36,6 +37,8 @@ NSString * const CloseDetailNotification = @"CloseDetailNotification";
 - (IBAction)onMenuTapped:(UITapGestureRecognizer *)sender;
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
+
+@property (nonatomic, strong) UITapGestureRecognizer *tap;
 
 @end
 
@@ -74,8 +77,6 @@ NSString * const CloseDetailNotification = @"CloseDetailNotification";
 	self.searchBarView.layer.shadowOpacity = 0.3;
 	self.searchBarView.layer.shadowOffset = CGSizeMake(0, 0);
 	self.searchBarView.layer.cornerRadius = 2;
-	
-	
 		
 }
 
@@ -103,6 +104,7 @@ NSString * const CloseDetailNotification = @"CloseDetailNotification";
        
        CPRack *rack = [[CPRack alloc] initWithDictionary:@{
                                 @"name": [row objectAtIndex:8],
+								@"address": [row objectAtIndex:9],
                                 @"latitude": [[NSNumber alloc] initWithDouble:latitude],
                                 @"longitude": [[NSNumber alloc] initWithDouble:longitude]
                             }];
@@ -127,18 +129,28 @@ NSString * const CloseDetailNotification = @"CloseDetailNotification";
 	   }];
 	   
 	}
-	[self.mainMapView addAnnotations:[self filterAnnotations:self.annotations modifyMap:false]];
-	*/
+	 */
+	//[self.mainMapView addAnnotations:[self filterAnnotations:self.annotations modifyMap:false]];
+	
 }
 
-- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
-	[searchBar resignFirstResponder];
-	searchBar.showsCancelButton=false;
-}
+
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
-	searchBar.showsCancelButton=true;
 	
+	self.tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTap:)];
+	
+	//[self.mainMapView setUserInteractionEnabled:false];
+	[self.mainMapView addGestureRecognizer:self.tap];
+	
+	NSLog(@"begin editing and add gestrue recog");
+}
+
+- (IBAction)onTap:(UIPanGestureRecognizer *)gesture {
+	NSLog(@"on tap");
+	[self.mainMapView removeGestureRecognizer:self.tap];
+	[self.locationSearchBar resignFirstResponder];
+	//[self.mainMapView setUserInteractionEnabled:true];
 }
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
@@ -148,7 +160,7 @@ NSString * const CloseDetailNotification = @"CloseDetailNotification";
 	
 	/* close the detail view */
 	if (self.selectedAnnotationView != nil){
-		self.selectedAnnotationView.pinColor = 
+		self.selectedAnnotationView.pinColor = MKPinAnnotationColorRed;
 		self.selectedAnnotationView = nil;
 		UIView *miniDetailView = self.view.subviews.lastObject;
 		[UIView animateWithDuration:0.15 animations:^{
@@ -331,7 +343,8 @@ NSString * const CloseDetailNotification = @"CloseDetailNotification";
 			MKDirections *directions = [[MKDirections alloc] initWithRequest:request];
 			[directions calculateETAWithCompletionHandler:^(MKETAResponse *response, NSError *error) {
 				NSLog(@"distance: %.2f minutes", response.expectedTravelTime / 60);
-				//self.miniDetail.rackDescriptionLabel.text = [NSString stringWithFormat:@"Walking time: %.2f minutes", response.expectedTravelTime / 60];
+				
+				[[NSNotificationCenter defaultCenter] postNotificationName:UpdateWalkingDistanceDetailNotification object:self userInfo:[NSDictionary dictionaryWithObject:@(response.expectedTravelTime) forKey:@"time"]];
 			}];
 								 
 		}
