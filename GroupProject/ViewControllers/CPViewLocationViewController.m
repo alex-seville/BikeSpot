@@ -32,6 +32,8 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 
 
 @property (nonatomic, strong) CPRackAnnotation *selectedAnnotation;
+@property (nonatomic, strong) CPRackAnnotation *searchResultAnnotation;
+
 @property (weak, nonatomic) IBOutlet UISearchBar *locationSearchBar;
 - (IBAction)onLongPress:(UILongPressGestureRecognizer *)sender;
 - (IBAction)onMenuTapped:(UITapGestureRecognizer *)sender;
@@ -156,50 +158,59 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
 	[searchBar resignFirstResponder];
 	searchBar.showsCancelButton=false;
-    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
 	
-	/* close the detail view */
-	if (self.selectedAnnotation != nil){
-		
-		MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[self.mainMapView dequeueReusableAnnotationViewWithIdentifier:@"RackAnnotation"];
-		
-		if(!annotationView){
-			annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:self.selectedAnnotation reuseIdentifier:@"RackAnnotation"];
+	
+	MKCoordinateRegion newRegion;
+    newRegion.center.latitude = 37.783333;
+    newRegion.center.longitude = -122.416667;
+    
+    // setup the area spanned by the map region:
+    // we use the delta values to indicate the desired zoom level of the map,
+    //      (smaller delta values corresponding to a higher zoom level)
+    //
+    newRegion.span.latitudeDelta = 0.112872;
+    newRegion.span.longitudeDelta = 0.109863;
+	
+	MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
+    
+    request.naturalLanguageQuery = searchBar.text;
+    request.region = newRegion;
+    
+    MKLocalSearchCompletionHandler completionHandler = ^(MKLocalSearchResponse *response, NSError *error)
+    {
+        if (error != nil)
+        {
+            NSString *errorStr = [[error userInfo] valueForKey:NSLocalizedDescriptionKey];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Could not find places"
+                                                            message:errorStr
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
+        else
+        {
+            
+			CPRackAnnotation *newAnnot = [[CPRackAnnotation alloc] initWithLocation:response.boundingRegion.center];
+			
+			self.searchResultAnnotation = newAnnot;
+			[self.mainMapView addAnnotation:newAnnot];
+			
+			
+			[self.mainMapView setCenterCoordinate:response.boundingRegion.center animated:YES];
+			
+			[self.mainMapView setRegion:response.boundingRegion animated:YES];
+			[self findRacksWithLocation:response.boundingRegion.center];
+			[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 		}
-		
-		annotationView.pinColor = MKPinAnnotationColorRed;
-		
-		UIView *miniDetailView = self.view.subviews.lastObject;
-		[UIView animateWithDuration:0.15 animations:^{
-			miniDetailView.frame = CGRectMake(10, self.view.frame.size.height+10, self.view.frame.size.width-20, 100);
-		} ];
-	}
-	
-    [geocoder geocodeAddressString:searchBar.text completionHandler:^(NSArray *placemarks, NSError *error) {
-        //Error checking
-		
-        CLPlacemark *placemark = [placemarks objectAtIndex:0];
-        MKCoordinateRegion region;
-        region.center.latitude = placemark.region.center.latitude;
-        region.center.longitude = placemark.region.center.longitude;
-        MKCoordinateSpan span;
-        double radius = placemark.region.radius / 10000; // convert to km
-		
-        NSLog(@"[searchBarSearchButtonClicked] Radius is %f", radius);
-        span.latitudeDelta = radius / 112.0;
-		
-        region.span = span;
-		
-		
-		CPRackAnnotation *newAnnot = [[CPRackAnnotation alloc] initWithLocation:placemark.location.coordinate];
-		
-		
-		[self.mainMapView addAnnotation:newAnnot];
-		
-		
-        [self.mainMapView setRegion:region animated:YES];
-		
-    }];
+    };
+    
+    
+    MKLocalSearch *localSearch = [[MKLocalSearch alloc] initWithRequest:request];
+    
+    [localSearch startWithCompletionHandler:completionHandler];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+
 }
 
 #pragma mark - mapview delegate methods
@@ -279,8 +290,17 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 	}
 	
 	annotationView.pinColor = MKPinAnnotationColorRed;
+	
+	if (self.searchResultAnnotation != nil){
+		if (self.searchResultAnnotation.coordinate.latitude == annotation.coordinate.latitude && self.searchResultAnnotation.coordinate.longitude == annotation.coordinate.longitude){
+			
+			annotationView.pinColor = MKPinAnnotationColorPurple;
+			[annotationView setUserInteractionEnabled:false];
+		}
+		
+	}
 
-	if (self.selectedAnnotation != nil){
+	else if (self.selectedAnnotation != nil){
 		
 		if (self.selectedAnnotation.coordinate.latitude == annotation.coordinate.latitude && self.selectedAnnotation.coordinate.longitude == annotation.coordinate.longitude){
 			NSLog(@"%f %f %f %f", self.selectedAnnotation.coordinate.latitude , annotation.coordinate.latitude ,self.selectedAnnotation.coordinate.longitude, annotation.coordinate.longitude);
@@ -364,7 +384,10 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 
 -(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
 	//[self filterAnnotations:self.annotations modifyMap:true];
-	[self findRacksWithLocation:mapView.centerCoordinate];
+	
+	if (self.searchResultAnnotation == nil){
+		[self findRacksWithLocation:mapView.centerCoordinate];
+	}
 	
 	
 }
