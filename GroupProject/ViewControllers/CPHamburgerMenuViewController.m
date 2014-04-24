@@ -102,6 +102,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     [self.menuTableView deselectRowAtIndexPath:indexPath animated:YES];
     
     [self.delegate sender:self menuTapped:indexPath.row];

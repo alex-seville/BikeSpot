@@ -22,6 +22,7 @@
 @property (strong, nonatomic) UINavigationController *createAccountNavigationViewController;
 
 @property (strong, nonatomic) UIBarButtonItem *cancelButton;
+@property (weak, nonatomic) IBOutlet UILabel *appName;
 
 @end
 
@@ -33,6 +34,8 @@
     if (self) {
         // Custom initialization
         
+        self.title = @"Log In";
+        
         // sign in view controller
         self.enterAccountViewController = [[CPEnterAccountViewController alloc] initWithSignInOption];
         self.enterAccountNavigationViewController = [[UINavigationController alloc] initWithRootViewController:self.enterAccountViewController];
@@ -40,7 +43,7 @@
         // sign up view controller
         self.createAccountViewController = [[ CPEnterAccountViewController alloc] initWithNewAccountOption];
         self.createAccountNavigationViewController = [[UINavigationController alloc] initWithRootViewController:self.createAccountViewController];
-        
+             
     }
     return self;
 }
@@ -50,8 +53,22 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    [self.navigationController.navigationBar setTitleTextAttributes: @{
+                                                                       NSForegroundColorAttributeName: [UIColor whiteColor],
+                                                                       NSFontAttributeName: [UIFont fontWithName:@"Avenir" size:14.0f],
+                                                                     }];
     self.cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(onCancel:)];
     self.navigationItem.leftBarButtonItem = self.cancelButton;
+    
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f]; // TODO put this color def somewhere else....
+    
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f];
+    [self.navigationItem.leftBarButtonItem setTitleTextAttributes: @{
+                                                                    NSForegroundColorAttributeName: [UIColor whiteColor],
+                                                                    NSFontAttributeName: [UIFont fontWithName:@"Avenir" size:14.0f],
+                                                                    } forState:UIControlStateNormal];
+    
+    self.appName.textColor = [UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f];
 
 }
 
