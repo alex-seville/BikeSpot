@@ -31,7 +31,7 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 @property (weak, nonatomic) IBOutlet UIView *searchBarView;
 
 
-@property (nonatomic, strong) MKPinAnnotationView *selectedAnnotationView;
+@property (nonatomic, strong) CPRackAnnotation *selectedAnnotation;
 @property (weak, nonatomic) IBOutlet UISearchBar *locationSearchBar;
 - (IBAction)onLongPress:(UILongPressGestureRecognizer *)sender;
 - (IBAction)onMenuTapped:(UITapGestureRecognizer *)sender;
@@ -159,9 +159,16 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
 	
 	/* close the detail view */
-	if (self.selectedAnnotationView != nil){
-		self.selectedAnnotationView.pinColor = MKPinAnnotationColorRed;
-		self.selectedAnnotationView = nil;
+	if (self.selectedAnnotation != nil){
+		
+		MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[self.mainMapView dequeueReusableAnnotationViewWithIdentifier:@"RackAnnotation"];
+		
+		if(!annotationView){
+			annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:self.selectedAnnotation reuseIdentifier:@"RackAnnotation"];
+		}
+		
+		annotationView.pinColor = MKPinAnnotationColorRed;
+		
 		UIView *miniDetailView = self.view.subviews.lastObject;
 		[UIView animateWithDuration:0.15 animations:^{
 			miniDetailView.frame = CGRectMake(10, self.view.frame.size.height+10, self.view.frame.size.width-20, 100);
@@ -231,30 +238,25 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 		if (error) {
 			NSLog(@"error in geo query!"); // todo why is this ever happening?
 		} else {
-			// We need to make new post objects from objects,
-			// and update allPosts and the map to reflect this new array.
-			// But we don't want to remove all annotations from the mapview blindly,
-			// so let's do some work to figure out what's new and what needs removing.
 			
-			// 1. Find genuinely new posts:
 			NSLog(@"object count %lu", (unsigned long)objects.count);
-			[self.mainMapView removeAnnotations:self.mainMapView.annotations];
+			//[self.mainMapView removeAnnotations:self.mainMapView.annotations];
 			for (PFObject *object in objects) {
 				CPRack *rack = (CPRack *)object;
 				CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(rack.geoLocation.latitude, rack.geoLocation.longitude);
-				CPRackAnnotation *annotation = [[CPRackAnnotation alloc] initWithRack:rack Location:coord];
-				[self.mainMapView addAnnotation:annotation];
-				[self.annotations addObject:annotation];
 				
-				/*
-				if (!firstSelected && self.selectedAnnotationView == nil){
-					firstSelected = true;
-					[self.mainMapView selectAnnotation:self.mainMapView.annotations.lastObject animated:NO];
+				if ([self.mainMapView.annotations indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+					BOOL test = (((CPRackAnnotation *)obj).coordinate.latitude == coord.latitude &&
+								 ((CPRackAnnotation *)obj).coordinate.longitude == coord.longitude);
+					*stop = test;
 					
-				}else if (((CPRackAnnotation *)self.selectedAnnotationView.annotation).selected &&
-						  self.selectedAnnotationView.annotation == annotation){
-					annotation.selected = true;
-				}*/
+					return test;
+				}] == NSNotFound){
+					CPRackAnnotation *annotation = [[CPRackAnnotation alloc] initWithRack:rack Location:coord];
+					[self.mainMapView addAnnotation:annotation];
+					[self.annotations addObject:annotation];
+				}
+				
 			}
 			
 			
@@ -276,10 +278,14 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 		annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"RackAnnotation"];
 	}
 	
-	if (((CPRackAnnotation *)annotationView.annotation).selected){
-		annotationView.pinColor = MKPinAnnotationColorGreen;
-	} else{
-		annotationView.pinColor = MKPinAnnotationColorRed;
+	annotationView.pinColor = MKPinAnnotationColorRed;
+
+	if (self.selectedAnnotation != nil){
+		
+		if (self.selectedAnnotation.coordinate.latitude == annotation.coordinate.latitude && self.selectedAnnotation.coordinate.longitude == annotation.coordinate.longitude){
+			NSLog(@"%f %f %f %f", self.selectedAnnotation.coordinate.latitude , annotation.coordinate.latitude ,self.selectedAnnotation.coordinate.longitude, annotation.coordinate.longitude);
+			annotationView.pinColor = MKPinAnnotationColorGreen;
+		}
 	}
 
     annotationView.canShowCallout = YES;
@@ -297,21 +303,27 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 	if(![view.annotation isKindOfClass:[MKUserLocation class]] && ((CPRackAnnotation *)view.annotation).rack != nil){
 		CPRack *rack = ((CPRackAnnotation *)view.annotation).rack;
 		
-		if ([self.selectedAnnotationView isEqual:view]){
+		if ([self.selectedAnnotation isEqual:view.annotation]){
 			NSLog(@"clicking the same annotation again");
 			
-			self.selectedAnnotationView = nil;
+			self.selectedAnnotation = nil;
 			view.pinColor = MKPinAnnotationColorRed;
 			
 			[[NSNotificationCenter defaultCenter] postNotificationName:CloseDetailNotification object:self userInfo:[NSDictionary dictionaryWithObject:rack forKey:@"rack"]];
 		}else{
 			view.pinColor = MKPinAnnotationColorGreen;
 			
-			if (self.selectedAnnotationView != nil){
+			if (self.selectedAnnotation != nil){
 				NSLog(@"clicking different annotation");
 				
+				MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"RackAnnotation"];
+				
+				if(!annotationView){
+					annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:self.selectedAnnotation reuseIdentifier:@"RackAnnotation"];
+				}
 
-				self.selectedAnnotationView.pinColor =MKPinAnnotationColorRed;
+				
+				annotationView.pinColor =MKPinAnnotationColorRed;
 				
 				/* update minitdetailview info */
 				//[self.miniDetail setName:view.annotation.title];
@@ -328,10 +340,8 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 				
 				
 			}
-			self.selectedAnnotationView = view;
-			((CPRackAnnotation *)self.selectedAnnotationView.annotation).selected = true;
-
-			
+			self.selectedAnnotation = view.annotation;
+						
 			MKMapItem *source = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:self.mainMapView.centerCoordinate addressDictionary:nil]];
 			MKMapItem *dest = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:((CPRackAnnotation *)view.annotation).coordinate addressDictionary:nil]];
 			
