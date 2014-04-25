@@ -178,6 +178,7 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
     
     MKLocalSearchCompletionHandler completionHandler = ^(MKLocalSearchResponse *response, NSError *error)
     {
+		
         if (error != nil)
         {
             NSString *errorStr = [[error userInfo] valueForKey:NSLocalizedDescriptionKey];
@@ -190,7 +191,7 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
         }
         else
         {
-            
+            [self resetSearchAnnotation];
 			CPRackAnnotation *newAnnot = [[CPRackAnnotation alloc] initWithLocation:response.boundingRegion.center];
 			
 			self.searchResultAnnotation = newAnnot;
@@ -203,14 +204,24 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 			[self findRacksWithLocation:response.boundingRegion.center];
 			[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 		}
+		
     };
     
+	
     
     MKLocalSearch *localSearch = [[MKLocalSearch alloc] initWithRequest:request];
     
     [localSearch startWithCompletionHandler:completionHandler];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 
+}
+
+- (void) resetSearchAnnotation {
+	if (self.searchResultAnnotation != nil){
+		[self.mainMapView removeAnnotation:self.searchResultAnnotation];
+		self.searchResultAnnotation = nil;
+		
+	}
 }
 
 #pragma mark - mapview delegate methods
@@ -250,7 +261,7 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 			NSLog(@"error in geo query!"); // todo why is this ever happening?
 		} else {
 			
-			NSLog(@"object count %lu", (unsigned long)objects.count);
+			
 			//[self.mainMapView removeAnnotations:self.mainMapView.annotations];
 			for (PFObject *object in objects) {
 				CPRack *rack = (CPRack *)object;
@@ -303,13 +314,13 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 	else if (self.selectedAnnotation != nil){
 		
 		if (self.selectedAnnotation.coordinate.latitude == annotation.coordinate.latitude && self.selectedAnnotation.coordinate.longitude == annotation.coordinate.longitude){
-			NSLog(@"%f %f %f %f", self.selectedAnnotation.coordinate.latitude , annotation.coordinate.latitude ,self.selectedAnnotation.coordinate.longitude, annotation.coordinate.longitude);
+			
 			annotationView.pinColor = MKPinAnnotationColorGreen;
 		}
 	}
 
-    annotationView.canShowCallout = YES;
-    annotationView.draggable = YES;
+    annotationView.canShowCallout = NO;
+    annotationView.draggable = NO;
     
     annotationView.animatesDrop = NO;
     
@@ -318,16 +329,18 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKPinAnnotationView *)view {
 	
-	[self.mainMapView deselectAnnotation:view.annotation animated:NO];
+	
 	
 	if(![view.annotation isKindOfClass:[MKUserLocation class]] && ((CPRackAnnotation *)view.annotation).rack != nil){
 		CPRack *rack = ((CPRackAnnotation *)view.annotation).rack;
 		
 		if ([self.selectedAnnotation isEqual:view.annotation]){
+			/* this condition is never hit, we can't deselect for now */
 			NSLog(@"clicking the same annotation again");
-			
+			[self.mainMapView deselectAnnotation:self.selectedAnnotation animated:NO];
 			self.selectedAnnotation = nil;
-			view.pinColor = MKPinAnnotationColorRed;
+			
+			
 			
 			[[NSNotificationCenter defaultCenter] postNotificationName:CloseDetailNotification object:self userInfo:[NSDictionary dictionaryWithObject:rack forKey:@"rack"]];
 		}else{
@@ -336,17 +349,10 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 			if (self.selectedAnnotation != nil){
 				NSLog(@"clicking different annotation");
 				
-				MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"RackAnnotation"];
+				//to reset the pin we remove and re-add the annotation to the map
+				[self.mainMapView deselectAnnotation:self.selectedAnnotation animated:NO];
 				
-				if(!annotationView){
-					annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:self.selectedAnnotation reuseIdentifier:@"RackAnnotation"];
-				}
-
 				
-				annotationView.pinColor =MKPinAnnotationColorRed;
-				
-				/* update minitdetailview info */
-				//[self.miniDetail setName:view.annotation.title];
 				[[NSNotificationCenter defaultCenter] postNotificationName:UpdateMiniDetailNotification object:self userInfo:[NSDictionary dictionaryWithObject:rack forKey:@"rack"]];
 				
 			}else{
@@ -361,8 +367,16 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 				
 			}
 			self.selectedAnnotation = view.annotation;
+			
+			CLLocationCoordinate2D sourceCoord;
+			
+			if (self.searchResultAnnotation != nil){
+				sourceCoord = self.searchResultAnnotation.coordinate;
+			}else{
+				sourceCoord = self.locationManager.location.coordinate;
+			}
 						
-			MKMapItem *source = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:self.mainMapView.centerCoordinate addressDictionary:nil]];
+			MKMapItem *source = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:sourceCoord addressDictionary:nil]];
 			MKMapItem *dest = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:((CPRackAnnotation *)view.annotation).coordinate addressDictionary:nil]];
 			
 			MKDirectionsRequest *request = [[MKDirectionsRequest alloc] init];
@@ -372,7 +386,6 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 			
 			MKDirections *directions = [[MKDirections alloc] initWithRequest:request];
 			[directions calculateETAWithCompletionHandler:^(MKETAResponse *response, NSError *error) {
-				NSLog(@"distance: %.2f minutes", response.expectedTravelTime / 60);
 				
 				[[NSNotificationCenter defaultCenter] postNotificationName:UpdateWalkingDistanceDetailNotification object:self userInfo:[NSDictionary dictionaryWithObject:@(response.expectedTravelTime) forKey:@"time"]];
 			}];
@@ -382,12 +395,16 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
     
 }
 
+- (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKPinAnnotationView *)view {
+	NSLog(@"deselect");
+	view.pinColor = MKPinAnnotationColorRed;
+}
+
 -(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
 	//[self filterAnnotations:self.annotations modifyMap:true];
 	
-	if (self.searchResultAnnotation == nil){
-		[self findRacksWithLocation:mapView.centerCoordinate];
-	}
+	[self findRacksWithLocation:mapView.centerCoordinate];
+	
 	
 	
 }
