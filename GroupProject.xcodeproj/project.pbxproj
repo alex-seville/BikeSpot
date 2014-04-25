@@ -20,6 +20,7 @@
 		6524D9DA18F23B570072620D /* ParseClient.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6524D9D918F23B570072620D /* ParseClient.plist */; };
 		652D805618F7AA900027D752 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 652D805418F7A3250027D752 /* data.json */; };
 		6548959B18ED08E3002E7F0E /* CPRack.m in Sources */ = {isa = PBXBuildFile; fileRef = 6548959A18ED08E3002E7F0E /* CPRack.m */; };
+		65509B1D190A2C7700084D69 /* ZSPinAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 65509B1C190A2C7700084D69 /* ZSPinAnnotation.m */; };
 		657BD82B18FB847A00A887EC /* CPAnnotationGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 657BD82A18FB847A00A887EC /* CPAnnotationGroup.m */; };
 		6583AF1918EC931D00D46333 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6583AF1818EC931D00D46333 /* Foundation.framework */; };
 		6583AF1B18EC931D00D46333 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6583AF1A18EC931D00D46333 /* CoreGraphics.framework */; };
@@ -98,6 +99,8 @@
 		652D805418F7A3250027D752 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		6548959918ED08E3002E7F0E /* CPRack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPRack.h; path = Models/CPRack.h; sourceTree = "<group>"; };
 		6548959A18ED08E3002E7F0E /* CPRack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPRack.m; path = Models/CPRack.m; sourceTree = "<group>"; };
+		65509B1B190A2C7700084D69 /* ZSPinAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZSPinAnnotation.h; path = "Custom Pin/ZSPinAnnotation.h"; sourceTree = "<group>"; };
+		65509B1C190A2C7700084D69 /* ZSPinAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZSPinAnnotation.m; path = "Custom Pin/ZSPinAnnotation.m"; sourceTree = "<group>"; };
 		657BD82918FB847A00A887EC /* CPAnnotationGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPAnnotationGroup.h; path = Models/CPAnnotationGroup.h; sourceTree = "<group>"; };
 		657BD82A18FB847A00A887EC /* CPAnnotationGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPAnnotationGroup.m; path = Models/CPAnnotationGroup.m; sourceTree = "<group>"; };
 		6583AF1518EC931D00D46333 /* GroupProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -277,6 +280,15 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		65509B1A190A2C4700084D69 /* Custom Pin */ = {
+			isa = PBXGroup;
+			children = (
+				65509B1B190A2C7700084D69 /* ZSPinAnnotation.h */,
+				65509B1C190A2C7700084D69 /* ZSPinAnnotation.m */,
+			);
+			name = "Custom Pin";
+			sourceTree = "<group>";
+		};
 		6583AF0C18EC931D00D46333 = {
 			isa = PBXGroup;
 			children = (
@@ -331,6 +343,7 @@
 		6583AF1E18EC931D00D46333 /* GroupProject */ = {
 			isa = PBXGroup;
 			children = (
+				65509B1A190A2C4700084D69 /* Custom Pin */,
 				658D6A9218FA4A07009D6812 /* Views */,
 				65173C1C18F38BA8002B2C14 /* ViewControllers */,
 				6524D9D518F23A960072620D /* DAL */,
@@ -535,6 +548,7 @@
 				6583AF2918EC931D00D46333 /* CPAppDelegate.m in Sources */,
 				65173C2518F38C00002B2C14 /* CPHamburgerMenuViewController.m in Sources */,
 				6524D9D818F23AB80072620D /* CPParseClient.m in Sources */,
+				65509B1D190A2C7700084D69 /* ZSPinAnnotation.m in Sources */,
 				5C66FE2F18F2788B00AB0965 /* CPUser.m in Sources */,
 				658D6A9518FA4A3F009D6812 /* CPRackAnnotation.m in Sources */,
 				65173C2A18F38C57002B2C14 /* CPViewLocationViewController.m in Sources */,

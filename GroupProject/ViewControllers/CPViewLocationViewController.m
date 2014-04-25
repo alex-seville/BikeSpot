@@ -14,6 +14,8 @@
 #import "CPAnnotationGroup.h"
 #import <Parse/Parse.h>
 #import "CPParseClient.h"
+#import "TSMessage.h"
+#import "ZSPinAnnotation.h"
 
 #define iphoneScaleFactorLatitude   9.0
 #define iphoneScaleFactorLongitude  11.0
@@ -160,59 +162,90 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 	searchBar.showsCancelButton=false;
 	
 	
-	MKCoordinateRegion newRegion;
-    newRegion.center.latitude = 37.783333;
-    newRegion.center.longitude = -122.416667;
+	/*CLRegion *newRegion = [[CLRegion alloc] init];
+	newRegion
+    newRegion.latitude = 37.783333;
+    newRegion.longitude = -122.416667;
+    */
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     
-    // setup the area spanned by the map region:
-    // we use the delta values to indicate the desired zoom level of the map,
-    //      (smaller delta values corresponding to a higher zoom level)
-    //
-    newRegion.span.latitudeDelta = 0.112872;
-    newRegion.span.longitudeDelta = 0.109863;
-	
-	MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
+    [geocoder geocodeAddressDictionary:@{
+				@"Street": searchBar.text,
+				@"City": @"San Francisco",
+				@"State": @"California"
+		}  completionHandler:^(NSArray *placemarks, NSError *error) {
     
-    request.naturalLanguageQuery = searchBar.text;
-    request.region = newRegion;
-    
-    MKLocalSearchCompletionHandler completionHandler = ^(MKLocalSearchResponse *response, NSError *error)
-    {
 		
-        if (error != nil)
+        if (error != nil )
         {
-            NSString *errorStr = [[error userInfo] valueForKey:NSLocalizedDescriptionKey];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Could not find places"
-                                                            message:errorStr
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"OK"
-                                                  otherButtonTitles:nil];
-            [alert show];
+            [TSMessage showNotificationWithTitle:@"No destination found"
+										subtitle:@"Please search for an address with San Francisco"
+											type:TSMessageNotificationTypeError];
         }
         else
         {
-            [self resetSearchAnnotation];
-			CPRackAnnotation *newAnnot = [[CPRackAnnotation alloc] initWithLocation:response.boundingRegion.center];
-			
-			self.searchResultAnnotation = newAnnot;
-			[self.mainMapView addAnnotation:newAnnot];
 			
 			
-			[self.mainMapView setCenterCoordinate:response.boundingRegion.center animated:YES];
+			int index = 0;
+			bool keepChecking = true;
 			
-			[self.mainMapView setRegion:response.boundingRegion animated:YES];
-			[self findRacksWithLocation:response.boundingRegion.center];
-			[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+			//find the first placemark in SF
+			CLPlacemark *placemark = [placemarks objectAtIndex:index];
+			while (keepChecking && (![placemark.country  isEqual: @"United States"] || ![placemark.administrativeArea  isEqual: @"CA"] || ![placemark.locality  isEqual: @"San Francisco"])){
+				index++;
+				if (index >= placemarks.count){
+					keepChecking = false;
+				}else{
+					placemark = [placemarks objectAtIndex:index];
+				}
+			}
+			
+			//check that the placemark is in SF
+			if (![placemark.country  isEqual: @"United States"] || ![placemark.administrativeArea  isEqual: @"CA"] || ![placemark.locality  isEqual: @"San Francisco"]){
+				[TSMessage showNotificationWithTitle:@"No destination found"
+											subtitle:@"Please search for an address with San Francisco"
+												type:TSMessageNotificationTypeError];
+			}else{
+				
+				[self clearSelectedAnnotation];
+				
+				[self resetSearchAnnotation];
+				
+				
+				if (placemark.addressDictionary[@"FormattedAddressLines"] == nil || [placemark.addressDictionary[@"FormattedAddressLines"][0]  isEqual: @"San Francisco, CA"]){
+					//address is vague, should warn user somehow
+					[TSMessage showNotificationWithTitle:@"Unspecific Address"
+												subtitle:@"We were unable to find the exact address.  Your destination may or may not be near this location."
+													type:TSMessageNotificationTypeWarning];
+				}
+			
+				MKCoordinateRegion region;
+				region.center.latitude = placemark.region.center.latitude;
+				region.center.longitude = placemark.region.center.longitude;
+				MKCoordinateSpan span;
+				double radius = placemark.region.radius / 10000; // convert to km
+				
+				NSLog(@"[searchBarSearchButtonClicked] Radius is %f", radius);
+				span.latitudeDelta = radius / 112.0;
+				
+				region.span = span;
+				
+				CPRackAnnotation *newAnnot = [[CPRackAnnotation alloc] initWithLocation:region.center];
+				
+				self.searchResultAnnotation = newAnnot;
+				[self.mainMapView addAnnotation:newAnnot];
+				
+				
+				[self.mainMapView setCenterCoordinate:region.center animated:YES];
+				
+				[self.mainMapView setRegion:region animated:YES];
+				[self findRacksWithLocation:region.center];
+			}
+			
 		}
 		
-    };
+    }];
     
-	
-    
-    MKLocalSearch *localSearch = [[MKLocalSearch alloc] initWithRequest:request];
-    
-    [localSearch startWithCompletionHandler:completionHandler];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 
 }
 
@@ -222,6 +255,14 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 		self.searchResultAnnotation = nil;
 		
 	}
+}
+
+- (void) clearSelectedAnnotation {
+	if (self.selectedAnnotation != nil){
+		[[NSNotificationCenter defaultCenter] postNotificationName:CloseDetailNotification object:self userInfo:[NSDictionary dictionaryWithObject:self.selectedAnnotation.rack forKey:@"rack"]];
+	}
+	[self.mainMapView deselectAnnotation:self.selectedAnnotation animated:NO];
+	self.selectedAnnotation = nil;
 }
 
 #pragma mark - mapview delegate methods
@@ -294,20 +335,20 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 	if ([annotation isKindOfClass:[MKUserLocation class]]) return nil;
     
 	//for our racks, create an annotationview
-	MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"RackAnnotation"];
+	ZSPinAnnotation *annotationView = (ZSPinAnnotation *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"RackAnnotation"];
 	
 	if(!annotationView){
-		annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"RackAnnotation"];
+		annotationView = [[ZSPinAnnotation alloc] initWithAnnotation:annotation reuseIdentifier:@"RackAnnotation"];
 	}
 	
-	annotationView.pinColor = MKPinAnnotationColorRed;
-	
-	if (self.searchResultAnnotation != nil){
-		if (self.searchResultAnnotation.coordinate.latitude == annotation.coordinate.latitude && self.searchResultAnnotation.coordinate.longitude == annotation.coordinate.longitude){
+		
+	if (self.searchResultAnnotation != nil && self.searchResultAnnotation.coordinate.latitude == annotation.coordinate.latitude && self.searchResultAnnotation.coordinate.longitude == annotation.coordinate.longitude)
+	{
 			
-			annotationView.pinColor = MKPinAnnotationColorPurple;
-			[annotationView setUserInteractionEnabled:false];
-		}
+		annotationView.annotationType = ZSPinAnnotationTypeDisc;
+		annotationView.annotationColor = [UIColor blueColor];
+		[annotationView setUserInteractionEnabled:false];
+		annotationView.enabled = false;
 		
 	}
 
@@ -315,19 +356,24 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 		
 		if (self.selectedAnnotation.coordinate.latitude == annotation.coordinate.latitude && self.selectedAnnotation.coordinate.longitude == annotation.coordinate.longitude){
 			
-			annotationView.pinColor = MKPinAnnotationColorGreen;
+			annotationView.annotationType = ZSPinAnnotationTypeStandard;
+			annotationView.annotationColor = [UIColor darkGrayColor];
 		}
+	}else{
+		annotationView.annotationType = ZSPinAnnotationTypeStandard;
+		annotationView.annotationColor = [UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f];
+
 	}
 
     annotationView.canShowCallout = NO;
     annotationView.draggable = NO;
     
-    annotationView.animatesDrop = NO;
+
     
     return annotationView;
 }
 
-- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKPinAnnotationView *)view {
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(ZSPinAnnotation *)view {
 	
 	
 	
@@ -344,7 +390,8 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 			
 			[[NSNotificationCenter defaultCenter] postNotificationName:CloseDetailNotification object:self userInfo:[NSDictionary dictionaryWithObject:rack forKey:@"rack"]];
 		}else{
-			view.pinColor = MKPinAnnotationColorGreen;
+			view.annotationColor = [UIColor darkGrayColor];
+			
 			
 			if (self.selectedAnnotation != nil){
 				NSLog(@"clicking different annotation");
@@ -395,9 +442,10 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
     
 }
 
-- (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKPinAnnotationView *)view {
+- (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(ZSPinAnnotation *)view {
 	NSLog(@"deselect");
-	view.pinColor = MKPinAnnotationColorRed;
+	view.annotationColor = [UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f];
+	
 }
 
 -(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{

@@ -41,6 +41,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	self.view.layer.cornerRadius = 2;
+	self.rackNameLabel.textColor = [UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f];
+
 }
 
 - (void)didReceiveMemoryWarning
