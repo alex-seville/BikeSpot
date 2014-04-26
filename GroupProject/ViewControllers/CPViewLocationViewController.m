@@ -29,6 +29,7 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 @property (weak, nonatomic) IBOutlet MKMapView *mainMapView;
 
 @property (nonatomic, strong) NSMutableArray *racks;
+@property (nonatomic, strong) NSArray *sortedAnnotations;
 
 @property (weak, nonatomic) IBOutlet UIView *searchBarView;
 
@@ -263,6 +264,34 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 
 }
 
+- (void)createSortedAnnotations{
+	CLLocation *currentLocation;
+	
+	if (self.searchResultAnnotation){
+		currentLocation = [[CLLocation alloc] initWithLatitude:self.searchResultAnnotation.coordinate.latitude longitude:self.searchResultAnnotation.coordinate.longitude];
+	} else {
+		currentLocation = [[CLLocation alloc] initWithLatitude:self.mainMapView.userLocation.coordinate.latitude longitude:self.mainMapView.userLocation.coordinate.longitude];
+	}
+	
+    
+	
+	NSPredicate *sPredicate = [NSPredicate predicateWithFormat:@"self isMemberOfClass: %@", [CPRackAnnotation class]];
+	NSArray *mapAnnots = [self.mainMapView.annotations filteredArrayUsingPredicate:sPredicate];
+	NSLog(@"sorting");
+
+	NSArray *sorted = [mapAnnots sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+		
+        CLLocationDistance first = [((CPRackAnnotation *)a).location distanceFromLocation:currentLocation];
+        CLLocationDistance second = [((CPRackAnnotation *)b).location distanceFromLocation:currentLocation];
+		NSLog(@" %f > %f", first, second);
+        return first > second;
+    }];
+	for (CPRackAnnotation *annot in sorted) {
+		NSLog(@"annot distance: %f", [annot.location distanceFromLocation:currentLocation]);
+	}
+	self.sortedAnnotations = sorted;
+}
+
 - (void) resetSearchAnnotation {
 	if (self.searchResultAnnotation != nil){
 		[self.mainMapView removeAnnotation:self.searchResultAnnotation];
@@ -335,6 +364,7 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 				}
 				
 			}
+			[self createSortedAnnotations];
 			
 		}
 	}];
@@ -567,8 +597,8 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 	[self.locationManager stopUpdatingLocation];
 }
 
-- (int)getRackIndex:(CPRack *)rack {
-	NSArray *annots = [self.mainMapView annotations];
+- (int)getRackIndex:(CPRack *)rack annotations:(NSArray *)annotations {
+	NSArray *annots = annotations;
 	int rackIndex = [annots indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
 		CPRackAnnotation *rackAnnot = (CPRackAnnotation *)obj;
 		if ([rackAnnot isKindOfClass:[MKUserLocation class]]){
@@ -578,12 +608,13 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 		stop = &found;
 		return found;
 	}];
+	NSLog(@"found at %i", rackIndex);
 	return rackIndex;
 }
 
 - (CPRack *)getNextRack:(CPRack *)rack {
-	NSArray *annots = [self.mainMapView annotations];
-	int rackIndex = [self getRackIndex:rack];
+	NSArray *annots = self.sortedAnnotations;
+	int rackIndex = [self getRackIndex:rack annotations:annots];
 	[self.mainMapView deselectAnnotation:annots[rackIndex] animated:NO];
 	if (rackIndex+1 >= annots.count){
 		rackIndex = 0;
@@ -597,8 +628,8 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 }
 
 - (CPRack *)getPrevRack:(CPRack *)rack {
-	NSArray *annots = [self.mainMapView annotations];
-	int rackIndex = [self getRackIndex:rack];
+	NSArray *annots = self.sortedAnnotations;
+	int rackIndex = [self getRackIndex:rack annotations:annots];
 	[self.mainMapView deselectAnnotation:annots[rackIndex] animated:NO];
 	if (rackIndex-1 <= 0){
 		rackIndex = annots.count-1;

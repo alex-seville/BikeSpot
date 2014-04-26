@@ -9,6 +9,10 @@
 #import "CPRackAnnotation.h"
 #import "CPRack.h"
 
+@interface CPRackAnnotation()
+
+@end
+
 @implementation CPRackAnnotation
 
 -(id)initWithRack:(CPRack *)rack Location:(CLLocationCoordinate2D)location{
@@ -16,7 +20,10 @@
     if (self){
         _coordinate = location;
 		_rack = rack;
-		_selected = false;
+		
+		_location = [[CLLocation alloc]
+					 initWithLatitude:location.latitude
+					 longitude:location.longitude];
     }
     return self;
 }
@@ -25,7 +32,9 @@
     self = [super init];
     if (self){
         _coordinate = location;
-		
+		_location = [[CLLocation alloc]
+								   initWithLatitude:location.latitude
+								   longitude:location.longitude];
 		
     }
     return self;

@@ -18,6 +18,7 @@
 @property (copy, nonatomic) NSString *title;
 @property (nonatomic, strong) CPRack *rack;
 @property (nonatomic, assign) bool selected;
+@property (nonatomic, strong) CLLocation *location;
 
 -(id)initWithRack:(CPRack *)rack Location:(CLLocationCoordinate2D)location;
 -(id)initWithLocation:(CLLocationCoordinate2D)location;
