@@ -44,6 +44,8 @@
 @property (nonatomic, strong) CPRackMiniDetailViewController *miniDetail;
 @property (nonatomic, strong) CPAddParkingViewController *addNew;
 
+@property (nonatomic, assign) int startx;
+
 @end
 
 @implementation CPMainViewController
@@ -247,7 +249,10 @@
 	
 	[UIView animateWithDuration:0.15 animations:^{
 		miniDetailView.frame = CGRectMake(10, self.view.frame.size.height-100, self.view.frame.size.width-20, 100);
+		[self createPanView:CGRectMake(0, self.view.frame.size.height-100, self.view.frame.size.width, 100)];
 	} ];
+	
+	
 }
 
 -(void)onUpdateDetail:(NSNotification *) notification {
@@ -268,6 +273,82 @@
 -(void)onUpdateWalkingTime:(NSNotification *) notification {
 	NSTimeInterval time = [notification.userInfo[@"time"] doubleValue];
 	[self.miniDetail setTime:time];
+}
+
+-(void)createPanView:(CGRect)rect {
+	UIView *panView = [[UIView alloc] initWithFrame:rect];
+	UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(onPanDetails:)];
+	NSLog(@"create pan view");
+	[panView addGestureRecognizer:pan];
+	[self.view addSubview:panView];
+}
+
+- (IBAction)onPanDetails:(UIPanGestureRecognizer *)gesture {
+	
+	CGPoint point = [gesture locationInView:self.miniDetail.view];
+	CGPoint velocity = [gesture velocityInView:self.miniDetail.view];
+	
+	NSLog(@"pan: %f", point.x);
+	
+	if (gesture.state == UIGestureRecognizerStateBegan){
+		self.startx = point.x;
+	} else if (gesture.state == UIGestureRecognizerStateChanged){
+		CGRect viewFrame = self.miniDetail.view.frame;
+		viewFrame.origin.x += point.x - self.startx;
+		self.miniDetail.view.frame = viewFrame;
+	} else if (gesture.state == UIGestureRecognizerStateEnded){
+		NSLog(@"x %f ",self.miniDetail.view.frame.origin.x);
+		
+		if (self.miniDetail.view.frame.origin.x < -100 ||
+			self.miniDetail.view.frame.origin.x > 100){
+			
+			if (velocity.x > 1){
+				NSLog(@"right?");
+				CGRect viewFrame = self.miniDetail.view.frame;
+				viewFrame.origin.x += self.view.frame.size.width;
+				[UIView animateWithDuration:0.15 animations:^{
+					//move off screen
+					self.miniDetail.view.frame = viewFrame;
+				} completion:^(BOOL finished) {
+					self.miniDetail.view.hidden = true;
+					CGRect viewFrame = self.miniDetail.view.frame;
+					viewFrame.origin.x = -self.view.frame.size.width;
+					self.miniDetail.view.frame = viewFrame;
+					self.miniDetail.view.hidden = false;
+					viewFrame.origin.x = 10;
+					[UIView animateWithDuration:0.15 animations:^{
+						self.miniDetail.view.frame = viewFrame;
+					}];
+				}];
+			}else{
+				NSLog(@"left?");
+				CGRect viewFrame = self.miniDetail.view.frame;
+				viewFrame.origin.x = -self.miniDetail.view.frame.size.width;
+				[UIView animateWithDuration:0.15 animations:^{
+					//move off screen
+					self.miniDetail.view.frame = viewFrame;
+				} completion:^(BOOL finished) {
+					self.miniDetail.view.hidden = true;
+					CGRect viewFrame = self.miniDetail.view.frame;
+					viewFrame.origin.x = self.view.frame.size.width;
+					self.miniDetail.view.frame = viewFrame;
+					self.miniDetail.view.hidden = false;
+					
+					viewFrame.origin.x = 10;
+					[UIView animateWithDuration:0.15 animations:^{
+						self.miniDetail.view.frame = viewFrame;
+					}];
+				}];
+			}
+		}else{
+			NSLog(@"reset");
+			CGRect viewFrame = self.miniDetail.view.frame;
+			viewFrame.origin.x = 10;
+			[UIView animateWithDuration:0.15 animations:^{
+				self.miniDetail.view.frame = viewFrame;
+			}];
+		}
+	}
 }
 
 @end
