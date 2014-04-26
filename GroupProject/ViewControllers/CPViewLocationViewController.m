@@ -567,6 +567,50 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 	[self.locationManager stopUpdatingLocation];
 }
 
+- (int)getRackIndex:(CPRack *)rack {
+	NSArray *annots = [self.mainMapView annotations];
+	int rackIndex = [annots indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+		CPRackAnnotation *rackAnnot = (CPRackAnnotation *)obj;
+		if ([rackAnnot isKindOfClass:[MKUserLocation class]]){
+			return false;
+		}
+		BOOL found = (rackAnnot.rack == rack);
+		stop = &found;
+		return found;
+	}];
+	return rackIndex;
+}
+
+- (CPRack *)getNextRack:(CPRack *)rack {
+	NSArray *annots = [self.mainMapView annotations];
+	int rackIndex = [self getRackIndex:rack];
+	[self.mainMapView deselectAnnotation:annots[rackIndex] animated:NO];
+	if (rackIndex+1 >= annots.count){
+		rackIndex = 0;
+	}else{
+		rackIndex++;
+	}
+	CPRackAnnotation *rackAnnot = annots[rackIndex];
+	[self.mainMapView selectAnnotation:rackAnnot animated:NO];
+	[self.mainMapView setCenterCoordinate:rackAnnot.coordinate animated:YES];
+	return rackAnnot.rack;
+}
+
+- (CPRack *)getPrevRack:(CPRack *)rack {
+	NSArray *annots = [self.mainMapView annotations];
+	int rackIndex = [self getRackIndex:rack];
+	[self.mainMapView deselectAnnotation:annots[rackIndex] animated:NO];
+	if (rackIndex-1 <= 0){
+		rackIndex = annots.count-1;
+	}else{
+		rackIndex--;
+	}
+	CPRackAnnotation *rackAnnot = annots[rackIndex];
+	[self.mainMapView selectAnnotation:rackAnnot animated:NO];
+	[self.mainMapView setCenterCoordinate:rackAnnot.coordinate animated:YES];
+	return rackAnnot.rack;
+}
+
 #pragma mark - CPAddParkingViewControllerDelegate methods
 -(void)didAddParkingViewClose:(CPAddParkingViewController *)sender
 {

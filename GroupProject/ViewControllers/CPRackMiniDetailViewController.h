@@ -16,6 +16,8 @@ extern NSString * const ViewMoreRackDetails;
 - (void) setRack:(CPRack *)rack;
 - (void) setTime:(NSTimeInterval)time;
 
+- (CPRack *) getRack;
+
 /* just for now */
 @property (weak, nonatomic) IBOutlet UILabel *rackDescriptionLabel;
 
