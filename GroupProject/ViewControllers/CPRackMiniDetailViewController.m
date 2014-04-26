@@ -13,12 +13,8 @@
 
 @interface CPRackMiniDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *rackNameLabel;
-//@property (weak, nonatomic) IBOutlet UILabel *rackDescriptionLabel;
 
 - (IBAction)onPan:(UIPanGestureRecognizer *)sender;
-@property (nonatomic, assign) double startPan;
-@property (nonatomic, assign) double startHeight;
-@property (nonatomic, assign) double startY;
 
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
@@ -54,6 +50,7 @@
 - (void) setRack:(CPRack *)rack {
     self.rackNameLabel.text = rack.name;
 	self.rackDescriptionLabel.text = rack.address;
+	self.timeLabel.text = @"";
 }
 
 - (void) setTime:(NSTimeInterval)time {
@@ -66,6 +63,7 @@
 
 /* panning upwards reveals more details */
 /* panning side-to-side should show another point */
+/*
 - (IBAction)onPan:(UIPanGestureRecognizer *)sender {
 	CGPoint point = [sender locationInView:self.view];
 	CGPoint velocity = [sender velocityInView:self.view];
@@ -100,4 +98,6 @@
 	}
 	
 }
+ */
+
 @end

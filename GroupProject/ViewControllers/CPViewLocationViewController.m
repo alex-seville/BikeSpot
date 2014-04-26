@@ -43,6 +43,7 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 @property (nonatomic, strong) CLLocationManager *locationManager;
 
 @property (nonatomic, strong) UITapGestureRecognizer *tap;
+@property (nonatomic, strong) UITapGestureRecognizer *tapWhenAnnotationOpen;
 
 @end
 
@@ -156,6 +157,17 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 	[self.locationSearchBar resignFirstResponder];
 	//[self.mainMapView setUserInteractionEnabled:true];
 }
+
+- (IBAction)onTapWhenAnnotationOpen:(UIPanGestureRecognizer *)gesture {
+	NSLog(@"on tap");
+	[self.mainMapView removeGestureRecognizer:self.tapWhenAnnotationOpen];
+	[self.mainMapView deselectAnnotation:self.selectedAnnotation animated:NO];
+	
+	[[NSNotificationCenter defaultCenter] postNotificationName:CloseDetailNotification object:self userInfo:[NSDictionary dictionaryWithObject:self.selectedAnnotation.rack forKey:@"rack"]];
+	
+	self.selectedAnnotation = nil;
+}
+
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
 	[searchBar resignFirstResponder];
@@ -322,9 +334,6 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 				
 			}
 			
-			
-			
-			
 		}
 	}];
 }
@@ -386,7 +395,7 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 			[self.mainMapView deselectAnnotation:self.selectedAnnotation animated:NO];
 			self.selectedAnnotation = nil;
 			
-			
+			[self.mainMapView removeGestureRecognizer:self.tapWhenAnnotationOpen];
 			
 			[[NSNotificationCenter defaultCenter] postNotificationName:CloseDetailNotification object:self userInfo:[NSDictionary dictionaryWithObject:rack forKey:@"rack"]];
 		}else{
@@ -410,6 +419,11 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 				CPRack *rack = ((CPRackAnnotation *)view.annotation).rack;
 				
 				[[NSNotificationCenter defaultCenter] postNotificationName:ViewMoreRackDetails object:self userInfo:[NSDictionary dictionaryWithObject:rack forKey:@"rack"]];
+				
+				self.tapWhenAnnotationOpen = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTapWhenAnnotationOpen:)];
+				
+				//[self.mainMapView setUserInteractionEnabled:false];
+				[self.mainMapView addGestureRecognizer:self.tapWhenAnnotationOpen];
 				
 				
 			}
@@ -444,16 +458,14 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 
 - (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(ZSPinAnnotation *)view {
 	NSLog(@"deselect");
-	view.annotationColor = [UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f];
-	
+	if(![view.annotation isKindOfClass:[MKUserLocation class]]){
+		view.annotationColor = [UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f];
+	}
 }
 
 -(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
-	//[self filterAnnotations:self.annotations modifyMap:true];
 	
 	[self findRacksWithLocation:mapView.centerCoordinate];
-	
-	
 	
 }
 
