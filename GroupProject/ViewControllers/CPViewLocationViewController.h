@@ -16,5 +16,6 @@ extern NSString * const CloseDetailNotification;
 extern NSString * const UpdateWalkingDistanceDetailNotification;
 
 @interface CPViewLocationViewController : UIViewController <MKMapViewDelegate, UISearchBarDelegate, CLLocationManagerDelegate, CPAddParkingViewControllerDelegate>
+@property (nonatomic, strong) NSMutableArray *annotations;
 
 @end

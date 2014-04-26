@@ -27,7 +27,7 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 
 @interface CPViewLocationViewController ()
 @property (weak, nonatomic) IBOutlet MKMapView *mainMapView;
-@property (nonatomic, strong) NSMutableArray *annotations;
+
 @property (nonatomic, strong) NSMutableArray *racks;
 
 @property (weak, nonatomic) IBOutlet UIView *searchBarView;
@@ -352,6 +352,9 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 		annotationView = [[ZSPinAnnotation alloc] initWithAnnotation:annotation reuseIdentifier:@"RackAnnotation"];
 	}
 	
+	annotationView.annotationType = ZSPinAnnotationTypeStandard;
+	annotationView.annotationColor = [UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f];
+	
 		
 	if (self.searchResultAnnotation != nil && self.searchResultAnnotation.coordinate.latitude == annotation.coordinate.latitude && self.searchResultAnnotation.coordinate.longitude == annotation.coordinate.longitude)
 	{
@@ -370,10 +373,6 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 			annotationView.annotationType = ZSPinAnnotationTypeStandard;
 			annotationView.annotationColor = [UIColor darkGrayColor];
 		}
-	}else{
-		annotationView.annotationType = ZSPinAnnotationTypeStandard;
-		annotationView.annotationColor = [UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f];
-
 	}
 
     annotationView.canShowCallout = NO;
