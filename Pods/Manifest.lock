@@ -21,19 +21,25 @@ PODS:
   - BDBOAuth1Manager (1.2.0):
     - AFNetworking/NSURLConnection (~> 2.2.0)
     - AFNetworking/NSURLSession (~> 2.2.0)
+  - HexColors (2.2.1)
   - MHPrettyDate (1.1.1)
   - SVProgressHUD (0.8)
+  - TSMessages (0.9.7):
+    - HexColors
 
 DEPENDENCIES:
   - AFNetworking
   - BDBOAuth1Manager
   - MHPrettyDate
   - SVProgressHUD (= 0.8)
+  - TSMessages
 
 SPEC CHECKSUMS:
   AFNetworking: 0121f4b69be3fa58d1ab317866e036e12ac9651d
   BDBOAuth1Manager: 25d18d56820695aa18aae44eecad55829274a290
+  HexColors: 99211502e17904af7891fc8f687d0e4958a6d66e
   MHPrettyDate: 0486e5e1ddff296748b7a71cd78c9cc785a80cc5
   SVProgressHUD: 51042a14e3a716efdbdd73cbb2181fb23ee94389
+  TSMessages: 9dd053bcf1a8985275177ebe0fb8c0f1416e92f7
 
-COCOAPODS: 0.29.0
+COCOAPODS: 0.32.1
