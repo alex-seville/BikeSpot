@@ -311,6 +311,9 @@
 					self.miniDetail.view.frame = viewFrame;
 				} completion:^(BOOL finished) {
 					self.miniDetail.view.hidden = true;
+					
+					self.miniDetail.rackDescriptionLabel.text = @"changed!";
+					
 					CGRect viewFrame = self.miniDetail.view.frame;
 					viewFrame.origin.x = -self.view.frame.size.width;
 					self.miniDetail.view.frame = viewFrame;
@@ -329,6 +332,10 @@
 					self.miniDetail.view.frame = viewFrame;
 				} completion:^(BOOL finished) {
 					self.miniDetail.view.hidden = true;
+					
+					self.miniDetail.rackDescriptionLabel.text = @"changed!";
+
+					
 					CGRect viewFrame = self.miniDetail.view.frame;
 					viewFrame.origin.x = self.view.frame.size.width;
 					self.miniDetail.view.frame = viewFrame;
