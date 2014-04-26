@@ -11,19 +11,28 @@
 #import "CPUser.h"
 
 @interface CPAddParkingViewController ()
+@property (weak, nonatomic) UIColor *themeColor;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *descriptionField;
-@property (weak, nonatomic) IBOutlet UIStepper *parkingNumberControl;
 @property (weak, nonatomic) IBOutlet UILabel *parkingNumberField;
+@property (weak, nonatomic) IBOutlet UIButton *lessSpotsButton;
+@property (weak, nonatomic) IBOutlet UIButton *moreSpotsButton;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *garageControl;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *safetyRatingControl;
+@property (weak, nonatomic) IBOutlet UILabel *viewTitle;
+@property (weak, nonatomic) IBOutlet UIButton *addPhotoButton;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
+@property (weak, nonatomic) IBOutlet UIButton *submitButton;
+@property (weak, nonatomic) IBOutlet UIButton *garageButton;
+@property (weak, nonatomic) IBOutlet UIView *fakeNavBar;
+@property (weak, nonatomic) IBOutlet UIView *parkingSpotsView;
 - (IBAction)onSubmit:(id)sender;
 - (IBAction)onCancel:(id)sender;
 - (IBAction)onTap:(UITapGestureRecognizer *)sender;
-- (IBAction)onStepperValueChanged:(id)sender;
-- (void)didAddParkingViewClose:(CPAddParkingViewController *)sender;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *safetyRatingControl;
-
+- (IBAction)onLessSpots:(id)sender;
+- (IBAction)onMoreSpots:(id)sender;
+- (IBAction)onGarage:(id)sender;
 
 
 @end
@@ -43,6 +52,7 @@
     self = [super init];
     if (self){
         _coordinate = location;
+        _themeColor = [UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f]; // why doesn't this work?
     }
     return self;
 }
@@ -51,6 +61,29 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.viewTitle.textColor = [UIColor whiteColor];
+    self.fakeNavBar.backgroundColor = [UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f];
+    [self.addPhotoButton setTitleColor:[UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f] forState:UIControlStateNormal];
+    [self.submitButton setTitleColor:[UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f] forState:UIControlStateNormal];
+    [self.cancelButton setTitleColor:[UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f] forState:UIControlStateNormal];
+    [self.garageButton setTitleColor:[UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f] forState:UIControlStateNormal];
+    [[self.garageButton layer] setBorderWidth:1.0f];
+    [[self.garageButton layer] setCornerRadius:2];
+    [[self.garageButton layer] setBorderColor:[UIColor grayColor].CGColor];
+    [[self.parkingSpotsView layer] setBorderWidth:1.0f];
+    [[self.parkingSpotsView layer] setCornerRadius:2];
+    [[self.parkingSpotsView layer] setBorderColor: [UIColor grayColor].CGColor];
+    [[self.parkingSpotsView layer] setBackgroundColor:[UIColor clearColor].CGColor];
+    
+    [[self.nameField layer] setCornerRadius:2];
+    [[self.descriptionField layer] setCornerRadius:2];
+    
+    [[self.safetyRatingControl layer] setCornerRadius:2];
+    self.safetyRatingControl.tintColor = [UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f];
+    
+    [[self.imageView layer] setBorderWidth: 1.0f];
+    [[self.imageView layer] setCornerRadius:2];
+    [[self.imageView layer] setBorderColor:[UIColor grayColor].CGColor];
 }
 
 - (void)didReceiveMemoryWarning
@@ -109,8 +142,13 @@
     [self.view endEditing:YES];
 }
 
-- (IBAction)onStepperValueChanged:(id)sender {
-    self.parkingNumberField.text = [NSString stringWithFormat:@"%d", (int)self.parkingNumberControl.value];
+- (IBAction)onLessSpots:(id)sender {
+}
+
+- (IBAction)onMoreSpots:(id)sender {
+}
+
+- (IBAction)onGarage:(id)sender {
 }
 
 - (BOOL)validateFields {

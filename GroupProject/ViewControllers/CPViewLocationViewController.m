@@ -45,6 +45,8 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 @property (nonatomic, strong) UITapGestureRecognizer *tap;
 @property (nonatomic, strong) UITapGestureRecognizer *tapWhenAnnotationOpen;
 
+@property (nonatomic, strong) CPAddParkingViewController *addNew;
+
 @end
 
 @implementation CPViewLocationViewController
@@ -532,19 +534,19 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 		
 		
 		/* move up */
-		/*
+		
 		self.addNew = [[CPAddParkingViewController alloc] initWithLocation:coord];
 		UIView *addNewView = self.addNew.view;
 		addNewView.frame = CGRectMake(0, self.view.frame.size.height+10, self.view.frame.size.width, 100);
         self.addNew.delegate = self;
 		
 		[self.view addSubview:addNewView];
-		*/
+		
 		/* disable map interactions until save or cancel are pressed */
 		[self.mainMapView setUserInteractionEnabled:false];
 		
 		[UIView animateWithDuration:0.15 animations:^{
-			//addNewView.frame = CGRectMake(0, self.view.frame.size.height-400, self.view.frame.size.width, 400);
+			addNewView.frame = CGRectMake(0, self.view.frame.size.height-400, self.view.frame.size.width, 400);
 			/* the map needs to recenter somehow...*/
 		} ];
 

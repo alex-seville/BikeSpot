@@ -11,6 +11,7 @@
 #import "UIImageView+AFNetworking.h"
 #import <Parse/Parse.h>
 
+
 @interface CPUserProfileViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UILabel *currentcity;
