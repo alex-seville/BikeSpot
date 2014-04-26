@@ -45,6 +45,7 @@
 @property (nonatomic, strong) CPAddParkingViewController *addNew;
 
 @property (nonatomic, assign) int startx;
+@property (nonatomic, strong) UIView *panView;
 
 @end
 
@@ -267,6 +268,7 @@
 	UIView *miniDetailView = self.miniDetail.view;
 	[UIView animateWithDuration:0.15 animations:^{
 		miniDetailView.frame = CGRectMake(10, self.view.frame.size.height+10, self.view.frame.size.width-20, 100);
+		[self removePanView];
 	} ];
 }
 
@@ -276,11 +278,15 @@
 }
 
 -(void)createPanView:(CGRect)rect {
-	UIView *panView = [[UIView alloc] initWithFrame:rect];
+	self.panView = [[UIView alloc] initWithFrame:rect];
 	UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(onPanDetails:)];
 	NSLog(@"create pan view");
-	[panView addGestureRecognizer:pan];
-	[self.view addSubview:panView];
+	[self.panView addGestureRecognizer:pan];
+	[self.view addSubview:self.panView];
+}
+
+-(void)removePanView{
+	[self.panView removeFromSuperview];
 }
 
 - (IBAction)onPanDetails:(UIPanGestureRecognizer *)gesture {
