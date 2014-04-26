@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "CPAddParkingViewController.h"
+#import "CPRack.h"
 
 extern NSString * const ViewMoreRackDetails;
 extern NSString * const UpdateMiniDetailNotification;
@@ -17,5 +18,8 @@ extern NSString * const UpdateWalkingDistanceDetailNotification;
 
 @interface CPViewLocationViewController : UIViewController <MKMapViewDelegate, UISearchBarDelegate, CLLocationManagerDelegate, CPAddParkingViewControllerDelegate>
 @property (nonatomic, strong) NSMutableArray *annotations;
+
+- (CPRack *)getNextRack:(CPRack *)rack;
+- (CPRack *)getPrevRack:(CPRack *)rack;
 
 @end

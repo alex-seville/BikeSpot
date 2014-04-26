@@ -312,7 +312,8 @@
 				} completion:^(BOOL finished) {
 					self.miniDetail.view.hidden = true;
 					
-					self.miniDetail.rackDescriptionLabel.text = @"changed!";
+					CPRack *prevRack = [self.mapViewController getPrevRack:[self.miniDetail getRack]];
+					[self.miniDetail setRack:prevRack];
 					
 					CGRect viewFrame = self.miniDetail.view.frame;
 					viewFrame.origin.x = -self.view.frame.size.width;
@@ -333,8 +334,8 @@
 				} completion:^(BOOL finished) {
 					self.miniDetail.view.hidden = true;
 					
-					self.miniDetail.rackDescriptionLabel.text = @"changed!";
-
+					CPRack *nextRack = [self.mapViewController getNextRack:[self.miniDetail getRack]];
+					[self.miniDetail setRack:nextRack];
 					
 					CGRect viewFrame = self.miniDetail.view.frame;
 					viewFrame.origin.x = self.view.frame.size.width;

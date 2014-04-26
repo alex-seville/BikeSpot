@@ -64,11 +64,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GroupProject/ViewControllers/CPRackMiniDetailViewController.m"
-            timestampString = "420178322.376002"
+            timestampString = "420234675.532956"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "@implementation CPRackMiniDetailViewController"
             landmarkType = "3">
          </BreakpointContent>

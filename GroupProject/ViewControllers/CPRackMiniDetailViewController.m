@@ -17,6 +17,7 @@
 - (IBAction)onPan:(UIPanGestureRecognizer *)sender;
 
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (nonatomic, strong) CPRack *rack;
 
 
 @end
@@ -48,6 +49,7 @@
 }
 
 - (void) setRack:(CPRack *)rack {
+	_rack = rack;
     self.rackNameLabel.text = rack.name;
 	self.rackDescriptionLabel.text = rack.address;
 	self.timeLabel.text = @"";
@@ -59,6 +61,10 @@
 	}else{
 		self.timeLabel.text = [NSString stringWithFormat:@"Walking time: %.0f minutes", time / 60];
 	}
+}
+
+- (CPRack *) getRack{
+	return _rack;
 }
 
 /* panning upwards reveals more details */
