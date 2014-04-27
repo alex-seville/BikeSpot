@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
 #import <MapKit/MapKit.h>
+#import "CPUser.h"
 
 
 @interface CPRack : PFObject<PFSubclassing>
@@ -45,7 +46,7 @@
 @property int numSpots;
 
 /* username of user who added the bike rack */
-@property (retain) PFUser *createdBy;
+@property (retain) CPUser *createdBy;
 
 /* photo of the bike rack */
 @property (retain) PFFile *rackPhoto;

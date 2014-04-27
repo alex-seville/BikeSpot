@@ -175,7 +175,7 @@ NSString const *NOT_IN_GARAGE = @"Not in garage";
         }];
     }
 
-    
+    CPUser *currentUser = (CPUser*)[CPUser currentUser];
     CPRack *newBikeRack = [[CPRack alloc] initWithDictionary:@{
                                                               @"name": self.nameField.text,
                                                               @"isInGarage": self.isInGarage?@YES:@NO,
@@ -186,7 +186,7 @@ NSString const *NOT_IN_GARAGE = @"Not in garage";
                                                               @"rackPhoto": imageFile,
                                                               @"longitude": [NSNumber numberWithDouble:self.coordinate.longitude],
                                                               @"latitude": [NSNumber numberWithDouble:self.coordinate.latitude],
-                                                              @"createdBy:":[CPUser currentUser],
+                                                              @"createdBy":currentUser,
                                                               @"numSpots": [NSNumber numberWithInt:self.numSpots]
                                                               }];
     
