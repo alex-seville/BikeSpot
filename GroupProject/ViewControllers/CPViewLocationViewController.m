@@ -25,6 +25,7 @@ NSString * const UpdateMiniDetailNotification = @"UpdateMiniDetailNotification";
 NSString * const CloseDetailNotification = @"CloseDetailNotification";
 NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistanceDetailNotification";
 NSString * const AddNewRackNotification = @"AddNewRackNotification";
+NSString * const PresentLogInViewNotification = @"PresentLogInViewNotification";
 
 @interface CPViewLocationViewController ()
 @property (weak, nonatomic) IBOutlet MKMapView *mainMapView;
@@ -537,13 +538,17 @@ NSString * const AddNewRackNotification = @"AddNewRackNotification";
 }
 
 
-
-
-
 - (IBAction)onLongPress:(UILongPressGestureRecognizer *)sender {
-	if (sender.state == UIGestureRecognizerStateBegan){
-		
-
+	
+    // user not logged in
+    if (![CPUser currentUser])
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:PresentLogInViewNotification object:self];
+        return;
+    }
+    
+    if (sender.state == UIGestureRecognizerStateBegan){
+    
 		CGPoint location = [sender locationInView:self.mainMapView];
 		CLLocationCoordinate2D coord = [self.mainMapView convertPoint:location toCoordinateFromView:self.mainMapView];
 		CPRackAnnotation *newAnnot = [[CPRackAnnotation alloc] initWithLocation:coord];

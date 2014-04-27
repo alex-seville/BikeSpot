@@ -143,6 +143,10 @@
 	[[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(onShowCamera:)
                                                  name:ShowCameraNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                            selector:@selector(onPresentLogInView:)
+                                                name:PresentLogInViewNotification object:nil];
 	
 	
 	/* create a new minidetail view */
@@ -327,6 +331,12 @@
 		self.view.window.frame = CGRectMake(0, 0, appFrame.size.width, appFrame.size.height);
 	}];
 
+}
+     
+-(void)onPresentLogInView:(NSNotification *) notification {
+    CPSignInViewController *logInView = [[CPSignInViewController alloc] initWithHint];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:logInView];
+    [self presentViewController:navController animated:YES completion:nil];
 }
 
 

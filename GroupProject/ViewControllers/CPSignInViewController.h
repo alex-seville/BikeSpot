@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CPSignInViewController : UIViewController
+-(id) initWithHint;
 
 @end
