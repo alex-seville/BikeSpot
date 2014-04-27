@@ -9,6 +9,7 @@
 #import "CPAddParkingViewController.h"
 #import "CPRack.h"
 #import "CPUser.h"
+#import "TSMessage.h"
 
 NSString * const ShowCameraNotification = @"ShowCameraNotification";
 
@@ -45,6 +46,7 @@ NSString * const ShowCameraNotification = @"ShowCameraNotification";
 - (IBAction)onSafety5:(id)sender;
 - (IBAction)onImageViewTapped:(id)sender;
 - (IBAction)onAddPhoto:(id)sender;
+- (IBAction)onPan:(UIPanGestureRecognizer *)sender;
 
 @property (strong, nonatomic) IBOutlet UIButton *safety1;
 @property (strong, nonatomic) IBOutlet UIButton *safety2;
@@ -191,8 +193,13 @@ NSString const *NOT_IN_GARAGE = @"Not in garage";
     
     [newBikeRack saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
+            /*
             UIAlertView *successAlert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"You've added a new bike rack." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
             [successAlert show];
+             */
+            [TSMessage showNotificationWithTitle:@"Success!"
+                                        subtitle:@"You have added a new bike parking."
+                                            type:TSMessageNotificationTypeSuccess];
             // change to close after alert 
             [self closeView];
             
@@ -287,6 +294,9 @@ NSString const *NOT_IN_GARAGE = @"Not in garage";
     [self openCamera];
 }
 
+- (IBAction)onPan:(UIPanGestureRecognizer *)sender {
+}
+
 - (void)setSafetyRating:(int)value {
     // TODO animate?
     int i = 0;
@@ -310,28 +320,50 @@ NSString const *NOT_IN_GARAGE = @"Not in garage";
     // TODO or just grey out submit button
     // replace with log in vc
     if (![CPUser currentUser]) {
+        /*
         UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Log In!" message:@"Please log in to add a new bike rack." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
         [errorAlert show];
+        return false;
+         */
+        
+        [TSMessage showNotificationWithTitle:@"Log In!"
+                                    subtitle:@"Please log in to add a new bike parking."
+                                        type:TSMessageNotificationTypeError];
         return false;
     }
     
     NSString *trimmedName = [self.nameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     if ([trimmedName length] == 0) {
+        /*
         UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Please fill in a bike rack name." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
         [errorAlert show];
+         */
+        [TSMessage showNotificationWithTitle:@"Error!"
+                                    subtitle:@"Please fill in a bike parking name."
+                                        type:TSMessageNotificationTypeError];
         return false;
     }
     
     NSString *trimmedDescription = [self.descriptionField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     if ([trimmedDescription length] == 0) {
+        /*
         UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Please fill in a bike rack description." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
         [errorAlert show];
+         */
+        [TSMessage showNotificationWithTitle:@"Error!"
+                                    subtitle:@"Please fill in a bike parking description."
+                                        type:TSMessageNotificationTypeError];
         return false;
     }
     
     if (!self.imageView.image) {
+        /*
         UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Please take a photo of the bike rack." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
         [errorAlert show];
+         */
+        [TSMessage showNotificationWithTitle:@"Error!"
+                                    subtitle:@"Please  take a photo of the bike parking."
+                                        type:TSMessageNotificationTypeError];
         return false;
     }
     
@@ -381,7 +413,7 @@ NSString const *NOT_IN_GARAGE = @"Not in garage";
 
 - (void)openCamera {
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        
+        /*
         UIAlertView *cameraAlert = [[UIAlertView alloc] initWithTitle:@"Error!"
                                                               message:@"Device has no camera."
                                                              delegate:nil
@@ -389,6 +421,10 @@ NSString const *NOT_IN_GARAGE = @"Not in garage";
                                                     otherButtonTitles: nil];
         
         [cameraAlert show];
+         */
+        [TSMessage showNotificationWithTitle:@"Error!"
+                                    subtitle:@"Device has no camera."
+                                        type:TSMessageNotificationTypeError];
         
     }
     else
