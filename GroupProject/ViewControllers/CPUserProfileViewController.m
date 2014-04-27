@@ -20,8 +20,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *memberSince;
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UIView *dividerBar;
-@property (weak, nonatomic) IBOutlet UITableView *bikeParkingTableView;
-@property (weak, nonatomic) NSArray *userBikeRacks;
+@property (strong, nonatomic) IBOutlet UITableView *bikeParkingTableView;
+@property (strong, nonatomic) NSArray *userBikeRacks;
 @end
 
 @implementation CPUserProfileViewController
@@ -141,17 +141,19 @@
 }
 
 - (void) getUserBikeRacks {
-    /*
-     
-     2014-04-27 10:44:16.410 GroupProject[11893:60b] Warning: A long-running Parse operation is being executed on the main thread.
-     Break on warnParseOperationOnMainThread() to debug.
-     */
+
     PFQuery *query = [PFQuery queryWithClassName:@"CPRack"];
     [query whereKey:@"createdBy" equalTo:(CPUser *)[CPUser currentUser]];
     
-    self.userBikeRacks = [query findObjects];
-
-    [self.bikeParkingTableView reloadData];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error)
+        {
+            self.userBikeRacks = objects;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.bikeParkingTableView reloadData];
+            });
+        }
+    }];
 }
 
 @end
