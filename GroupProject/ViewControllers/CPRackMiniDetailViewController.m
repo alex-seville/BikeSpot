@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (nonatomic, strong) CPRack *rack;
 
+@property (weak, nonatomic) IBOutlet UILabel *extraDetails;
 
 @end
 
@@ -51,13 +52,29 @@
     self.rackNameLabel.text = rack.name;
 	self.rackDescriptionLabel.text = rack.address;
 	self.timeLabel.text = @"";
+	NSString *extras = @"";
+	if (rack.numSpots > 0){
+		if (rack.numSpots > 99){
+			extras = [extras stringByAppendingString:@"99+ spots, "];
+		}else{
+			extras = [extras stringByAppendingString:[NSString stringWithFormat:@"%i spots, ",rack.numSpots]];
+		}
+	}
+	if (rack.safetyRating > 0){
+		NSArray *safetyStrings = [NSArray arrayWithObjects:@"\u2605", @"\u2605\u2605", @"\u2605\u2605\u2605", @"\u2605\u2605\u2605\u2605", @"\u2605\u2605\u2605\u2605\u2605",nil];
+		
+		extras = [extras stringByAppendingString:safetyStrings[rack.safetyRating-1]];
+	}
+	self.extraDetails.text = extras;
 }
 
 - (void) setTime:(NSTimeInterval)time {
 	if (time < 60){
 		self.timeLabel.text = [NSString stringWithFormat:@"Walking time: %.0f seconds", time];
-	}else{
+	}else if (time >= 60 && time < 6000){
 		self.timeLabel.text = [NSString stringWithFormat:@"Walking time: %.0f minutes", time / 60];
+	}else {
+		self.timeLabel.text = @"Walking time: 99+ minutes";
 	}
 }
 

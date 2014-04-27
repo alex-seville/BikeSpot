@@ -418,7 +418,8 @@ NSString * const PresentLogInViewNotification = @"PresentLogInViewNotification";
 	
 	
 	if(![view.annotation isKindOfClass:[MKUserLocation class]] && ((CPRackAnnotation *)view.annotation).rack != nil){
-		CPRack *rack = ((CPRackAnnotation *)view.annotation).rack;
+		CPRackAnnotation *rackAnnot = (CPRackAnnotation *)view.annotation;
+		CPRack *rack = rackAnnot.rack;
 		
 		if ([self.selectedAnnotation isEqual:view.annotation]){
 			/* this condition is never hit, we can't deselect for now */
@@ -431,7 +432,7 @@ NSString * const PresentLogInViewNotification = @"PresentLogInViewNotification";
 			[[NSNotificationCenter defaultCenter] postNotificationName:CloseDetailNotification object:self userInfo:[NSDictionary dictionaryWithObject:rack forKey:@"rack"]];
 		}else{
 			view.annotationColor = [UIColor darkGrayColor];
-			
+			[self.mainMapView setCenterCoordinate:rackAnnot.coordinate animated:YES];
 			
 			if (self.selectedAnnotation != nil){
 				NSLog(@"clicking different annotation");
@@ -547,6 +548,7 @@ NSString * const PresentLogInViewNotification = @"PresentLogInViewNotification";
 - (IBAction)onLongPress:(UILongPressGestureRecognizer *)sender {
 	
     // user not logged in
+	
     if (![CPUser currentUser])
     {
         [[NSNotificationCenter defaultCenter] postNotificationName:PresentLogInViewNotification object:self];
@@ -583,8 +585,8 @@ NSString * const PresentLogInViewNotification = @"PresentLogInViewNotification";
 			[self.mainMapView setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-400)];
 			self.searchLayerX = self.searchBarView.frame.origin.x;
 			self.searchLayerY = self.searchBarView.frame.origin.y;
-			self.searchBarX = self.searchBarView.frame.origin.x;
-			self.searchBarX = self.searchBarView.frame.origin.y;
+			self.searchBarX = self.locationSearchBar.frame.origin.x;
+			self.searchBarX = self.locationSearchBar.frame.origin.y;
 			
 			[self.searchBarView setFrame:CGRectMake(0, -self.searchBarView.frame.size.height, self.searchBarView.frame.size.width, self.searchBarView.frame.size.height)];
 			
@@ -611,9 +613,9 @@ NSString * const PresentLogInViewNotification = @"PresentLogInViewNotification";
 	[self.searchDisplayController setActive:YES animated:YES ];
 	[UIView animateWithDuration:0.15 animations:^{
 		[self.mainMapView setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-		[self.searchBarView setFrame:CGRectMake(0, 10, self.searchBarView.frame.size.width-20, self.searchBarView.frame.size.height)];
-		
-		[self.locationSearchBar setFrame:CGRectMake(0, 0, self.searchBarView.frame.size.width, self.searchBarView.frame.size.height)];
+		[self.searchBarView setFrame:CGRectMake(self.searchLayerX, self.searchLayerY, self.searchBarView.frame.size.width, self.searchBarView.frame.size.height)];
+		NSLog(@"layer, bar %f %f", self.searchLayerX, self.searchBarX);
+		[self.locationSearchBar setFrame:CGRectMake(self.searchBarX-self.searchLayerX, self.searchLayerY + self.searchBarY, self.searchBarView.frame.size.width, self.searchBarView.frame.size.height)];
 		
 		
 	} completion:^(BOOL finished) {
