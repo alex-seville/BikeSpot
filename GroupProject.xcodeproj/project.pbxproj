@@ -57,6 +57,9 @@
 		65B69618190C658B0079F909 /* AppIcon76x76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65B69608190C658B0079F909 /* AppIcon76x76@2x.png */; };
 		65B69619190C658B0079F909 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 65B69609190C658B0079F909 /* iTunesArtwork.png */; };
 		65B6961A190C658B0079F909 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65B6960A190C658B0079F909 /* iTunesArtwork@2x.png */; };
+		65B6961E190DBB800079F909 /* CPHelpScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B6961C190DBB800079F909 /* CPHelpScreenViewController.m */; };
+		65B6961F190DBB800079F909 /* CPHelpScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65B6961D190DBB800079F909 /* CPHelpScreenViewController.xib */; };
+		65B69621190DC1D00079F909 /* help_screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 65B69620190DC1D00079F909 /* help_screen.png */; };
 		65DA83F318EDF7A70091FC1C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DA83F218EDF7A70091FC1C /* Parse.framework */; };
 		65DA83F518EDF7EA0091FC1C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DA83F418EDF7EA0091FC1C /* AudioToolbox.framework */; };
 		65DA83F718EDF7F10091FC1C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DA83F618EDF7F10091FC1C /* CFNetwork.framework */; };
@@ -162,6 +165,10 @@
 		65B69608190C658B0079F909 /* AppIcon76x76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon76x76@2x.png"; sourceTree = "<group>"; };
 		65B69609190C658B0079F909 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		65B6960A190C658B0079F909 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		65B6961B190DBB800079F909 /* CPHelpScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPHelpScreenViewController.h; path = ViewControllers/CPHelpScreenViewController.h; sourceTree = "<group>"; };
+		65B6961C190DBB800079F909 /* CPHelpScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPHelpScreenViewController.m; path = ViewControllers/CPHelpScreenViewController.m; sourceTree = "<group>"; };
+		65B6961D190DBB800079F909 /* CPHelpScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CPHelpScreenViewController.xib; path = ViewControllers/CPHelpScreenViewController.xib; sourceTree = "<group>"; };
+		65B69620190DC1D00079F909 /* help_screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help_screen.png; sourceTree = "<group>"; };
 		65DA83F218EDF7A70091FC1C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		65DA83F418EDF7EA0091FC1C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		65DA83F618EDF7F10091FC1C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -283,6 +290,9 @@
 				AE7CE31D190CD223009CA751 /* CPLabelCell.h */,
 				AE7CE31E190CD223009CA751 /* CPLabelCell.m */,
 				AE7CE31F190CD223009CA751 /* CPLabelCell.xib */,
+				65B6961B190DBB800079F909 /* CPHelpScreenViewController.h */,
+				65B6961C190DBB800079F909 /* CPHelpScreenViewController.m */,
+				65B6961D190DBB800079F909 /* CPHelpScreenViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -436,6 +446,7 @@
 		65B695FA190C658B0079F909 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				65B69620190DC1D00079F909 /* help_screen.png */,
 				65B695FB190C658B0079F909 /* AppIcon29x29.png */,
 				65B695FC190C658B0079F909 /* AppIcon29x29@2x.png */,
 				65B695FD190C658B0079F909 /* AppIcon40x40.png */,
@@ -537,6 +548,7 @@
 			files = (
 				AE4C439518FA6B7000731F44 /* CPSettingsViewController.xib in Resources */,
 				65B69618190C658B0079F909 /* AppIcon76x76@2x.png in Resources */,
+				65B6961F190DBB800079F909 /* CPHelpScreenViewController.xib in Resources */,
 				65B69613190C658B0079F909 /* AppIcon60x60.png in Resources */,
 				65B6960D190C658B0079F909 /* AppIcon40x40.png in Resources */,
 				65B69612190C658B0079F909 /* AppIcon57x57@2x.png in Resources */,
@@ -560,6 +572,7 @@
 				65B6960F190C658B0079F909 /* AppIcon50x50.png in Resources */,
 				65B6960E190C658B0079F909 /* AppIcon40x40@2x.png in Resources */,
 				65B69611190C658B0079F909 /* AppIcon57x57.png in Resources */,
+				65B69621190DC1D00079F909 /* help_screen.png in Resources */,
 				65173C2B18F38C57002B2C14 /* CPViewLocationViewController.xib in Resources */,
 				AE4C439018FA508700731F44 /* CPMenuCell.xib in Resources */,
 				65B69617190C658B0079F909 /* AppIcon76x76.png in Resources */,
@@ -627,6 +640,7 @@
 				AE4C438A18FA075E00731F44 /* CPUserProfileViewController.m in Sources */,
 				6583AF2518EC931D00D46333 /* main.m in Sources */,
 				AE4C438518FA074600731F44 /* CPSearchSettingsViewController.m in Sources */,
+				65B6961E190DBB800079F909 /* CPHelpScreenViewController.m in Sources */,
 				6583AF2918EC931D00D46333 /* CPAppDelegate.m in Sources */,
 				65173C2518F38C00002B2C14 /* CPHamburgerMenuViewController.m in Sources */,
 				6524D9D818F23AB80072620D /* CPParseClient.m in Sources */,

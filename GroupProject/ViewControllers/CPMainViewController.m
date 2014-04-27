@@ -16,6 +16,7 @@
 #import "CPUser.h"
 #import "CPRack.h"
 #import "CPRackMiniDetailViewController.h"
+#import "CPHelpScreenViewController.h"
 
 @interface CPMainViewController ()
 @property (weak, nonatomic) IBOutlet UIView *menuView;
@@ -34,6 +35,7 @@
 @property (strong ,nonatomic) CPAddParkingViewController *addParkingViewController;
 @property (strong, nonatomic) CPSettingsViewController *settingsViewController;
 @property (strong, nonatomic) CPSignInViewController *signInViewController;
+@property (strong, nonatomic) CPHelpScreenViewController *helpViewController;
 
 
 
@@ -84,16 +86,45 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+	
+	self.navigationController.navigationBar.hidden=YES;
+	
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	
+	if (![defaults boolForKey:@"hasStarted"]){
+		[[NSNotificationCenter defaultCenter] addObserver:self
+												 selector:@selector(onCloseHelpWindow)
+													 name:CloseHelpView object:nil];
+		
+		self.helpViewController = [[CPHelpScreenViewController alloc] init];
+		[self.contentView addSubview:self.helpViewController.view];
+		[self.contentView bringSubviewToFront:self.helpViewController.view];
+	}else{
+		[self setupViewsAndEvents];
+	}
+   
+}
 
-    self.navigationController.navigationBar.hidden=YES;
-    
+-(void)onCloseHelpWindow {
+	
+	[self setupViewsAndEvents];
+	[UIView animateWithDuration:0.15 animations:^{
+		self.helpViewController.view.alpha = 0;
+	} completion:^(BOOL finished) {
+		[self.helpViewController.view removeFromSuperview];
+	}];
+	
+}
 
-    [self.menuView addSubview:self.menuNavigationController.view];
+-(void)setupViewsAndEvents {
+	[self.menuView addSubview:self.menuNavigationController.view];
     self.menuViewController.delegate = self;
-
+	
     [self.contentView addSubview:self.mapViewNavigationController.view];
     [self.contentView bringSubviewToFront:self.mapViewNavigationController.view];
+	if (self.helpViewController != nil){
+		[self.contentView bringSubviewToFront:self.helpViewController.view];
+	}
     [self.contentView addSubview:self.menuTab];
 	
 	self.mapViewNavigationController.view.layer.shadowOffset = CGSizeMake(-5, 0);
@@ -145,8 +176,8 @@
                                                  name:ShowCameraNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                            selector:@selector(onPresentLogInView:)
-                                                name:PresentLogInViewNotification object:nil];
+											 selector:@selector(onPresentLogInView:)
+												 name:PresentLogInViewNotification object:nil];
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(onCloseAddNew:)
@@ -160,8 +191,6 @@
 	self.miniDetail.view.layer.shadowOpacity = 0.3;
 	self.miniDetail.view.layer.shadowOffset = CGSizeMake(0, 0);
 	self.miniDetail.view.layer.cornerRadius = 2;
-    
-   
 }
 
 - (void)didReceiveMemoryWarning

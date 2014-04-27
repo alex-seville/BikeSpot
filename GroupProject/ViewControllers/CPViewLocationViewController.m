@@ -569,13 +569,12 @@ NSString * const PresentLogInViewNotification = @"PresentLogInViewNotification";
 		/* move up */
 		
 		[[NSNotificationCenter defaultCenter] postNotificationName:AddNewRackNotification object:self
-				userInfo:@{
-						   @"latitude": @(coord.latitude),
-						   @"longitude": @(coord.longitude)
-					}
+			userInfo:@{
+				   @"latitude": @(coord.latitude),
+				   @"longitude": @(coord.longitude)
+			}
 		];
 		
-				
 		
 		/* disable search too */
 		[self.searchBarView resignFirstResponder];
