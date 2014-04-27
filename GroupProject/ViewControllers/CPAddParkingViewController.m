@@ -143,6 +143,33 @@ NSString const *NOT_IN_GARAGE = @"Not in garage";
     if (![self validateFields]) {
         return;
     }
+    
+    NSString *imageFileName = @"";
+    PFFile *imageFile = nil;
+    if (self.imageView.image)
+    {
+        NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.05f);
+        NSDateFormatter *format = [[NSDateFormatter alloc] init];
+        [format setDateFormat:@"MMMMddyyyyHHmmssz"];
+        imageFileName = [format stringFromDate:[NSDate date]];
+        imageFile = [PFFile fileWithName:imageFileName data:imageData];
+        
+        // Save PFFile
+        [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (!error)
+            {
+                
+            }
+            else
+            {
+                // Log details of the failure
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
+            }
+        } progressBlock:^(int percentDone) {
+            // Update your progress spinner here. percentDone will be between 0 and 100.
+            //HUD.progress = (float)percentDone/100;
+        }];
+    }
 
     
     CPRack *newBikeRack = [[CPRack alloc] initWithDictionary:@{
@@ -151,12 +178,14 @@ NSString const *NOT_IN_GARAGE = @"Not in garage";
                                                               @"isCommercial": @NO,
                                                               @"safetyRating": [NSNumber numberWithInt:self.selectedSafetyRating],
                                                               @"longDescription": self.descriptionField.text,
-                                                              @"rackPhotoName": @"test.png",
+                                                              @"rackPhotoName": imageFileName,
+                                                              @"rackPhoto": imageFile,
                                                               @"longitude": [NSNumber numberWithDouble:self.coordinate.longitude],
                                                               @"latitude": [NSNumber numberWithDouble:self.coordinate.latitude],
-                                                              @"createdBy:":[[CPUser currentUser] username],
+                                                              @"createdBy:":[CPUser currentUser],
                                                               @"numSpots": [NSNumber numberWithInt:self.numSpots]
                                                               }];
+    
     
     [newBikeRack saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
@@ -167,6 +196,7 @@ NSString const *NOT_IN_GARAGE = @"Not in garage";
             
         }
     }];
+    
 }
 
 - (IBAction)onCancel:(id)sender {
@@ -293,6 +323,12 @@ NSString const *NOT_IN_GARAGE = @"Not in garage";
     NSString *trimmedDescription = [self.descriptionField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     if ([trimmedDescription length] == 0) {
         UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Please fill in a bike rack description." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [errorAlert show];
+        return false;
+    }
+    
+    if (!self.imageView.image) {
+        UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Please take a photo of the bike rack." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
         [errorAlert show];
         return false;
     }

@@ -47,6 +47,9 @@
 /* username of user who added this rack */
 @dynamic createdBy;
 
+/* photo of the bike rack */
+@dynamic rackPhoto;
+
 
 
 
@@ -67,6 +70,8 @@
     self.safetyRating = [dictionary[@"safetyRating"] intValue];
     self.longDescription = dictionary[@"longDescription"];
     self.rackPhotoName = dictionary[@"rackPhotoName"];
+    self.rackPhoto = dictionary[@"rackPhoto"];
+
     
     self.address = dictionary[@"address"];
     self.numSpots = [dictionary[@"numSpots"] intValue];
