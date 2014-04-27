@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSArray *loggedInMenuOptions;
 @property (nonatomic, strong) NSArray *loggedOutMenuOptions;
 @property (nonatomic, strong) NSArray *menuOptions;
+@property (nonatomic, strong) NSArray *icons;
 @property (nonatomic, strong) CPUserProfileViewController *userProfileViewController;
 @property (nonatomic, strong) UINavigationController *userProfileNavigationController;
 @property (weak, nonatomic) IBOutlet UITableView *menuTableView;
@@ -31,6 +32,7 @@
         self.title = @"Menu";
         
         self.menuOptions = @[@"Home", @"Profile", @"Log In/Out"];
+        self.icons = @[@"green_home_small.png", @"green_profile_small.png", @"green_key_small.png"];
         
         // user profile view
         self.userProfileViewController = [[CPUserProfileViewController alloc] init];
@@ -88,10 +90,14 @@
         if (indexPath.row > 0 && !userLoggedIn)
         {
             [cell.optionLabel setTextColor:[UIColor grayColor]];
+            cell.icon.image = [UIImage imageNamed:@"gray_profile_small.png"];
             cell.userInteractionEnabled = NO;
+            
+            return cell;
         }
     }
     
+    cell.icon.image = [UIImage imageNamed:self.icons[indexPath.row]];
     return cell;
 }
 
@@ -113,7 +119,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 40;
+    return 60;
 }
 
 
