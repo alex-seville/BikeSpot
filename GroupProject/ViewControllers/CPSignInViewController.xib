@@ -25,12 +25,16 @@
                         <action selector="signInFB:" destination="-1" eventType="touchUpInside" id="p9M-3W-TUO"/>
                     </connections>
                 </button>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BikeSpot (replace w/ logo)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXH-yh-zj7">
-                    <rect key="frame" x="34" y="187" width="252" height="28"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your bike parking app" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXH-yh-zj7">
+                    <rect key="frame" x="76" y="192" width="168" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
+                    <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="15"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bikeSpotIcon" translatesAutoresizingMaskIntoConstraints="NO" id="xfJ-QP-bUO">
+                    <rect key="frame" x="0.0" y="123" width="320" height="61"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
@@ -40,5 +44,6 @@
     </objects>
     <resources>
         <image name="active_404" width="404" height="90"/>
+        <image name="bikeSpotIcon" width="468" height="110"/>
     </resources>
 </document>
