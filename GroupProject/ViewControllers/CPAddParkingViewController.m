@@ -28,6 +28,7 @@
 @property (assign, nonatomic) int numSpots;
 @property (weak, nonatomic) IBOutlet UIView *fakeNavBar;
 @property (weak, nonatomic) IBOutlet UIView *parkingSpotsView;
+@property (weak, nonatomic) IBOutlet UIView *safetyRatingView;
 - (IBAction)onSubmit:(id)sender;
 - (IBAction)onCancel:(id)sender;
 - (IBAction)onTap:(UITapGestureRecognizer *)sender;
@@ -39,6 +40,7 @@
 - (IBAction)onSafety3:(id)sender;
 - (IBAction)onSafety4:(id)sender;
 - (IBAction)onSafety5:(id)sender;
+- (IBAction)onImageViewTapped:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UIButton *safety1;
 @property (strong, nonatomic) IBOutlet UIButton *safety2;
@@ -100,6 +102,12 @@ NSString const *NOT_IN_GARAGE = @"Not in garage";
     [[self.parkingSpotsView layer] setCornerRadius:2];
     [[self.parkingSpotsView layer] setBorderColor: [UIColor grayColor].CGColor];
     [[self.parkingSpotsView layer] setBackgroundColor:[UIColor clearColor].CGColor];
+    
+    // view that outlines safety rating selection
+    [[self.safetyRatingView layer] setBorderWidth:1.0f];
+    [[self.safetyRatingView layer] setCornerRadius:2];
+    [[self.safetyRatingView layer] setBorderColor: [UIColor grayColor].CGColor];
+    [[self.safetyRatingView layer] setBackgroundColor:[UIColor clearColor].CGColor];
     
     // name field attribues
     [[self.nameField layer] setCornerRadius:2];
@@ -233,6 +241,9 @@ NSString const *NOT_IN_GARAGE = @"Not in garage";
 
 - (IBAction)onSafety5:(id)sender {
     [self setSafetyRating:5];
+}
+
+- (IBAction)onImageViewTapped:(id)sender {
 }
 
 - (void)setSafetyRating:(int)value {
