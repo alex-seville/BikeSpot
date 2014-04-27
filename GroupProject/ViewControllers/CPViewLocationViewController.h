@@ -22,5 +22,6 @@ extern NSString * const AddNewRackNotification;
 
 - (CPRack *)getNextRack:(CPRack *)rack;
 - (CPRack *)getPrevRack:(CPRack *)rack;
+- (void) onCloseAddNew;
 
 @end

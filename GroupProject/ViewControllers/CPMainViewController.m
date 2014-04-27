@@ -135,6 +135,10 @@
                                              selector:@selector(onShowCamera:)
                                                  name:ShowCameraNotification object:nil];
 	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(onCloseAddNew:)
+                                                 name:CloseAddNewNotification object:nil];
+	
 	
 	/* create a new minidetail view */
 	self.miniDetail = [[CPRackMiniDetailViewController alloc] init];
@@ -307,17 +311,19 @@
 	
 	[self.view addSubview:addNewView];
 	
-	
-	CGRect appFrame = [[UIScreen mainScreen] applicationFrame];
-	
 	[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
 	
 	[UIView animateWithDuration:0.15 animations:^{
 		addNewView.frame = CGRectMake(0, self.view.frame.size.height-400, self.view.frame.size.width, 400);
-		self.navigationController.navigationBar.frame = self.navigationController.navigationBar.bounds;
-		self.view.window.frame = CGRectMake(0, 0, appFrame.size.width, appFrame.size.height);
 	}];
 
+}
+
+-(void)onCloseAddNew:(NSNotification *) notification {
+	[self.mapViewController onCloseAddNew];
+	
+	[[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
+	
 }
 
 

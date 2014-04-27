@@ -50,6 +50,11 @@ NSString * const AddNewRackNotification = @"AddNewRackNotification";
 
 @property (nonatomic, strong) CPAddParkingViewController *addNew;
 
+@property (nonatomic, assign) double searchLayerX;
+@property (nonatomic, assign) double searchLayerY;
+@property (nonatomic, assign) double searchBarX;
+@property (nonatomic, assign) double searchBarY;
+
 @end
 
 @implementation CPViewLocationViewController
@@ -488,8 +493,9 @@ NSString * const AddNewRackNotification = @"AddNewRackNotification";
 }
 
 -(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
-	
-	[self findRacksWithLocation:mapView.centerCoordinate];
+	if (self.addAnnotation == nil){
+		[self findRacksWithLocation:mapView.centerCoordinate];
+	}
 	
 }
 
@@ -570,6 +576,11 @@ NSString * const AddNewRackNotification = @"AddNewRackNotification";
 		[self.searchDisplayController setActive:NO animated:YES ];
 		[UIView animateWithDuration:0.15 animations:^{
 			[self.mainMapView setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-400)];
+			self.searchLayerX = self.searchBarView.frame.origin.x;
+			self.searchLayerY = self.searchBarView.frame.origin.y;
+			self.searchBarX = self.searchBarView.frame.origin.x;
+			self.searchBarX = self.searchBarView.frame.origin.y;
+			
 			[self.searchBarView setFrame:CGRectMake(0, -self.searchBarView.frame.size.height, self.searchBarView.frame.size.width, self.searchBarView.frame.size.height)];
 			
 			[self.locationSearchBar setFrame:CGRectMake(0, -self.searchBarView.frame.size.height, self.searchBarView.frame.size.width, self.searchBarView.frame.size.height)];
@@ -582,9 +593,31 @@ NSString * const AddNewRackNotification = @"AddNewRackNotification";
 			
 			// TODO only add if user actually added a bike rack
 			[self.mainMapView addAnnotation:newAnnot];
+			
+			
 		} ];
 		
 	}
+}
+
+- (void) onCloseAddNew {
+	self.addAnnotation = nil;
+	[self.mainMapView removeAnnotations:self.mainMapView.annotations];
+	[self.searchDisplayController setActive:YES animated:YES ];
+	[UIView animateWithDuration:0.15 animations:^{
+		[self.mainMapView setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+		[self.searchBarView setFrame:CGRectMake(0, 10, self.searchBarView.frame.size.width-20, self.searchBarView.frame.size.height)];
+		
+		[self.locationSearchBar setFrame:CGRectMake(0, 0, self.searchBarView.frame.size.width, self.searchBarView.frame.size.height)];
+		
+		
+	} completion:^(BOOL finished) {
+		
+		/* disable map interactions until save or cancel are pressed */
+		[self.mainMapView setUserInteractionEnabled:true];
+		
+		
+	} ];
 }
 
 - (IBAction)onMenuTapped:(UITapGestureRecognizer *)sender {

@@ -9,6 +9,7 @@
 #import "CPRack.h"
 #import <Parse/PFObject+Subclass.h>
 #import <MapKit/MapKit.h>
+#import "CPUser.h"
 
 @interface CPRack()
 
@@ -75,7 +76,7 @@
     
     self.address = dictionary[@"address"];
     self.numSpots = [dictionary[@"numSpots"] intValue];
-    self.createdBy = dictionary[@"createdBy"];
+    self.createdBy = (CPUser *)dictionary[@"createdBy"];
 	
 	self.geoLocation = [[PFGeoPoint alloc] init];
 	self.geoLocation.latitude = [dictionary[@"latitude"] doubleValue];

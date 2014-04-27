@@ -14,8 +14,6 @@
 @interface CPRackMiniDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *rackNameLabel;
 
-- (IBAction)onPan:(UIPanGestureRecognizer *)sender;
-
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (nonatomic, strong) CPRack *rack;
 
@@ -67,43 +65,5 @@
 	return _rack;
 }
 
-/* panning upwards reveals more details */
-/* panning side-to-side should show another point */
-/*
-- (IBAction)onPan:(UIPanGestureRecognizer *)sender {
-	CGPoint point = [sender locationInView:self.view];
-	CGPoint velocity = [sender velocityInView:self.view];
-	
-	
-	if (sender.state == UIGestureRecognizerStateChanged){
-		CGRect viewFrame = self.view.frame;
-		
-		if (viewFrame.size.height-point.y >= 100 ){
-		
-			viewFrame.origin.y += point.y;
-			viewFrame.size.height -= point.y;
-			self.view.frame = viewFrame;
-			
-		}else{
-			
-			viewFrame.origin.x += point.x;
-			
-			
-		}
-		
-	}else if (sender.state == UIGestureRecognizerStateEnded){
-		CGRect viewFrame = self.view.frame;
-		if (velocity.y > 0){
-			
-			viewFrame.origin.y = 0;
-			viewFrame.size.height = 0;
-		}else{
-			viewFrame.origin.y = 300;
-			viewFrame.size.height = self.view.frame.size.height-300;
-		}
-	}
-	
-}
- */
 
 @end
