@@ -15,6 +15,7 @@ extern NSString * const ViewMoreRackDetails;
 extern NSString * const UpdateMiniDetailNotification;
 extern NSString * const CloseDetailNotification;
 extern NSString * const UpdateWalkingDistanceDetailNotification;
+extern NSString * const AddNewRackNotification;
 
 @interface CPViewLocationViewController : UIViewController <MKMapViewDelegate, UISearchBarDelegate, CLLocationManagerDelegate, CPAddParkingViewControllerDelegate>
 @property (nonatomic, strong) NSMutableArray *annotations;
