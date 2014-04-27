@@ -11,6 +11,10 @@
 #import "CPUser.h"
 
 @interface CPAddParkingViewController ()
+@property (assign, nonatomic) BOOL isInGarage;
+@property (assign, nonatomic) int selectedSafetyRating;
+@property (assign, nonatomic) int numSpots;
+
 @property (weak, nonatomic) UIColor *themeColor;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
@@ -23,9 +27,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
 @property (weak, nonatomic) IBOutlet UIButton *garageButton;
-@property (assign, nonatomic) BOOL isInGarage;
-@property (assign, nonatomic) int selectedSafetyRating;
-@property (assign, nonatomic) int numSpots;
 @property (weak, nonatomic) IBOutlet UIView *fakeNavBar;
 @property (weak, nonatomic) IBOutlet UIView *parkingSpotsView;
 @property (weak, nonatomic) IBOutlet UIView *safetyRatingView;
@@ -41,6 +42,7 @@
 - (IBAction)onSafety4:(id)sender;
 - (IBAction)onSafety5:(id)sender;
 - (IBAction)onImageViewTapped:(id)sender;
+- (IBAction)onAddPhoto:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UIButton *safety1;
 @property (strong, nonatomic) IBOutlet UIButton *safety2;
@@ -69,9 +71,7 @@ NSString const *NOT_IN_GARAGE = @"Not in garage";
     self = [super init];
     if (self){
         _coordinate = location;
-        _themeColor = [UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f]; // why doesn't this work?
-        
-        
+        //_themeColor = [UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f]; // why doesn't this work?
     }
     return self;
 }
@@ -95,7 +95,7 @@ NSString const *NOT_IN_GARAGE = @"Not in garage";
     [[self.garageButton layer] setBorderWidth:1.0f];
     [[self.garageButton layer] setCornerRadius:2];
     [[self.garageButton layer] setBorderColor:[UIColor grayColor].CGColor];
-    self.isInGarage = YES;
+    self.isInGarage = NO;
     
     // view that outlines number of parking spots control
     [[self.parkingSpotsView layer] setBorderWidth:1.0f];
@@ -244,6 +244,11 @@ NSString const *NOT_IN_GARAGE = @"Not in garage";
 }
 
 - (IBAction)onImageViewTapped:(id)sender {
+    [self openCamera];
+}
+
+- (IBAction)onAddPhoto:(id)sender {
+    [self openCamera];
 }
 
 - (void)setSafetyRating:(int)value {
@@ -332,5 +337,43 @@ NSString const *NOT_IN_GARAGE = @"Not in garage";
     }
 }
 
+- (void)openCamera {
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        
+        UIAlertView *cameraAlert = [[UIAlertView alloc] initWithTitle:@"Error!"
+                                                              message:@"Device has no camera."
+                                                             delegate:nil
+                                                    cancelButtonTitle:@"Ok"
+                                                    otherButtonTitles: nil];
+        
+        [cameraAlert show];
+        
+    }
+    else
+    {
+        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+        picker.delegate = self;
+        picker.allowsEditing = YES;
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        
+        [self presentViewController:picker animated:YES completion:NULL];
+    }
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+    self.imageView.image = chosenImage;
+    [self.addPhotoButton setTitle:@"" forState:UIControlStateNormal];
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+}
 
 @end

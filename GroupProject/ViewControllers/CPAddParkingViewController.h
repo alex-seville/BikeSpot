@@ -16,7 +16,7 @@
 -(void)didAddParkingViewClose:(CPAddParkingViewController *)sender;
 @end
 
-@interface CPAddParkingViewController : UIViewController<MKMapViewDelegate>
+@interface CPAddParkingViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 @property (nonatomic, weak) id<CPAddParkingViewControllerDelegate> delegate;
 
