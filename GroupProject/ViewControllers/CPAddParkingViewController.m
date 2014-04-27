@@ -10,6 +10,8 @@
 #import "CPRack.h"
 #import "CPUser.h"
 
+NSString * const ShowCameraNotification = @"ShowCameraNotification";
+
 @interface CPAddParkingViewController ()
 @property (assign, nonatomic) BOOL isInGarage;
 @property (assign, nonatomic) int selectedSafetyRating;
@@ -50,6 +52,8 @@
 @property (strong, nonatomic) IBOutlet UIButton *safety4;
 @property (strong, nonatomic) IBOutlet UIButton *safety5;
 @property (strong, nonatomic) NSArray *safetyRatingButtons;
+
+
 
 @end
 
@@ -351,12 +355,8 @@ NSString const *NOT_IN_GARAGE = @"Not in garage";
     }
     else
     {
-        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-        picker.delegate = self;
-        picker.allowsEditing = YES;
-        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-        
-        [self presentViewController:picker animated:YES completion:NULL];
+		//let the main view controller present it
+		[[NSNotificationCenter defaultCenter] postNotificationName:ShowCameraNotification object:self];
     }
 }
 
@@ -367,7 +367,7 @@ NSString const *NOT_IN_GARAGE = @"Not in garage";
     [self.addPhotoButton setTitle:@"" forState:UIControlStateNormal];
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
-    
+	   
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
