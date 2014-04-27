@@ -24,6 +24,7 @@ NSString * const ViewMoreRackDetails = @"ViewMoreRackDetails";
 NSString * const UpdateMiniDetailNotification = @"UpdateMiniDetailNotification";
 NSString * const CloseDetailNotification = @"CloseDetailNotification";
 NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistanceDetailNotification";
+NSString * const AddNewRackNotification = @"AddNewRackNotification";
 
 @interface CPViewLocationViewController ()
 @property (weak, nonatomic) IBOutlet MKMapView *mainMapView;
@@ -36,6 +37,7 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 
 @property (nonatomic, strong) CPRackAnnotation *selectedAnnotation;
 @property (nonatomic, strong) CPRackAnnotation *searchResultAnnotation;
+@property (nonatomic, strong) CPRackAnnotation *addAnnotation;
 
 @property (weak, nonatomic) IBOutlet UISearchBar *locationSearchBar;
 - (IBAction)onLongPress:(UILongPressGestureRecognizer *)sender;
@@ -150,19 +152,16 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 	
 	//[self.mainMapView setUserInteractionEnabled:false];
 	[self.mainMapView addGestureRecognizer:self.tap];
-	
-	NSLog(@"begin editing and add gestrue recog");
+
 }
 
 - (IBAction)onTap:(UIPanGestureRecognizer *)gesture {
-	NSLog(@"on tap");
 	[self.mainMapView removeGestureRecognizer:self.tap];
 	[self.locationSearchBar resignFirstResponder];
 	//[self.mainMapView setUserInteractionEnabled:true];
 }
 
 - (IBAction)onTapWhenAnnotationOpen:(UIPanGestureRecognizer *)gesture {
-	NSLog(@"on tap");
 	[self.mainMapView removeGestureRecognizer:self.tapWhenAnnotationOpen];
 	[self.mainMapView deselectAnnotation:self.selectedAnnotation animated:NO];
 	
@@ -240,7 +239,6 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 				MKCoordinateSpan span;
 				double radius = placemark.region.radius / 10000; // convert to km
 				
-				NSLog(@"[searchBarSearchButtonClicked] Radius is %f", radius);
 				span.latitudeDelta = radius / 112.0;
 				
 				region.span = span;
@@ -277,18 +275,15 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 	
 	NSPredicate *sPredicate = [NSPredicate predicateWithFormat:@"self isMemberOfClass: %@", [CPRackAnnotation class]];
 	NSArray *mapAnnots = [self.mainMapView.annotations filteredArrayUsingPredicate:sPredicate];
-	NSLog(@"sorting");
 
 	NSArray *sorted = [mapAnnots sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
 		
         CLLocationDistance first = [((CPRackAnnotation *)a).location distanceFromLocation:currentLocation];
         CLLocationDistance second = [((CPRackAnnotation *)b).location distanceFromLocation:currentLocation];
-		NSLog(@" %f > %f", first, second);
+
         return first > second;
     }];
-	for (CPRackAnnotation *annot in sorted) {
-		NSLog(@"annot distance: %f", [annot.location distanceFromLocation:currentLocation]);
-	}
+
 	self.sortedAnnotations = sorted;
 }
 
@@ -313,14 +308,7 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 
 
 - (void)mapView:(MKMapView *)aMapView didUpdateUserLocation:(MKUserLocation *)aUserLocation {
-	/*
-	CLLocationCoordinate2D coord = self.mainMapView.userLocation.location.coordinate;
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coord, 1000, 1000);
-    
-    [self.mainMapView setRegion:region animated:YES];
-	
-	[self findRacksWithLocation:coord];
-	 */
+
 }
 
 
@@ -335,14 +323,16 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 	
 	PFGeoPoint *point = [PFGeoPoint geoPointWithLatitude:location.latitude longitude:location.longitude];
 	[query whereKey:@"geoLocation" nearGeoPoint:point withinKilometers:5];
-	//[query includeKey:kPAWParseUserKey];
+	
 	query.limit = 30;
 	
 	[self.annotations removeAllObjects];
 	
 	[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
 		if (error) {
-			NSLog(@"error in geo query!"); // todo why is this ever happening?
+			[TSMessage showNotificationWithTitle:@"No bike racks found"
+										subtitle:@"There may be a problem with your connection."
+											type:TSMessageNotificationTypeError];
 		} else {
 			
 			
@@ -385,8 +375,12 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 	annotationView.annotationType = ZSPinAnnotationTypeStandard;
 	annotationView.annotationColor = [UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f];
 	
-		
-	if (self.searchResultAnnotation != nil && self.searchResultAnnotation.coordinate.latitude == annotation.coordinate.latitude && self.searchResultAnnotation.coordinate.longitude == annotation.coordinate.longitude)
+	if (self.addAnnotation != nil && self.addAnnotation.coordinate.latitude == annotation.coordinate.latitude && self.addAnnotation.coordinate.longitude == annotation.coordinate.longitude){
+		annotationView.annotationType = ZSPinAnnotationTypeStandard;
+		annotationView.annotationColor = [UIColor blackColor];
+	}
+	
+	else if (self.searchResultAnnotation != nil && self.searchResultAnnotation.coordinate.latitude == annotation.coordinate.latitude && self.searchResultAnnotation.coordinate.longitude == annotation.coordinate.longitude)
 	{
 			
 		annotationView.annotationType = ZSPinAnnotationTypeDisc;
@@ -488,7 +482,6 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 }
 
 - (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(ZSPinAnnotation *)view {
-	NSLog(@"deselect");
 	if(![view.annotation isKindOfClass:[MKUserLocation class]]){
 		view.annotationColor = [UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f];
 	}
@@ -525,7 +518,7 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
                 found=TRUE;
 				if (modifyMap){
 					[self.mainMapView removeAnnotation:checkingLocation];
-					//CPAnnotationGroup *group
+					
 				}
 				
                 break;
@@ -540,8 +533,6 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 		
     }
     return racksToShow;
-	 
-	//return racksToFilter;
 	
 }
 
@@ -557,28 +548,41 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 		CLLocationCoordinate2D coord = [self.mainMapView convertPoint:location toCoordinateFromView:self.mainMapView];
 		CPRackAnnotation *newAnnot = [[CPRackAnnotation alloc] initWithLocation:coord];
 		
-		
+		self.addAnnotation = newAnnot;
         // TODO only add if user actually added a bike rack
 		[self.mainMapView addAnnotation:newAnnot];
-		
+		[self.mainMapView setCenterCoordinate:coord];
 		
 		/* move up */
 		
-		self.addNew = [[CPAddParkingViewController alloc] initWithLocation:coord];
-		UIView *addNewView = self.addNew.view;
-		addNewView.frame = CGRectMake(0, self.view.frame.size.height+10, self.view.frame.size.width, 100);
-        self.addNew.delegate = self;
+		[[NSNotificationCenter defaultCenter] postNotificationName:AddNewRackNotification object:self
+				userInfo:@{
+						   @"latitude": @(coord.latitude),
+						   @"longitude": @(coord.longitude)
+					}
+		];
 		
-		[self.view addSubview:addNewView];
+				
 		
-		/* disable map interactions until save or cancel are pressed */
-		[self.mainMapView setUserInteractionEnabled:false];
+		/* disable search too */
+		[self.searchBarView resignFirstResponder];
 		
+		[self.searchDisplayController setActive:NO animated:YES ];
 		[UIView animateWithDuration:0.15 animations:^{
-			addNewView.frame = CGRectMake(0, self.view.frame.size.height-400, self.view.frame.size.width, 400);
-			/* the map needs to recenter somehow...*/
+			[self.mainMapView setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-400)];
+			[self.searchBarView setFrame:CGRectMake(0, -self.searchBarView.frame.size.height, self.searchBarView.frame.size.width, self.searchBarView.frame.size.height)];
+			
+			[self.locationSearchBar setFrame:CGRectMake(0, -self.searchBarView.frame.size.height, self.searchBarView.frame.size.width, self.searchBarView.frame.size.height)];
+			
+						
+		} completion:^(BOOL finished) {
+			
+			/* disable map interactions until save or cancel are pressed */
+			[self.mainMapView setUserInteractionEnabled:false];
+			
+			// TODO only add if user actually added a bike rack
+			[self.mainMapView addAnnotation:newAnnot];
 		} ];
-
 		
 	}
 }
@@ -608,7 +612,7 @@ NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistan
 		stop = &found;
 		return found;
 	}];
-	NSLog(@"found at %i", rackIndex);
+
 	return rackIndex;
 }
 

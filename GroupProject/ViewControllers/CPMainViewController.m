@@ -127,6 +127,10 @@
                                              selector:@selector(onUpdateWalkingTime:)
                                                  name:UpdateWalkingDistanceDetailNotification object:nil];
 	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(onAddNew:)
+                                                 name:AddNewRackNotification object:nil];
+	
 	
 	/* create a new minidetail view */
 	self.miniDetail = [[CPRackMiniDetailViewController alloc] init];
@@ -276,6 +280,28 @@
 	NSTimeInterval time = [notification.userInfo[@"time"] doubleValue];
 	[self.miniDetail setTime:time];
 }
+
+-(void)onAddNew:(NSNotification *) notification {
+	
+	CLLocationCoordinate2D coord = CLLocationCoordinate2DMake([notification.userInfo[@"latitude"] doubleValue], [notification.userInfo[@"longitude"] doubleValue]);
+	
+	self.addParkingViewController = [[CPAddParkingViewController alloc] initWithLocation:coord];
+	UIView *addNewView = self.addParkingViewController.view;
+	addNewView.frame = CGRectMake(0, self.view.frame.size.height+10, self.view.frame.size.width, 100);
+	//self.addNew.delegate = self;
+	
+	[self.view addSubview:addNewView];
+	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+	[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:YES];
+
+	
+	[UIView animateWithDuration:0.15 animations:^{
+		addNewView.frame = CGRectMake(0, self.view.frame.size.height-400, self.view.frame.size.width, 400);
+		
+	}];
+
+}
+
 
 -(void)createPanView:(CGRect)rect {
 	self.panView = [[UIView alloc] initWithFrame:rect];
