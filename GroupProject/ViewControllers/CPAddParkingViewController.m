@@ -116,11 +116,13 @@ NSString const *NOT_IN_GARAGE = @"Not in garage";
     // name field attribues
     [[self.nameField layer] setCornerRadius:2];
     [[self.nameField layer] masksToBounds];
+    [[self.nameField layer] setBorderWidth:1.0f];
     [[self.nameField layer] setBorderColor:[UIColor grayColor].CGColor];
     
     // description field attributes
     [[self.descriptionField layer] setCornerRadius:2];
     [[self.descriptionField layer] masksToBounds];
+    [[self.descriptionField layer] setBorderWidth:1.0f];
     [[self.descriptionField layer] setBorderColor:[UIColor grayColor].CGColor];
     
     self.numSpots = 1;
