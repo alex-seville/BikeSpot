@@ -249,12 +249,13 @@
     UINavigationController *nvc = self.viewControllers[index];
     [self.contentView addSubview:nvc.view];
     
-    if (index == 0 || ![CPUser currentUser])
+    if (index == 0 || !user)
     {
         [self.contentView addSubview:self.menuTab];
     }
 
-    
+    // force refresh
+    [nvc viewWillAppear:YES];
     
     
 }

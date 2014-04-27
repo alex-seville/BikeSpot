@@ -103,13 +103,18 @@
         UINib *labelCellNib = [UINib nibWithNibName:@"CPLabelCell" bundle:nil];
         [self.bikeParkingTableView registerNib:labelCellNib forCellReuseIdentifier:@"CPLabelCell"];
         
-        [self getUserBikeRacks];
+        //[self getUserBikeRacks];
         
         // This will remove extra separators from tableview
         self.bikeParkingTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
         
     }
 
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self getUserBikeRacks];
 }
 
 - (void)didReceiveMemoryWarning
@@ -136,6 +141,11 @@
 }
 
 - (void) getUserBikeRacks {
+    /*
+     
+     2014-04-27 10:44:16.410 GroupProject[11893:60b] Warning: A long-running Parse operation is being executed on the main thread.
+     Break on warnParseOperationOnMainThread() to debug.
+     */
     PFQuery *query = [PFQuery queryWithClassName:@"CPRack"];
     [query whereKey:@"createdBy" equalTo:(CPUser *)[CPUser currentUser]];
     
