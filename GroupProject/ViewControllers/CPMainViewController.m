@@ -90,7 +90,7 @@
 	self.navigationController.navigationBar.hidden=YES;
 	
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	
+	//[defaults setBool:false forKey:@"hasStarted"];
 	if (![defaults boolForKey:@"hasStarted"]){
 		[[NSNotificationCenter defaultCenter] addObserver:self
 												 selector:@selector(onCloseHelpWindow)

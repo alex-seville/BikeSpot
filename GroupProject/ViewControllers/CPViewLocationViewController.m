@@ -68,7 +68,7 @@ NSString * const PresentLogInViewNotification = @"PresentLogInViewNotification";
 		[CPParseClient instance];
 		self.locationManager = [[CLLocationManager alloc] init];
 		self.locationManager.delegate = self;
-		[self.locationManager startUpdatingLocation];
+		
 		
 				
         
@@ -79,6 +79,7 @@ NSString * const PresentLogInViewNotification = @"PresentLogInViewNotification";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	[self.locationManager startUpdatingLocation];
 	
 	self.navigationController.navigationBar.hidden=YES;
 	
@@ -632,7 +633,7 @@ NSString * const PresentLogInViewNotification = @"PresentLogInViewNotification";
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
 	CLLocationCoordinate2D coord = ((CLLocation *)locations[0]).coordinate;
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coord, 1000, 1000);
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coord, 10, 10);
     
     [self.mainMapView setRegion:region animated:YES];
 	
