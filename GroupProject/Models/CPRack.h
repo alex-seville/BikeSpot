@@ -45,7 +45,10 @@
 @property int numSpots;
 
 /* username of user who added the bike rack */
-@property (retain) NSString *createdBy;
+@property (retain) PFUser *createdBy;
+
+/* photo of the bike rack */
+@property (retain) PFFile *rackPhoto;
 
 
 @end
