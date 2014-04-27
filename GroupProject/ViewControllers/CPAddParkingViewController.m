@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *garageButton;
 @property (assign, nonatomic) BOOL isInGarage;
 @property (assign, nonatomic) int selectedSafetyRating;
+@property (assign, nonatomic) int numSpots;
 @property (weak, nonatomic) IBOutlet UIView *fakeNavBar;
 @property (weak, nonatomic) IBOutlet UIView *parkingSpotsView;
 - (IBAction)onSubmit:(id)sender;
@@ -110,14 +111,9 @@ NSString const *NOT_IN_GARAGE = @"Not in garage";
     [[self.descriptionField layer] masksToBounds];
     [[self.descriptionField layer] setBorderColor:[UIColor grayColor].CGColor];
     
+    self.numSpots = 1;
+    [self setParkingSpotsButtons];
 
-    for (int i = 0; i < [self.safetyRatingButtons count]; i++)
-    {
-        UIButton *button = self.safetyRatingButtons[i];
-        [button setBackgroundImage:[UIImage imageNamed:@"gray_lock_small.png"] forState:UIControlStateNormal];
-        [button setTitle:@"" forState:UIControlStateNormal];
-    }
-    
     // set add photo image view attributes
     [[self.imageView layer] setBorderWidth: 1.0f];
     [[self.imageView layer] setCornerRadius:2];
@@ -147,7 +143,7 @@ NSString const *NOT_IN_GARAGE = @"Not in garage";
                                                               @"longitude": [NSNumber numberWithDouble:self.coordinate.longitude],
                                                               @"latitude": [NSNumber numberWithDouble:self.coordinate.latitude],
                                                               @"createdBy:":[[CPUser currentUser] username],
-                                                              @"numSpots": [NSNumber numberWithInt:[self.parkingNumberField.text intValue]]
+                                                              @"numSpots": [NSNumber numberWithInt:self.numSpots]
                                                               }];
     
     [newBikeRack saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
@@ -181,9 +177,29 @@ NSString const *NOT_IN_GARAGE = @"Not in garage";
 }
 
 - (IBAction)onLessSpots:(id)sender {
+    if (self.numSpots <= 1)
+    {
+        return;
+    }
+    else
+    {
+        self.numSpots--;
+        [self setParkingSpotsNumber];
+        [self setParkingSpotsButtons];
+    }
 }
 
 - (IBAction)onMoreSpots:(id)sender {
+    if (self.numSpots >= 20)
+    {
+        return;
+    }
+    else
+    {
+        self.numSpots++;
+        [self setParkingSpotsNumber];
+        [self setParkingSpotsButtons];
+    }
 }
 
 - (IBAction)onGarage:(id)sender {
@@ -264,5 +280,46 @@ NSString const *NOT_IN_GARAGE = @"Not in garage";
     return true;
     
 }
+
+- (void)setParkingSpotsNumber {
+    if (self.numSpots == 1)
+    {
+        self.parkingNumberField.text = [NSString stringWithFormat:@"%d spot", self.numSpots];
+    }
+    else
+    {
+        self.parkingNumberField.text = [NSString stringWithFormat:@"%d spots", self.numSpots];
+    }
+
+}
+
+- (void)setParkingSpotsButtons{
+    
+    if (self.numSpots <= 1)
+    {
+        [self.lessSpotsButton setBackgroundImage:[UIImage imageNamed:@"gray_less_small"] forState:UIControlStateNormal];
+        [self.lessSpotsButton setEnabled:NO];
+    }
+    else if (self.numSpots >= 20)
+    {
+        [self.moreSpotsButton setBackgroundImage:[UIImage imageNamed:@"gray_more_small"] forState:UIControlStateNormal];
+        [self.moreSpotsButton setEnabled:NO];
+    }
+    else
+    {
+        if (!self.lessSpotsButton.enabled)
+        {
+            [self.lessSpotsButton setBackgroundImage:[UIImage imageNamed:@"green_less_small"] forState:UIControlStateNormal];
+            [self.lessSpotsButton setEnabled:YES];
+        }
+
+        if (!self.moreSpotsButton.enabled)
+        {
+            [self.moreSpotsButton setBackgroundImage:[UIImage imageNamed:@"green_more_small"] forState:UIControlStateNormal];
+            [self.moreSpotsButton setEnabled:YES];
+        }
+    }
+}
+
 
 @end
