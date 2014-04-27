@@ -23,6 +23,9 @@
 
 @property (strong, nonatomic) UIBarButtonItem *cancelButton;
 @property (weak, nonatomic) IBOutlet UILabel *appName;
+@property (weak, nonatomic) IBOutlet UILabel *hint;
+
+@property (weak, nonatomic) NSString *hintText;
 
 @end
 
@@ -48,6 +51,15 @@
     return self;
 }
 
+- (id)initWithHint
+{
+    self = [super init];
+    if (self) {
+        self.hintText = @"Log in to add a new bike parking spot";
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -69,6 +81,8 @@
                                                                     } forState:UIControlStateNormal];
     
     self.appName.textColor = [UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f];
+    
+    self.hint.text = self.hintText;
 
 }
 

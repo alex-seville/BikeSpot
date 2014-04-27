@@ -81,6 +81,8 @@
 		AE4C439018FA508700731F44 /* CPMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE4C438E18FA508700731F44 /* CPMenuCell.xib */; };
 		AE4C439418FA6B7000731F44 /* CPSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4C439218FA6B7000731F44 /* CPSettingsViewController.m */; };
 		AE4C439518FA6B7000731F44 /* CPSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE4C439318FA6B7000731F44 /* CPSettingsViewController.xib */; };
+		AE7CE320190CD223009CA751 /* CPLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7CE31E190CD223009CA751 /* CPLabelCell.m */; };
+		AE7CE321190CD223009CA751 /* CPLabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE7CE31F190CD223009CA751 /* CPLabelCell.xib */; };
 		AEC149BC1903366800A66CE6 /* CPAddParkingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC149BA1903366800A66CE6 /* CPAddParkingViewController.m */; };
 		AEC149BD1903366800A66CE6 /* CPAddParkingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEC149BB1903366800A66CE6 /* CPAddParkingViewController.xib */; };
 /* End PBXBuildFile section */
@@ -191,6 +193,9 @@
 		AE4C439118FA6B7000731F44 /* CPSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPSettingsViewController.h; path = ViewControllers/CPSettingsViewController.h; sourceTree = "<group>"; };
 		AE4C439218FA6B7000731F44 /* CPSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPSettingsViewController.m; path = ViewControllers/CPSettingsViewController.m; sourceTree = "<group>"; };
 		AE4C439318FA6B7000731F44 /* CPSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CPSettingsViewController.xib; path = ViewControllers/CPSettingsViewController.xib; sourceTree = "<group>"; };
+		AE7CE31D190CD223009CA751 /* CPLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPLabelCell.h; path = ViewControllers/CPLabelCell.h; sourceTree = "<group>"; };
+		AE7CE31E190CD223009CA751 /* CPLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPLabelCell.m; path = ViewControllers/CPLabelCell.m; sourceTree = "<group>"; };
+		AE7CE31F190CD223009CA751 /* CPLabelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CPLabelCell.xib; path = ViewControllers/CPLabelCell.xib; sourceTree = "<group>"; };
 		AEC149B91903366800A66CE6 /* CPAddParkingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPAddParkingViewController.h; path = ViewControllers/CPAddParkingViewController.h; sourceTree = "<group>"; };
 		AEC149BA1903366800A66CE6 /* CPAddParkingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPAddParkingViewController.m; path = ViewControllers/CPAddParkingViewController.m; sourceTree = "<group>"; };
 		AEC149BB1903366800A66CE6 /* CPAddParkingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CPAddParkingViewController.xib; path = ViewControllers/CPAddParkingViewController.xib; sourceTree = "<group>"; };
@@ -275,6 +280,9 @@
 				AEC149B91903366800A66CE6 /* CPAddParkingViewController.h */,
 				AEC149BA1903366800A66CE6 /* CPAddParkingViewController.m */,
 				AEC149BB1903366800A66CE6 /* CPAddParkingViewController.xib */,
+				AE7CE31D190CD223009CA751 /* CPLabelCell.h */,
+				AE7CE31E190CD223009CA751 /* CPLabelCell.m */,
+				AE7CE31F190CD223009CA751 /* CPLabelCell.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -546,6 +554,7 @@
 				AE4C438618FA074600731F44 /* CPSearchSettingsViewController.xib in Resources */,
 				AE4C437718F91AAF00731F44 /* CPEnterAccountViewController.xib in Resources */,
 				65B6960B190C658B0079F909 /* AppIcon29x29.png in Resources */,
+				AE7CE321190CD223009CA751 /* CPLabelCell.xib in Resources */,
 				65B69619190C658B0079F909 /* iTunesArtwork.png in Resources */,
 				6583AF2B18EC931D00D46333 /* Images.xcassets in Resources */,
 				65B6960F190C658B0079F909 /* AppIcon50x50.png in Resources */,
@@ -628,6 +637,7 @@
 				AE4C439418FA6B7000731F44 /* CPSettingsViewController.m in Sources */,
 				657BD82B18FB847A00A887EC /* CPAnnotationGroup.m in Sources */,
 				AE4C437618F91AAF00731F44 /* CPEnterAccountViewController.m in Sources */,
+				AE7CE320190CD223009CA751 /* CPLabelCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,5 +10,6 @@
 
 @interface CPMenuCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *optionLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *icon;
 
 @end

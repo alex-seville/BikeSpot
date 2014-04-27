@@ -104,7 +104,16 @@
 	self.menuTab.layer.shadowOffset = CGSizeMake(-5, 0);
     self.menuTab.layer.shadowRadius = 5;
     self.menuTab.layer.shadowOpacity = 0.3;
-	self.menuTab.layer.cornerRadius = 10;
+    self.menuTab.backgroundColor = [UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f];
+    
+    // round two corners of menu tab
+    UIBezierPath *maskPath;
+    maskPath = [UIBezierPath bezierPathWithRoundedRect:self.menuTab.bounds byRoundingCorners:(UIRectCornerTopRight | UIRectCornerBottomRight) cornerRadii:CGSizeMake(2.0, 2.0)];
+    
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+    maskLayer.frame = self.menuTab.bounds;
+    maskLayer.path = maskPath.CGPath;
+    self.menuTab.layer.mask = maskLayer;
     
     
     //add pan recongnizer to firstView
@@ -134,6 +143,10 @@
 	[[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(onShowCamera:)
                                                  name:ShowCameraNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                            selector:@selector(onPresentLogInView:)
+                                                name:PresentLogInViewNotification object:nil];
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(onCloseAddNew:)
@@ -240,12 +253,13 @@
     UINavigationController *nvc = self.viewControllers[index];
     [self.contentView addSubview:nvc.view];
     
-    if (index == 0 || ![CPUser currentUser])
+    if (index == 0 || !user)
     {
         [self.contentView addSubview:self.menuTab];
     }
 
-    
+    // force refresh
+    [nvc viewWillAppear:YES];
     
     
 }
@@ -317,6 +331,12 @@
 		addNewView.frame = CGRectMake(0, self.view.frame.size.height-400, self.view.frame.size.width, 400);
 	}];
 
+}
+     
+-(void)onPresentLogInView:(NSNotification *) notification {
+    CPSignInViewController *logInView = [[CPSignInViewController alloc] initWithHint];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:logInView];
+    [self presentViewController:navController animated:YES completion:nil];
 }
 
 -(void)onCloseAddNew:(NSNotification *) notification {

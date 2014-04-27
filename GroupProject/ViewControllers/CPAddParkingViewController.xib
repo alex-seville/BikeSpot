@@ -142,7 +142,7 @@
                     </subviews>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="bike parking name" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="nms-Qj-rPe">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Bike parking name" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="nms-Qj-rPe">
                     <rect key="frame" x="12" y="63" width="293" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -150,7 +150,7 @@
                     <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="bike parking description" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="YNQ-Vc-DKi">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Bike parking description" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="YNQ-Vc-DKi">
                     <rect key="frame" x="12" y="109" width="293" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -190,7 +190,7 @@
                     </connections>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IpQ-yE-PXc">
-                    <rect key="frame" x="14" y="160" width="90" height="14"/>
+                    <rect key="frame" x="12" y="160" width="90" height="14"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="14"/>
                     <state key="normal" title="Add photo">
@@ -218,6 +218,7 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <connections>
                 <outletCollection property="gestureRecognizers" destination="Fr8-wp-Pf3" appends="YES" id="5Mq-bS-rx6"/>
+                <outletCollection property="gestureRecognizers" destination="LY1-T4-t99" appends="YES" id="4cm-bo-Y20"/>
             </connections>
         </view>
         <tapGestureRecognizer id="Fr8-wp-Pf3">
@@ -230,6 +231,11 @@
                 <action selector="onImageViewTapped:" destination="-1" id="vOO-ia-QCL"/>
             </connections>
         </tapGestureRecognizer>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="LY1-T4-t99">
+            <connections>
+                <action selector="onPan:" destination="-1" id="BXv-pJ-S2g"/>
+            </connections>
+        </panGestureRecognizer>
     </objects>
     <resources>
         <image name="gray_lock_small" width="100" height="100"/>
