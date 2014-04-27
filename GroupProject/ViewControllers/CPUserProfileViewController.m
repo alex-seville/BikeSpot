@@ -107,9 +107,8 @@
         
         // This will remove extra separators from tableview
         self.bikeParkingTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+        
     }
-    
-
 
 }
 
