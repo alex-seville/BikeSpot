@@ -131,6 +131,10 @@
                                              selector:@selector(onAddNew:)
                                                  name:AddNewRackNotification object:nil];
 	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(onShowCamera:)
+                                                 name:ShowCameraNotification object:nil];
+	
 	
 	/* create a new minidetail view */
 	self.miniDetail = [[CPRackMiniDetailViewController alloc] init];
@@ -276,6 +280,17 @@
 	} ];
 }
 
+
+
+-(void)onShowCamera:(NSNotification *) notification {
+	UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+	picker.delegate = self.addParkingViewController;
+	picker.allowsEditing = YES;
+	picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+	
+	[self presentViewController:picker animated:YES completion:NULL];
+}
+
 -(void)onUpdateWalkingTime:(NSNotification *) notification {
 	NSTimeInterval time = [notification.userInfo[@"time"] doubleValue];
 	[self.miniDetail setTime:time];
@@ -291,13 +306,16 @@
 	//self.addNew.delegate = self;
 	
 	[self.view addSubview:addNewView];
-	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-	[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:YES];
-
+	
+	
+	CGRect appFrame = [[UIScreen mainScreen] applicationFrame];
+	
+	[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
 	
 	[UIView animateWithDuration:0.15 animations:^{
 		addNewView.frame = CGRectMake(0, self.view.frame.size.height-400, self.view.frame.size.width, 400);
-		
+		self.navigationController.navigationBar.frame = self.navigationController.navigationBar.bounds;
+		self.view.window.frame = CGRectMake(0, 0, appFrame.size.width, appFrame.size.height);
 	}];
 
 }
