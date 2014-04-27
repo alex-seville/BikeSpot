@@ -9,6 +9,8 @@
 #import "CPUserProfileViewController.h"
 #import "CPUser.h"
 #import "UIImageView+AFNetworking.h"
+#import "CPLabelCell.h"
+#import "CPRack.h"
 #import <Parse/Parse.h>
 
 
@@ -18,7 +20,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *memberSince;
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UIView *dividerBar;
-
+@property (weak, nonatomic) IBOutlet UITableView *bikeParkingTableView;
+@property (weak, nonatomic) NSArray *userBikeRacks;
 @end
 
 @implementation CPUserProfileViewController
@@ -90,6 +93,20 @@
                                                               timeStyle:NSDateFormatterNoStyle];
         self.memberSince.text = dateString;
         
+        // Do any additional setup after loading the view from its nib.
+        self.bikeParkingTableView.dataSource = self;
+        self.bikeParkingTableView.delegate = self;
+        self.bikeParkingTableView.scrollEnabled = NO;
+        
+        
+        // register cells
+        UINib *labelCellNib = [UINib nibWithNibName:@"CPLabelCell" bundle:nil];
+        [self.bikeParkingTableView registerNib:labelCellNib forCellReuseIdentifier:@"CPLabelCell"];
+        
+        [self getUserBikeRacks];
+        
+        // This will remove extra separators from tableview
+        self.bikeParkingTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     }
     
 
@@ -102,9 +119,30 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)onEdit:(id)sender
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    CPLabelCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CPLabelCell" forIndexPath:indexPath];
+    cell.label.text = self.userBikeRacks[indexPath.row][@"name"];
+    return cell;
+}
+
+- (int)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return [self.userBikeRacks count];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 30;
+}
+
+- (void) getUserBikeRacks {
+    PFQuery *query = [PFQuery queryWithClassName:@"CPRack"];
+    [query whereKey:@"createdBy" equalTo:(CPUser *)[CPUser currentUser]];
+    
+    self.userBikeRacks = [query findObjects];
+
+    [self.bikeParkingTableView reloadData];
 }
 
 @end

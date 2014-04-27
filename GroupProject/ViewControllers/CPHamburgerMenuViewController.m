@@ -57,6 +57,9 @@
     
     self.menuTableView.dataSource = self;
     self.menuTableView.delegate = self;
+    
+    // This will remove extra separators from tableview
+    self.menuTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 
 }
 

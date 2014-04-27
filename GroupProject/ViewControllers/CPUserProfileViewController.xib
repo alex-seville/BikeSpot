@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CPUserProfileViewController">
             <connections>
+                <outlet property="bikeParkingTableView" destination="x7V-t3-tCW" id="s3J-fk-75u"/>
                 <outlet property="currentcity" destination="eBU-Tm-taZ" id="iyh-9J-8zW"/>
                 <outlet property="dividerBar" destination="zBX-i0-tub" id="rvO-tQ-RUS"/>
                 <outlet property="memberSince" destination="rP9-7o-scN" id="te1-50-4CH"/>
@@ -59,6 +60,11 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="x7V-t3-tCW">
+                    <rect key="frame" x="20" y="248" width="280" height="294"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
