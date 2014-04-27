@@ -104,7 +104,16 @@
 	self.menuTab.layer.shadowOffset = CGSizeMake(-5, 0);
     self.menuTab.layer.shadowRadius = 5;
     self.menuTab.layer.shadowOpacity = 0.3;
-	self.menuTab.layer.cornerRadius = 10;
+    self.menuTab.backgroundColor = [UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f];
+    
+    // round two corners of menu tab
+    UIBezierPath *maskPath;
+    maskPath = [UIBezierPath bezierPathWithRoundedRect:self.menuTab.bounds byRoundingCorners:(UIRectCornerTopRight | UIRectCornerBottomRight) cornerRadii:CGSizeMake(2.0, 2.0)];
+    
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+    maskLayer.frame = self.menuTab.bounds;
+    maskLayer.path = maskPath.CGPath;
+    self.menuTab.layer.mask = maskLayer;
     
     
     //add pan recongnizer to firstView
