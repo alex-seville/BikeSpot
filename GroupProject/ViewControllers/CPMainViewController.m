@@ -282,7 +282,8 @@
     UINavigationController *nvc = self.viewControllers[index];
     [self.contentView addSubview:nvc.view];
     
-    if (index == 0 || !user)
+    // need to get user again because user could've logged out
+    if (index == 0 || ![CPUser currentUser])
     {
         [self.contentView addSubview:self.menuTab];
     }
