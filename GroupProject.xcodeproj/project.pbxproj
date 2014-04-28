@@ -60,6 +60,8 @@
 		65B6961E190DBB800079F909 /* CPHelpScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B6961C190DBB800079F909 /* CPHelpScreenViewController.m */; };
 		65B6961F190DBB800079F909 /* CPHelpScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65B6961D190DBB800079F909 /* CPHelpScreenViewController.xib */; };
 		65B69621190DC1D00079F909 /* help_screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 65B69620190DC1D00079F909 /* help_screen.png */; };
+		65B69625190DEE090079F909 /* CPInstructionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B69623190DEE090079F909 /* CPInstructionViewController.m */; };
+		65B69626190DEE090079F909 /* CPInstructionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65B69624190DEE090079F909 /* CPInstructionViewController.xib */; };
 		65DA83F318EDF7A70091FC1C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DA83F218EDF7A70091FC1C /* Parse.framework */; };
 		65DA83F518EDF7EA0091FC1C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DA83F418EDF7EA0091FC1C /* AudioToolbox.framework */; };
 		65DA83F718EDF7F10091FC1C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DA83F618EDF7F10091FC1C /* CFNetwork.framework */; };
@@ -169,6 +171,9 @@
 		65B6961C190DBB800079F909 /* CPHelpScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPHelpScreenViewController.m; path = ViewControllers/CPHelpScreenViewController.m; sourceTree = "<group>"; };
 		65B6961D190DBB800079F909 /* CPHelpScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CPHelpScreenViewController.xib; path = ViewControllers/CPHelpScreenViewController.xib; sourceTree = "<group>"; };
 		65B69620190DC1D00079F909 /* help_screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help_screen.png; sourceTree = "<group>"; };
+		65B69622190DEE090079F909 /* CPInstructionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPInstructionViewController.h; path = ViewControllers/CPInstructionViewController.h; sourceTree = "<group>"; };
+		65B69623190DEE090079F909 /* CPInstructionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPInstructionViewController.m; path = ViewControllers/CPInstructionViewController.m; sourceTree = "<group>"; };
+		65B69624190DEE090079F909 /* CPInstructionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CPInstructionViewController.xib; path = ViewControllers/CPInstructionViewController.xib; sourceTree = "<group>"; };
 		65DA83F218EDF7A70091FC1C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		65DA83F418EDF7EA0091FC1C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		65DA83F618EDF7F10091FC1C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -293,6 +298,9 @@
 				65B6961B190DBB800079F909 /* CPHelpScreenViewController.h */,
 				65B6961C190DBB800079F909 /* CPHelpScreenViewController.m */,
 				65B6961D190DBB800079F909 /* CPHelpScreenViewController.xib */,
+				65B69622190DEE090079F909 /* CPInstructionViewController.h */,
+				65B69623190DEE090079F909 /* CPInstructionViewController.m */,
+				65B69624190DEE090079F909 /* CPInstructionViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -579,6 +587,7 @@
 				65B69616190C658B0079F909 /* AppIcon72x72@2x.png in Resources */,
 				65173C2618F38C00002B2C14 /* CPHamburgerMenuViewController.xib in Resources */,
 				65B69610190C658B0079F909 /* AppIcon50x50@2x.png in Resources */,
+				65B69626190DEE090079F909 /* CPInstructionViewController.xib in Resources */,
 				65B69615190C658B0079F909 /* AppIcon72x72.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -641,6 +650,7 @@
 				6583AF2518EC931D00D46333 /* main.m in Sources */,
 				AE4C438518FA074600731F44 /* CPSearchSettingsViewController.m in Sources */,
 				65B6961E190DBB800079F909 /* CPHelpScreenViewController.m in Sources */,
+				65B69625190DEE090079F909 /* CPInstructionViewController.m in Sources */,
 				6583AF2918EC931D00D46333 /* CPAppDelegate.m in Sources */,
 				65173C2518F38C00002B2C14 /* CPHamburgerMenuViewController.m in Sources */,
 				6524D9D818F23AB80072620D /* CPParseClient.m in Sources */,

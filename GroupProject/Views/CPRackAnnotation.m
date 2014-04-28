@@ -24,6 +24,7 @@
 		_location = [[CLLocation alloc]
 					 initWithLatitude:location.latitude
 					 longitude:location.longitude];
+		_title = _rack.name;
     }
     return self;
 }
@@ -53,10 +54,7 @@
 }
 
 
-- (NSString *)title{
-    
-    return ((CPRack *)_rack).name;
-}
+
 
 
 

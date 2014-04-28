@@ -26,6 +26,8 @@ NSString * const CloseDetailNotification = @"CloseDetailNotification";
 NSString * const UpdateWalkingDistanceDetailNotification = @"UpdateWalkingDistanceDetailNotification";
 NSString * const AddNewRackNotification = @"AddNewRackNotification";
 NSString * const PresentLogInViewNotification = @"PresentLogInViewNotification";
+NSString * const ShowInstructionsNotification = @"ShowInstructionsNotification";
+NSString * const CloseInstructionsNotification = @"CloseInstructionsNotification";
 
 @interface CPViewLocationViewController ()
 @property (weak, nonatomic) IBOutlet MKMapView *mainMapView;
@@ -68,9 +70,6 @@ NSString * const PresentLogInViewNotification = @"PresentLogInViewNotification";
 		[CPParseClient instance];
 		self.locationManager = [[CLLocationManager alloc] init];
 		self.locationManager.delegate = self;
-		
-		
-				
         
     }
     return self;
@@ -79,6 +78,7 @@ NSString * const PresentLogInViewNotification = @"PresentLogInViewNotification";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	[self.locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
 	[self.locationManager startUpdatingLocation];
 	
 	self.navigationController.navigationBar.hidden=YES;
@@ -169,12 +169,16 @@ NSString * const PresentLogInViewNotification = @"PresentLogInViewNotification";
 }
 
 - (IBAction)onTapWhenAnnotationOpen:(UIPanGestureRecognizer *)gesture {
+	
 	[self.mainMapView removeGestureRecognizer:self.tapWhenAnnotationOpen];
-	[self.mainMapView deselectAnnotation:self.selectedAnnotation animated:NO];
 	
-	[[NSNotificationCenter defaultCenter] postNotificationName:CloseDetailNotification object:self userInfo:[NSDictionary dictionaryWithObject:self.selectedAnnotation.rack forKey:@"rack"]];
-	
-	self.selectedAnnotation = nil;
+	if (self.selectedAnnotation != nil){
+		[self.mainMapView deselectAnnotation:self.selectedAnnotation animated:NO];
+		
+		[[NSNotificationCenter defaultCenter] postNotificationName:CloseDetailNotification object:self userInfo:[NSDictionary dictionaryWithObject:self.selectedAnnotation.rack forKey:@"rack"]];
+		
+		self.selectedAnnotation = nil;
+	}
 }
 
 
@@ -182,12 +186,6 @@ NSString * const PresentLogInViewNotification = @"PresentLogInViewNotification";
 	[searchBar resignFirstResponder];
 	searchBar.showsCancelButton=false;
 	
-	
-	/*CLRegion *newRegion = [[CLRegion alloc] init];
-	newRegion
-    newRegion.latitude = 37.783333;
-    newRegion.longitude = -122.416667;
-    */
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     
     [geocoder geocodeAddressDictionary:@{
@@ -205,6 +203,7 @@ NSString * const PresentLogInViewNotification = @"PresentLogInViewNotification";
         }
         else
         {
+			[[NSNotificationCenter defaultCenter] postNotificationName:CloseInstructionsNotification object:self];
 			
 			
 			int index = 0;
@@ -251,8 +250,9 @@ NSString * const PresentLogInViewNotification = @"PresentLogInViewNotification";
 				region.span = span;
 				
 				CPRackAnnotation *newAnnot = [[CPRackAnnotation alloc] initWithLocation:region.center];
-				
+				[newAnnot setTitle:searchBar.text];
 				self.searchResultAnnotation = newAnnot;
+				
 				[self.mainMapView addAnnotation:newAnnot];
 				
 				
@@ -342,8 +342,6 @@ NSString * const PresentLogInViewNotification = @"PresentLogInViewNotification";
 											type:TSMessageNotificationTypeError];
 		} else {
 			
-			
-			//[self.mainMapView removeAnnotations:self.mainMapView.annotations];
 			for (PFObject *object in objects) {
 				CPRack *rack = (CPRack *)object;
 				CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(rack.geoLocation.latitude, rack.geoLocation.longitude);
@@ -381,6 +379,8 @@ NSString * const PresentLogInViewNotification = @"PresentLogInViewNotification";
 	
 	annotationView.annotationType = ZSPinAnnotationTypeStandard;
 	annotationView.annotationColor = [UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f];
+	annotationView.canShowCallout = NO;
+    annotationView.draggable = NO;
 	
 	if (self.addAnnotation != nil && self.addAnnotation.coordinate.latitude == annotation.coordinate.latitude && self.addAnnotation.coordinate.longitude == annotation.coordinate.longitude){
 		annotationView.annotationType = ZSPinAnnotationTypeStandard;
@@ -392,9 +392,6 @@ NSString * const PresentLogInViewNotification = @"PresentLogInViewNotification";
 			
 		annotationView.annotationType = ZSPinAnnotationTypeDisc;
 		annotationView.annotationColor = [UIColor blueColor];
-		[annotationView setUserInteractionEnabled:false];
-		annotationView.enabled = false;
-		
 	}
 
 	else if (self.selectedAnnotation != nil){
@@ -405,20 +402,20 @@ NSString * const PresentLogInViewNotification = @"PresentLogInViewNotification";
 			annotationView.annotationColor = [UIColor darkGrayColor];
 		}
 	}
-
-    annotationView.canShowCallout = NO;
-    annotationView.draggable = NO;
-    
-
     
     return annotationView;
 }
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(ZSPinAnnotation *)view {
 	
-	
-	
-	if(![view.annotation isKindOfClass:[MKUserLocation class]] && ((CPRackAnnotation *)view.annotation).rack != nil){
+	if ([self.searchResultAnnotation isEqual:view.annotation]){
+		NSString *title = self.searchResultAnnotation.title;
+		[[NSNotificationCenter defaultCenter] postNotificationName:ShowInstructionsNotification object:self
+		 userInfo:[NSDictionary dictionaryWithObject:title forKey:@"title"]];
+	}else if(![view.annotation isKindOfClass:[MKUserLocation class]] && ((CPRackAnnotation *)view.annotation).rack != nil){
+		
+		[[NSNotificationCenter defaultCenter] postNotificationName:CloseInstructionsNotification object:self];
+		
 		CPRackAnnotation *rackAnnot = (CPRackAnnotation *)view.annotation;
 		CPRack *rack = rackAnnot.rack;
 		
@@ -549,13 +546,14 @@ NSString * const PresentLogInViewNotification = @"PresentLogInViewNotification";
 - (IBAction)onLongPress:(UILongPressGestureRecognizer *)sender {
 	
     // user not logged in
-	
+	[[NSNotificationCenter defaultCenter] postNotificationName:CloseInstructionsNotification object:self];
+	/*
     if (![CPUser currentUser])
     {
         [[NSNotificationCenter defaultCenter] postNotificationName:PresentLogInViewNotification object:self];
         return;
     }
-    
+    */
     if (sender.state == UIGestureRecognizerStateBegan){
     
 		CGPoint location = [sender locationInView:self.mainMapView];

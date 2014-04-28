@@ -417,6 +417,9 @@
 //To change the size of the tappable area that will show the callout accessory view
 - (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent*)event
 {
+	self.enabled = YES;
+	return YES;
+	/*
     if(point.x > 30 && point.x < 80 && point.y > 0 && point.y < 50)
     {
         self.enabled = YES;
@@ -426,6 +429,7 @@
         self.enabled = NO;
     }
     return self.enabled;
+	 */
 }
 
 @end
