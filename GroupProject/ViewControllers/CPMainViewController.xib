@@ -27,7 +27,7 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
                         <imageView alpha="0.69999999999999973" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="menu_dots_small" translatesAutoresizingMaskIntoConstraints="NO" id="Wbo-Qq-bIv">
-                            <rect key="frame" x="0.0" y="379" width="15" height="40"/>
+                            <rect key="frame" x="0.0" y="380" width="15" height="40"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <gestureRecognizers/>

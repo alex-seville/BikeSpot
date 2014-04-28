@@ -15,9 +15,13 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQc-4D-7ma">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQc-4D-7ma">
                     <rect key="frame" x="53" y="269" width="214" height="47"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="1wS-DX-Sbm"/>
+                        <constraint firstAttribute="width" constant="214" id="3cS-dJ-iDg"/>
+                    </constraints>
                     <state key="normal" image="active_404">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -25,9 +29,13 @@
                         <action selector="signInFB:" destination="-1" eventType="touchUpInside" id="p9M-3W-TUO"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bikeSpotIconSloganGreen" translatesAutoresizingMaskIntoConstraints="NO" id="xfJ-QP-bUO">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bikeSpotIconSloganGreen" translatesAutoresizingMaskIntoConstraints="NO" id="xfJ-QP-bUO">
                     <rect key="frame" x="0.0" y="123" width="320" height="100"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="320" id="Pd8-sv-CgB"/>
+                        <constraint firstAttribute="height" constant="100" id="vpx-UC-tTX"/>
+                    </constraints>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d35-mF-3hu">
                     <rect key="frame" x="10" y="343" width="300" height="21"/>
@@ -37,6 +45,14 @@
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="xfJ-QP-bUO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6JP-jm-kAf"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YQc-4D-7ma" secondAttribute="trailing" constant="53" id="OVd-Yk-rNR"/>
+                <constraint firstItem="YQc-4D-7ma" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="53" id="V0a-OP-hM3"/>
+                <constraint firstItem="YQc-4D-7ma" firstAttribute="top" secondItem="xfJ-QP-bUO" secondAttribute="bottom" constant="46" id="ZsV-cd-GIE"/>
+                <constraint firstAttribute="trailing" secondItem="xfJ-QP-bUO" secondAttribute="trailing" id="bCF-8t-NMc"/>
+                <constraint firstItem="xfJ-QP-bUO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="123" id="r9R-k8-NFo"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

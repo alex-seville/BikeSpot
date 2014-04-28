@@ -13,17 +13,31 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAt-SI-C1E">
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAt-SI-C1E">
                         <rect key="frame" x="65" y="20" width="240" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="rr1-f7-bNG"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oZU-Gc-yeq">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oZU-Gc-yeq">
                         <rect key="frame" x="7" y="5" width="50" height="50"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="2KE-Du-ffS"/>
+                            <constraint firstAttribute="height" constant="50" id="wBy-Kd-bZv"/>
+                        </constraints>
                     </imageView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="kAt-SI-C1E" firstAttribute="leading" secondItem="oZU-Gc-yeq" secondAttribute="trailing" constant="8" id="3Yi-HE-p1M"/>
+                    <constraint firstItem="oZU-Gc-yeq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="7" id="6VW-zv-pIr"/>
+                    <constraint firstItem="oZU-Gc-yeq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Kz1-SL-OZb"/>
+                    <constraint firstAttribute="trailing" secondItem="kAt-SI-C1E" secondAttribute="trailing" constant="15" id="phN-e7-0MJ"/>
+                    <constraint firstItem="kAt-SI-C1E" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="uxy-zb-Iad"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="icon" destination="oZU-Gc-yeq" id="dDl-yJ-Xju"/>
