@@ -659,7 +659,7 @@ NSString * const CloseInstructionsNotification = @"CloseInstructionsNotification
 	int rackIndex = [self getRackIndex:rack annotations:annots];
 	[self.mainMapView deselectAnnotation:annots[rackIndex] animated:NO];
 	if (rackIndex+1 >= annots.count){
-		rackIndex = 0;
+		rackIndex = annots.count-1;
 	}else{
 		rackIndex++;
 	}
@@ -674,7 +674,7 @@ NSString * const CloseInstructionsNotification = @"CloseInstructionsNotification
 	int rackIndex = [self getRackIndex:rack annotations:annots];
 	[self.mainMapView deselectAnnotation:annots[rackIndex] animated:NO];
 	if (rackIndex-1 <= 0){
-		rackIndex = annots.count-1;
+		rackIndex = 0;
 	}else{
 		rackIndex--;
 	}
