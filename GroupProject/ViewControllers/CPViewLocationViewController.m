@@ -84,6 +84,7 @@ NSString * const CloseInstructionsNotification = @"CloseInstructionsNotification
 	self.navigationController.navigationBar.hidden=YES;
 	
     self.locationSearchBar.delegate = self;
+    [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setFont:[UIFont fontWithName:@"Avenir" size:14.0f]];
 	
     self.mainMapView.delegate = self;
     self.annotations = [[NSMutableArray alloc] init];
