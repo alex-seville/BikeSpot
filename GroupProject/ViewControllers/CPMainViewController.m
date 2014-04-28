@@ -17,6 +17,7 @@
 #import "CPRack.h"
 #import "CPRackMiniDetailViewController.h"
 #import "CPHelpScreenViewController.h"
+#import "CPInstructionViewController.h"
 
 @interface CPMainViewController ()
 @property (weak, nonatomic) IBOutlet UIView *menuView;
@@ -36,7 +37,7 @@
 @property (strong, nonatomic) CPSettingsViewController *settingsViewController;
 @property (strong, nonatomic) CPSignInViewController *signInViewController;
 @property (strong, nonatomic) CPHelpScreenViewController *helpViewController;
-
+@property (strong, nonatomic) CPInstructionViewController *instructionViewController;
 
 
 @property (nonatomic, strong) NSArray *viewControllers;
@@ -183,6 +184,13 @@
                                              selector:@selector(onCloseAddNew:)
                                                  name:CloseAddNewNotification object:nil];
 	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(onShowInstructions:)
+                                                 name:ShowInstructionsNotification object:nil];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(onCloseInstructions:)
+                                                 name:CloseInstructionsNotification object:nil];
 	
 	/* create a new minidetail view */
 	self.miniDetail = [[CPRackMiniDetailViewController alloc] init];
@@ -301,7 +309,7 @@
 	UIView *miniDetailView = self.miniDetail.view;
 	miniDetailView.frame = CGRectMake(10, self.view.frame.size.height+10, self.view.frame.size.width-20, 100);
 	[self.miniDetail setRack:rack];
-	[self.view addSubview:miniDetailView];
+	[self.contentView addSubview:miniDetailView];
 	
 	[UIView animateWithDuration:0.15 animations:^{
 		miniDetailView.frame = CGRectMake(10, self.view.frame.size.height-100, self.view.frame.size.width-20, 100);
@@ -327,7 +335,34 @@
 	} ];
 }
 
+-(void)onShowInstructions:(NSNotification *) notification {
+	NSString *title = notification.userInfo[@"title"];
+	self.instructionViewController = [[CPInstructionViewController alloc] init];
+	self.instructionViewController.view.layer.shadowColor = [UIColor blackColor].CGColor;
+	self.instructionViewController.view.layer.shadowRadius = 2;
+	self.instructionViewController.view.layer.shadowOpacity = 0.3;
+	self.instructionViewController.view.layer.shadowOffset = CGSizeMake(0, 0);
+	self.instructionViewController.view.layer.cornerRadius = 2;
+	
+	UIView *miniDetailView = self.instructionViewController.view;
+	miniDetailView.frame = CGRectMake(10, self.view.frame.size.height+10, self.view.frame.size.width-20, 100);
+	self.instructionViewController.instructionLabel.text = title;
+	[self.contentView addSubview:miniDetailView];
+	
+	[UIView animateWithDuration:0.15 animations:^{
+		miniDetailView.frame = CGRectMake(10, self.view.frame.size.height-self.instructionViewController.view.frame.size.height-10, self.view.frame.size.width-20, self.instructionViewController.view.frame.size.height+10);
+	} ];
+}
 
+-(void)onCloseInstructions:(NSNotification *) notification {
+	if (self.instructionViewController != nil){
+		UIView *miniDetailView = self.instructionViewController.view;
+		
+		[UIView animateWithDuration:0.15 animations:^{
+			miniDetailView.frame = CGRectMake(10, self.view.frame.size.height+10, self.view.frame.size.width-20, self.instructionViewController.view.frame.size.height);
+		} ];
+	}
+}
 
 -(void)onShowCamera:(NSNotification *) notification {
 	UIImagePickerController *picker = [[UIImagePickerController alloc] init];
@@ -352,7 +387,7 @@
 	addNewView.frame = CGRectMake(0, self.view.frame.size.height+10, self.view.frame.size.width, 100);
 	//self.addNew.delegate = self;
 	
-	[self.view addSubview:addNewView];
+	[self.contentView addSubview:addNewView];
 	
 	[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
 	
@@ -381,7 +416,7 @@
 	UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(onPanDetails:)];
 	NSLog(@"create pan view");
 	[self.panView addGestureRecognizer:pan];
-	[self.view addSubview:self.panView];
+	[self.contentView addSubview:self.panView];
 }
 
 -(void)removePanView{
