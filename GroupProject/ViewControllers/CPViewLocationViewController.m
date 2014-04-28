@@ -547,13 +547,13 @@ NSString * const CloseInstructionsNotification = @"CloseInstructionsNotification
 	
     // user not logged in
 	[[NSNotificationCenter defaultCenter] postNotificationName:CloseInstructionsNotification object:self];
-	/*
+	
     if (![CPUser currentUser])
     {
         [[NSNotificationCenter defaultCenter] postNotificationName:PresentLogInViewNotification object:self];
         return;
     }
-    */
+    
     if (sender.state == UIGestureRecognizerStateBegan){
     
 		CGPoint location = [sender locationInView:self.mainMapView];
