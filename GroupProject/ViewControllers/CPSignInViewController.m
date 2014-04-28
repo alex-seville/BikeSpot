@@ -144,6 +144,7 @@
 }
 
 - (IBAction)onCancel:(id)sender {
+    [SVProgressHUD dismiss];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
