@@ -98,6 +98,7 @@
 													 name:CloseHelpView object:nil];
 		
 		self.helpViewController = [[CPHelpScreenViewController alloc] init];
+		
 		[self.contentView addSubview:self.helpViewController.view];
 		[self.contentView bringSubviewToFront:self.helpViewController.view];
 	}else{
