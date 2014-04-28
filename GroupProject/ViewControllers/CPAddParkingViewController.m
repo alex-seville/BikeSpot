@@ -12,6 +12,7 @@
 #import "TSMessage.h"
 
 NSString * const ShowCameraNotification = @"ShowCameraNotification";
+NSString * const CloseAddNewNotification = @"CloseAddNewNotification";
 
 @interface CPAddParkingViewController ()
 @property (assign, nonatomic) BOOL isInGarage;
@@ -215,6 +216,9 @@ NSString const *NOT_IN_GARAGE = @"Not in garage";
 }
 
 - (void) closeView {
+	//let the main view controller reset the map, etc...
+	[[NSNotificationCenter defaultCenter] postNotificationName:CloseAddNewNotification object:self];
+	
     [UIView animateWithDuration:0.15 animations:^{
         self.view.frame = CGRectMake(0, self.view.frame.size.height+100, self.view.frame.size.width, 100);
         

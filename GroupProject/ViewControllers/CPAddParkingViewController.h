@@ -19,7 +19,9 @@
 @interface CPAddParkingViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 @property (nonatomic, weak) id<CPAddParkingViewControllerDelegate> delegate;
+
 extern NSString * const ShowCameraNotification;
+extern NSString * const CloseAddNewNotification;
 
 -(id)initWithLocation:(CLLocationCoordinate2D)location;
 @end

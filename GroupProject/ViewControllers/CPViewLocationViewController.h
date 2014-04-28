@@ -23,5 +23,6 @@ extern NSString * const PresentLogInViewNotification;
 
 - (CPRack *)getNextRack:(CPRack *)rack;
 - (CPRack *)getPrevRack:(CPRack *)rack;
+- (void) onCloseAddNew;
 
 @end

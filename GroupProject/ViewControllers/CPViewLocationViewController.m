@@ -51,6 +51,11 @@ NSString * const PresentLogInViewNotification = @"PresentLogInViewNotification";
 
 @property (nonatomic, strong) CPAddParkingViewController *addNew;
 
+@property (nonatomic, assign) double searchLayerX;
+@property (nonatomic, assign) double searchLayerY;
+@property (nonatomic, assign) double searchBarX;
+@property (nonatomic, assign) double searchBarY;
+
 @end
 
 @implementation CPViewLocationViewController
@@ -63,7 +68,7 @@ NSString * const PresentLogInViewNotification = @"PresentLogInViewNotification";
 		[CPParseClient instance];
 		self.locationManager = [[CLLocationManager alloc] init];
 		self.locationManager.delegate = self;
-		[self.locationManager startUpdatingLocation];
+		
 		
 				
         
@@ -74,6 +79,7 @@ NSString * const PresentLogInViewNotification = @"PresentLogInViewNotification";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	[self.locationManager startUpdatingLocation];
 	
 	self.navigationController.navigationBar.hidden=YES;
 	
@@ -413,7 +419,8 @@ NSString * const PresentLogInViewNotification = @"PresentLogInViewNotification";
 	
 	
 	if(![view.annotation isKindOfClass:[MKUserLocation class]] && ((CPRackAnnotation *)view.annotation).rack != nil){
-		CPRack *rack = ((CPRackAnnotation *)view.annotation).rack;
+		CPRackAnnotation *rackAnnot = (CPRackAnnotation *)view.annotation;
+		CPRack *rack = rackAnnot.rack;
 		
 		if ([self.selectedAnnotation isEqual:view.annotation]){
 			/* this condition is never hit, we can't deselect for now */
@@ -426,7 +433,7 @@ NSString * const PresentLogInViewNotification = @"PresentLogInViewNotification";
 			[[NSNotificationCenter defaultCenter] postNotificationName:CloseDetailNotification object:self userInfo:[NSDictionary dictionaryWithObject:rack forKey:@"rack"]];
 		}else{
 			view.annotationColor = [UIColor darkGrayColor];
-			
+			[self.mainMapView setCenterCoordinate:rackAnnot.coordinate animated:YES];
 			
 			if (self.selectedAnnotation != nil){
 				NSLog(@"clicking different annotation");
@@ -489,8 +496,9 @@ NSString * const PresentLogInViewNotification = @"PresentLogInViewNotification";
 }
 
 -(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
-	
-	[self findRacksWithLocation:mapView.centerCoordinate];
+	if (self.addAnnotation == nil){
+		[self findRacksWithLocation:mapView.centerCoordinate];
+	}
 	
 }
 
@@ -541,6 +549,7 @@ NSString * const PresentLogInViewNotification = @"PresentLogInViewNotification";
 - (IBAction)onLongPress:(UILongPressGestureRecognizer *)sender {
 	
     // user not logged in
+	
     if (![CPUser currentUser])
     {
         [[NSNotificationCenter defaultCenter] postNotificationName:PresentLogInViewNotification object:self];
@@ -561,13 +570,12 @@ NSString * const PresentLogInViewNotification = @"PresentLogInViewNotification";
 		/* move up */
 		
 		[[NSNotificationCenter defaultCenter] postNotificationName:AddNewRackNotification object:self
-				userInfo:@{
-						   @"latitude": @(coord.latitude),
-						   @"longitude": @(coord.longitude)
-					}
+			userInfo:@{
+				   @"latitude": @(coord.latitude),
+				   @"longitude": @(coord.longitude)
+			}
 		];
 		
-				
 		
 		/* disable search too */
 		[self.searchBarView resignFirstResponder];
@@ -575,6 +583,11 @@ NSString * const PresentLogInViewNotification = @"PresentLogInViewNotification";
 		[self.searchDisplayController setActive:NO animated:YES ];
 		[UIView animateWithDuration:0.15 animations:^{
 			[self.mainMapView setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-400)];
+			self.searchLayerX = self.searchBarView.frame.origin.x;
+			self.searchLayerY = self.searchBarView.frame.origin.y;
+			self.searchBarX = self.locationSearchBar.frame.origin.x;
+			self.searchBarX = self.locationSearchBar.frame.origin.y;
+			
 			[self.searchBarView setFrame:CGRectMake(0, -self.searchBarView.frame.size.height, self.searchBarView.frame.size.width, self.searchBarView.frame.size.height)];
 			
 			[self.locationSearchBar setFrame:CGRectMake(0, -self.searchBarView.frame.size.height, self.searchBarView.frame.size.width, self.searchBarView.frame.size.height)];
@@ -587,9 +600,31 @@ NSString * const PresentLogInViewNotification = @"PresentLogInViewNotification";
 			
 			// TODO only add if user actually added a bike rack
 			[self.mainMapView addAnnotation:newAnnot];
+			
+			
 		} ];
 		
 	}
+}
+
+- (void) onCloseAddNew {
+	self.addAnnotation = nil;
+	[self.mainMapView removeAnnotations:self.mainMapView.annotations];
+	[self.searchDisplayController setActive:YES animated:YES ];
+	[UIView animateWithDuration:0.15 animations:^{
+		[self.mainMapView setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+		[self.searchBarView setFrame:CGRectMake(self.searchLayerX, self.searchLayerY, self.searchBarView.frame.size.width, self.searchBarView.frame.size.height)];
+		NSLog(@"layer, bar %f %f", self.searchLayerX, self.searchBarX);
+		[self.locationSearchBar setFrame:CGRectMake(self.searchBarX-self.searchLayerX, self.searchLayerY + self.searchBarY, self.searchBarView.frame.size.width, self.searchBarView.frame.size.height)];
+		
+		
+	} completion:^(BOOL finished) {
+		
+		/* disable map interactions until save or cancel are pressed */
+		[self.mainMapView setUserInteractionEnabled:true];
+		
+		
+	} ];
 }
 
 - (IBAction)onMenuTapped:(UITapGestureRecognizer *)sender {
@@ -598,7 +633,7 @@ NSString * const PresentLogInViewNotification = @"PresentLogInViewNotification";
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
 	CLLocationCoordinate2D coord = ((CLLocation *)locations[0]).coordinate;
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coord, 1000, 1000);
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coord, 10, 10);
     
     [self.mainMapView setRegion:region animated:YES];
 	

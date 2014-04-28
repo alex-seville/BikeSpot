@@ -14,11 +14,10 @@
 @interface CPRackMiniDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *rackNameLabel;
 
-- (IBAction)onPan:(UIPanGestureRecognizer *)sender;
-
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (nonatomic, strong) CPRack *rack;
 
+@property (weak, nonatomic) IBOutlet UILabel *extraDetails;
 
 @end
 
@@ -53,13 +52,29 @@
     self.rackNameLabel.text = rack.name;
 	self.rackDescriptionLabel.text = rack.address;
 	self.timeLabel.text = @"";
+	NSString *extras = @"";
+	if (rack.numSpots > 0){
+		if (rack.numSpots > 99){
+			extras = [extras stringByAppendingString:@"99+ spots, "];
+		}else{
+			extras = [extras stringByAppendingString:[NSString stringWithFormat:@"%i spots, ",rack.numSpots]];
+		}
+	}
+	if (rack.safetyRating > 0){
+		NSArray *safetyStrings = [NSArray arrayWithObjects:@"\u2605", @"\u2605\u2605", @"\u2605\u2605\u2605", @"\u2605\u2605\u2605\u2605", @"\u2605\u2605\u2605\u2605\u2605",nil];
+		
+		extras = [extras stringByAppendingString:safetyStrings[rack.safetyRating-1]];
+	}
+	self.extraDetails.text = extras;
 }
 
 - (void) setTime:(NSTimeInterval)time {
 	if (time < 60){
 		self.timeLabel.text = [NSString stringWithFormat:@"Walking time: %.0f seconds", time];
-	}else{
+	}else if (time >= 60 && time < 6000){
 		self.timeLabel.text = [NSString stringWithFormat:@"Walking time: %.0f minutes", time / 60];
+	}else {
+		self.timeLabel.text = @"Walking time: 99+ minutes";
 	}
 }
 
@@ -67,43 +82,5 @@
 	return _rack;
 }
 
-/* panning upwards reveals more details */
-/* panning side-to-side should show another point */
-/*
-- (IBAction)onPan:(UIPanGestureRecognizer *)sender {
-	CGPoint point = [sender locationInView:self.view];
-	CGPoint velocity = [sender velocityInView:self.view];
-	
-	
-	if (sender.state == UIGestureRecognizerStateChanged){
-		CGRect viewFrame = self.view.frame;
-		
-		if (viewFrame.size.height-point.y >= 100 ){
-		
-			viewFrame.origin.y += point.y;
-			viewFrame.size.height -= point.y;
-			self.view.frame = viewFrame;
-			
-		}else{
-			
-			viewFrame.origin.x += point.x;
-			
-			
-		}
-		
-	}else if (sender.state == UIGestureRecognizerStateEnded){
-		CGRect viewFrame = self.view.frame;
-		if (velocity.y > 0){
-			
-			viewFrame.origin.y = 0;
-			viewFrame.size.height = 0;
-		}else{
-			viewFrame.origin.y = 300;
-			viewFrame.size.height = self.view.frame.size.height-300;
-		}
-	}
-	
-}
- */
 
 @end
