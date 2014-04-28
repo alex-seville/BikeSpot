@@ -299,6 +299,50 @@ NSString const *NOT_IN_GARAGE = @"Not in garage";
 }
 
 - (IBAction)onPan:(UIPanGestureRecognizer *)sender {
+    CGPoint velocity = [sender velocityInView:self.view];
+    
+    //NSLog(@"%f", velocity.y);
+    // drag the MAIN CONTENT VIEW frame away
+    if (sender.state == UIGestureRecognizerStateBegan) {
+        
+    }
+    else if (sender.state == UIGestureRecognizerStateChanged) {
+        /*
+        NSLog(@"%f", velocity.y);
+        // moving view down
+        if (velocity.y > 0) {
+            CGRect frame = self.view.frame;
+            if (frame.origin.y <= self.view.frame.size.height) {
+                frame.origin.y += 10;
+                self.view.frame = frame;
+            }
+        }
+        else
+        {
+            CGRect frame = self.view.frame;
+            if (frame.origin.y > 100) {
+                frame.origin.y -= 10;
+                self.view.frame = frame;
+            }
+        }
+         */
+    }
+    else if (sender.state == UIGestureRecognizerStateEnded) {
+        
+        // moving view down
+        if (velocity.y >= 0) {
+            [self closeView];
+        }
+        else
+        {
+            /*
+            // put view back
+            [UIView animateWithDuration:0.5  animations:^{
+                self.view.frame = CGRectMake(0, self.view.frame.size.height+10, self.view.frame.size.width, 100);
+            }];
+             */
+        }
+    }
 }
 
 - (void)setSafetyRating:(int)value {
