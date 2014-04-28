@@ -272,7 +272,9 @@
 -(void)sender:(CPHamburgerMenuViewController *)sender menuTapped:(int)index
 {
     // move main display view back
-    [self showMainContentView];
+    [UIView animateWithDuration:0.5  animations:^{
+        [self showMainContentView];
+    }];
 
     CPUser *user = [CPUser currentUser];
     
