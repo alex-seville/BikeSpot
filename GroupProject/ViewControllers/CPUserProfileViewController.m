@@ -12,7 +12,7 @@
 #import "CPLabelCell.h"
 #import "CPRack.h"
 #import <Parse/Parse.h>
-
+#import "SVProgressHUD.h"
 
 @interface CPUserProfileViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
@@ -57,22 +57,20 @@
     
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f];
     
-    //self.dividerBar.backgroundColor = [UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f];
     self.dividerBar.layer.shadowColor = [UIColor blackColor].CGColor;
     self.dividerBar.backgroundColor = [UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f];
-	//self.dividerBar.layer.shadowRadius = 2;
-	//self.dividerBar.layer.shadowOpacity = 0.3;
-	//self.dividerBar.layer.shadowOffset = CGSizeMake(0, 0);
 	self.dividerBar.layer.cornerRadius = 2;
     
     if (isLinkedToFacebook)
     {
         // Create request for user's Facebook data
         FBRequest *request = [FBRequest requestForMe];
+        [SVProgressHUD showWithStatus:@"Loading profile..."];
         
         // Send request to Facebook
         [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
             if (!error) {
+                [SVProgressHUD dismiss];
                 // result is a dictionary with the user's Facebook data
                 NSDictionary *userData = (NSDictionary *)result;
                 NSLog(@"%@", userData);
@@ -92,23 +90,20 @@
                                                               dateStyle:NSDateFormatterLongStyle
                                                               timeStyle:NSDateFormatterNoStyle];
         self.memberSince.text = dateString;
-        
-        // Do any additional setup after loading the view from its nib.
-        self.bikeParkingTableView.dataSource = self;
-        self.bikeParkingTableView.delegate = self;
-        self.bikeParkingTableView.scrollEnabled = NO;
-        
-        
-        // register cells
-        UINib *labelCellNib = [UINib nibWithNibName:@"CPLabelCell" bundle:nil];
-        [self.bikeParkingTableView registerNib:labelCellNib forCellReuseIdentifier:@"CPLabelCell"];
-        
-        //[self getUserBikeRacks];
-        
-        // This will remove extra separators from tableview
-        self.bikeParkingTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-        
     }
+    
+    // Do any additional setup after loading the view from its nib.
+    self.bikeParkingTableView.dataSource = self;
+    self.bikeParkingTableView.delegate = self;
+    self.bikeParkingTableView.scrollEnabled = NO;
+    
+    
+    // register cells
+    UINib *labelCellNib = [UINib nibWithNibName:@"CPLabelCell" bundle:nil];
+    [self.bikeParkingTableView registerNib:labelCellNib forCellReuseIdentifier:@"CPLabelCell"];
+    
+    // This will remove extra separators from tableview
+    self.bikeParkingTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 
 }
 
