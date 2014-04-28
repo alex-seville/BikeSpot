@@ -6,7 +6,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CPSignInViewController">
             <connections>
-                <outlet property="appName" destination="XXH-yh-zj7" id="bor-B7-chj"/>
                 <outlet property="hint" destination="d35-mF-3hu" id="Kaw-QF-0bE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -26,14 +25,8 @@
                         <action selector="signInFB:" destination="-1" eventType="touchUpInside" id="p9M-3W-TUO"/>
                     </connections>
                 </button>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your bike parking app" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXH-yh-zj7">
-                    <rect key="frame" x="76" y="192" width="168" height="22"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="15"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bikeSpotIcon" translatesAutoresizingMaskIntoConstraints="NO" id="xfJ-QP-bUO">
-                    <rect key="frame" x="0.0" y="123" width="320" height="61"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bikeSpotIconSloganGreen" translatesAutoresizingMaskIntoConstraints="NO" id="xfJ-QP-bUO">
+                    <rect key="frame" x="0.0" y="123" width="320" height="100"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d35-mF-3hu">
@@ -51,6 +44,6 @@
     </objects>
     <resources>
         <image name="active_404" width="404" height="90"/>
-        <image name="bikeSpotIcon" width="468" height="110"/>
+        <image name="bikeSpotIconSloganGreen" width="792" height="288"/>
     </resources>
 </document>
