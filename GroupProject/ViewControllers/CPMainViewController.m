@@ -18,6 +18,7 @@
 #import "CPRackMiniDetailViewController.h"
 #import "CPHelpScreenViewController.h"
 #import "CPInstructionViewController.h"
+#import "CPAboutViewController.h"
 
 @interface CPMainViewController ()
 @property (weak, nonatomic) IBOutlet UIView *menuView;
@@ -30,6 +31,7 @@
 @property (strong, nonatomic) UINavigationController *addParkingNavigationController;
 @property (strong, nonatomic) UINavigationController *settingsNavigationController;
 @property (strong, nonatomic) UINavigationController *signInNavigationController;
+@property (strong, nonatomic) UINavigationController *aboutNavigationController;
 @property (strong, nonatomic) CPHamburgerMenuViewController *menuViewController;
 @property (strong, nonatomic) CPViewLocationViewController *mapViewController;
 @property (strong, nonatomic) CPUserProfileViewController *userProfileViewController;
@@ -38,6 +40,7 @@
 @property (strong, nonatomic) CPSignInViewController *signInViewController;
 @property (strong, nonatomic) CPHelpScreenViewController *helpViewController;
 @property (strong, nonatomic) CPInstructionViewController *instructionViewController;
+@property (strong, nonatomic) CPAboutViewController *aboutViewController;
 
 
 @property (nonatomic, strong) NSArray *viewControllers;
@@ -78,7 +81,10 @@
         self.signInViewController = [[CPSignInViewController alloc] init];
         self.signInNavigationController = [[UINavigationController alloc] initWithRootViewController:self.signInViewController];
         
-        self.viewControllers = @[self.mapViewNavigationController, self.userProfileNavigationController, self.mapViewNavigationController];
+        self.aboutViewController = [[CPAboutViewController alloc] init];
+        self.aboutNavigationController = [[UINavigationController alloc] initWithRootViewController:self.aboutViewController];
+        
+        self.viewControllers = @[self.mapViewNavigationController, self.userProfileNavigationController, self.aboutNavigationController, self.mapViewNavigationController];
         
     }
     return self;

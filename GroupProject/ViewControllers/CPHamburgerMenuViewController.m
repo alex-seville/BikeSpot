@@ -31,8 +31,8 @@
         // Custom initialization
         self.title = @"Menu";
         
-        self.menuOptions = @[@"Home", @"Profile", @"Log In/Out"];
-        self.icons = @[@"green_home_small.png", @"green_profile_small.png", @"green_key_small.png"];
+        self.menuOptions = @[@"Home", @"Profile", @"About", @"Log In/Out"];
+        self.icons = @[@"green_home_small.png", @"green_profile_small.png", @"green_about.png", @"green_key_small.png"];
         
         // user profile view
         self.userProfileViewController = [[CPUserProfileViewController alloc] init];
