@@ -19,6 +19,7 @@
 #import "CPHelpScreenViewController.h"
 #import "CPInstructionViewController.h"
 #import "CPAboutViewController.h"
+#import "TSMessage.h"
 
 @interface CPMainViewController ()
 @property (weak, nonatomic) IBOutlet UIView *menuView;

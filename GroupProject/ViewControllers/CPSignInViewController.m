@@ -10,6 +10,7 @@
 #import "CPEnterAccountViewController.h"
 #import <Parse/Parse.h>
 #import "CPMainViewController.h"
+#import "SVProgressHUD.h"
 
 @interface CPSignInViewController ()
 - (IBAction)signInFB:(id)sender;
@@ -104,6 +105,7 @@
 - (IBAction)signInFB:(id)sender {
     // The permissions requested from the user
     NSArray *permissionsArray = @[ @"user_about_me", @"user_relationships", @"user_birthday", @"user_location"];
+    [SVProgressHUD showWithStatus:@"Logging in..."];
     
     // Login PFUser using Facebook
     [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
@@ -120,6 +122,7 @@
         }
         else {
             NSLog(@"User with Facebook logged in!");
+            [SVProgressHUD dismiss];
             [self showMainViewController];
         }
     }];
