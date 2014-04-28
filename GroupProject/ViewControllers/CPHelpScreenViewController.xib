@@ -19,7 +19,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bikeSpotIcon" translatesAutoresizingMaskIntoConstraints="NO" id="82h-ir-wVl">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bikeSpotIconSloganGreen" translatesAutoresizingMaskIntoConstraints="NO" id="82h-ir-wVl">
                     <rect key="frame" x="40" y="38" width="240" height="128"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -58,7 +58,7 @@
         </view>
     </objects>
     <resources>
-        <image name="bikeSpotIcon" width="468" height="110"/>
+        <image name="bikeSpotIconSloganGreen" width="792" height="288"/>
         <image name="help_screen.png" width="1536" height="2048"/>
     </resources>
 </document>
