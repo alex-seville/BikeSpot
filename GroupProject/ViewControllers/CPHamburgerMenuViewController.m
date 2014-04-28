@@ -90,7 +90,8 @@
     else
     {
         cell.optionLabel.text = self.menuOptions[indexPath.row];
-        if (indexPath.row > 0 && !userLoggedIn)
+        // gray out profile option
+        if (indexPath.row == 1 && !userLoggedIn)
         {
             [cell.optionLabel setTextColor:[UIColor grayColor]];
             cell.icon.image = [UIImage imageNamed:@"gray_profile_small.png"];
