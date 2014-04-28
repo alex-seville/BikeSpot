@@ -13,6 +13,7 @@ NSString * const CloseHelpView = @"CloseHelpView";
 
 @interface CPHelpScreenViewController ()
 - (IBAction)getStartedClick:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *getStartedBorder;
 
 @end
 
@@ -30,6 +31,11 @@ NSString * const CloseHelpView = @"CloseHelpView";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	self.getStartedBorder.layer.cornerRadius = 15;
+	self.getStartedBorder.layer.borderColor = [UIColor whiteColor].CGColor;
+	self.getStartedBorder.layer.borderWidth = 3;
+	
+	
     // Do any additional setup after loading the view from its nib.
 	self.navigationController.navigationBar.hidden=YES;
 }
