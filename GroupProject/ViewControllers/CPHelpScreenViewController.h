@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CPHelpScreenViewController : UIViewController
+@interface CPHelpScreenViewController : UIViewController <UIScrollViewDelegate>
 extern NSString * const CloseHelpView;
 @end
