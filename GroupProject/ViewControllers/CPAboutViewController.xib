@@ -23,22 +23,23 @@
                     </constraints>
                 </imageView>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7A-Ts-WF9">
-                    <rect key="frame" x="8" y="255" width="304" height="300"/>
+                    <rect key="frame" x="14" y="255" width="292" height="300"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="300" id="iJL-V7-SqG"/>
+                        <constraint firstAttribute="height" constant="300" id="dtL-ww-yXn"/>
                     </constraints>
                     <mutableString key="text">Bike Rack designed by Luis Pachon from the Noun Project, used under CC BY 3.0 / Color modified and icon cropped from original Bike Lock designed by Simon Child Jnr from the Noun Project, used under CC BY 3.0 / Color modified from original Cycling designed by Jamison Wieser from the Noun Project, used under CC BY 3.0 / Color modified from original Key designed by Zach VanDeHey from the Noun Project, used under CC BY 3.0 / Color modified from original Map designed by Stefano Vetere from the Noun Project, used under CC BY 3.0 / Color modified from original</mutableString>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="10"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Bz7-Qd-Tc5">
-                    <rect key="frame" x="8" y="173" width="304" height="74"/>
+                    <rect key="frame" x="14" y="173" width="292" height="74"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="74" id="7GW-zu-xhq"/>
+                        <constraint firstAttribute="height" constant="74" id="QGN-jJ-LtW"/>
                     </constraints>
                     <string key="text">Search and find bike parking near you, add your favorite spots, and never worry about hunting for the perfect place for your bike!</string>
                     <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="14"/>
@@ -47,14 +48,14 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Bz7-Qd-Tc5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="7L0-TN-tEe"/>
+                <constraint firstAttribute="trailing" secondItem="f7A-Ts-WF9" secondAttribute="trailing" constant="14" id="4Td-dt-eCE"/>
+                <constraint firstItem="Bz7-Qd-Tc5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="14" id="7IV-Gc-k5B"/>
                 <constraint firstItem="w09-Uj-5lC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="65" id="86s-N7-HYO"/>
                 <constraint firstItem="w09-Uj-5lC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="AFl-vj-g7J"/>
-                <constraint firstAttribute="trailing" secondItem="f7A-Ts-WF9" secondAttribute="trailing" constant="8" id="LqZ-ST-NS4"/>
-                <constraint firstItem="f7A-Ts-WF9" firstAttribute="top" secondItem="Bz7-Qd-Tc5" secondAttribute="bottom" constant="8" id="fOj-wB-Fyu"/>
-                <constraint firstAttribute="trailing" secondItem="Bz7-Qd-Tc5" secondAttribute="trailing" constant="8" id="lYU-PU-wPu"/>
-                <constraint firstItem="f7A-Ts-WF9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="r83-Ms-5Fk"/>
-                <constraint firstItem="Bz7-Qd-Tc5" firstAttribute="top" secondItem="w09-Uj-5lC" secondAttribute="bottom" constant="8" id="uIw-Bq-uR4"/>
+                <constraint firstItem="Bz7-Qd-Tc5" firstAttribute="top" secondItem="w09-Uj-5lC" secondAttribute="bottom" constant="8" id="BRN-TP-Pd8"/>
+                <constraint firstItem="f7A-Ts-WF9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="14" id="Dsh-A4-FBW"/>
+                <constraint firstAttribute="trailing" secondItem="Bz7-Qd-Tc5" secondAttribute="trailing" constant="14" id="JI1-7H-BR8"/>
+                <constraint firstItem="f7A-Ts-WF9" firstAttribute="top" secondItem="Bz7-Qd-Tc5" secondAttribute="bottom" constant="8" id="TSo-fL-7K5"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>

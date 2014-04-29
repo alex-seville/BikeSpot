@@ -300,10 +300,13 @@
     UINavigationController *nvc = self.viewControllers[index];
     [self.contentView addSubview:nvc.view];
     
+    /*
     if (nvc == self.mapViewNavigationController)
     {
+    */
         [self.contentView addSubview:self.menuTab];
-    }
+    
+    //}
 
     // force refresh
     [nvc viewWillAppear:YES];
