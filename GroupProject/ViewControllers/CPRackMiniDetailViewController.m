@@ -74,11 +74,11 @@
 
 - (void) setTime:(NSTimeInterval)time {
 	if (time < 60){
-		self.timeLabel.text = [NSString stringWithFormat:@"Walk time from destination: %.0f secs", time];
+		self.timeLabel.text = [NSString stringWithFormat:@"Walk-back time: %.0f secs", time];
 	}else if (time >= 60 && time < 6000){
-		self.timeLabel.text = [NSString stringWithFormat:@"Walk time from destination: %.0f mins", time / 60];
+		self.timeLabel.text = [NSString stringWithFormat:@"Walk-back time: %.0f mins", time / 60];
 	}else {
-		self.timeLabel.text = @"Walk time from destination: 99+ mins";
+		self.timeLabel.text = @"Walk-back time: 99+ mins";
 	}
 }
 

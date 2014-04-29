@@ -21,6 +21,7 @@
 		652D805618F7AA900027D752 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 652D805418F7A3250027D752 /* data.json */; };
 		6548959B18ED08E3002E7F0E /* CPRack.m in Sources */ = {isa = PBXBuildFile; fileRef = 6548959A18ED08E3002E7F0E /* CPRack.m */; };
 		65509B1D190A2C7700084D69 /* ZSPinAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 65509B1C190A2C7700084D69 /* ZSPinAnnotation.m */; };
+		6567DAD3190F5A3800C6D378 /* help_screen3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6567DAD2190F5A3800C6D378 /* help_screen3.png */; };
 		657BD82B18FB847A00A887EC /* CPAnnotationGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 657BD82A18FB847A00A887EC /* CPAnnotationGroup.m */; };
 		6583AF1918EC931D00D46333 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6583AF1818EC931D00D46333 /* Foundation.framework */; };
 		6583AF1B18EC931D00D46333 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6583AF1A18EC931D00D46333 /* CoreGraphics.framework */; };
@@ -62,6 +63,7 @@
 		65B69621190DC1D00079F909 /* help_screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 65B69620190DC1D00079F909 /* help_screen.png */; };
 		65B69625190DEE090079F909 /* CPInstructionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B69623190DEE090079F909 /* CPInstructionViewController.m */; };
 		65B69626190DEE090079F909 /* CPInstructionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65B69624190DEE090079F909 /* CPInstructionViewController.xib */; };
+		65CF9BC6190F3F210017C95E /* help_screen2.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CF9BC5190F3F210017C95E /* help_screen2.png */; };
 		65DA83F318EDF7A70091FC1C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DA83F218EDF7A70091FC1C /* Parse.framework */; };
 		65DA83F518EDF7EA0091FC1C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DA83F418EDF7EA0091FC1C /* AudioToolbox.framework */; };
 		65DA83F718EDF7F10091FC1C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65DA83F618EDF7F10091FC1C /* CFNetwork.framework */; };
@@ -126,6 +128,7 @@
 		6548959A18ED08E3002E7F0E /* CPRack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPRack.m; path = Models/CPRack.m; sourceTree = "<group>"; };
 		65509B1B190A2C7700084D69 /* ZSPinAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZSPinAnnotation.h; path = "Custom Pin/ZSPinAnnotation.h"; sourceTree = "<group>"; };
 		65509B1C190A2C7700084D69 /* ZSPinAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZSPinAnnotation.m; path = "Custom Pin/ZSPinAnnotation.m"; sourceTree = "<group>"; };
+		6567DAD2190F5A3800C6D378 /* help_screen3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help_screen3.png; sourceTree = "<group>"; };
 		657BD82918FB847A00A887EC /* CPAnnotationGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPAnnotationGroup.h; path = Models/CPAnnotationGroup.h; sourceTree = "<group>"; };
 		657BD82A18FB847A00A887EC /* CPAnnotationGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPAnnotationGroup.m; path = Models/CPAnnotationGroup.m; sourceTree = "<group>"; };
 		6583AF1518EC931D00D46333 /* GroupProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +179,7 @@
 		65B69622190DEE090079F909 /* CPInstructionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPInstructionViewController.h; path = ViewControllers/CPInstructionViewController.h; sourceTree = "<group>"; };
 		65B69623190DEE090079F909 /* CPInstructionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPInstructionViewController.m; path = ViewControllers/CPInstructionViewController.m; sourceTree = "<group>"; };
 		65B69624190DEE090079F909 /* CPInstructionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CPInstructionViewController.xib; path = ViewControllers/CPInstructionViewController.xib; sourceTree = "<group>"; };
+		65CF9BC5190F3F210017C95E /* help_screen2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help_screen2.png; sourceTree = "<group>"; };
 		65DA83F218EDF7A70091FC1C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		65DA83F418EDF7EA0091FC1C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		65DA83F618EDF7F10091FC1C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -462,6 +466,8 @@
 		65B695FA190C658B0079F909 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				6567DAD2190F5A3800C6D378 /* help_screen3.png */,
+				65CF9BC5190F3F210017C95E /* help_screen2.png */,
 				65B69620190DC1D00079F909 /* help_screen.png */,
 				65B695FB190C658B0079F909 /* AppIcon29x29.png */,
 				65B695FC190C658B0079F909 /* AppIcon29x29@2x.png */,
@@ -571,6 +577,7 @@
 				AE4C437C18F91BFA00731F44 /* CPSignInViewController.xib in Resources */,
 				65B6960C190C658B0079F909 /* AppIcon29x29@2x.png in Resources */,
 				658D6A9F18FA59DA009D6812 /* CPRackMiniDetailViewController.xib in Resources */,
+				65CF9BC6190F3F210017C95E /* help_screen2.png in Resources */,
 				652D805618F7AA900027D752 /* data.json in Resources */,
 				AE4C438B18FA075E00731F44 /* CPUserProfileViewController.xib in Resources */,
 				AE7CE326190E1872009CA751 /* CPAboutViewController.xib in Resources */,
@@ -585,6 +592,7 @@
 				65B6960B190C658B0079F909 /* AppIcon29x29.png in Resources */,
 				AE7CE321190CD223009CA751 /* CPLabelCell.xib in Resources */,
 				65B69619190C658B0079F909 /* iTunesArtwork.png in Resources */,
+				6567DAD3190F5A3800C6D378 /* help_screen3.png in Resources */,
 				6583AF2B18EC931D00D46333 /* Images.xcassets in Resources */,
 				65B6960F190C658B0079F909 /* AppIcon50x50.png in Resources */,
 				65B6960E190C658B0079F909 /* AppIcon40x40@2x.png in Resources */,
