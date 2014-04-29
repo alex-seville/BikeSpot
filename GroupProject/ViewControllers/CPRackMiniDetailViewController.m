@@ -49,8 +49,12 @@
 
 - (void) setRack:(CPRack *)rack {
 	_rack = rack;
-    self.rackNameLabel.text = rack.name;
-	self.rackDescriptionLabel.text = rack.address;
+    self.rackNameLabel.text = [[[rack.name substringToIndex:1] uppercaseString ] stringByAppendingString:[rack.name substringFromIndex:1]];
+	if ([[rack.address uppercaseString]  isEqual: @"NONE"]){
+		self.rackDescriptionLabel.text = @"";
+	}else{
+		self.rackDescriptionLabel.text = rack.address;
+	}
 	self.timeLabel.text = @"";
 	NSString *extras = @"";
 	if (rack.numSpots > 0){
@@ -70,11 +74,11 @@
 
 - (void) setTime:(NSTimeInterval)time {
 	if (time < 60){
-		self.timeLabel.text = [NSString stringWithFormat:@"Walking time: %.0f seconds", time];
+		self.timeLabel.text = [NSString stringWithFormat:@"Walk time from destination: %.0f secs", time];
 	}else if (time >= 60 && time < 6000){
-		self.timeLabel.text = [NSString stringWithFormat:@"Walking time: %.0f minutes", time / 60];
+		self.timeLabel.text = [NSString stringWithFormat:@"Walk time from destination: %.0f mins", time / 60];
 	}else {
-		self.timeLabel.text = @"Walking time: 99+ minutes";
+		self.timeLabel.text = @"Walk time from destination: 99+ mins";
 	}
 }
 
