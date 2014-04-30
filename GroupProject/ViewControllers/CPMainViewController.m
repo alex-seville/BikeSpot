@@ -92,9 +92,9 @@
         self.aboutNavigationController = [[UINavigationController alloc] initWithRootViewController:self.aboutViewController];
         
         self.helpViewController = [[CPHelpScreenViewController alloc] init];
-        self.helpNavigationController = [[UINavigationController alloc] initWithRootViewController:self.helpViewController];
+        //self.helpNavigationController = [[UINavigationController alloc] initWithRootViewController:self.helpViewController];
         
-        self.viewControllers = @[self.mapViewNavigationController, self.userProfileNavigationController, self.aboutNavigationController, self.helpNavigationController, self.mapViewNavigationController];
+        self.viewControllers = @[self.mapViewNavigationController, self.userProfileNavigationController, self.aboutNavigationController, self.helpViewController, self.mapViewNavigationController];
         
     }
     return self;
@@ -310,21 +310,21 @@
         [CPUser logOut];
     }
     
-    UINavigationController *nvc = self.viewControllers[index];
-    int temp = (nvc == self.helpNavigationController);
-    NSLog(@"nvc is helpview %d", temp);
-    [self.contentView addSubview:nvc.view];
-    
-    /*
-    if (nvc == self.mapViewNavigationController)
+    if (self.viewControllers[index] == self.helpViewController)
     {
-    */
-        [self.contentView addSubview:self.menuTab];
+        [self.contentView addSubview:self.helpViewController.view];
+    }
+    else
+    {
+        UINavigationController *nvc = self.viewControllers[index];
+        [self.contentView addSubview:nvc.view];
+        
+        // force refresh
+        [nvc viewWillAppear:YES];
+    }
     
-    //}
+    [self.contentView addSubview:self.menuTab];
 
-    // force refresh
-    [nvc viewWillAppear:YES];
     
     
 }
