@@ -21,6 +21,7 @@
 #import "CPAboutViewController.h"
 #import "CPHelpScreenViewController.h"
 #import "TSMessage.h"
+#import "CPSwipeInstructionsViewController.h"
 
 @interface CPMainViewController ()
 @property (weak, nonatomic) IBOutlet UIView *menuView;
@@ -44,6 +45,7 @@
 @property (strong, nonatomic) CPHelpScreenViewController *helpViewController;
 @property (strong, nonatomic) CPInstructionViewController *instructionViewController;
 @property (strong, nonatomic) CPAboutViewController *aboutViewController;
+@property (strong, nonatomic) CPSwipeInstructionsViewController *swipe;
 
 
 
@@ -56,6 +58,7 @@
 
 @property (nonatomic, assign) int startx;
 @property (nonatomic, strong) UIView *panView;
+@property (nonatomic, strong) UIView *helpTapView;
 
 @end
 
@@ -105,7 +108,7 @@
 	
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	//[defaults setBool:false forKey:@"hasStarted"];
-	if (true || ![defaults boolForKey:@"hasStarted"]){
+	if (![defaults boolForKey:@"hasStarted"]){
 		[[NSNotificationCenter defaultCenter] addObserver:self
 												 selector:@selector(onCloseHelpWindow)
 													 name:CloseHelpView object:nil];
@@ -205,6 +208,10 @@
 	[[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(onCloseInstructions:)
                                                  name:CloseInstructionsNotification object:nil];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(onCloseHelpDetail:)
+                                                 name:CloseHelpDetailNotification object:nil];
 	
 	/* create a new minidetail view */
 	self.miniDetail = [[CPRackMiniDetailViewController alloc] init];
@@ -332,9 +339,15 @@
 	[self.miniDetail setRack:rack];
 	[self.contentView addSubview:miniDetailView];
 	
+	
 	[UIView animateWithDuration:0.15 animations:^{
 		miniDetailView.frame = CGRectMake(10, self.view.frame.size.height-100, self.view.frame.size.width-20, 100);
 		[self createPanView:CGRectMake(0, self.view.frame.size.height-100, self.view.frame.size.width, 100)];
+		
+	} completion:^(BOOL finished) {
+		[self createTapView:CGRectMake(0, self.view.frame.size.height-100, self.view.frame.size.width, 100)];
+			
+		
 	} ];
 	
 	
@@ -442,6 +455,38 @@
 
 -(void)removePanView{
 	[self.panView removeFromSuperview];
+}
+
+-(void)createTapView:(CGRect)rect {
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	
+	if (![defaults boolForKey:@"hasSeenHelp"]){
+		//show the help instructions if the person taps on the detail
+		//set up a tap view first
+
+		self.helpTapView = [[UIView alloc] initWithFrame:rect];
+		UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTapHelpDetails:)];
+		NSLog(@"create tap view");
+		[self.helpTapView addGestureRecognizer:tap];
+		[self.contentView addSubview:self.helpTapView];
+	}
+}
+
+-(void)onCloseHelpDetail:(NSNotification *) notification {
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	[defaults setBool:true forKey:@"hasSeenHelp"];
+	[UIView animateWithDuration:0.15 animations:^{
+		self.swipe.view.alpha = 0;
+	} completion:^(BOOL finished) {
+		[self.helpTapView removeFromSuperview];
+	}];
+	
+}
+
+
+- (IBAction)onTapHelpDetails:(UITapGestureRecognizer *)gesture {
+	self.swipe = [[CPSwipeInstructionsViewController alloc] init];
+	[self.view addSubview:self.swipe.view];
 }
 
 - (IBAction)onPanDetails:(UIPanGestureRecognizer *)gesture {
