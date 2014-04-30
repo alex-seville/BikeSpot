@@ -38,6 +38,9 @@
 		658D6A9518FA4A3F009D6812 /* CPRackAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 658D6A9418FA4A3F009D6812 /* CPRackAnnotation.m */; };
 		658D6A9E18FA59DA009D6812 /* CPRackMiniDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 658D6A9C18FA59DA009D6812 /* CPRackMiniDetailViewController.m */; };
 		658D6A9F18FA59DA009D6812 /* CPRackMiniDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 658D6A9D18FA59DA009D6812 /* CPRackMiniDetailViewController.xib */; };
+		65A424B61910B1ED003AA7B8 /* icon_6096.png in Resources */ = {isa = PBXBuildFile; fileRef = 65A424B51910B1ED003AA7B8 /* icon_6096.png */; };
+		65A424BA1910BFB9003AA7B8 /* CPSwipeInstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A424B81910BFB9003AA7B8 /* CPSwipeInstructionsViewController.m */; };
+		65A424BB1910BFB9003AA7B8 /* CPSwipeInstructionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65A424B91910BFB9003AA7B8 /* CPSwipeInstructionsViewController.xib */; };
 		65B2F924190438B20057BC8B /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B2F923190438B20057BC8B /* CoreMedia.framework */; };
 		65B2F926190438BC0057BC8B /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B2F925190438BC0057BC8B /* CoreVideo.framework */; };
 		65B2F928190438C90057BC8B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B2F927190438C90057BC8B /* OpenGLES.framework */; };
@@ -152,6 +155,10 @@
 		658D6A9B18FA59DA009D6812 /* CPRackMiniDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPRackMiniDetailViewController.h; path = ViewControllers/CPRackMiniDetailViewController.h; sourceTree = "<group>"; };
 		658D6A9C18FA59DA009D6812 /* CPRackMiniDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPRackMiniDetailViewController.m; path = ViewControllers/CPRackMiniDetailViewController.m; sourceTree = "<group>"; };
 		658D6A9D18FA59DA009D6812 /* CPRackMiniDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CPRackMiniDetailViewController.xib; path = ViewControllers/CPRackMiniDetailViewController.xib; sourceTree = "<group>"; };
+		65A424B51910B1ED003AA7B8 /* icon_6096.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_6096.png; sourceTree = "<group>"; };
+		65A424B71910BFB9003AA7B8 /* CPSwipeInstructionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CPSwipeInstructionsViewController.h; path = ViewControllers/CPSwipeInstructionsViewController.h; sourceTree = "<group>"; };
+		65A424B81910BFB9003AA7B8 /* CPSwipeInstructionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CPSwipeInstructionsViewController.m; path = ViewControllers/CPSwipeInstructionsViewController.m; sourceTree = "<group>"; };
+		65A424B91910BFB9003AA7B8 /* CPSwipeInstructionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CPSwipeInstructionsViewController.xib; path = ViewControllers/CPSwipeInstructionsViewController.xib; sourceTree = "<group>"; };
 		65B2F923190438B20057BC8B /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		65B2F925190438BC0057BC8B /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		65B2F927190438C90057BC8B /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -313,6 +320,9 @@
 				AE7CE322190E1872009CA751 /* CPAboutViewController.h */,
 				AE7CE323190E1872009CA751 /* CPAboutViewController.m */,
 				AE7CE324190E1872009CA751 /* CPAboutViewController.xib */,
+				65A424B71910BFB9003AA7B8 /* CPSwipeInstructionsViewController.h */,
+				65A424B81910BFB9003AA7B8 /* CPSwipeInstructionsViewController.m */,
+				65A424B91910BFB9003AA7B8 /* CPSwipeInstructionsViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -466,6 +476,7 @@
 		65B695FA190C658B0079F909 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				65A424B51910B1ED003AA7B8 /* icon_6096.png */,
 				6567DAD2190F5A3800C6D378 /* help_screen3.png */,
 				65CF9BC5190F3F210017C95E /* help_screen2.png */,
 				65B69620190DC1D00079F909 /* help_screen.png */,
@@ -589,10 +600,12 @@
 				65B6961A190C658B0079F909 /* iTunesArtwork@2x.png in Resources */,
 				AE4C438618FA074600731F44 /* CPSearchSettingsViewController.xib in Resources */,
 				AE4C437718F91AAF00731F44 /* CPEnterAccountViewController.xib in Resources */,
+				65A424BB1910BFB9003AA7B8 /* CPSwipeInstructionsViewController.xib in Resources */,
 				65B6960B190C658B0079F909 /* AppIcon29x29.png in Resources */,
 				AE7CE321190CD223009CA751 /* CPLabelCell.xib in Resources */,
 				65B69619190C658B0079F909 /* iTunesArtwork.png in Resources */,
 				6567DAD3190F5A3800C6D378 /* help_screen3.png in Resources */,
+				65A424B61910B1ED003AA7B8 /* icon_6096.png in Resources */,
 				6583AF2B18EC931D00D46333 /* Images.xcassets in Resources */,
 				65B6960F190C658B0079F909 /* AppIcon50x50.png in Resources */,
 				65B6960E190C658B0079F909 /* AppIcon40x40@2x.png in Resources */,
@@ -678,6 +691,7 @@
 				65173C2A18F38C57002B2C14 /* CPViewLocationViewController.m in Sources */,
 				AE4C439418FA6B7000731F44 /* CPSettingsViewController.m in Sources */,
 				657BD82B18FB847A00A887EC /* CPAnnotationGroup.m in Sources */,
+				65A424BA1910BFB9003AA7B8 /* CPSwipeInstructionsViewController.m in Sources */,
 				AE4C437618F91AAF00731F44 /* CPEnterAccountViewController.m in Sources */,
 				AE7CE320190CD223009CA751 /* CPLabelCell.m in Sources */,
 			);

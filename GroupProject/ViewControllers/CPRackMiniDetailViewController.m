@@ -19,6 +19,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *extraDetails;
 
+
+
 @end
 
 @implementation CPRackMiniDetailViewController
@@ -37,9 +39,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	self.view.layer.cornerRadius = 2;
-	self.rackNameLabel.textColor = [UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f];
-
+		
 }
+
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -74,11 +78,11 @@
 
 - (void) setTime:(NSTimeInterval)time {
 	if (time < 60){
-		self.timeLabel.text = [NSString stringWithFormat:@"Walk-back time: %.0f secs", time];
+		self.timeLabel.text = [NSString stringWithFormat:@"Walk time to dest: %.0f secs", time];
 	}else if (time >= 60 && time < 6000){
-		self.timeLabel.text = [NSString stringWithFormat:@"Walk-back time: %.0f mins", time / 60];
+		self.timeLabel.text = [NSString stringWithFormat:@"Walk time to dest: %.0f mins", time / 60];
 	}else {
-		self.timeLabel.text = @"Walk-back time: 99+ mins";
+		self.timeLabel.text = @"Walk time to dest: 99+ mins";
 	}
 }
 

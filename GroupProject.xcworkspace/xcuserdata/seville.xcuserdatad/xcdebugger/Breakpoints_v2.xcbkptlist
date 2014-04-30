@@ -128,11 +128,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GroupProject/ViewControllers/CPRackMiniDetailViewController.m"
-            timestampString = "420429305.934486"
+            timestampString = "420529147.331182"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "-setRack:"
             landmarkType = "5">
          </BreakpointContent>
@@ -144,11 +144,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GroupProject/ViewControllers/CPRackMiniDetailViewController.m"
-            timestampString = "420429305.934486"
+            timestampString = "420529147.331182"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "-setRack:"
             landmarkType = "5">
          </BreakpointContent>
@@ -166,6 +166,70 @@
             startingLineNumber = "394"
             endingLineNumber = "394"
             landmarkName = "-mapView:viewForAnnotation:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GroupProject/ViewControllers/CPMainViewController.m"
+            timestampString = "420529817.621446"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "469"
+            endingLineNumber = "469"
+            landmarkName = "-onCloseHelpDetail:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GroupProject/ViewControllers/CPMainViewController.m"
+            timestampString = "420529842.141651"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "455"
+            endingLineNumber = "455"
+            landmarkName = "-createTapView:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GroupProject/ViewControllers/CPMainViewController.m"
+            timestampString = "420529843.173749"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "460"
+            endingLineNumber = "460"
+            landmarkName = "-createTapView:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GroupProject/ViewControllers/CPMainViewController.m"
+            timestampString = "420529924.53235"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "473"
+            endingLineNumber = "473"
+            landmarkName = "-onCloseHelpDetail:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
