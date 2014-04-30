@@ -53,6 +53,8 @@ NSString * const CloseHelpView = @"CloseHelpView";
 	self.getStartedBorder.layer.borderWidth = 3;
 	
 	
+	
+	
     // Do any additional setup after loading the view from its nib.
 	self.navigationController.navigationBar.hidden=YES;
 	

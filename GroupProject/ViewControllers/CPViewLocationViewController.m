@@ -16,6 +16,7 @@
 #import "CPParseClient.h"
 #import "TSMessage.h"
 #import "ZSPinAnnotation.h"
+#import "SVProgressHUD.h"
 
 #define iphoneScaleFactorLatitude   9.0
 #define iphoneScaleFactorLongitude  11.0
@@ -188,14 +189,14 @@ NSString * const CloseInstructionsNotification = @"CloseInstructionsNotification
 	searchBar.showsCancelButton=false;
 	
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    
+    [SVProgressHUD show];
     [geocoder geocodeAddressDictionary:@{
 				@"Street": searchBar.text,
 				@"City": @"San Francisco",
 				@"State": @"California"
 		}  completionHandler:^(NSArray *placemarks, NSError *error) {
     
-		
+		[SVProgressHUD dismiss];
         if (error != nil )
         {
             [TSMessage showNotificationWithTitle:@"No destination found"

@@ -99,7 +99,7 @@
 	
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	//[defaults setBool:false forKey:@"hasStarted"];
-	if (![defaults boolForKey:@"hasStarted"]){
+	if (true || ![defaults boolForKey:@"hasStarted"]){
 		[[NSNotificationCenter defaultCenter] addObserver:self
 												 selector:@selector(onCloseHelpWindow)
 													 name:CloseHelpView object:nil];
