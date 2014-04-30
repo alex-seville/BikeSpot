@@ -52,6 +52,7 @@ NSString * const CloseHelpDetailNotification = @"CloseHelpDetailNotification";
 - (IBAction)closeBtnAction:(id)sender {
 	NSLog(@"button clicked");
 	[[NSNotificationCenter defaultCenter] postNotificationName:CloseHelpDetailNotification object:self];
-	
+	self.closeBtn.titleLabel.textColor = [UIColor colorWithRed:0.f green:180/255.0f blue:108/255.0f alpha:1.0f];
+
 }
 @end
