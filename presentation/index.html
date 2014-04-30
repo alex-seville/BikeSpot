@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>SF BikeSpot</title>
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<img width="500" src="../GroupProject/Images.xcassets/bikeSpotIconWhite.imageset/bikeSpotIconWhite.png"><br>
+					<h4>Your bike parking app</h4><br>
+					<p>
+						<small>A presentation by Eugenia Leong &amp; Alex Seville</small>
+						
+					</p>
+				</section>
+
+				<section>
+					<h2>Introduction</h2>
+					<p>
+						Our Team
+						<br><br>
+						<ul>
+							<li>Eugenia Leong (Zynga)</li>
+							<li>Alex Seville (Flickr)</li>
+							<li>Advisor: Ruchi Varshney</li>
+						</ul>
+					</p>
+
+				</section>
+
+
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h2>Bike Parking</h2>
+						<p>
+							Our app tackles the issue of finding safe, convenient bike parking in San Francisco.
+						</p>
+						<img src="https://farm5.staticflickr.com/4075/4958944748_d603a242c0_z.jpg">
+						<small>Stolen by Steve Tannock</small>
+						
+					</section>
+					<section>
+						<h2>Bike Parking</h2>
+						<p>
+							Our use case was:
+							<br><br>
+							Bob is leaving his house to meet a friend at a restaurant in San Francisco. <br><br> Before he leaves (or when he arrives) he wants to quickly find reliable bike parking near the restaurant.
+						</p>
+					</section>
+					<section>
+						<h2>Bike Parking</h2>
+						<p>
+							To accomplish that we developed a map-based application that allows you to: <br><br>
+							<ul><li> search for a destination</li>
+							<li> view nearby bike racks </li><li>view the walking time between the rack and your destination</li><li> and add bike racks that are missing from our service</li></ul>
+						</p>
+					</section>
+					
+				</section>
+
+				<section>
+					<h2>Demo!</h2>
+					<p>
+						
+					</p>
+				</section>
+
+				<section>
+					<section>
+						<h2>Technical Challenges</h2>
+						<p>
+							We addressed the following challenges
+						</p>
+						<ul>
+							<li>Customizing map annotations</li>
+							<li>Camera customization</li>
+							<li>Hierarchy of Views</li>
+							<li>Sourcing of data</li>
+						</ul>
+						
+						
+					</section>
+					<section>
+						<h2>Customizing map annotations</h2>
+						<p>
+							The default MKPinAnnotation comes in 3 colors: red, green, purple.  <br><br>Apple prescribes usages to each of these colors, and doesn't allow you to specify colors manually without adding your own image assets or (like we did) finding a Pod that redraws the pins with your specified color.
+						</p>
+					</section>
+					<section>
+						<h2>Camera customization</h2>
+						<p>
+							The defauly camera control in iOS, as we learned in class, cannot easily be customized. <br><br> It is easy to use, and works for our app at this stage, but customizing the color to match our theme would have required implementing things manually.
+						</p>
+					</section>
+					<section>
+						<h2>Hierarchy of Views</h2>
+						<p>
+							The map exposed a variety of gestures, so determining the correct view hierarchy was something that took us time to figure out.  <br><br>Eventually we chose to manage all views from a single parent, and communicate using NSNotifications.
+						</p>
+					</section>
+
+					<section>
+						<h2>Sourcing of Data</h2>
+						<p>
+							When we started the project we assumed we would have to manually add data, or generate dummy data to have a demo.<br><br>  Luckily, the City of San Francisco not only provides bike rack data for unlimited free public use, but they also furnished us with an updated corpus.
+						</p>
+					</section>
+					
+				</section>
+
+				<section>
+						<h2>What's Next?</h2>
+						<p>
+							<ul>
+								<li>Social activity with your fb social graph</li>
+								<li>Surfacing more details about each rack</li>
+								<li>Bring in Google STreetView images for racks</li>
+							</ul>
+						</p>
+					</section>
+				<section>
+						<h2>Q&amp;A</h2>
+						<p>
+							
+						</p>
+					</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
