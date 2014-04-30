@@ -540,6 +540,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "CodePath Group Project";
 				TargetAttributes = {
+					6583AF1418EC931D00D46333 = {
+						DevelopmentTeam = BJ5R3B45HU;
+					};
 					6583AF2F18EC931D00D46333 = {
 						TestTargetID = 6583AF1418EC931D00D46333;
 					};

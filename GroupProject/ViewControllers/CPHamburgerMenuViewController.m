@@ -31,8 +31,8 @@
         // Custom initialization
         self.title = @"Menu";
         
-        self.menuOptions = @[@"Home", @"Profile", @"About", @"Log In/Out"];
-        self.icons = @[@"green_home_small.png", @"green_profile_small.png", @"green_about.png", @"green_key_small.png"];
+        self.menuOptions = @[@"Home", @"Profile", @"About", @"Help", @"Log In/Out"];
+        self.icons = @[@"green_home_small.png", @"green_profile_small.png", @"green_help.png", @"green_about.png", @"green_key_small.png"];
         
         // user profile view
         self.userProfileViewController = [[CPUserProfileViewController alloc] init];
@@ -115,7 +115,7 @@
     
     [self.menuTableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    [self.delegate sender:self menuTapped:indexPath.row];
+    [self.delegate sender:self menuTapped:(int)indexPath.row];
     
     [self.menuTableView reloadData];
     

@@ -19,6 +19,7 @@
 #import "CPHelpScreenViewController.h"
 #import "CPInstructionViewController.h"
 #import "CPAboutViewController.h"
+#import "CPHelpScreenViewController.h"
 #import "TSMessage.h"
 
 @interface CPMainViewController ()
@@ -33,6 +34,7 @@
 @property (strong, nonatomic) UINavigationController *settingsNavigationController;
 @property (strong, nonatomic) UINavigationController *signInNavigationController;
 @property (strong, nonatomic) UINavigationController *aboutNavigationController;
+@property (strong, nonatomic) UINavigationController *helpNavigationController;
 @property (strong, nonatomic) CPHamburgerMenuViewController *menuViewController;
 @property (strong, nonatomic) CPViewLocationViewController *mapViewController;
 @property (strong, nonatomic) CPUserProfileViewController *userProfileViewController;
@@ -42,6 +44,7 @@
 @property (strong, nonatomic) CPHelpScreenViewController *helpViewController;
 @property (strong, nonatomic) CPInstructionViewController *instructionViewController;
 @property (strong, nonatomic) CPAboutViewController *aboutViewController;
+
 
 
 @property (nonatomic, strong) NSArray *viewControllers;
@@ -85,7 +88,10 @@
         self.aboutViewController = [[CPAboutViewController alloc] init];
         self.aboutNavigationController = [[UINavigationController alloc] initWithRootViewController:self.aboutViewController];
         
-        self.viewControllers = @[self.mapViewNavigationController, self.userProfileNavigationController, self.aboutNavigationController, self.mapViewNavigationController];
+        self.helpViewController = [[CPHelpScreenViewController alloc] init];
+        self.helpNavigationController = [[UINavigationController alloc] initWithRootViewController:self.helpViewController];
+        
+        self.viewControllers = @[self.mapViewNavigationController, self.userProfileNavigationController, self.aboutNavigationController, self.helpNavigationController, self.mapViewNavigationController];
         
     }
     return self;
@@ -104,7 +110,7 @@
 												 selector:@selector(onCloseHelpWindow)
 													 name:CloseHelpView object:nil];
 		
-		self.helpViewController = [[CPHelpScreenViewController alloc] init];
+
 		
 		[self.contentView addSubview:self.helpViewController.view];
 		[self.contentView bringSubviewToFront:self.helpViewController.view];
@@ -298,6 +304,8 @@
     }
     
     UINavigationController *nvc = self.viewControllers[index];
+    int temp = (nvc == self.helpNavigationController);
+    NSLog(@"nvc is helpview %d", temp);
     [self.contentView addSubview:nvc.view];
     
     /*
